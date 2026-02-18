@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://brydfk7u3lay8"]
+
+[ext_resource type="Script" uid="uid://cn3ayp83s43ox" path="res://scripts/game.gd" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://c1mnb2f4kbvnc" path="res://scripts/player_manager.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://c3rhd30o8kx4m" path="res://scripts/platforms.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://2kfbrrv0er40" path="res://scenes/platform.tscn" id="4_lbhrr"]
+
+[node name="Game" type="Node2D" unique_id=971450599]
+script = ExtResource("1_lbhrr")
+
+[node name="Player_manager" type="Node" parent="." unique_id=1298001265]
+script = ExtResource("1_yqjtg")
+
+[node name="Player" parent="Player_manager" unique_id=1427670723 instance=ExtResource("1_uwrxv")]
+position = Vector2(-65, -16)
+
+[node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=616215835]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="platforms" type="Node2D" parent="." unique_id=1347431229]
+script = ExtResource("4_iywne")
+
+[node name="platform" parent="platforms" unique_id=503880014 instance=ExtResource("4_lbhrr")]
+position = Vector2(-65, -3)
+
+[node name="platform2" parent="platforms" unique_id=1722545183 instance=ExtResource("4_lbhrr")]
+position = Vector2(53, -5)
+
+[connection signal="createInk" from="platforms" to="." method="_on_platforms_create_ink"]
