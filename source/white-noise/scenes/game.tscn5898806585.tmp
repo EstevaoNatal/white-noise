@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://brydfk7u3lay8"]
+
+[ext_resource type="Script" uid="uid://cn3ayp83s43ox" path="res://scripts/game.gd" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://c1mnb2f4kbvnc" path="res://scripts/player_manager.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://c3rhd30o8kx4m" path="res://scripts/platforms.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://2kfbrrv0er40" path="res://scenes/platform.tscn" id="4_lbhrr"]
+
+[node name="Game" type="Node2D" unique_id=971450599]
+script = ExtResource("1_lbhrr")
+
+[node name="Player_manager" type="Node" parent="." unique_id=1298001265]
+script = ExtResource("1_yqjtg")
+
+[node name="Player" parent="Player_manager" unique_id=1427670723 instance=ExtResource("1_uwrxv")]
+position = Vector2(-65, -16)
+
+[node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=616215835]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="Tinta escolhida" type="Label" parent="Player_manager/Camera2D" unique_id=322168129]
+offset_left = -185.0
+offset_top = 78.0
+offset_right = -145.0
+offset_bottom = 101.0
+text = "preto"
+
+[node name="platforms" type="Node2D" parent="." unique_id=1347431229]
+script = ExtResource("4_iywne")
+
+[node name="platform" parent="platforms" unique_id=503880014 instance=ExtResource("4_lbhrr")]
+position = Vector2(-65, -3)
+
+[node name="platform2" parent="platforms" unique_id=1722545183 instance=ExtResource("4_lbhrr")]
+position = Vector2(53, -5)
+
+[node name="platform3" parent="platforms" unique_id=1369417080 instance=ExtResource("4_lbhrr")]
+position = Vector2(-12, 61)
+
+[node name="platform4" parent="platforms" unique_id=182874807 instance=ExtResource("4_lbhrr")]
+position = Vector2(4, 61)
+
+[node name="platform5" parent="platforms" unique_id=2086953890 instance=ExtResource("4_lbhrr")]
+position = Vector2(20, 61)
+
+[node name="platform6" parent="platforms" unique_id=1079215564 instance=ExtResource("4_lbhrr")]
+position = Vector2(36, 61)
+
+[node name="platform7" parent="platforms" unique_id=174020119 instance=ExtResource("4_lbhrr")]
+position = Vector2(52, 61)
+
+[node name="platform8" parent="platforms" unique_id=2049073778 instance=ExtResource("4_lbhrr")]
+position = Vector2(68, 61)
+
+[node name="platform9" parent="platforms" unique_id=2038978657 instance=ExtResource("4_lbhrr")]
+position = Vector2(180, 61)
+
+[node name="platform10" parent="platforms" unique_id=710046395 instance=ExtResource("4_lbhrr")]
+position = Vector2(196, 61)
+
+[node name="platform11" parent="platforms" unique_id=1342344317 instance=ExtResource("4_lbhrr")]
+position = Vector2(212, 61)
+
+[node name="platform12" parent="platforms" unique_id=923128044 instance=ExtResource("4_lbhrr")]
+position = Vector2(228, 61)
+
+[node name="platform13" parent="platforms" unique_id=1299097540 instance=ExtResource("4_lbhrr")]
+position = Vector2(244, 61)
+
+[node name="platform14" parent="platforms" unique_id=1907513600 instance=ExtResource("4_lbhrr")]
+position = Vector2(260, 61)
+
+[node name="platform15" parent="platforms" unique_id=845099142 instance=ExtResource("4_lbhrr")]
+position = Vector2(84, 61)
+
+[node name="platform16" parent="platforms" unique_id=1766732379 instance=ExtResource("4_lbhrr")]
+position = Vector2(100, 61)
+
+[node name="platform17" parent="platforms" unique_id=641670318 instance=ExtResource("4_lbhrr")]
+position = Vector2(116, 61)
+
+[node name="platform18" parent="platforms" unique_id=178454315 instance=ExtResource("4_lbhrr")]
+position = Vector2(132, 61)
+
+[node name="platform19" parent="platforms" unique_id=1998127833 instance=ExtResource("4_lbhrr")]
+position = Vector2(148, 61)
+
+[node name="platform20" parent="platforms" unique_id=463346405 instance=ExtResource("4_lbhrr")]
+position = Vector2(164, 61)
+
+[connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
+[connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
+[connection signal="createInk" from="platforms" to="." method="_on_platforms_create_ink"]

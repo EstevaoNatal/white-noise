@@ -1,8 +1,11 @@
 extends Node2D
-signal createInk
+signal cargas
 
-func _on_platform_carimbou() -> void:
-	createInk.emit()
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
 
-func _on_platform_2_carimbou() -> void:
-	createInk.emit()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass 
