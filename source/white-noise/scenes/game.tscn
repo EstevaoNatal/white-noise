@@ -3,83 +3,185 @@
 [ext_resource type="Script" uid="uid://cn3ayp83s43ox" path="res://scripts/game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://c1mnb2f4kbvnc" path="res://scripts/player_manager.gd" id="1_yqjtg"]
-[ext_resource type="Script" uid="uid://c3rhd30o8kx4m" path="res://scripts/platforms.gd" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://dd7m348o1p5b3" path="res://images/tinta.png" id="2_gee14"]
+[ext_resource type="Texture2D" uid="uid://cmltrn2fgiixg" path="res://images/laranja.png" id="2_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://bnud718mbvuxf" path="res://images/cadeira-removebg-preview.png" id="3_dinhu"]
+[ext_resource type="Texture2D" uid="uid://beowcy1yoywf6" path="res://images/placeholder.png" id="4_0tnpc"]
+[ext_resource type="Script" uid="uid://bcx630c02nf50" path="res://scripts/platforms.gd" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://2kfbrrv0er40" path="res://scenes/platform.tscn" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="4_p57ef"]
+[ext_resource type="Texture2D" uid="uid://5g53jopi4t8s" path="res://images/fase_tutorial_escrivaninha.png" id="5_u5sy4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
+size = Vector2(563.9856, 460)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u5sy4"]
 
 [node name="Game" type="Node2D" unique_id=971450599]
 script = ExtResource("1_lbhrr")
+
+[node name="Laranja" type="Sprite2D" parent="." unique_id=380108493]
+position = Vector2(-4, -818)
+scale = Vector2(2, 2)
+texture = ExtResource("2_kvpfn")
+
+[node name="CadeiraRemovebgPreview" type="Sprite2D" parent="." unique_id=396478514]
+position = Vector2(378, 152.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("3_dinhu")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1491331023]
+visible = false
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(-15, 10)
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallax2D" unique_id=1102969573]
+scroll_scale = Vector2(2, 2)
+scroll_offset = Vector2(-15, 10)
+repeat_size = Vector2(1000, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/Parallax2D2" unique_id=1825361166]
+position = Vector2(-218.00003, 72.99997)
+scale = Vector2(4, 4)
+texture = ExtResource("2_gee14")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D/Parallax2D2" unique_id=994607542]
+texture = ExtResource("4_0tnpc")
 
 [node name="Player_manager" type="Node" parent="." unique_id=1298001265]
 script = ExtResource("1_yqjtg")
 
 [node name="Player" parent="Player_manager" unique_id=1427670723 instance=ExtResource("1_uwrxv")]
-position = Vector2(-65, -16)
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-135, 60)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" type="Control" parent="Player_manager/Player" unique_id=2142849941]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 268.0
+offset_top = -136.0
+offset_right = 308.0
+offset_bottom = -96.0
+script = ExtResource("4_p57ef")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cargas de tinta" type="Label" parent="Player_manager/Player/Control" unique_id=518580216]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1170.0
+offset_top = -434.0
+offset_right = -961.0
+offset_bottom = -346.0
+theme_override_font_sizes/font_size = 64
+text = "cargas"
+
+[node name="Tinta escolhida" type="Label" parent="Player_manager/Player/Control" unique_id=322168129]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1174.0
+offset_top = 462.0
+offset_right = -1005.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 64
+text = "preto"
 
 [node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=616215835]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="platforms" type="Node2D" parent="." unique_id=1347431229]
+position = Vector2(-138, 50)
 script = ExtResource("4_iywne")
 
-[node name="platform" parent="platforms" unique_id=503880014 instance=ExtResource("4_lbhrr")]
-position = Vector2(-65, -3)
-
-[node name="platform2" parent="platforms" unique_id=1722545183 instance=ExtResource("4_lbhrr")]
-position = Vector2(53, -5)
-
 [node name="platform3" parent="platforms" unique_id=1369417080 instance=ExtResource("4_lbhrr")]
-position = Vector2(-12, 61)
+position = Vector2(-13, 52)
 
 [node name="platform4" parent="platforms" unique_id=182874807 instance=ExtResource("4_lbhrr")]
-position = Vector2(4, 61)
+position = Vector2(13, 52)
 
-[node name="platform5" parent="platforms" unique_id=2086953890 instance=ExtResource("4_lbhrr")]
-position = Vector2(20, 61)
+[node name="platform5" parent="platforms" unique_id=1054994374 instance=ExtResource("4_lbhrr")]
+position = Vector2(39, 52)
 
-[node name="platform6" parent="platforms" unique_id=1079215564 instance=ExtResource("4_lbhrr")]
-position = Vector2(36, 61)
+[node name="platform6" parent="platforms" unique_id=159754415 instance=ExtResource("4_lbhrr")]
+position = Vector2(64, 52)
 
-[node name="platform7" parent="platforms" unique_id=174020119 instance=ExtResource("4_lbhrr")]
-position = Vector2(52, 61)
+[node name="platform7" parent="platforms" unique_id=766361586 instance=ExtResource("4_lbhrr")]
+position = Vector2(87, 52)
 
-[node name="platform8" parent="platforms" unique_id=2049073778 instance=ExtResource("4_lbhrr")]
-position = Vector2(68, 61)
+[node name="platform8" parent="platforms" unique_id=1298190267 instance=ExtResource("4_lbhrr")]
+position = Vector2(113, 52)
 
-[node name="platform9" parent="platforms" unique_id=2038978657 instance=ExtResource("4_lbhrr")]
-position = Vector2(180, 61)
+[node name="platform9" parent="platforms" unique_id=1908292499 instance=ExtResource("4_lbhrr")]
+position = Vector2(139, 52)
 
-[node name="platform10" parent="platforms" unique_id=710046395 instance=ExtResource("4_lbhrr")]
-position = Vector2(196, 61)
+[node name="platform10" parent="platforms" unique_id=14019426 instance=ExtResource("4_lbhrr")]
+position = Vector2(167, 52)
 
-[node name="platform11" parent="platforms" unique_id=1342344317 instance=ExtResource("4_lbhrr")]
-position = Vector2(212, 61)
+[node name="platform11" parent="platforms" unique_id=1622971238 instance=ExtResource("4_lbhrr")]
+position = Vector2(193, 52)
 
-[node name="platform12" parent="platforms" unique_id=923128044 instance=ExtResource("4_lbhrr")]
-position = Vector2(228, 61)
+[node name="platform12" parent="platforms" unique_id=1919776571 instance=ExtResource("4_lbhrr")]
+position = Vector2(220, 52)
 
-[node name="platform13" parent="platforms" unique_id=1299097540 instance=ExtResource("4_lbhrr")]
-position = Vector2(244, 61)
+[node name="platform13" parent="platforms" unique_id=1656003175 instance=ExtResource("4_lbhrr")]
+position = Vector2(247, 52)
 
-[node name="platform14" parent="platforms" unique_id=1907513600 instance=ExtResource("4_lbhrr")]
-position = Vector2(260, 61)
+[node name="platform14" parent="platforms" unique_id=149586898 instance=ExtResource("4_lbhrr")]
+position = Vector2(273, 52)
 
-[node name="platform15" parent="platforms" unique_id=845099142 instance=ExtResource("4_lbhrr")]
-position = Vector2(84, 61)
+[node name="platform15" parent="platforms" unique_id=1470349019 instance=ExtResource("4_lbhrr")]
+position = Vector2(299, 52)
 
-[node name="platform16" parent="platforms" unique_id=1766732379 instance=ExtResource("4_lbhrr")]
-position = Vector2(100, 61)
+[node name="platform16" parent="platforms" unique_id=364764666 instance=ExtResource("4_lbhrr")]
+position = Vector2(324, 52)
 
-[node name="platform17" parent="platforms" unique_id=641670318 instance=ExtResource("4_lbhrr")]
-position = Vector2(116, 61)
+[node name="platform17" parent="platforms" unique_id=2064932493 instance=ExtResource("4_lbhrr")]
+position = Vector2(347, 52)
 
-[node name="platform18" parent="platforms" unique_id=178454315 instance=ExtResource("4_lbhrr")]
-position = Vector2(132, 61)
+[node name="platform18" parent="platforms" unique_id=596951968 instance=ExtResource("4_lbhrr")]
+position = Vector2(373, 52)
 
-[node name="platform19" parent="platforms" unique_id=1998127833 instance=ExtResource("4_lbhrr")]
-position = Vector2(148, 61)
+[node name="platform19" parent="platforms" unique_id=1367549949 instance=ExtResource("4_lbhrr")]
+position = Vector2(399, 52)
 
-[node name="platform20" parent="platforms" unique_id=463346405 instance=ExtResource("4_lbhrr")]
-position = Vector2(164, 61)
+[node name="platform20" parent="platforms" unique_id=1000043106 instance=ExtResource("4_lbhrr")]
+position = Vector2(427, 52)
 
-[connection signal="createInk" from="platforms" to="." method="_on_platforms_create_ink"]
+[node name="platform21" parent="platforms" unique_id=1380558787 instance=ExtResource("4_lbhrr")]
+position = Vector2(453, 52)
+
+[node name="platform22" parent="platforms" unique_id=1837528190 instance=ExtResource("4_lbhrr")]
+position = Vector2(480, 52)
+
+[node name="FaseTutorialEscrivaninha" type="Sprite2D" parent="." unique_id=641590945]
+z_index = 1
+texture_filter = 1
+position = Vector2(-442, 477)
+texture = ExtResource("5_u5sy4")
+
+[node name="mesa" type="Sprite2D" parent="." unique_id=1195435791]
+position = Vector2(-51, 314)
+scale = Vector2(1.5425926, 0.46666667)
+texture = ExtResource("5_u5sy4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mesa" unique_id=2083223506]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mesa/StaticBody2D" unique_id=558223316]
+position = Vector2(-14.909973, -219.99997)
+shape = SubResource("RectangleShape2D_kvpfn")
+
+[node name="killzone" type="Area2D" parent="." unique_id=1804361994]
+position = Vector2(-616, 284)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1473273461]
+shape = SubResource("WorldBoundaryShape2D_u5sy4")
+
+[connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
+[connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
+[connection signal="cargas" from="platforms" to="." method="_on_platforms_cargas"]
+[connection signal="property_list_changed" from="platforms" to="platforms" method="_on_property_list_changed"]
+[connection signal="area_entered" from="killzone" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="killzone" to="." method="_on_area_2d_body_entered"]
