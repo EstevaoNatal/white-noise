@@ -9,28 +9,35 @@ const JUMP_VELOCITY = -250.0
 var time_jump_charge=0.0
 var can_jump = true
 var diagonal = 0.0
+var max_velocidade_y=1
 
 #define a cor
-enum tinta {preto, azul}
+enum tinta {preto, azul, verde}
 @export var cor_atual : tinta
-@export var contador_tinta=100
+@onready var contador_tinta=100
 @onready var diminuir_cargas: bool = false
 @onready var contador_tinta_azul: int = 0
+@onready var can_ink=false
 
 func _on_ready() -> void:
 	mudou_tinta.emit(cor_atual as tinta)
 	diminuir_cargas = false
+	cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 
 func _physics_process(delta: float) -> void:
 	#pega direção
+	if Input.is_action_just_pressed("resetar"):
+		get_tree().reload_current_scene()
+		
+	
 	if diminuir_cargas:
 		if cor_atual!=1:
 			contador_tinta-=2
-			cargas_de_tinta.text = "Cargas tem:" + str(floori(contador_tinta/2))
+			cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 			diminuir_cargas=false
 		else:
 			contador_tinta-=1
-			cargas_de_tinta.text = "Cargas tem:" + str(floori(contador_tinta/2))
+			cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 			diminuir_cargas=false
 	var direction := Input.get_axis("lookLeft", "lookRight")
 	
@@ -46,10 +53,13 @@ func _physics_process(delta: float) -> void:
 			mov_cor_preta(delta,direction)
 		if cor_atual==tinta.azul:
 			mov_cor_azul(delta,direction)
+		if cor_atual==tinta.verde:
+			mov_cor_verde(delta,direction)
 	move_and_slide()
 
 func pulo_carimbo(delta_jump,direction_jump):
 	#print(time_jump_charge)
+	
 	if Input.is_action_pressed("jump") and is_on_floor():
 		#print(diagonal)
 		time_jump_charge+=2*delta_jump
@@ -58,7 +68,7 @@ func pulo_carimbo(delta_jump,direction_jump):
 		if Input.is_action_pressed("up"):
 			diagonal=1.2
 		elif Input.is_action_pressed("down"):
-			diagonal=-1.2
+			diagonal=-0.7
 		#print(diagonal)
 		time_jump_charge=clamp(time_jump_charge,1,2.1)
 		print(time_jump_charge, " ", velocity.y)
@@ -100,4 +110,18 @@ func mov_cor_azul(deltaAzul,directionAzul):
 			velocity.x += frenagem
 
 func mov_cor_verde(deltaVerde,directionVerde):
-	pass
+	velocity.x = snappedf(velocity.x,10)
+	#print(velocity.x)
+	var frenagem=10
+	if can_jump:
+		pulo_carimbo(deltaVerde,directionVerde)
+		can_jump = false
+	if not is_on_floor():
+		velocity+=get_gravity()*deltaVerde
+	else:
+		can_jump = true
+		#print(velocity.x, velocity.y)
+		if velocity.x>0:
+			velocity.x-=frenagem
+		elif velocity.x<0:
+			velocity.x+=frenagem

@@ -7,11 +7,16 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Area2D/Sprite2D
 @onready var platforms: Node = $platforms
 @onready var cargas_de_tinta: Label = %"Cargas de tinta"
+@onready var origin_spawnpoint: Marker2D = $spawnpoints/origin_spawnpoint
+@onready var player_manager: Node = $Player_manager
+@onready var current_spawnpoint = Globais.player_spawn
 
 var jogador = preload("res://scenes/player.tscn")
 
 # Called when the node enters the scene tree for the first time. # Replace with function body.
 
+func _ready() -> void:
+	player.position = current_spawnpoint
 
 func _on_player_ready() -> void:
 	pass # Replace with function body.
@@ -24,6 +29,9 @@ func _on_player_ready() -> void:
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	get_tree().reload_current_scene()
 
-
 func _on_platforms_property_list_changed() -> void:
 	pass # Replace with function body.
+
+
+func _on_reload_timer_timeout() -> void:
+	player.can_ink = true

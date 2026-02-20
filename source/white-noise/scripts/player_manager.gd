@@ -13,6 +13,8 @@ func _ready() -> void:
 		tinta_escolhida.text = "preto"
 	if cor_atual == 1:
 		tinta_escolhida.text = "azul"
+	if cor_atual == 2:
+		tinta_escolhida.text = "verde"
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

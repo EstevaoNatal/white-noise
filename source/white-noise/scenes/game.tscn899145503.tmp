@@ -18,12 +18,8 @@ size = Vector2(563.9856, 460)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u5sy4"]
 
-[node name="first_area" type="Node2D" unique_id=971450599]
+[node name="Game" type="Node2D" unique_id=971450599]
 script = ExtResource("1_lbhrr")
-
-[node name="reload timer" type="Timer" parent="." unique_id=2053761768]
-one_shot = true
-autostart = true
 
 [node name="Laranja" type="Sprite2D" parent="." unique_id=380108493]
 position = Vector2(-4, -818)
@@ -60,43 +56,106 @@ script = ExtResource("1_yqjtg")
 [node name="Player" parent="Player_manager" unique_id=1427670723 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(-153, 60)
+position = Vector2(-135, 60)
 scale = Vector2(0.5, 0.5)
+
+[node name="Control" type="Control" parent="Player_manager/Player" unique_id=2142849941]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 268.0
+offset_top = -136.0
+offset_right = 308.0
+offset_bottom = -96.0
+script = ExtResource("4_p57ef")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cargas de tinta" type="Label" parent="Player_manager/Player/Control" unique_id=518580216]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1170.0
+offset_top = -434.0
+offset_right = -961.0
+offset_bottom = -346.0
+theme_override_font_sizes/font_size = 64
+text = "cargas"
+
+[node name="Tinta escolhida" type="Label" parent="Player_manager/Player/Control" unique_id=322168129]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1174.0
+offset_top = 462.0
+offset_right = -1005.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 64
+text = "preto"
 
 [node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=616215835]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="Control" type="Control" parent="Player_manager/Camera2D" unique_id=2142849941]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1.0
-offset_top = -8.0
-offset_right = 39.0
-offset_bottom = 32.0
-script = ExtResource("4_p57ef")
-metadata/_edit_use_anchors_ = true
+[node name="platforms" type="Node2D" parent="." unique_id=1347431229]
+position = Vector2(-138, 50)
+script = ExtResource("4_iywne")
 
-[node name="Cargas de tinta" type="Label" parent="Player_manager/Camera2D/Control" unique_id=518580216]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -465.0
-offset_top = -263.0
-offset_right = -256.0
-offset_bottom = -175.0
-theme_override_font_sizes/font_size = 64
-text = "cargas"
+[node name="platform3" parent="platforms" unique_id=1369417080 instance=ExtResource("4_lbhrr")]
+position = Vector2(-13, 52)
 
-[node name="Tinta escolhida" type="Label" parent="Player_manager/Camera2D/Control" unique_id=322168129]
-unique_name_in_owner = true
-z_index = 20
-layout_mode = 0
-offset_left = -457.0
-offset_top = 164.0
-offset_right = -288.0
-offset_bottom = 252.0
-theme_override_font_sizes/font_size = 64
-text = "preto"
+[node name="platform4" parent="platforms" unique_id=182874807 instance=ExtResource("4_lbhrr")]
+position = Vector2(13, 52)
+
+[node name="platform5" parent="platforms" unique_id=1054994374 instance=ExtResource("4_lbhrr")]
+position = Vector2(39, 52)
+
+[node name="platform6" parent="platforms" unique_id=159754415 instance=ExtResource("4_lbhrr")]
+position = Vector2(64, 52)
+
+[node name="platform7" parent="platforms" unique_id=766361586 instance=ExtResource("4_lbhrr")]
+position = Vector2(87, 52)
+
+[node name="platform8" parent="platforms" unique_id=1298190267 instance=ExtResource("4_lbhrr")]
+position = Vector2(113, 52)
+
+[node name="platform9" parent="platforms" unique_id=1908292499 instance=ExtResource("4_lbhrr")]
+position = Vector2(139, 52)
+
+[node name="platform10" parent="platforms" unique_id=14019426 instance=ExtResource("4_lbhrr")]
+position = Vector2(167, 52)
+
+[node name="platform11" parent="platforms" unique_id=1622971238 instance=ExtResource("4_lbhrr")]
+position = Vector2(193, 52)
+
+[node name="platform12" parent="platforms" unique_id=1919776571 instance=ExtResource("4_lbhrr")]
+position = Vector2(220, 52)
+
+[node name="platform13" parent="platforms" unique_id=1656003175 instance=ExtResource("4_lbhrr")]
+position = Vector2(247, 52)
+
+[node name="platform14" parent="platforms" unique_id=149586898 instance=ExtResource("4_lbhrr")]
+position = Vector2(273, 52)
+
+[node name="platform15" parent="platforms" unique_id=1470349019 instance=ExtResource("4_lbhrr")]
+position = Vector2(299, 52)
+
+[node name="platform16" parent="platforms" unique_id=364764666 instance=ExtResource("4_lbhrr")]
+position = Vector2(324, 52)
+
+[node name="platform17" parent="platforms" unique_id=2064932493 instance=ExtResource("4_lbhrr")]
+position = Vector2(347, 52)
+
+[node name="platform18" parent="platforms" unique_id=596951968 instance=ExtResource("4_lbhrr")]
+position = Vector2(373, 52)
+
+[node name="platform19" parent="platforms" unique_id=1367549949 instance=ExtResource("4_lbhrr")]
+position = Vector2(399, 52)
+
+[node name="platform20" parent="platforms" unique_id=1000043106 instance=ExtResource("4_lbhrr")]
+position = Vector2(427, 52)
+
+[node name="platform21" parent="platforms" unique_id=1380558787 instance=ExtResource("4_lbhrr")]
+position = Vector2(453, 52)
+
+[node name="platform22" parent="platforms" unique_id=1837528190 instance=ExtResource("4_lbhrr")]
+position = Vector2(480, 52)
 
 [node name="FaseTutorialEscrivaninha" type="Sprite2D" parent="." unique_id=641590945]
 z_index = 1
@@ -124,63 +183,11 @@ shape = SubResource("WorldBoundaryShape2D_u5sy4")
 [node name="spawnpoints" type="Node" parent="." unique_id=241387243]
 
 [node name="origin_spawnpoint" parent="spawnpoints" unique_id=1315256099 instance=ExtResource("12_dinhu")]
-unique_name_in_owner = true
-position = Vector2(-38, 57)
+position = Vector2(-66, 59)
 
-[node name="spawnpoint_test" parent="spawnpoints" unique_id=488415302 instance=ExtResource("12_dinhu")]
-position = Vector2(222, 56)
-
-[node name="platforms" type="Node2D" parent="." unique_id=1347431229]
-position = Vector2(-138, 50)
-script = ExtResource("4_iywne")
-
-[node name="StaticBody2D" parent="platforms" unique_id=1054994374 instance=ExtResource("4_lbhrr")]
-position = Vector2(-12, 51)
-
-[node name="StaticBody2D2" parent="platforms" unique_id=1284031546 instance=ExtResource("4_lbhrr")]
-position = Vector2(25, 51)
-
-[node name="StaticBody2D3" parent="platforms" unique_id=1700395002 instance=ExtResource("4_lbhrr")]
-position = Vector2(62, 51)
-
-[node name="StaticBody2D4" parent="platforms" unique_id=846397182 instance=ExtResource("4_lbhrr")]
-position = Vector2(99, 51)
-
-[node name="StaticBody2D11" parent="platforms" unique_id=1883833184 instance=ExtResource("4_lbhrr")]
-position = Vector2(358, 51)
-
-[node name="StaticBody2D12" parent="platforms" unique_id=2059626478 instance=ExtResource("4_lbhrr")]
-position = Vector2(395, 51)
-
-[node name="StaticBody2D13" parent="platforms" unique_id=519938855 instance=ExtResource("4_lbhrr")]
-position = Vector2(432, 51)
-
-[node name="StaticBody2D14" parent="platforms" unique_id=431100961 instance=ExtResource("4_lbhrr")]
-position = Vector2(469, 51)
-
-[node name="StaticBody2D5" parent="platforms" unique_id=792394293 instance=ExtResource("4_lbhrr")]
-position = Vector2(136, 51)
-
-[node name="StaticBody2D6" parent="platforms" unique_id=37342117 instance=ExtResource("4_lbhrr")]
-position = Vector2(173, 51)
-
-[node name="StaticBody2D7" parent="platforms" unique_id=644692102 instance=ExtResource("4_lbhrr")]
-position = Vector2(210, 51)
-
-[node name="StaticBody2D8" parent="platforms" unique_id=1677293957 instance=ExtResource("4_lbhrr")]
-position = Vector2(247, 51)
-
-[node name="StaticBody2D9" parent="platforms" unique_id=1832939358 instance=ExtResource("4_lbhrr")]
-position = Vector2(284, 51)
-
-[node name="StaticBody2D10" parent="platforms" unique_id=1834625233 instance=ExtResource("4_lbhrr")]
-position = Vector2(321, 51)
-
-[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
 [connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
 [connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
-[connection signal="area_entered" from="killzone" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="killzone" to="." method="_on_area_2d_body_entered"]
 [connection signal="cargas" from="platforms" to="." method="_on_platforms_cargas"]
 [connection signal="property_list_changed" from="platforms" to="platforms" method="_on_property_list_changed"]
+[connection signal="area_entered" from="killzone" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="killzone" to="." method="_on_area_2d_body_entered"]
