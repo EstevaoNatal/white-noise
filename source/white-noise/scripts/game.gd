@@ -10,6 +10,8 @@ extends Node2D
 @onready var origin_spawnpoint: Marker2D = $spawnpoints/origin_spawnpoint
 @onready var player_manager: Node = $Player_manager
 @onready var current_spawnpoint = Globais.player_spawn
+@onready var tamanhos_tela = [Vector2i(1920,1080),Vector2i(960,540),Vector2i(640,360)]
+@onready var tamanho_atual=0
 
 var jogador = preload("res://scenes/player.tscn")
 
@@ -17,11 +19,19 @@ var jogador = preload("res://scenes/player.tscn")
 
 func _ready() -> void:
 	player.position = current_spawnpoint
+	print(DisplayServer.screen_get_size())
 
 func _on_player_ready() -> void:
 	pass # Replace with function body.
 
-
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("aumentar_tamanho_tela") or Input.is_action_just_pressed("diminuir_tamanho_tela"):
+		if Input.is_action_just_pressed("aumentar_tamanho_tela") and tamanho_atual>0:
+			tamanho_atual-=1
+		if Input.is_action_just_pressed("diminuir_tamanho_tela") and tamanho_atual<tamanhos_tela.size()-1:
+			tamanho_atual+=1
+		DisplayServer.window_set_size(tamanhos_tela[tamanho_atual])
+		print(tamanho_atual)
 #func _on_platforms_cargas() -> void:
 	#get_node("Player_manager/Player").diminuir_cargas = true
 	#cargas_de_tinta.text = "Cargas tem:" + str()

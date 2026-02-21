@@ -19,11 +19,13 @@ func _ready() -> void:
 
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+	speed = Globais.player_jump_velocidade
 	if ink_verde.visible==false:
 		can_bounce=false
 	if player.cor_atual==0:
 		if ink_preto.visible==false:
 			if player.can_ink:
+				player.ultima_carimbada=0
 				can_bounce=false
 				ink_preto.visible = true
 				ink_azul.visible=false
@@ -32,6 +34,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	elif player.cor_atual==1:
 		if ink_azul.visible==false:
 			if player.can_ink:
+				player.ultima_carimbada=1
 				can_bounce=false
 				ink_azul.visible = true
 				ink_verde.visible=false
@@ -41,16 +44,15 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 		if not Input.is_action_pressed("down"):
 			if GlobaisNode.get_node("tempo_verde").is_stopped() and can_bounce:
 				GlobaisNode.get_node("tempo_verde").start()
-				player.velocity.y=-0.8*speed
+				player.velocity.y = speed*0.8
+				Globais.player_jump_velocidade = player.velocity.y
+				print(player.velocity.y)
 				print("aboba")
 		if ink_verde.visible==false:
 			if player.can_ink:
+				player.ultima_carimbada=2
 				can_bounce=true
 				ink_azul.visible=false
 				ink_preto.visible=false
 				ink_verde.visible = true
 				player.diminuir_cargas=true
-
-
-func _on_get_speed_body_entered(body: CharacterBody2D) -> void:
-	speed=body.velocity.y

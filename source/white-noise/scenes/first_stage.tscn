@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://5g53jopi4t8s" path="res://images/fase_tutorial_escrivaninha.png" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://da6rdi543wwmi" path="res://scenes/spawnpoints.tscn" id="12_dinhu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdk56"]
+size = Vector2(533, 133)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
 size = Vector2(563.9856, 460)
 
@@ -80,22 +83,22 @@ metadata/_edit_use_anchors_ = true
 [node name="Cargas de tinta" type="Label" parent="Player_manager/Camera2D/Control" unique_id=518580216]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -465.0
-offset_top = -263.0
-offset_right = -256.0
-offset_bottom = -175.0
-theme_override_font_sizes/font_size = 64
+offset_left = -277.0
+offset_top = -146.0
+offset_right = -177.0
+offset_bottom = -101.0
+theme_override_font_sizes/font_size = 32
 text = "cargas"
 
 [node name="Tinta escolhida" type="Label" parent="Player_manager/Camera2D/Control" unique_id=322168129]
 unique_name_in_owner = true
 z_index = 20
 layout_mode = 0
-offset_left = -457.0
-offset_top = 164.0
-offset_right = -288.0
-offset_bottom = 252.0
-theme_override_font_sizes/font_size = 64
+offset_left = -259.0
+offset_top = 104.0
+offset_right = -175.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 32
 text = "preto"
 
 [node name="FaseTutorialEscrivaninha" type="Sprite2D" parent="." unique_id=641590945]
@@ -103,6 +106,12 @@ z_index = 1
 texture_filter = 1
 position = Vector2(-442, 477)
 texture = ExtResource("5_u5sy4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FaseTutorialEscrivaninha" unique_id=881924841]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FaseTutorialEscrivaninha/StaticBody2D" unique_id=1155928373]
+position = Vector2(-0.5, -383.5)
+shape = SubResource("RectangleShape2D_gdk56")
 
 [node name="mesa" type="Sprite2D" parent="." unique_id=1195435791]
 position = Vector2(-51, 314)
@@ -134,7 +143,7 @@ position = Vector2(222, 56)
 position = Vector2(-138, 50)
 script = ExtResource("4_iywne")
 
-[node name="StaticBody2D" parent="platforms" unique_id=1054994374 instance=ExtResource("4_lbhrr")]
+[node name="StaticBody2D" parent="platforms" unique_id=1975935879 instance=ExtResource("4_lbhrr")]
 position = Vector2(-12, 51)
 
 [node name="StaticBody2D2" parent="platforms" unique_id=1284031546 instance=ExtResource("4_lbhrr")]
