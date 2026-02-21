@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @onready var player: CharacterBody2D = $"."
 @onready var cargas_de_tinta: Label = %"Cargas de tinta"
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 signal mudou_tinta
 
 var dead=false
@@ -10,6 +11,7 @@ var time_jump_charge=0.0
 var can_jump = true
 var diagonal = 0.0
 var max_velocidade_y=1
+var ultima_carimbada:int = 0
 
 #define a cor
 enum tinta {preto, azul, verde}
@@ -25,11 +27,38 @@ func _on_ready() -> void:
 	cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 
 func _physics_process(delta: float) -> void:
-	#pega direção
-	if Input.is_action_just_pressed("resetar"):
-		get_tree().reload_current_scene()
-		
+	#pega direção		
+	var direction := Input.get_axis("lookLeft", "lookRight")
+	if direction==-1:
+		animated_sprite_2d.flip_h=true
+	elif direction==1:
+		animated_sprite_2d.flip_h=false
 	
+	if ultima_carimbada==0:
+		if not is_on_floor():
+			if velocity.y<0:
+				animated_sprite_2d.play("pulando_preto")
+			else:
+				animated_sprite_2d.play("indo_pular_preto")
+		else:
+			animated_sprite_2d.play("idle_preto")
+	elif ultima_carimbada==1:
+		if not is_on_floor():
+			if velocity.y<0:
+				animated_sprite_2d.play("pulando_azul")
+			else:
+				animated_sprite_2d.play("indo_pular_azul")
+		else:
+			animated_sprite_2d.play("idle_azul")
+	elif ultima_carimbada==2:
+		if not is_on_floor():
+			if velocity.y<0:
+				animated_sprite_2d.play("pulando_verde")
+			else:
+				animated_sprite_2d.play("indo_pular_verde")
+		else:
+			animated_sprite_2d.play("idle_verde")
+
 	if diminuir_cargas:
 		if cor_atual!=1:
 			contador_tinta-=2
@@ -39,7 +68,6 @@ func _physics_process(delta: float) -> void:
 			contador_tinta-=1
 			cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 			diminuir_cargas=false
-	var direction := Input.get_axis("lookLeft", "lookRight")
 	
 	if Input.is_action_just_pressed("trocar_cor_tras") && cor_atual>0:
 		cor_atual= cor_atual - 1 as tinta
@@ -59,7 +87,6 @@ func _physics_process(delta: float) -> void:
 
 func pulo_carimbo(delta_jump,direction_jump):
 	#print(time_jump_charge)
-	
 	if Input.is_action_pressed("jump") and is_on_floor():
 		#print(diagonal)
 		time_jump_charge+=2*delta_jump
@@ -74,6 +101,7 @@ func pulo_carimbo(delta_jump,direction_jump):
 		print(time_jump_charge, " ", velocity.y)
 		velocity.x = direction_jump*SPEED*time_jump_charge
 		velocity.y = JUMP_VELOCITY*time_jump_charge - 200*diagonal
+		Globais.player_jump_velocidade = JUMP_VELOCITY*time_jump_charge - 200*diagonal
 		time_jump_charge=0.0
 		diagonal=0.0
 
