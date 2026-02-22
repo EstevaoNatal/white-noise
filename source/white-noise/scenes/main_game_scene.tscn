@@ -2,8 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c3v33ckgktiwj" path="res://scripts/main_game_scene.gd" id="1_qsd30"]
 [ext_resource type="PackedScene" uid="uid://brydfk7u3lay8" path="res://scenes/first_stage.tscn" id="2_d383n"]
+[ext_resource type="PackedScene" uid="uid://ce4laia03af1t" path="res://scenes/next_level_check.tscn" id="3_d383n"]
 
 [node name="mainGameScene" type="Node2D" unique_id=2087594735]
 script = ExtResource("1_qsd30")
 
 [node name="first_area" parent="." unique_id=971450599 instance=ExtResource("2_d383n")]
+
+[node name="next_level_check" parent="." unique_id=1434865447 instance=ExtResource("3_d383n")]
+position = Vector2(843, -988)
+
+[connection signal="next_phase" from="next_level_check" to="." method="_on_next_level_check_next_phase"]

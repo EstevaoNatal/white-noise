@@ -22,6 +22,7 @@ GlobaisNode="*uid://swwv4td5gt0r"
 
 [display]
 
+window/size/initial_position_type=0
 window/stretch/mode="canvas_items"
 
 [input]

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ce4laia03af1t"]
+
+[ext_resource type="Script" uid="uid://bobjihthkfsn8" path="res://scripts/next_level_check.gd" id="1_83jg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plaoi"]
+
+[node name="next_level_check" type="Area2D" unique_id=1434865447]
+script = ExtResource("1_83jg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=362943859]
+shape = SubResource("RectangleShape2D_plaoi")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
