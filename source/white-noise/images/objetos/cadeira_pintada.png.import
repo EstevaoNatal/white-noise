@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3k8hf1jmu3e"
-path="res://.godot/imported/lineart_mesa (pintado)(1).png-ee9f6a8f70d2f3f90ffb09ca31f9a4bb.ctex"
+uid="uid://dbo7oav8oya46"
+path="res://.godot/imported/cadeira_pintada.png-2c71c80007de2c85f6682513d59f6662.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/player_sprites/lineart_mesa (pintado)(1).png"
-dest_files=["res://.godot/imported/lineart_mesa (pintado)(1).png-ee9f6a8f70d2f3f90ffb09ca31f9a4bb.ctex"]
+source_file="res://images/objetos/cadeira_pintada.png"
+dest_files=["res://.godot/imported/cadeira_pintada.png-2c71c80007de2c85f6682513d59f6662.ctex"]
 
 [params]
 

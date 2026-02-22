@@ -1,17 +1,14 @@
 [gd_scene format=3 uid="uid://2kfbrrv0er40"]
 
-[ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="2_n1ckp"]
+[ext_resource type="Texture2D" uid="uid://b2b8ghg5lf0kn" path="res://images/tintas/tinta_preta_2.png" id="2_n1ckp"]
 [ext_resource type="Script" uid="uid://yn43d1pbs0p0" path="res://scripts/platform.gd" id="2_nlgqw"]
-[ext_resource type="Texture2D" uid="uid://datqosoutcj0j" path="res://images/verde.png" id="3_u7qrw"]
-[ext_resource type="Texture2D" uid="uid://duk1re4l2rbr1" path="res://images/azul_real.png" id="4_n1ckp"]
+[ext_resource type="Texture2D" uid="uid://bwuqo7xkjpl6i" path="res://images/tintas/tinta_verde_2.png" id="3_n1ckp"]
+[ext_resource type="Texture2D" uid="uid://c80u41ymwxot7" path="res://images/tintas/tinta_azul_2.png" id="4_n1ckp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
 size = Vector2(37, 23)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_507ja"]
-size = Vector2(37, 17)
-
-[node name="StaticBody2D" type="StaticBody2D" unique_id=1054994374]
+[node name="StaticBody2D" type="Node2D" unique_id=2040306453]
 z_index = 3
 script = ExtResource("2_nlgqw")
 
@@ -19,28 +16,24 @@ script = ExtResource("2_nlgqw")
 
 [node name="ink_preto" type="Sprite2D" parent="Area2D" unique_id=1845629216]
 visible = false
-position = Vector2(-3.5, 0)
-scale = Vector2(0.032118056, 0.006172839)
+position = Vector2(-4, 5.4092827)
+scale = Vector2(0.08705882, 0.06900652)
 texture = ExtResource("2_n1ckp")
 
 [node name="ink_verde" type="Sprite2D" parent="Area2D" unique_id=1499423079]
 visible = false
-position = Vector2(-3.499999, -0.09426161)
-scale = Vector2(0.032118056, 0.0058819083)
-texture = ExtResource("3_u7qrw")
+position = Vector2(-4, 5.409)
+scale = Vector2(0.087, 0.069)
+texture = ExtResource("3_n1ckp")
 
 [node name="ink_azul" type="Sprite2D" parent="Area2D" unique_id=231244296]
 visible = false
-position = Vector2(-3.500002, 2.2351742e-08)
-scale = Vector2(0.032118052, 0.0061728396)
+position = Vector2(-4, 5.409)
+scale = Vector2(0.087, 0.069)
 texture = ExtResource("4_n1ckp")
 
 [node name="area_deteccao" type="CollisionShape2D" parent="Area2D" unique_id=731205723]
 position = Vector2(-3.5, 4.5)
 shape = SubResource("RectangleShape2D_nlgqw")
-
-[node name="pisar" type="CollisionShape2D" parent="." unique_id=1645579890]
-position = Vector2(-3.5, 7.5)
-shape = SubResource("RectangleShape2D_507ja")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 @onready var ink_preto: Sprite2D = $Area2D/ink_preto
 @onready var ink_verde: Sprite2D = $Area2D/ink_verde
 @onready var ink_azul: Sprite2D = $Area2D/ink_azul

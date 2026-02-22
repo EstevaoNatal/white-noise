@@ -11,7 +11,7 @@ var time_jump_charge=0.0
 var can_jump = true
 var diagonal = 0.0
 var max_velocidade_y=1
-var ultima_carimbada:int = 0
+var ultima_carimbada:int = -1
 
 #define a cor
 enum tinta {preto, azul, verde}
@@ -34,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	elif direction==1:
 		animated_sprite_2d.flip_h=false
 	
+	#decide animação baseado na ultima cor carimbada e no mov. atual
 	if ultima_carimbada==0:
 		if not is_on_floor():
 			if velocity.y<0:
@@ -58,6 +59,14 @@ func _physics_process(delta: float) -> void:
 				animated_sprite_2d.play("indo_pular_verde")
 		else:
 			animated_sprite_2d.play("idle_verde")
+	else:
+		if not is_on_floor():
+			if velocity.y<0:
+				animated_sprite_2d.play("pulando_semCor")
+			else:
+				animated_sprite_2d.play("indo_pular_semCor")
+		else:
+			animated_sprite_2d.play("idle_nao_pintado")
 
 	if diminuir_cargas:
 		if cor_atual!=1:
@@ -97,7 +106,7 @@ func pulo_carimbo(delta_jump,direction_jump):
 		elif Input.is_action_pressed("down"):
 			diagonal=-0.7
 		#print(diagonal)
-		time_jump_charge=clamp(time_jump_charge,1,2.1)
+		time_jump_charge=clamp(time_jump_charge,1,5)
 		print(time_jump_charge, " ", velocity.y)
 		velocity.x = direction_jump*SPEED*time_jump_charge
 		velocity.y = JUMP_VELOCITY*time_jump_charge - 200*diagonal
