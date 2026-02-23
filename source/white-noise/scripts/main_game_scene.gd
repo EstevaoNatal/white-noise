@@ -6,6 +6,7 @@ extends Node2D
 @onready var tamanhos_tela = [Vector2i(1920,1080),Vector2i(960,540),Vector2i(640,360)]
 @onready var tamanho_atual=0
 var contador=0
+var contador1=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,11 +22,53 @@ func _process(delta: float) -> void:
 			tamanho_atual+=1
 		DisplayServer.window_set_size(tamanhos_tela[tamanho_atual])
 		print(tamanho_atual)
+	if Globais.fase_atual==2 && contador==0:
+		nivelAtual = main_game_scene.get_node("first_area")
+		main_game_scene.remove_child(nivelAtual)
+		nivelAtual.call_deferred("free")
+		proximo = load("res://scenes/first_stage.tscn")
+		proximo_nivel = proximo.instantiate()
+		main_game_scene.add_child(proximo_nivel)
+		Globais.fase_atual=1
+		contador=1
+	if Globais.fase_atual==4:
+		if contador1==0:
+			nivelAtual = main_game_scene.get_child(0)
+			main_game_scene.remove_child(nivelAtual)
+			nivelAtual.call_deferred("free")
+			proximo = load("res://scenes/telaDeMorte.tscn")
+			proximo_nivel = proximo.instantiate()
+			main_game_scene.add_child(proximo_nivel)
+			Globais.fase_atual=1
+			contador1=1
+	else:
+		contador1=0
 
-func _on_next_level_check_next_phase() -> void:
-	nivelAtual = main_game_scene.get_node("first_area")
+func _on_menu_inicio() -> void:
+	nivelAtual = main_game_scene.get_node("Menu")
 	main_game_scene.remove_child(nivelAtual)
 	nivelAtual.call_deferred("free")
 	proximo = load("res://scenes/first_stage.tscn")
 	proximo_nivel = proximo.instantiate()
 	main_game_scene.add_child(proximo_nivel)
+	Globais.fase_atual=1
+
+
+func _on_menu_opcoes() -> void:
+	nivelAtual = main_game_scene.get_node("Menu")
+	main_game_scene.remove_child(nivelAtual)
+	nivelAtual.call_deferred("free")
+	proximo = load("res://scenes/first_stage.tscn")
+	proximo_nivel = proximo.instantiate()
+	main_game_scene.add_child(proximo_nivel)
+	Globais.fase_atual=1
+
+
+func _on_menu_fechar() -> void:
+	nivelAtual = main_game_scene.get_node("Menu")
+	main_game_scene.remove_child(nivelAtual)
+	nivelAtual.call_deferred("free")
+	proximo = load("res://scenes/first_stage.tscn")
+	proximo_nivel = proximo.instantiate()
+	main_game_scene.add_child(proximo_nivel)
+	Globais.fase_atual=1

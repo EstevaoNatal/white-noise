@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dyq7hroewwrfk"]
+
+[ext_resource type="Script" uid="uid://rifor51m8rkt" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://cy3imydvgb40q" path="res://images/objetos/mão(1).png" id="3_con2f"]
+
+[node name="Menu" type="Node2D" unique_id=1758809669]
+script = ExtResource("1_vjb58")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=907294059]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1568484615]
+texture = ExtResource("1_yqeox")
+
+[node name="Iniciar" type="Button" parent="." unique_id=1803858864]
+offset_left = -481.0
+offset_top = -199.0
+offset_right = -307.0
+offset_bottom = -146.0
+theme_override_font_sizes/font_size = 32
+text = "Iniciar"
+
+[node name="Opções" type="Button" parent="." unique_id=1664012644]
+offset_left = -481.0
+offset_top = -70.0
+offset_right = -307.0
+offset_bottom = -17.0
+theme_override_font_sizes/font_size = 32
+text = "Opções"
+
+[node name="Sair" type="Button" parent="." unique_id=2019090536]
+offset_left = -481.0
+offset_top = 63.0
+offset_right = -307.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 32
+text = "Sair"
+
+[node name="Mão" type="Sprite2D" parent="." unique_id=2062043783]
+position = Vector2(447, 328)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_con2f")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1653063445]
+position = Vector2(232, 193)
+
+[connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Opções" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]

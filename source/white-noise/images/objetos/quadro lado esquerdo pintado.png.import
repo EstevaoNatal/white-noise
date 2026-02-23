@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wsxap43vlcpb"
-valid=false
+uid="uid://bxkkype7ohed4"
+path="res://.godot/imported/quadro lado esquerdo pintado.png-e17579a34045db61433655c8b088b4da.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://images/azul.png"
+source_file="res://images/objetos/quadro lado esquerdo pintado.png"
+dest_files=["res://.godot/imported/quadro lado esquerdo pintado.png-e17579a34045db61433655c8b088b4da.ctex"]
 
 [params]
 
