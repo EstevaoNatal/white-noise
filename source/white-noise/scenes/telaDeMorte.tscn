@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://fhwj3xgt1te1"]
+
+[ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="1_wbmbq"]
+[ext_resource type="Texture2D" uid="uid://d2vkhpgvquimr" path="res://images/deathscreenPlaceholder.png" id="2_n2ym4"]
+
+[node name="telaDeMorte" type="Sprite2D" unique_id=1860939011]
+texture = ExtResource("1_wbmbq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=332053107]
+
+[node name="DeathscreenPlaceholder" type="Sprite2D" parent="." unique_id=901372678]
+position = Vector2(-1, -7)
+texture = ExtResource("2_n2ym4")
