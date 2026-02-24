@@ -3,65 +3,327 @@
 [ext_resource type="Texture2D" uid="uid://cxkscov8s6c36" path="res://images/UI/Carga/carga_personagem.png" id="1_n6j2j"]
 [ext_resource type="Texture2D" uid="uid://h1q65jjay5e2" path="res://images/UI/Carga/carga_min/_preta_cheio_2.png" id="2_63lv3"]
 [ext_resource type="Texture2D" uid="uid://c82fv6w83p2b2" path="res://images/UI/Carga/carga_grand/_preta_2/_cheio.png" id="3_6nfn0"]
+[ext_resource type="Texture2D" uid="uid://bc20k4t2qql6y" path="res://images/UI/Carga/carga_min/_preta_metade_2.png" id="3_eegid"]
+[ext_resource type="Texture2D" uid="uid://cdoeagpoipc22" path="res://images/UI/Carga/carga_min/_verde_cheia.png" id="4_xl5ay"]
+[ext_resource type="Texture2D" uid="uid://cxyxdu1445wk" path="res://images/UI/Carga/carga_min/_verde_metade.png" id="5_dnhxu"]
+[ext_resource type="Texture2D" uid="uid://bhxrcc3ns1d0v" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_1.png" id="7_hk2bl"]
+[ext_resource type="Texture2D" uid="uid://c1j6d76ebc8sb" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_2.png" id="8_ka21f"]
+[ext_resource type="Texture2D" uid="uid://crxcj4e7j63dk" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_3.png" id="9_i5lp8"]
+[ext_resource type="Texture2D" uid="uid://b1i7x05kh0v4b" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_4.png" id="10_jb5mo"]
+[ext_resource type="Texture2D" uid="uid://ytev0dx6b0au" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_5.png" id="11_cvjah"]
+[ext_resource type="Texture2D" uid="uid://dp6wrvaqw8iao" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_6.png" id="12_2xm5i"]
+[ext_resource type="Texture2D" uid="uid://d03l7rg8icmgy" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_7.png" id="13_ep0yn"]
+[ext_resource type="Texture2D" uid="uid://b1q7wn577na41" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_8.png" id="14_tpq5r"]
+[ext_resource type="Texture2D" uid="uid://b7byiu0iky6vr" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_9.png" id="15_ypp0o"]
+[ext_resource type="Texture2D" uid="uid://b5kpnbjbnuqa" path="res://images/UI/Carga/carga_grand/_vazia.png" id="16_ia4m2"]
+[ext_resource type="Texture2D" uid="uid://jheuh2utljom" path="res://images/UI/Carga/carga_grand/_verde/_cheia.png" id="17_o4oiw"]
+[ext_resource type="Texture2D" uid="uid://c8g8aik5pv1ov" path="res://images/UI/Carga/carga_grand/_verde/_uso_1.png" id="18_cmqdb"]
+[ext_resource type="Texture2D" uid="uid://dma6npo0a2fdd" path="res://images/UI/Carga/carga_grand/_verde/_uso_2.png" id="19_p0wnt"]
+[ext_resource type="Texture2D" uid="uid://dw7t018dtuxmn" path="res://images/UI/Carga/carga_grand/_verde/_uso_3.png" id="20_dl4tq"]
+[ext_resource type="Texture2D" uid="uid://dmgh0il41go70" path="res://images/UI/Carga/carga_grand/_verde/_uso_4.png" id="21_6gvu2"]
+[ext_resource type="Texture2D" uid="uid://f5vmctec71w6" path="res://images/UI/Carga/carga_grand/_verde/_uso_5.png" id="22_06t7g"]
+[ext_resource type="Texture2D" uid="uid://cttx7gl6gleq3" path="res://images/UI/Carga/carga_grand/_verde/_uso_6.png" id="23_ln2w4"]
+[ext_resource type="Texture2D" uid="uid://c7iwnyjkoup3o" path="res://images/UI/Carga/carga_grand/_verde/_uso_7.png" id="24_mv5je"]
+[ext_resource type="Texture2D" uid="uid://er7s6mec0e66" path="res://images/UI/Carga/carga_grand/_verde/_uso_8.png" id="25_ypbpn"]
+[ext_resource type="Texture2D" uid="uid://dtvh3qarjuwsu" path="res://images/UI/Carga/carga_grand/_verde/_uso_9.png" id="26_vji6x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvjli"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"azul_p",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_63lv3")
+}],
+"loop": true,
+"name": &"preto0",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eegid")
+}],
+"loop": true,
+"name": &"preto1",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"vazio",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xl5ay")
+}],
+"loop": true,
+"name": &"verde0",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dnhxu")
+}],
+"loop": true,
+"name": &"verde1",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vl40m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6nfn0")
+}],
+"loop": true,
+"name": &"preto0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hk2bl")
+}],
+"loop": true,
+"name": &"preto1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ka21f")
+}],
+"loop": true,
+"name": &"preto2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i5lp8")
+}],
+"loop": true,
+"name": &"preto3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jb5mo")
+}],
+"loop": true,
+"name": &"preto4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cvjah")
+}],
+"loop": true,
+"name": &"preto5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_2xm5i")
+}],
+"loop": true,
+"name": &"preto6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ep0yn")
+}],
+"loop": true,
+"name": &"preto7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_tpq5r")
+}],
+"loop": true,
+"name": &"preto8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ypp0o")
+}],
+"loop": true,
+"name": &"preto9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ia4m2")
+}],
+"loop": true,
+"name": &"vazia",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_o4oiw")
+}],
+"loop": true,
+"name": &"verde0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_cmqdb")
+}],
+"loop": true,
+"name": &"verde1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_p0wnt")
+}],
+"loop": true,
+"name": &"verde2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_dl4tq")
+}],
+"loop": true,
+"name": &"verde3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_6gvu2")
+}],
+"loop": true,
+"name": &"verde4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_06t7g")
+}],
+"loop": true,
+"name": &"verde5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_ln2w4")
+}],
+"loop": true,
+"name": &"verde6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_mv5je")
+}],
+"loop": true,
+"name": &"verde7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ypbpn")
+}],
+"loop": true,
+"name": &"verde8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_vji6x")
+}],
+"loop": true,
+"name": &"verde9",
+"speed": 5.0
+}]
 
 [node name="UI_Cargas" type="Node2D" unique_id=322756276]
+scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=510571770]
 position = Vector2(-9.536743e-07, 4.7683716e-07)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_n6j2j")
 
-[node name="ink1" type="Sprite2D" parent="." unique_id=1635549168]
+[node name="ink3" type="AnimatedSprite2D" parent="." unique_id=5892041]
 position = Vector2(35, -42)
 scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"verde1"
+autoplay = "preto0"
 
-[node name="ink8" type="Sprite2D" parent="." unique_id=45598781]
-position = Vector2(34.999996, 42)
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
-
-[node name="ink2" type="Sprite2D" parent="." unique_id=1024080939]
+[node name="ink4" type="AnimatedSprite2D" parent="." unique_id=1820457037]
 position = Vector2(45, -32)
 scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"preto0"
+autoplay = "preto0"
 
-[node name="ink9" type="Sprite2D" parent="." unique_id=681476102]
-position = Vector2(45, 32)
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
-
-[node name="ink3" type="Sprite2D" parent="." unique_id=1995478241]
+[node name="ink5" type="AnimatedSprite2D" parent="." unique_id=2091996650]
 position = Vector2(52, -21)
 scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"preto0"
+autoplay = "preto0"
 
-[node name="ink10" type="Sprite2D" parent="." unique_id=1864166832]
-position = Vector2(52, 21)
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
-
-[node name="ink4" type="Sprite2D" parent="." unique_id=2033239104]
+[node name="ink2" type="AnimatedSprite2D" parent="." unique_id=1985323338]
 position = Vector2(23, -49)
 scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"preto1"
+autoplay = "preto0"
 
-[node name="ink7" type="Sprite2D" parent="." unique_id=1239910695]
-position = Vector2(22.999998, 49)
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
-
-[node name="ink5" type="Sprite2D" parent="." unique_id=25469509]
+[node name="ink1" type="AnimatedSprite2D" parent="." unique_id=691918636]
 position = Vector2(9, -52)
 scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"vazio"
+autoplay = "preto0"
 
-[node name="ink6" type="Sprite2D" parent="." unique_id=362150497]
-position = Vector2(8.999999, 52)
+[node name="ink6" type="AnimatedSprite2D" parent="." unique_id=1593056135]
+position = Vector2(52, 21)
 scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_63lv3")
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"preto0"
+autoplay = "preto0"
 
-[node name="Cheia" type="Sprite2D" parent="." unique_id=70615612]
+[node name="ink7" type="AnimatedSprite2D" parent="." unique_id=93414369]
+position = Vector2(45, 32)
+scale = Vector2(0.075, 0.075)
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"preto0"
+autoplay = "preto0"
+
+[node name="ink8" type="AnimatedSprite2D" parent="." unique_id=703615740]
+position = Vector2(35, 42)
+scale = Vector2(0.075, 0.075)
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"preto0"
+autoplay = "preto0"
+
+[node name="ink9" type="AnimatedSprite2D" parent="." unique_id=1080397951]
+position = Vector2(23, 49)
+scale = Vector2(0.075, 0.075)
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"preto0"
+autoplay = "preto0"
+
+[node name="ink10" type="AnimatedSprite2D" parent="." unique_id=1135884545]
+position = Vector2(9, 52)
+scale = Vector2(0.075, 0.075)
+sprite_frames = SubResource("SpriteFrames_gvjli")
+animation = &"preto0"
+autoplay = "preto0"
+
+[node name="Cheia" type="AnimatedSprite2D" parent="." unique_id=711204429]
 position = Vector2(65, 0)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_6nfn0")
+sprite_frames = SubResource("SpriteFrames_vl40m")
+animation = &"vazia"
+autoplay = "preto0"

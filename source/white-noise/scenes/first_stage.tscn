@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://ddsgqp46103qb" path="res://images/objetos/porta meio.png" id="22_ebhel"]
 [ext_resource type="Texture2D" uid="uid://bfrf4nepp8p0m" path="res://images/objetos/porta cima.png" id="23_5p8p6"]
 [ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="24_exr4a"]
+[ext_resource type="Script" uid="uid://c7bt4n484x4xr" path="res://scripts/documento_importante.gd" id="25_31ak0"]
+[ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="25_kuapm"]
 [ext_resource type="Texture2D" uid="uid://dulhc81pbax88" path="res://images/objetos/livro 2 (espiral).png" id="26_5p8p6"]
 [ext_resource type="PackedScene" uid="uid://ce4laia03af1t" path="res://scenes/next_level_check.tscn" id="27_exr4a"]
 [ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="28_347x0"]
@@ -56,10 +58,14 @@ size = Vector2(1216, 76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_347x0"]
 size = Vector2(667, 2154)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1me6s"]
+size = Vector2(86.4375, 86.43799)
+
 [node name="first_area" type="Node2D" unique_id=971450599]
 script = ExtResource("1_lbhrr")
 
 [node name="background" type="Parallax2D" parent="." unique_id=1234890429]
+z_index = -13
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(71, 86)
 repeat_size = Vector2(402.5, 303.45)
@@ -92,12 +98,6 @@ shape = SubResource("ConvexPolygonShape2D_nbdn1")
 
 [node name="Player_manager" type="Node" parent="." unique_id=1298001265]
 script = ExtResource("1_yqjtg")
-
-[node name="Player" parent="Player_manager" unique_id=1427670723 instance=ExtResource("1_uwrxv")]
-unique_name_in_owner = true
-z_index = 1
-position = Vector2(-87, 62)
-scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=616215835]
 z_index = 21
@@ -140,6 +140,12 @@ text = "preto"
 [node name="musica primeira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1841112230]
 stream = ExtResource("7_5mhlt")
 
+[node name="Player" parent="Player_manager" unique_id=1572016301 instance=ExtResource("1_uwrxv")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-127, -422)
+scale = Vector2(0.5, 0.5)
+
 [node name="FaseTutorialEscrivaninha" type="Sprite2D" parent="." unique_id=641590945]
 z_index = 1
 texture_filter = 1
@@ -156,7 +162,7 @@ shape = SubResource("RectangleShape2D_gdk56")
 
 [node name="origin_spawnpoint" parent="spawnpoints" unique_id=1315256099 instance=ExtResource("12_dinhu")]
 unique_name_in_owner = true
-position = Vector2(-38, 57)
+position = Vector2(-1, 66)
 
 [node name="spawnpoint_test" parent="spawnpoints" unique_id=488415302 instance=ExtResource("12_dinhu")]
 position = Vector2(222, 56)
@@ -986,16 +992,15 @@ position = Vector2(-368.00024, 25.99997)
 scale = Vector2(0.056423612, 1.7561728)
 texture = ExtResource("24_exr4a")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=338692351]
+[node name="UI" type="CanvasLayer" parent="." unique_id=338692351]
 layer = 35
+script = ExtResource("25_kuapm")
 
-[node name="Node2D" type="Node2D" parent="CanvasLayer" unique_id=1000601622]
+[node name="Node2D" type="Node2D" parent="UI" unique_id=1000601622]
 
-[node name="UI_Cargas" parent="CanvasLayer" unique_id=322756276 instance=ExtResource("8_rsbve")]
+[node name="UI_Cargas" parent="UI" unique_id=322756276 instance=ExtResource("8_rsbve")]
 unique_name_in_owner = true
-z_index = 35
-position = Vector2(107, 536)
-scale = Vector2(2, 2)
+position = Vector2(105, 532)
 
 [node name="livros" type="Node" parent="." unique_id=777346826]
 
@@ -1031,10 +1036,22 @@ shape = SubResource("RectangleShape2D_347x0")
 [node name="killzone" parent="." unique_id=233359857 instance=ExtResource("28_347x0")]
 position = Vector2(-1019, 272)
 
+[node name="DocumentoImportante" type="Sprite2D" parent="." unique_id=1005520319]
+z_index = -2
+position = Vector2(-1400, -1348)
+scale = Vector2(0.17007308, 0.17007305)
+texture = ExtResource("9_ebhel")
+script = ExtResource("25_31ak0")
+
+[node name="Area2D" type="Area2D" parent="DocumentoImportante" unique_id=2082215527]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DocumentoImportante/Area2D" unique_id=1511104912]
+position = Vector2(-0.00025558472, 41.159016)
+shape = SubResource("RectangleShape2D_1me6s")
+
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
-[connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
-[connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
 [connection signal="cargas" from="platforms" to="." method="_on_platforms_cargas"]
 [connection signal="property_list_changed" from="platforms" to="platforms" method="_on_property_list_changed"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="DocumentoImportante/Area2D" to="DocumentoImportante" method="_on_area_2d_body_entered"]

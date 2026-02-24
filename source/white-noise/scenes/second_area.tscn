@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://cb3x1uyj5ju2h"]
+
+[ext_resource type="Script" uid="uid://c1mnb2f4kbvnc" path="res://scripts/player_manager.gd" id="1_7l7j1"]
+[ext_resource type="Script" uid="uid://ovmqqw5olq2l" path="res://scripts/second_area.gd" id="1_308xq"]
+[ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="2_bliab"]
+[ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="3_oti4k"]
+[ext_resource type="AudioStream" uid="uid://h2r5jmcke1k7" path="res://musicas/MSC_T001.mp3" id="4_wbhli"]
+[ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="5_wbhli"]
+[ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="6_308xq"]
+[ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="7_2anwn"]
+[ext_resource type="Texture2D" uid="uid://bqkl2qwxkw23p" path="res://images/objetos/placa esquerda.png" id="9_8tmsi"]
+[ext_resource type="Texture2D" uid="uid://cwkutgnydrs3y" path="res://images/objetos/placa direita.png" id="10_ymk8a"]
+[ext_resource type="Texture2D" uid="uid://b3h6jj274x8uf" path="res://images/objetos/esteira pintada esquerda.png" id="11_ntj7i"]
+[ext_resource type="Texture2D" uid="uid://c53gb0mv5lvsn" path="res://images/objetos/esteira pintada.png" id="12_xnptu"]
+[ext_resource type="Texture2D" uid="uid://dhqqemshob21k" path="res://images/objetos/janela.png" id="13_xnptu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_213rp"]
+size = Vector2(3605.0005, 570)
+
+[node name="second_area" type="Node2D" unique_id=1786779047]
+script = ExtResource("1_308xq")
+
+[node name="Player_manager" type="Node" parent="." unique_id=1635873012]
+script = ExtResource("1_7l7j1")
+
+[node name="Player" parent="Player_manager" unique_id=1572016301 instance=ExtResource("2_bliab")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-87, 62)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=756158525]
+z_index = 21
+position = Vector2(-87, 62)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
+[node name="Control" type="Control" parent="Player_manager/Camera2D" unique_id=1480578735]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -8.0
+offset_right = 39.0
+offset_bottom = 32.0
+script = ExtResource("3_oti4k")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cargas de tinta" type="Label" parent="Player_manager/Camera2D" unique_id=2033074634]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+offset_left = -453.0
+offset_top = -248.0
+offset_right = -353.0
+offset_bottom = -203.0
+theme_override_font_sizes/font_size = 32
+text = "cargas"
+
+[node name="Tinta escolhida" type="Label" parent="Player_manager/Camera2D" unique_id=1709719296]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+offset_left = -463.0
+offset_top = 211.0
+offset_right = -379.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 32
+text = "preto"
+
+[node name="musica primeira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=796908898]
+stream = ExtResource("4_wbhli")
+
+[node name="killzone" parent="." unique_id=233359857 instance=ExtResource("5_wbhli")]
+position = Vector2(-65, 1017)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1369011901]
+layer = 35
+script = ExtResource("6_308xq")
+
+[node name="Node2D" type="Node2D" parent="UI" unique_id=2062119938]
+
+[node name="UI_Cargas" parent="UI" unique_id=322756276 instance=ExtResource("7_2anwn")]
+unique_name_in_owner = true
+z_index = 35
+position = Vector2(107, 536)
+
+[node name="pLaca" type="Node2D" parent="." unique_id=480119659]
+position = Vector2(197, -790)
+
+[node name="PlacaEsquerda" type="Sprite2D" parent="pLaca" unique_id=71368675]
+position = Vector2(384, -22)
+texture = ExtResource("9_8tmsi")
+
+[node name="PlacaDireita" type="Sprite2D" parent="pLaca" unique_id=1194666984]
+position = Vector2(354, -22)
+texture = ExtResource("10_ymk8a")
+
+[node name="esteira" type="Node2D" parent="." unique_id=645213354]
+position = Vector2(124, 227)
+scale = Vector2(0.2, 0.2)
+
+[node name="EsteiraPintadaEsquerda" type="Sprite2D" parent="esteira" unique_id=250514086]
+position = Vector2(160, -45)
+texture = ExtResource("11_ntj7i")
+
+[node name="EsteiraPintada" type="Sprite2D" parent="esteira" unique_id=1083178777]
+position = Vector2(147, -45)
+texture = ExtResource("12_xnptu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="esteira" unique_id=1736375635]
+position = Vector2(160, -45)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="esteira/StaticBody2D" unique_id=1047136802]
+position = Vector2(-122.50006, -275.00006)
+shape = SubResource("RectangleShape2D_213rp")
+
+[node name="Janela" type="Sprite2D" parent="." unique_id=1375457211]
+position = Vector2(1222, 3)
+texture = ExtResource("13_xnptu")
+
+[connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
+[connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]

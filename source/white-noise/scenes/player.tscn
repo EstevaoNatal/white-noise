@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4f8rnk0u3ved" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://csfehdm12u8sf" path="res://images/player_sprites/spriteidle azul.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://vcb1r1h21udu" path="res://images/player_sprites/sprite carimbando preto.png" id="2_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://dw3uji7bmwlju" path="res://images/player_sprites/spriteidle não pintado.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://d3bhwr13ip33y" path="res://images/player_sprites/spriteidle preto.png" id="4_jej6c"]
 [ext_resource type="Texture2D" uid="uid://dmi64kn374otk" path="res://images/player_sprites/spriteidle verde.png" id="4_tuyoq"]
@@ -19,6 +20,14 @@ size = Vector2(68, 171)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f1ej7")
+}],
+"loop": true,
+"name": &"carimbando",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_dqkch")
@@ -128,3 +137,8 @@ position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_dqkch")
 animation = &"idle_nao_pintado"
 autoplay = "idle_nao_pintado"
+
+[node name="Timer" type="Timer" parent="." unique_id=1029708059]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
