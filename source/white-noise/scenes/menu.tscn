@@ -1,16 +1,13 @@
 [gd_scene format=3 uid="uid://dyq7hroewwrfk"]
 
 [ext_resource type="Script" uid="uid://rifor51m8rkt" path="res://scripts/menu.gd" id="1_vjb58"]
-[ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://cy3imydvgb40q" path="res://images/objetos/mão(1).png" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://tfyovw7ibxsn" path="res://images/fundo/mesa menu pintada.png" id="3_mhnvy"]
 
 [node name="Menu" type="Node2D" unique_id=1758809669]
 script = ExtResource("1_vjb58")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=907294059]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1568484615]
-texture = ExtResource("1_yqeox")
 
 [node name="Iniciar" type="Button" parent="." unique_id=1803858864]
 offset_left = -481.0
@@ -37,12 +34,21 @@ theme_override_font_sizes/font_size = 32
 text = "Sair"
 
 [node name="Mão" type="Sprite2D" parent="." unique_id=2062043783]
+z_index = 5
 position = Vector2(447, 328)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_con2f")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1653063445]
 position = Vector2(232, 193)
+
+[node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=551369896]
+z_index = -2
+position = Vector2(0, -1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_mhnvy")
+
+[node name="Timer" type="Timer" parent="." unique_id=1458012140]
 
 [connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Opções" to="." method="_on_opções_pressed"]

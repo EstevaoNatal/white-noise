@@ -6,8 +6,12 @@
 [node name="mainGameScene" type="Node2D" unique_id=2087594735]
 script = ExtResource("1_qsd30")
 
+[node name="timer_fechar" type="Timer" parent="." unique_id=338804193]
+wait_time = 3.0
+
 [node name="Menu" parent="." unique_id=1758809669 instance=ExtResource("4_oa6bs")]
 
+[connection signal="timeout" from="timer_fechar" to="." method="_on_timer_fechar_timeout"]
 [connection signal="fechar" from="Menu" to="." method="_on_menu_fechar"]
 [connection signal="inicio" from="Menu" to="." method="_on_menu_inicio"]
 [connection signal="opcoes" from="Menu" to="." method="_on_menu_opcoes"]

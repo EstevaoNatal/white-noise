@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dielpu26uagp4"]
+
+[ext_resource type="Texture2D" uid="uid://c8ktbega0ruhe" path="res://images/objetos/carimbo.png" id="1_516qg"]
+
+[node name="Carimbo" type="Sprite2D" unique_id=230138269]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_516qg")
