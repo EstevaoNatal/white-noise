@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b1s4chm3u2uu5"]
+
+[ext_resource type="Texture2D" uid="uid://cxkscov8s6c36" path="res://images/UI/Carga/carga_personagem.png" id="1_n6j2j"]
+[ext_resource type="Texture2D" uid="uid://h1q65jjay5e2" path="res://images/UI/Carga/carga_min/_preta_cheio_2.png" id="2_63lv3"]
+[ext_resource type="Texture2D" uid="uid://c82fv6w83p2b2" path="res://images/UI/Carga/carga_grand/_preta_2/_cheio.png" id="3_6nfn0"]
+
+[node name="UI_Cargas" type="Node2D" unique_id=322756276]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=510571770]
+position = Vector2(-9.536743e-07, 4.7683716e-07)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_n6j2j")
+
+[node name="ink1" type="Sprite2D" parent="." unique_id=1635549168]
+position = Vector2(35, -42)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink8" type="Sprite2D" parent="." unique_id=45598781]
+position = Vector2(34.999996, 42)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink2" type="Sprite2D" parent="." unique_id=1024080939]
+position = Vector2(45, -32)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink9" type="Sprite2D" parent="." unique_id=681476102]
+position = Vector2(45, 32)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink3" type="Sprite2D" parent="." unique_id=1995478241]
+position = Vector2(52, -21)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink10" type="Sprite2D" parent="." unique_id=1864166832]
+position = Vector2(52, 21)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink4" type="Sprite2D" parent="." unique_id=2033239104]
+position = Vector2(23, -49)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink7" type="Sprite2D" parent="." unique_id=1239910695]
+position = Vector2(22.999998, 49)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink5" type="Sprite2D" parent="." unique_id=25469509]
+position = Vector2(9, -52)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="ink6" type="Sprite2D" parent="." unique_id=362150497]
+position = Vector2(8.999999, 52)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_63lv3")
+
+[node name="Cheia" type="Sprite2D" parent="." unique_id=70615612]
+position = Vector2(65, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_6nfn0")

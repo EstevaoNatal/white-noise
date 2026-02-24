@@ -126,5 +126,5 @@ shape = SubResource("RectangleShape2D_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=545735181]
 position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"pulando_preto"
+animation = &"idle_nao_pintado"
 autoplay = "idle_nao_pintado"

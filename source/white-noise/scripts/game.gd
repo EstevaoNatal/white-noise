@@ -1,5 +1,4 @@
 extends Node2D
-@onready var game: Node2D = $"."
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 @onready var player: CharacterBody2D = $Player_manager/Player
 @onready var world: TileMapLayer = $world
@@ -10,7 +9,8 @@ extends Node2D
 @onready var origin_spawnpoint: Marker2D = $spawnpoints/origin_spawnpoint
 @onready var player_manager: Node = $Player_manager
 @onready var current_spawnpoint = Globais.player_spawn
-
+@onready var first_area: Node2D = $"."
+signal load_second_level
 
 var jogador = preload("res://scenes/player.tscn")
 
@@ -27,12 +27,11 @@ func _on_player_ready() -> void:
 	#get_node("Player_manager/Player").diminuir_cargas = true
 	#cargas_de_tinta.text = "Cargas tem:" + str()
 
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
-	get_tree().reload_current_scene()
-
-func _on_platforms_property_list_changed() -> void:
-	pass # Replace with function body.
 
 
 func _on_reload_timer_timeout() -> void:
 	player.can_ink = true
+
+
+func _on_killzone_body_entered(body: CharacterBody2D) -> void:
+	Globais.fase_atual=4

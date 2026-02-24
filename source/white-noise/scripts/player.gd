@@ -16,7 +16,7 @@ var ultima_carimbada:int = -1
 #define a cor
 enum tinta {preto, azul, verde}
 @export var cor_atual : tinta
-@onready var contador_tinta=100
+@onready var contador_tinta:=100
 @onready var diminuir_cargas: bool = false
 @onready var contador_tinta_azul: int = 0
 @onready var can_ink=false
@@ -24,7 +24,7 @@ enum tinta {preto, azul, verde}
 func _on_ready() -> void:
 	mudou_tinta.emit(cor_atual as tinta)
 	diminuir_cargas = false
-	cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
+	#cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 
 func _physics_process(delta: float) -> void:
 	#pega direção		
@@ -71,11 +71,11 @@ func _physics_process(delta: float) -> void:
 	if diminuir_cargas:
 		if cor_atual!=1:
 			contador_tinta-=2
-			cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
+			#cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 			diminuir_cargas=false
 		else:
 			contador_tinta-=1
-			cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
+			#cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 			diminuir_cargas=false
 	
 	if Input.is_action_just_pressed("trocar_cor_tras") && cor_atual>0:
@@ -106,11 +106,11 @@ func pulo_carimbo(delta_jump,direction_jump):
 		elif Input.is_action_pressed("down"):
 			diagonal=-0.7
 		#print(diagonal)
-		time_jump_charge=clamp(time_jump_charge,1,5)
+		time_jump_charge=clamp(time_jump_charge,1,4)
 		print(time_jump_charge, " ", velocity.y)
 		velocity.x = direction_jump*SPEED*time_jump_charge
 		velocity.y = JUMP_VELOCITY*time_jump_charge - 200*diagonal
-		Globais.player_jump_velocidade = JUMP_VELOCITY*time_jump_charge - 200*diagonal
+		Globais.player_jump_velocidade = 2*(JUMP_VELOCITY*time_jump_charge - 200*diagonal)
 		time_jump_charge=0.0
 		diagonal=0.0
 
