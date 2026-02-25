@@ -3,6 +3,7 @@ extends Node2D
 @onready var opções: Button = $Opções
 @onready var sair: Button = $Sair
 @onready var menu: Node2D = $"."
+@onready var comecar: TextureButton = $comecar
 signal inicio
 signal opcoes
 signal fechar
@@ -10,6 +11,10 @@ signal fechar
 var contador=0
 var contador1=0
 
+
+func _ready() -> void:
+	comecar.texture_normal = load("res://images/UI/btn_iniciar.png")
+	comecar.texture_hover = load("res://images/objetos/carimbo.png")
 
 func _on_iniciar_pressed() -> void:
 	inicio.emit()
@@ -32,3 +37,7 @@ func _process(delta: float) -> void:
 		img_carimbo.position = mouse_pos
 		menu.add_child(img_carimbo)
 		#menu.get_node("carimbo"+str(contador)).position = mouse_pos
+
+
+func _on_texture_button_pressed() -> void:
+	inicio.emit()

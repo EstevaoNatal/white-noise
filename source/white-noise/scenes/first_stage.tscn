@@ -38,7 +38,7 @@ points = PackedVector2Array(112, -82, 346, -134, 576, -168, 862, -182, 1072, -17
 points = PackedVector2Array(-282, 50, -208, -38, -86, -78, 14, -86, 174, -78, 228, -46, 266, 12, 278, 106)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdk56"]
-size = Vector2(533, 227)
+size = Vector2(533, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5b4cl"]
 size = Vector2(3170.5, 20)
@@ -155,7 +155,7 @@ texture = ExtResource("5_u5sy4")
 [node name="StaticBody2D" type="StaticBody2D" parent="FaseTutorialEscrivaninha" unique_id=881924841]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FaseTutorialEscrivaninha/StaticBody2D" unique_id=1155928373]
-position = Vector2(-0.5, -336.5)
+position = Vector2(-0.5, -351)
 shape = SubResource("RectangleShape2D_gdk56")
 
 [node name="spawnpoints" type="Node" parent="." unique_id=241387243]
@@ -215,6 +215,12 @@ position = Vector2(320, 55)
 
 [node name="StaticBody2D58" parent="platforms" unique_id=1054994374 instance=ExtResource("4_lbhrr")]
 position = Vector2(1586, -748)
+
+[node name="StaticBody2D97" parent="platforms" unique_id=2040306453 instance=ExtResource("4_lbhrr")]
+position = Vector2(1188, -238)
+
+[node name="StaticBody2D98" parent="platforms" unique_id=1968262051 instance=ExtResource("4_lbhrr")]
+position = Vector2(-73, -213)
 
 [node name="StaticBody2D59" parent="platforms" unique_id=1967751863 instance=ExtResource("4_lbhrr")]
 position = Vector2(1623, -748)
@@ -555,7 +561,7 @@ rotation = 0.6335545
 
 [node name="plat_quadro" type="Node" parent="platforms" unique_id=1841566441]
 
-[node name="StaticBody2D133" parent="platforms/plat_quadro" unique_id=2040306453 instance=ExtResource("4_lbhrr")]
+[node name="StaticBody2D133" parent="platforms/plat_quadro" unique_id=1150985782 instance=ExtResource("4_lbhrr")]
 z_index = 6
 position = Vector2(-599, -1160)
 
@@ -805,6 +811,22 @@ shape = SubResource("RectangleShape2D_iabq3")
 position = Vector2(36.5, -213)
 shape = SubResource("RectangleShape2D_qnkvy")
 
+[node name="PapelFolha2" type="Sprite2D" parent="." unique_id=573494808]
+position = Vector2(-466.35834, -330.5)
+scale = Vector2(0.5414441, 0.5414438)
+texture = ExtResource("13_5b4cl")
+
+[node name="papelcolisao" type="StaticBody2D" parent="PapelFolha2" unique_id=1868780025]
+position = Vector2(0.40152845, 2.387777e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PapelFolha2/papelcolisao" unique_id=1339848682]
+position = Vector2(-11, 150.5)
+shape = SubResource("RectangleShape2D_iabq3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PapelFolha2/papelcolisao" unique_id=825136999]
+position = Vector2(36.5, -213)
+shape = SubResource("RectangleShape2D_qnkvy")
+
 [node name="estante" type="Node2D" parent="." unique_id=396357909]
 position = Vector2(1743, -664)
 
@@ -1038,7 +1060,7 @@ position = Vector2(-1019, 272)
 
 [node name="DocumentoImportante" type="Sprite2D" parent="." unique_id=1005520319]
 z_index = -2
-position = Vector2(-1400, -1348)
+position = Vector2(-1373, -1361)
 scale = Vector2(0.17007308, 0.17007305)
 texture = ExtResource("9_ebhel")
 script = ExtResource("25_31ak0")

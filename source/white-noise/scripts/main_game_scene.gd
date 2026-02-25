@@ -65,7 +65,7 @@ func _on_menu_opcoes() -> void:
 	nivelAtual = main_game_scene.get_node("Menu")
 	main_game_scene.remove_child(nivelAtual)
 	nivelAtual.call_deferred("free")
-	proximo = load("res://scenes/first_stage.tscn")
+	proximo = load("res://scenes/second_area.tscn")
 	proximo_nivel = proximo.instantiate()
 	main_game_scene.add_child(proximo_nivel)
 	Globais.fase_atual=1

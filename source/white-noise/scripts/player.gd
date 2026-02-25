@@ -19,7 +19,7 @@ var carimbar_doc=false
 
 #define a cor
 enum tinta {preto, azul, verde}
-@export var cor_atual : tinta
+@onready var cor_atual : tinta
 @onready var contador_tinta:=70
 @onready var diminuir_cargas: bool = false
 @onready var contador_tinta_azul: int = 0
@@ -90,9 +90,11 @@ func _physics_process(delta: float) -> void:
 			diminuir_cargas=false
 	
 	if Input.is_action_just_pressed("trocar_cor_tras") && cor_atual>0:
+		print("q")
 		cor_atual= cor_atual - 2 as tinta
 		mudou_tinta.emit(cor_atual as tinta)
 	if Input.is_action_just_pressed("trocar_cor_frente") && cor_atual<tinta.size()-1:
+		print("e")
 		cor_atual= cor_atual + 2 as tinta
 		mudou_tinta.emit(cor_atual as tinta)
 	
