@@ -14,3 +14,8 @@ func _process(delta: float) -> void:
 
 func _on_killzone_body_entered(body: CharacterBody2D) -> void:
 	Globais.fase_atual=4
+
+
+
+func _on_reload_timer_timeout() -> void:
+	player.can_ink = true

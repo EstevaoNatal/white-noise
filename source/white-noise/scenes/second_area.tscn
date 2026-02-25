@@ -11,14 +11,877 @@
 [ext_resource type="Texture2D" uid="uid://bqkl2qwxkw23p" path="res://images/objetos/placa esquerda.png" id="9_8tmsi"]
 [ext_resource type="Texture2D" uid="uid://cwkutgnydrs3y" path="res://images/objetos/placa direita.png" id="10_ymk8a"]
 [ext_resource type="Texture2D" uid="uid://b3h6jj274x8uf" path="res://images/objetos/esteira pintada esquerda.png" id="11_ntj7i"]
+[ext_resource type="Texture2D" uid="uid://b8snum3wagp7d" path="res://images/objetos/esteira_pintada_frente_subindo(1).png" id="11_suy0s"]
 [ext_resource type="Texture2D" uid="uid://c53gb0mv5lvsn" path="res://images/objetos/esteira pintada.png" id="12_xnptu"]
 [ext_resource type="Texture2D" uid="uid://dhqqemshob21k" path="res://images/objetos/janela.png" id="13_xnptu"]
+[ext_resource type="PackedScene" uid="uid://2kfbrrv0er40" path="res://scenes/platform.tscn" id="14_213rp"]
+[ext_resource type="Texture2D" uid="uid://bfrf4nepp8p0m" path="res://images/objetos/porta cima.png" id="15_bn2eg"]
+[ext_resource type="Texture2D" uid="uid://cxcdog1y1hux5" path="res://images/objetos/mesa (pintado) LADO ESQUERDO GRANDE.png" id="16_ct7kn"]
+[ext_resource type="Texture2D" uid="uid://copgstdcwa7yx" path="res://images/fundo/fundo_backrooms.png" id="17_160l7"]
+[ext_resource type="Texture2D" uid="uid://c45i7e31m3sxj" path="res://images/objetos/caixa/caixa_completa.png" id="19_o6u0q"]
+[ext_resource type="PackedScene" uid="uid://da6rdi543wwmi" path="res://scenes/spawnpoints.tscn" id="20_suy0s"]
+[ext_resource type="Texture2D" uid="uid://dl40b7tb43hb3" path="res://images/fundo/fundo(1).png" id="21_ymu86"]
+[ext_resource type="Script" uid="uid://8l0idibxko44" path="res://scripts/caixas_levantadas.gd" id="22_41arw"]
+[ext_resource type="PackedScene" uid="uid://ce4laia03af1t" path="res://scenes/next_level_check.tscn" id="23_bqudx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_160l7"]
+size = Vector2(700, 418)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_213rp"]
-size = Vector2(3605.0005, 570)
+size = Vector2(16399.996, 570)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_243ow"]
+size = Vector2(958, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6u0q"]
+size = Vector2(3380.0005, 2035.001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1isc"]
+size = Vector2(3397.4097, 2040.9651)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymu86"]
+size = Vector2(649, 35)
+
+[sub_resource type="Animation" id="Animation_41arw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caixas_levantadas/Area2D/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-18, 48.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("caixas_levantadas/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4108, -449)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("caixas_levantadas/CaixaCompleta2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4299.2, -73.20007)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("caixas_levantadas/CaixaCompleta3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4598.2007, -727.19995)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plataformas/plataformas_esteira/StaticBody2D107:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(725, -669)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plataformas/plataformas_esteira/StaticBody2D106:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(762, -669)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("plataformas/plataformas_esteira/StaticBody2D105:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(799, -669)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("plataformas/plataformas_esteira/StaticBody2D104:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(836, -669)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("plataformas/plataformas_esteira/StaticBody2D103:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(873, -669)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("plataformas/plataformas_esteira/StaticBody2D102:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(910, -669)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("plataformas/plataformas_esteira/StaticBody2D101:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(947, -669)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("plataformas/plataformas_esteira/StaticBody2D100:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(971, -669)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("plataformas/plataformas_esteira/StaticBody2D99:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(392, -669)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("plataformas/plataformas_esteira/StaticBody2D98:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(429, -669)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("plataformas/plataformas_esteira/StaticBody2D97:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(466, -669)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("plataformas/plataformas_esteira/StaticBody2D96:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(503, -669)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("plataformas/plataformas_esteira/StaticBody2D95:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(540, -669)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("plataformas/plataformas_esteira/StaticBody2D94:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(577, -669)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("plataformas/plataformas_esteira/StaticBody2D93:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(614, -669)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("plataformas/plataformas_esteira/StaticBody2D92:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(651, -669)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("plataformas/plataformas_esteira/StaticBody2D91:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(688, -669)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("caixas_levantadas:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(306, -302)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("caixas_levantadas/CollisionPolygon2D:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3792.7937, -375)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("plataformas/plataformas_esteira/StaticBody2D149:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1021, -669)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("plataformas/plataformas_esteira/StaticBody2D150:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1058, -669)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("plataformas/plataformas_esteira/StaticBody2D208:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1380, -2629)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("plataformas/plataformas_esteira/StaticBody2D205:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1084, -2629)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("plataformas/plataformas_esteira/StaticBody2D204:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1121, -2629)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("plataformas/plataformas_esteira/StaticBody2D203:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1158, -2629)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("plataformas/plataformas_esteira/StaticBody2D202:position")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1195, -2629)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("plataformas/plataformas_esteira/StaticBody2D201:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1232, -2629)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("plataformas/plataformas_esteira/StaticBody2D200:position")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1269, -2629)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("plataformas/plataformas_esteira/StaticBody2D199:position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1306, -2629)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("plataformas/plataformas_esteira/StaticBody2D198:position")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1343, -2629)]
+}
+
+[sub_resource type="Animation" id="Animation_ymu86"]
+resource_name = "subir"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caixas_levantadas/Area2D/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(52, 52), Vector2(54, 46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("caixas_levantadas/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4108, -449), Vector2(4108, -449)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("caixas_levantadas/CaixaCompleta2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4299.2, -73.20007), Vector2(4299.2, -73.20007)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("caixas_levantadas/CaixaCompleta3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 5.0365577),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4643.0005, -648), Vector2(4645.0005, -647), Vector2(4643.0005, -648)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plataformas/plataformas_esteira/StaticBody2D107:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(725, -669), Vector2(725, -2093)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plataformas/plataformas_esteira/StaticBody2D106:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(762, -669), Vector2(762, -2093)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("plataformas/plataformas_esteira/StaticBody2D105:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(799, -669), Vector2(799, -2093)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("plataformas/plataformas_esteira/StaticBody2D104:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(836, -669), Vector2(836, -2093)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("plataformas/plataformas_esteira/StaticBody2D103:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(873, -669), Vector2(873, -2093)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("plataformas/plataformas_esteira/StaticBody2D102:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(910, -669), Vector2(910, -2093)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("plataformas/plataformas_esteira/StaticBody2D101:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(947, -669), Vector2(947, -2093)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("plataformas/plataformas_esteira/StaticBody2D100:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(984, -669), Vector2(984, -2093)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("plataformas/plataformas_esteira/StaticBody2D99:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(392, -669), Vector2(392, -2093)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("plataformas/plataformas_esteira/StaticBody2D98:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(429, -669), Vector2(429, -2093)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("plataformas/plataformas_esteira/StaticBody2D97:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(466, -669), Vector2(466, -2093)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("plataformas/plataformas_esteira/StaticBody2D96:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(503, -669), Vector2(503, -2093)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("plataformas/plataformas_esteira/StaticBody2D95:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(540, -669), Vector2(540, -2093)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("plataformas/plataformas_esteira/StaticBody2D94:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(577, -669), Vector2(577, -2093)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("plataformas/plataformas_esteira/StaticBody2D93:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(614, -669), Vector2(614, -2093)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("plataformas/plataformas_esteira/StaticBody2D92:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(651, -669), Vector2(651, -2093)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("plataformas/plataformas_esteira/StaticBody2D91:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(688, -669), Vector2(688, -2093)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("caixas_levantadas:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(306, -302), Vector2(306, -1726)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("caixas_levantadas/CollisionPolygon2D:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3792.7937, -375), Vector2(3792.7937, -375)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("plataformas/plataformas_esteira/StaticBody2D149:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1021, -669), Vector2(1021, -2093)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("plataformas/plataformas_esteira/StaticBody2D150:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1058, -669), Vector2(1058, -2093)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("plataformas/plataformas_esteira/StaticBody2D208:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1378, -1202), Vector2(1380, -2629)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("plataformas/plataformas_esteira/StaticBody2D205:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1082, -1202), Vector2(1084, -2629)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("plataformas/plataformas_esteira/StaticBody2D204:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1119, -1202), Vector2(1121, -2629)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("plataformas/plataformas_esteira/StaticBody2D203:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1156, -1202), Vector2(1158, -2629)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("plataformas/plataformas_esteira/StaticBody2D202:position")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1193, -1202), Vector2(1195, -2629)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("plataformas/plataformas_esteira/StaticBody2D201:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1230, -1202), Vector2(1232, -2629)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("plataformas/plataformas_esteira/StaticBody2D200:position")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1267, -1202), Vector2(1269, -2629)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("plataformas/plataformas_esteira/StaticBody2D199:position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1304, -1202), Vector2(1306, -2629)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("plataformas/plataformas_esteira/StaticBody2D198:position")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1341, -1202), Vector2(1343, -2629)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_41arw"]
+_data = {
+&"RESET": SubResource("Animation_41arw"),
+&"subir": SubResource("Animation_ymu86")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq31a"]
+size = Vector2(690, 875)
 
 [node name="second_area" type="Node2D" unique_id=1786779047]
 script = ExtResource("1_308xq")
+
+[node name="origin_spawnpoint" parent="." unique_id=1315256099 instance=ExtResource("20_suy0s")]
+unique_name_in_owner = true
+position = Vector2(-14.799805, 21.799927)
+rotation = 1.5707964
+scale = Vector2(0.19999997, 0.19999997)
 
 [node name="Player_manager" type="Node" parent="." unique_id=1635873012]
 script = ExtResource("1_7l7j1")
@@ -26,12 +889,11 @@ script = ExtResource("1_7l7j1")
 [node name="Player" parent="Player_manager" unique_id=1572016301 instance=ExtResource("2_bliab")]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(-87, 62)
+position = Vector2(1, -238)
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=756158525]
 z_index = 21
-position = Vector2(-87, 62)
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 
@@ -85,40 +947,855 @@ z_index = 35
 position = Vector2(107, 536)
 
 [node name="pLaca" type="Node2D" parent="." unique_id=480119659]
-position = Vector2(197, -790)
+position = Vector2(3765, -2455)
 
 [node name="PlacaEsquerda" type="Sprite2D" parent="pLaca" unique_id=71368675]
-position = Vector2(384, -22)
+position = Vector2(29, -22)
 texture = ExtResource("9_8tmsi")
 
 [node name="PlacaDireita" type="Sprite2D" parent="pLaca" unique_id=1194666984]
-position = Vector2(354, -22)
+position = Vector2(-1, -22)
 texture = ExtResource("10_ymk8a")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="pLaca" unique_id=289042584]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pLaca/StaticBody2D" unique_id=1771465616]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_160l7")
+
+[node name="pLaca2" type="Node2D" parent="." unique_id=800248671]
+position = Vector2(5681, -2726)
+
+[node name="PlacaEsquerda" type="Sprite2D" parent="pLaca2" unique_id=1517402954]
+position = Vector2(29, -22)
+texture = ExtResource("9_8tmsi")
+
+[node name="PlacaDireita" type="Sprite2D" parent="pLaca2" unique_id=1020834792]
+position = Vector2(-1, -22)
+texture = ExtResource("10_ymk8a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pLaca2" unique_id=1955955878]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pLaca2/StaticBody2D" unique_id=258167168]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_160l7")
+
 [node name="esteira" type="Node2D" parent="." unique_id=645213354]
-position = Vector2(124, 227)
+position = Vector2(3728.9995, 87.000015)
 scale = Vector2(0.2, 0.2)
+
+[node name="EsteiraPintadaFrenteSubindo" type="Sprite2D" parent="esteira" unique_id=1272213379]
+z_index = -1
+position = Vector2(-12044.997, -2155)
+scale = Vector2(2, 2)
+texture = ExtResource("11_suy0s")
 
 [node name="EsteiraPintadaEsquerda" type="Sprite2D" parent="esteira" unique_id=250514086]
 position = Vector2(160, -45)
+texture = ExtResource("11_ntj7i")
+
+[node name="EsteiraPintadaEsquerda2" type="Sprite2D" parent="esteira" unique_id=825120808]
+position = Vector2(-1724.9999, -45)
+texture = ExtResource("11_ntj7i")
+
+[node name="EsteiraPintadaEsquerda3" type="Sprite2D" parent="esteira" unique_id=1257317844]
+position = Vector2(-3600, -45)
+texture = ExtResource("11_ntj7i")
+
+[node name="EsteiraPintadaEsquerda4" type="Sprite2D" parent="esteira" unique_id=1005711520]
+position = Vector2(-5495, -45)
+texture = ExtResource("11_ntj7i")
+
+[node name="EsteiraPintadaEsquerda5" type="Sprite2D" parent="esteira" unique_id=303057574]
+position = Vector2(-7370, -45)
+texture = ExtResource("11_ntj7i")
+
+[node name="EsteiraPintadaEsquerda6" type="Sprite2D" parent="esteira" unique_id=689451606]
+position = Vector2(-9220, -45)
+texture = ExtResource("11_ntj7i")
+
+[node name="EsteiraPintadaEsquerda7" type="Sprite2D" parent="esteira" unique_id=130473441]
+position = Vector2(-11105, -45)
 texture = ExtResource("11_ntj7i")
 
 [node name="EsteiraPintada" type="Sprite2D" parent="esteira" unique_id=1083178777]
 position = Vector2(147, -45)
 texture = ExtResource("12_xnptu")
 
+[node name="EsteiraPintada2" type="Sprite2D" parent="esteira" unique_id=1513257856]
+position = Vector2(-12784.998, -45)
+texture = ExtResource("12_xnptu")
+flip_h = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="esteira" unique_id=1736375635]
-position = Vector2(160, -45)
+position = Vector2(160, -60)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="esteira/StaticBody2D" unique_id=1047136802]
-position = Vector2(-122.50006, -275.00006)
+position = Vector2(-6520.001, -275.00006)
 shape = SubResource("RectangleShape2D_213rp")
 
 [node name="Janela" type="Sprite2D" parent="." unique_id=1375457211]
-position = Vector2(1222, 3)
+position = Vector2(6779, -3388)
 texture = ExtResource("13_xnptu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Janela" unique_id=1745849643]
+position = Vector2(-25, 412)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Janela/StaticBody2D" unique_id=2029158179]
+shape = SubResource("RectangleShape2D_243ow")
+
+[node name="plataformas" type="Node" parent="." unique_id=294873842]
+
+[node name="plataformas_esteira" type="Node2D" parent="plataformas" unique_id=2130120768]
+position = Vector2(3723, -20)
+
+[node name="StaticBody2D" parent="plataformas/plataformas_esteira" unique_id=2040306453 instance=ExtResource("14_213rp")]
+position = Vector2(-6, -21)
+
+[node name="StaticBody2D2" parent="plataformas/plataformas_esteira" unique_id=2145174270 instance=ExtResource("14_213rp")]
+position = Vector2(-43, -21)
+
+[node name="StaticBody2D3" parent="plataformas/plataformas_esteira" unique_id=2039164515 instance=ExtResource("14_213rp")]
+position = Vector2(-80, -21)
+
+[node name="StaticBody2D4" parent="plataformas/plataformas_esteira" unique_id=1661693120 instance=ExtResource("14_213rp")]
+position = Vector2(-117, -21)
+
+[node name="StaticBody2D5" parent="plataformas/plataformas_esteira" unique_id=586118778 instance=ExtResource("14_213rp")]
+position = Vector2(-154, -21)
+
+[node name="StaticBody2D6" parent="plataformas/plataformas_esteira" unique_id=249309136 instance=ExtResource("14_213rp")]
+position = Vector2(-191, -21)
+
+[node name="StaticBody2D7" parent="plataformas/plataformas_esteira" unique_id=80713215 instance=ExtResource("14_213rp")]
+position = Vector2(-228, -21)
+
+[node name="StaticBody2D8" parent="plataformas/plataformas_esteira" unique_id=1018866106 instance=ExtResource("14_213rp")]
+position = Vector2(-265, -21)
+
+[node name="StaticBody2D9" parent="plataformas/plataformas_esteira" unique_id=742365024 instance=ExtResource("14_213rp")]
+position = Vector2(-302, -21)
+
+[node name="StaticBody2D11" parent="plataformas/plataformas_esteira" unique_id=2140193476 instance=ExtResource("14_213rp")]
+position = Vector2(327, -21)
+
+[node name="StaticBody2D20" parent="plataformas/plataformas_esteira" unique_id=1758735162 instance=ExtResource("14_213rp")]
+position = Vector2(362, -14.000007)
+rotation = 0.34906584
+
+[node name="StaticBody2D12" parent="plataformas/plataformas_esteira" unique_id=2048000605 instance=ExtResource("14_213rp")]
+position = Vector2(290, -21)
+
+[node name="StaticBody2D13" parent="plataformas/plataformas_esteira" unique_id=128405027 instance=ExtResource("14_213rp")]
+position = Vector2(253, -21)
+
+[node name="StaticBody2D14" parent="plataformas/plataformas_esteira" unique_id=958045692 instance=ExtResource("14_213rp")]
+position = Vector2(216, -21)
+
+[node name="StaticBody2D15" parent="plataformas/plataformas_esteira" unique_id=1272592517 instance=ExtResource("14_213rp")]
+position = Vector2(179, -21)
+
+[node name="StaticBody2D16" parent="plataformas/plataformas_esteira" unique_id=161030009 instance=ExtResource("14_213rp")]
+position = Vector2(142, -21)
+
+[node name="StaticBody2D17" parent="plataformas/plataformas_esteira" unique_id=520900047 instance=ExtResource("14_213rp")]
+position = Vector2(105, -21)
+
+[node name="StaticBody2D18" parent="plataformas/plataformas_esteira" unique_id=576609627 instance=ExtResource("14_213rp")]
+position = Vector2(68, -21)
+
+[node name="StaticBody2D19" parent="plataformas/plataformas_esteira" unique_id=396085545 instance=ExtResource("14_213rp")]
+position = Vector2(31, -21)
+
+[node name="StaticBody2D91" parent="plataformas/plataformas_esteira" unique_id=947981689 instance=ExtResource("14_213rp")]
+position = Vector2(688, -669)
+
+[node name="StaticBody2D92" parent="plataformas/plataformas_esteira" unique_id=1618069518 instance=ExtResource("14_213rp")]
+position = Vector2(651, -669)
+
+[node name="StaticBody2D93" parent="plataformas/plataformas_esteira" unique_id=711790620 instance=ExtResource("14_213rp")]
+position = Vector2(614, -669)
+
+[node name="StaticBody2D94" parent="plataformas/plataformas_esteira" unique_id=848283434 instance=ExtResource("14_213rp")]
+position = Vector2(577, -669)
+
+[node name="StaticBody2D95" parent="plataformas/plataformas_esteira" unique_id=1412414940 instance=ExtResource("14_213rp")]
+position = Vector2(540, -669)
+
+[node name="StaticBody2D96" parent="plataformas/plataformas_esteira" unique_id=209070926 instance=ExtResource("14_213rp")]
+position = Vector2(503, -669)
+
+[node name="StaticBody2D97" parent="plataformas/plataformas_esteira" unique_id=43112161 instance=ExtResource("14_213rp")]
+position = Vector2(466, -669)
+
+[node name="StaticBody2D98" parent="plataformas/plataformas_esteira" unique_id=991607466 instance=ExtResource("14_213rp")]
+position = Vector2(429, -669)
+
+[node name="StaticBody2D99" parent="plataformas/plataformas_esteira" unique_id=850848648 instance=ExtResource("14_213rp")]
+position = Vector2(392, -669)
+
+[node name="StaticBody2D100" parent="plataformas/plataformas_esteira" unique_id=1772987966 instance=ExtResource("14_213rp")]
+position = Vector2(971, -669)
+
+[node name="StaticBody2D149" parent="plataformas/plataformas_esteira" unique_id=1768645107 instance=ExtResource("14_213rp")]
+position = Vector2(1021, -669)
+
+[node name="StaticBody2D150" parent="plataformas/plataformas_esteira" unique_id=2108011624 instance=ExtResource("14_213rp")]
+position = Vector2(1058, -669)
+
+[node name="StaticBody2D101" parent="plataformas/plataformas_esteira" unique_id=945245988 instance=ExtResource("14_213rp")]
+position = Vector2(947, -669)
+
+[node name="StaticBody2D102" parent="plataformas/plataformas_esteira" unique_id=1473831163 instance=ExtResource("14_213rp")]
+position = Vector2(910, -669)
+
+[node name="StaticBody2D103" parent="plataformas/plataformas_esteira" unique_id=2029861973 instance=ExtResource("14_213rp")]
+position = Vector2(873, -669)
+
+[node name="StaticBody2D104" parent="plataformas/plataformas_esteira" unique_id=1684947081 instance=ExtResource("14_213rp")]
+position = Vector2(836, -669)
+
+[node name="StaticBody2D105" parent="plataformas/plataformas_esteira" unique_id=1830075565 instance=ExtResource("14_213rp")]
+position = Vector2(799, -669)
+
+[node name="StaticBody2D106" parent="plataformas/plataformas_esteira" unique_id=752750474 instance=ExtResource("14_213rp")]
+position = Vector2(762, -669)
+
+[node name="StaticBody2D107" parent="plataformas/plataformas_esteira" unique_id=1247394390 instance=ExtResource("14_213rp")]
+position = Vector2(725, -669)
+
+[node name="StaticBody2D151" parent="plataformas/plataformas_esteira" unique_id=1572373023 instance=ExtResource("14_213rp")]
+position = Vector2(5, -2648)
+
+[node name="StaticBody2D152" parent="plataformas/plataformas_esteira" unique_id=570159644 instance=ExtResource("14_213rp")]
+position = Vector2(-32, -2648)
+
+[node name="StaticBody2D153" parent="plataformas/plataformas_esteira" unique_id=1173405361 instance=ExtResource("14_213rp")]
+position = Vector2(-69, -2648)
+
+[node name="StaticBody2D154" parent="plataformas/plataformas_esteira" unique_id=1691110643 instance=ExtResource("14_213rp")]
+position = Vector2(-106, -2648)
+
+[node name="StaticBody2D155" parent="plataformas/plataformas_esteira" unique_id=706230011 instance=ExtResource("14_213rp")]
+position = Vector2(-143, -2648)
+
+[node name="StaticBody2D156" parent="plataformas/plataformas_esteira" unique_id=1386975301 instance=ExtResource("14_213rp")]
+position = Vector2(-180, -2648)
+
+[node name="StaticBody2D157" parent="plataformas/plataformas_esteira" unique_id=1375424152 instance=ExtResource("14_213rp")]
+position = Vector2(-217, -2648)
+
+[node name="StaticBody2D158" parent="plataformas/plataformas_esteira" unique_id=339461712 instance=ExtResource("14_213rp")]
+position = Vector2(-254, -2648)
+
+[node name="StaticBody2D159" parent="plataformas/plataformas_esteira" unique_id=550203659 instance=ExtResource("14_213rp")]
+position = Vector2(-291, -2648)
+
+[node name="StaticBody2D160" parent="plataformas/plataformas_esteira" unique_id=1839552869 instance=ExtResource("14_213rp")]
+position = Vector2(301, -2648)
+
+[node name="StaticBody2D161" parent="plataformas/plataformas_esteira" unique_id=460083768 instance=ExtResource("14_213rp")]
+position = Vector2(338, -2648)
+
+[node name="StaticBody2D162" parent="plataformas/plataformas_esteira" unique_id=333620362 instance=ExtResource("14_213rp")]
+position = Vector2(375, -2648)
+
+[node name="StaticBody2D163" parent="plataformas/plataformas_esteira" unique_id=1651113946 instance=ExtResource("14_213rp")]
+position = Vector2(264, -2648)
+
+[node name="StaticBody2D164" parent="plataformas/plataformas_esteira" unique_id=1865139577 instance=ExtResource("14_213rp")]
+position = Vector2(227, -2648)
+
+[node name="StaticBody2D165" parent="plataformas/plataformas_esteira" unique_id=1367974307 instance=ExtResource("14_213rp")]
+position = Vector2(190, -2648)
+
+[node name="StaticBody2D166" parent="plataformas/plataformas_esteira" unique_id=215790603 instance=ExtResource("14_213rp")]
+position = Vector2(153, -2648)
+
+[node name="StaticBody2D167" parent="plataformas/plataformas_esteira" unique_id=823001974 instance=ExtResource("14_213rp")]
+position = Vector2(116, -2648)
+
+[node name="StaticBody2D168" parent="plataformas/plataformas_esteira" unique_id=1645702916 instance=ExtResource("14_213rp")]
+position = Vector2(79, -2648)
+
+[node name="StaticBody2D169" parent="plataformas/plataformas_esteira" unique_id=1200932803 instance=ExtResource("14_213rp")]
+position = Vector2(42, -2648)
+
+[node name="StaticBody2D170" parent="plataformas/plataformas_esteira" unique_id=601234105 instance=ExtResource("14_213rp")]
+position = Vector2(1925, -2923)
+
+[node name="StaticBody2D171" parent="plataformas/plataformas_esteira" unique_id=426911847 instance=ExtResource("14_213rp")]
+position = Vector2(1888, -2923)
+
+[node name="StaticBody2D172" parent="plataformas/plataformas_esteira" unique_id=1193375163 instance=ExtResource("14_213rp")]
+position = Vector2(1851, -2923)
+
+[node name="StaticBody2D173" parent="plataformas/plataformas_esteira" unique_id=1250349447 instance=ExtResource("14_213rp")]
+position = Vector2(1814, -2923)
+
+[node name="StaticBody2D174" parent="plataformas/plataformas_esteira" unique_id=970475651 instance=ExtResource("14_213rp")]
+position = Vector2(1777, -2923)
+
+[node name="StaticBody2D175" parent="plataformas/plataformas_esteira" unique_id=554484369 instance=ExtResource("14_213rp")]
+position = Vector2(1740, -2923)
+
+[node name="StaticBody2D176" parent="plataformas/plataformas_esteira" unique_id=1354307025 instance=ExtResource("14_213rp")]
+position = Vector2(1703, -2923)
+
+[node name="StaticBody2D177" parent="plataformas/plataformas_esteira" unique_id=290989275 instance=ExtResource("14_213rp")]
+position = Vector2(1666, -2923)
+
+[node name="StaticBody2D178" parent="plataformas/plataformas_esteira" unique_id=76790616 instance=ExtResource("14_213rp")]
+position = Vector2(1629, -2923)
+
+[node name="StaticBody2D179" parent="plataformas/plataformas_esteira" unique_id=792365889 instance=ExtResource("14_213rp")]
+position = Vector2(2221, -2923)
+
+[node name="StaticBody2D180" parent="plataformas/plataformas_esteira" unique_id=176135717 instance=ExtResource("14_213rp")]
+position = Vector2(2258, -2923)
+
+[node name="StaticBody2D181" parent="plataformas/plataformas_esteira" unique_id=1278044785 instance=ExtResource("14_213rp")]
+position = Vector2(2295, -2923)
+
+[node name="StaticBody2D182" parent="plataformas/plataformas_esteira" unique_id=1919776908 instance=ExtResource("14_213rp")]
+position = Vector2(2184, -2923)
+
+[node name="StaticBody2D183" parent="plataformas/plataformas_esteira" unique_id=651950988 instance=ExtResource("14_213rp")]
+position = Vector2(2147, -2923)
+
+[node name="StaticBody2D184" parent="plataformas/plataformas_esteira" unique_id=714282764 instance=ExtResource("14_213rp")]
+position = Vector2(2110, -2923)
+
+[node name="StaticBody2D185" parent="plataformas/plataformas_esteira" unique_id=1116934658 instance=ExtResource("14_213rp")]
+position = Vector2(2073, -2923)
+
+[node name="StaticBody2D186" parent="plataformas/plataformas_esteira" unique_id=2073892100 instance=ExtResource("14_213rp")]
+position = Vector2(2036, -2923)
+
+[node name="StaticBody2D187" parent="plataformas/plataformas_esteira" unique_id=479186722 instance=ExtResource("14_213rp")]
+position = Vector2(1999, -2923)
+
+[node name="StaticBody2D188" parent="plataformas/plataformas_esteira" unique_id=1575546495 instance=ExtResource("14_213rp")]
+position = Vector2(1962, -2923)
+
+[node name="StaticBody2D189" parent="plataformas/plataformas_esteira" unique_id=850668024 instance=ExtResource("14_213rp")]
+position = Vector2(2870, -2971)
+
+[node name="StaticBody2D190" parent="plataformas/plataformas_esteira" unique_id=139265707 instance=ExtResource("14_213rp")]
+position = Vector2(2833, -2971)
+
+[node name="StaticBody2D191" parent="plataformas/plataformas_esteira" unique_id=1536949904 instance=ExtResource("14_213rp")]
+position = Vector2(2796, -2971)
+
+[node name="StaticBody2D192" parent="plataformas/plataformas_esteira" unique_id=1797232662 instance=ExtResource("14_213rp")]
+position = Vector2(2759, -2971)
+
+[node name="StaticBody2D193" parent="plataformas/plataformas_esteira" unique_id=694940943 instance=ExtResource("14_213rp")]
+position = Vector2(2722, -2971)
+
+[node name="StaticBody2D194" parent="plataformas/plataformas_esteira" unique_id=1981062769 instance=ExtResource("14_213rp")]
+position = Vector2(2685, -2971)
+
+[node name="StaticBody2D195" parent="plataformas/plataformas_esteira" unique_id=1062325582 instance=ExtResource("14_213rp")]
+position = Vector2(2648, -2971)
+
+[node name="StaticBody2D196" parent="plataformas/plataformas_esteira" unique_id=795453933 instance=ExtResource("14_213rp")]
+position = Vector2(2611, -2971)
+
+[node name="StaticBody2D197" parent="plataformas/plataformas_esteira" unique_id=952616198 instance=ExtResource("14_213rp")]
+position = Vector2(2574, -2971)
+
+[node name="StaticBody2D207" parent="plataformas/plataformas_esteira" unique_id=2130324575 instance=ExtResource("14_213rp")]
+position = Vector2(2907, -2971)
+
+[node name="StaticBody2D198" parent="plataformas/plataformas_esteira" unique_id=33252665 instance=ExtResource("14_213rp")]
+position = Vector2(1343, -2629)
+
+[node name="StaticBody2D199" parent="plataformas/plataformas_esteira" unique_id=321093043 instance=ExtResource("14_213rp")]
+position = Vector2(1306, -2629)
+
+[node name="StaticBody2D200" parent="plataformas/plataformas_esteira" unique_id=973276717 instance=ExtResource("14_213rp")]
+position = Vector2(1269, -2629)
+
+[node name="StaticBody2D201" parent="plataformas/plataformas_esteira" unique_id=1668614344 instance=ExtResource("14_213rp")]
+position = Vector2(1232, -2629)
+
+[node name="StaticBody2D202" parent="plataformas/plataformas_esteira" unique_id=102840988 instance=ExtResource("14_213rp")]
+position = Vector2(1195, -2629)
+
+[node name="StaticBody2D203" parent="plataformas/plataformas_esteira" unique_id=495526907 instance=ExtResource("14_213rp")]
+position = Vector2(1158, -2629)
+
+[node name="StaticBody2D204" parent="plataformas/plataformas_esteira" unique_id=821386054 instance=ExtResource("14_213rp")]
+position = Vector2(1121, -2629)
+
+[node name="StaticBody2D205" parent="plataformas/plataformas_esteira" unique_id=311873149 instance=ExtResource("14_213rp")]
+position = Vector2(1084, -2629)
+
+[node name="StaticBody2D208" parent="plataformas/plataformas_esteira" unique_id=211655485 instance=ExtResource("14_213rp")]
+position = Vector2(1380, -2629)
+
+[node name="StaticBody2D109" parent="plataformas/plataformas_esteira" unique_id=743224220 instance=ExtResource("14_213rp")]
+position = Vector2(-1267.8577, -507.40015)
+
+[node name="StaticBody2D110" parent="plataformas/plataformas_esteira" unique_id=1959728456 instance=ExtResource("14_213rp")]
+position = Vector2(-1304.8577, -507.40015)
+
+[node name="StaticBody2D111" parent="plataformas/plataformas_esteira" unique_id=1596004457 instance=ExtResource("14_213rp")]
+position = Vector2(-1341.8577, -507.40015)
+
+[node name="StaticBody2D112" parent="plataformas/plataformas_esteira" unique_id=1580264432 instance=ExtResource("14_213rp")]
+position = Vector2(-1378.8577, -507.40015)
+
+[node name="StaticBody2D131" parent="plataformas/plataformas_esteira" unique_id=533759884 instance=ExtResource("14_213rp")]
+position = Vector2(-1415.8577, -507.40015)
+
+[node name="StaticBody2D132" parent="plataformas/plataformas_esteira" unique_id=347939346 instance=ExtResource("14_213rp")]
+position = Vector2(-1452.8577, -507.40015)
+
+[node name="StaticBody2D133" parent="plataformas/plataformas_esteira" unique_id=1543088304 instance=ExtResource("14_213rp")]
+position = Vector2(-1489.8577, -507.40015)
+
+[node name="StaticBody2D134" parent="plataformas/plataformas_esteira" unique_id=1506975087 instance=ExtResource("14_213rp")]
+position = Vector2(-1526.8577, -507.40015)
+
+[node name="StaticBody2D135" parent="plataformas/plataformas_esteira" unique_id=693115417 instance=ExtResource("14_213rp")]
+position = Vector2(-1563.8577, -507.40015)
+
+[node name="StaticBody2D136" parent="plataformas/plataformas_esteira" unique_id=1885120975 instance=ExtResource("14_213rp")]
+position = Vector2(-1008.85767, -507.40015)
+
+[node name="StaticBody2D137" parent="plataformas/plataformas_esteira" unique_id=171446475 instance=ExtResource("14_213rp")]
+position = Vector2(-1045.8577, -507.40015)
+
+[node name="StaticBody2D138" parent="plataformas/plataformas_esteira" unique_id=1854702827 instance=ExtResource("14_213rp")]
+position = Vector2(-1082.8577, -507.40015)
+
+[node name="StaticBody2D139" parent="plataformas/plataformas_esteira" unique_id=850023435 instance=ExtResource("14_213rp")]
+position = Vector2(-1119.8577, -507.40015)
+
+[node name="StaticBody2D140" parent="plataformas/plataformas_esteira" unique_id=2123058554 instance=ExtResource("14_213rp")]
+position = Vector2(-1156.8577, -507.40015)
+
+[node name="StaticBody2D141" parent="plataformas/plataformas_esteira" unique_id=739004638 instance=ExtResource("14_213rp")]
+position = Vector2(-1193.8577, -507.40015)
+
+[node name="StaticBody2D143" parent="plataformas/plataformas_esteira" unique_id=1587624951 instance=ExtResource("14_213rp")]
+position = Vector2(-786.85767, -507.40015)
+
+[node name="StaticBody2D144" parent="plataformas/plataformas_esteira" unique_id=1174286903 instance=ExtResource("14_213rp")]
+position = Vector2(-823.85767, -507.40015)
+
+[node name="StaticBody2D145" parent="plataformas/plataformas_esteira" unique_id=273086302 instance=ExtResource("14_213rp")]
+position = Vector2(-860.85767, -507.40015)
+
+[node name="StaticBody2D146" parent="plataformas/plataformas_esteira" unique_id=119981388 instance=ExtResource("14_213rp")]
+position = Vector2(-897.85767, -507.40015)
+
+[node name="StaticBody2D147" parent="plataformas/plataformas_esteira" unique_id=1366813772 instance=ExtResource("14_213rp")]
+position = Vector2(-934.85767, -507.40015)
+
+[node name="StaticBody2D148" parent="plataformas/plataformas_esteira" unique_id=1135390721 instance=ExtResource("14_213rp")]
+position = Vector2(-971.85767, -507.40015)
+
+[node name="StaticBody2D142" parent="plataformas/plataformas_esteira" unique_id=394168662 instance=ExtResource("14_213rp")]
+position = Vector2(-1230.8577, -507.40015)
+
+[node name="StaticBody2D10" parent="plataformas/plataformas_esteira" unique_id=781258922 instance=ExtResource("14_213rp")]
+position = Vector2(-335, -21)
+scale = Vector2(0.7, 1)
+
+[node name="StaticBody2D21" parent="plataformas/plataformas_esteira" unique_id=283608808 instance=ExtResource("14_213rp")]
+position = Vector2(-366, -21)
+
+[node name="StaticBody2D22" parent="plataformas/plataformas_esteira" unique_id=1374937375 instance=ExtResource("14_213rp")]
+position = Vector2(-403, -21)
+
+[node name="StaticBody2D23" parent="plataformas/plataformas_esteira" unique_id=1448743974 instance=ExtResource("14_213rp")]
+position = Vector2(-440, -21)
+
+[node name="StaticBody2D24" parent="plataformas/plataformas_esteira" unique_id=704846995 instance=ExtResource("14_213rp")]
+position = Vector2(-477, -21)
+
+[node name="StaticBody2D25" parent="plataformas/plataformas_esteira" unique_id=1872920078 instance=ExtResource("14_213rp")]
+position = Vector2(-514, -21)
+
+[node name="StaticBody2D26" parent="plataformas/plataformas_esteira" unique_id=196419004 instance=ExtResource("14_213rp")]
+position = Vector2(-551, -21)
+
+[node name="StaticBody2D27" parent="plataformas/plataformas_esteira" unique_id=1726310043 instance=ExtResource("14_213rp")]
+position = Vector2(-588, -21)
+
+[node name="StaticBody2D28" parent="plataformas/plataformas_esteira" unique_id=328214452 instance=ExtResource("14_213rp")]
+position = Vector2(-625, -21)
+
+[node name="StaticBody2D29" parent="plataformas/plataformas_esteira" unique_id=692266517 instance=ExtResource("14_213rp")]
+position = Vector2(-662, -21)
+
+[node name="StaticBody2D30" parent="plataformas/plataformas_esteira" unique_id=1309240710 instance=ExtResource("14_213rp")]
+position = Vector2(-699, -21)
+
+[node name="StaticBody2D31" parent="plataformas/plataformas_esteira" unique_id=2050650576 instance=ExtResource("14_213rp")]
+position = Vector2(-1069, -21)
+
+[node name="StaticBody2D32" parent="plataformas/plataformas_esteira" unique_id=90679393 instance=ExtResource("14_213rp")]
+position = Vector2(-1106, -21)
+
+[node name="StaticBody2D33" parent="plataformas/plataformas_esteira" unique_id=973482322 instance=ExtResource("14_213rp")]
+position = Vector2(-1143, -21)
+
+[node name="StaticBody2D34" parent="plataformas/plataformas_esteira" unique_id=1747948662 instance=ExtResource("14_213rp")]
+position = Vector2(-1180, -21)
+
+[node name="StaticBody2D35" parent="plataformas/plataformas_esteira" unique_id=1392904821 instance=ExtResource("14_213rp")]
+position = Vector2(-1217, -21)
+
+[node name="StaticBody2D36" parent="plataformas/plataformas_esteira" unique_id=491527160 instance=ExtResource("14_213rp")]
+position = Vector2(-1254, -21)
+
+[node name="StaticBody2D37" parent="plataformas/plataformas_esteira" unique_id=149466704 instance=ExtResource("14_213rp")]
+position = Vector2(-1291, -21)
+
+[node name="StaticBody2D38" parent="plataformas/plataformas_esteira" unique_id=1025498980 instance=ExtResource("14_213rp")]
+position = Vector2(-1328, -21)
+
+[node name="StaticBody2D39" parent="plataformas/plataformas_esteira" unique_id=1137100176 instance=ExtResource("14_213rp")]
+position = Vector2(-1365, -21)
+
+[node name="StaticBody2D40" parent="plataformas/plataformas_esteira" unique_id=1423035555 instance=ExtResource("14_213rp")]
+position = Vector2(-736, -21)
+
+[node name="StaticBody2D41" parent="plataformas/plataformas_esteira" unique_id=468386439 instance=ExtResource("14_213rp")]
+position = Vector2(-773, -21)
+
+[node name="StaticBody2D42" parent="plataformas/plataformas_esteira" unique_id=872681679 instance=ExtResource("14_213rp")]
+position = Vector2(-810, -21)
+
+[node name="StaticBody2D43" parent="plataformas/plataformas_esteira" unique_id=376724878 instance=ExtResource("14_213rp")]
+position = Vector2(-847, -21)
+
+[node name="StaticBody2D44" parent="plataformas/plataformas_esteira" unique_id=1641280844 instance=ExtResource("14_213rp")]
+position = Vector2(-884, -21)
+
+[node name="StaticBody2D45" parent="plataformas/plataformas_esteira" unique_id=414325215 instance=ExtResource("14_213rp")]
+position = Vector2(-921, -21)
+
+[node name="StaticBody2D46" parent="plataformas/plataformas_esteira" unique_id=1682961329 instance=ExtResource("14_213rp")]
+position = Vector2(-958, -21)
+
+[node name="StaticBody2D47" parent="plataformas/plataformas_esteira" unique_id=1347498940 instance=ExtResource("14_213rp")]
+position = Vector2(-995, -21)
+
+[node name="StaticBody2D48" parent="plataformas/plataformas_esteira" unique_id=831486851 instance=ExtResource("14_213rp")]
+position = Vector2(-1032, -21)
+
+[node name="StaticBody2D49" parent="plataformas/plataformas_esteira" unique_id=1995281544 instance=ExtResource("14_213rp")]
+position = Vector2(-1398, -21)
+scale = Vector2(0.7, 1)
+
+[node name="StaticBody2D50" parent="plataformas/plataformas_esteira" unique_id=1256092747 instance=ExtResource("14_213rp")]
+position = Vector2(-1429, -21)
+
+[node name="StaticBody2D51" parent="plataformas/plataformas_esteira" unique_id=2072036923 instance=ExtResource("14_213rp")]
+position = Vector2(-1466, -21)
+
+[node name="StaticBody2D52" parent="plataformas/plataformas_esteira" unique_id=1280868746 instance=ExtResource("14_213rp")]
+position = Vector2(-1503, -21)
+
+[node name="StaticBody2D53" parent="plataformas/plataformas_esteira" unique_id=762340516 instance=ExtResource("14_213rp")]
+position = Vector2(-1540, -21)
+
+[node name="StaticBody2D54" parent="plataformas/plataformas_esteira" unique_id=373790574 instance=ExtResource("14_213rp")]
+position = Vector2(-1577, -21)
+
+[node name="StaticBody2D55" parent="plataformas/plataformas_esteira" unique_id=41391016 instance=ExtResource("14_213rp")]
+position = Vector2(-1614, -21)
+
+[node name="StaticBody2D56" parent="plataformas/plataformas_esteira" unique_id=805685290 instance=ExtResource("14_213rp")]
+position = Vector2(-1651, -21)
+
+[node name="StaticBody2D57" parent="plataformas/plataformas_esteira" unique_id=1475791551 instance=ExtResource("14_213rp")]
+position = Vector2(-1688, -21)
+
+[node name="StaticBody2D58" parent="plataformas/plataformas_esteira" unique_id=974602520 instance=ExtResource("14_213rp")]
+position = Vector2(-1725, -21)
+
+[node name="StaticBody2D59" parent="plataformas/plataformas_esteira" unique_id=1907743174 instance=ExtResource("14_213rp")]
+position = Vector2(-1762, -21)
+
+[node name="StaticBody2D60" parent="plataformas/plataformas_esteira" unique_id=1235056499 instance=ExtResource("14_213rp")]
+position = Vector2(-1799, -21)
+
+[node name="StaticBody2D61" parent="plataformas/plataformas_esteira" unique_id=60438078 instance=ExtResource("14_213rp")]
+position = Vector2(-1836, -21)
+
+[node name="StaticBody2D62" parent="plataformas/plataformas_esteira" unique_id=1807603066 instance=ExtResource("14_213rp")]
+position = Vector2(-1873, -21)
+
+[node name="StaticBody2D63" parent="plataformas/plataformas_esteira" unique_id=2008781752 instance=ExtResource("14_213rp")]
+position = Vector2(-1910, -21)
+
+[node name="StaticBody2D64" parent="plataformas/plataformas_esteira" unique_id=1868430931 instance=ExtResource("14_213rp")]
+position = Vector2(-1947, -21)
+
+[node name="StaticBody2D65" parent="plataformas/plataformas_esteira" unique_id=822180037 instance=ExtResource("14_213rp")]
+position = Vector2(-1980, -21)
+scale = Vector2(0.7, 1)
+
+[node name="StaticBody2D66" parent="plataformas/plataformas_esteira" unique_id=633183473 instance=ExtResource("14_213rp")]
+position = Vector2(-2011, -21)
+
+[node name="StaticBody2D67" parent="plataformas/plataformas_esteira" unique_id=308463816 instance=ExtResource("14_213rp")]
+position = Vector2(-2048, -21)
+
+[node name="StaticBody2D68" parent="plataformas/plataformas_esteira" unique_id=1495176862 instance=ExtResource("14_213rp")]
+position = Vector2(-2085, -21)
+
+[node name="StaticBody2D69" parent="plataformas/plataformas_esteira" unique_id=13601453 instance=ExtResource("14_213rp")]
+position = Vector2(-2122, -21)
+
+[node name="StaticBody2D70" parent="plataformas/plataformas_esteira" unique_id=846592509 instance=ExtResource("14_213rp")]
+position = Vector2(-2159, -21)
+
+[node name="StaticBody2D71" parent="plataformas/plataformas_esteira" unique_id=1397457464 instance=ExtResource("14_213rp")]
+position = Vector2(-2196, -21)
+
+[node name="StaticBody2D72" parent="plataformas/plataformas_esteira" unique_id=1274859334 instance=ExtResource("14_213rp")]
+position = Vector2(-2233, -21)
+
+[node name="StaticBody2D73" parent="plataformas/plataformas_esteira" unique_id=1767862578 instance=ExtResource("14_213rp")]
+position = Vector2(-2270, -21)
+
+[node name="StaticBody2D74" parent="plataformas/plataformas_esteira" unique_id=82588204 instance=ExtResource("14_213rp")]
+position = Vector2(-2307, -21)
+
+[node name="StaticBody2D75" parent="plataformas/plataformas_esteira" unique_id=937004474 instance=ExtResource("14_213rp")]
+position = Vector2(-2344, -21)
+
+[node name="StaticBody2D76" parent="plataformas/plataformas_esteira" unique_id=2095035495 instance=ExtResource("14_213rp")]
+position = Vector2(-2381, -21)
+
+[node name="StaticBody2D77" parent="plataformas/plataformas_esteira" unique_id=105241031 instance=ExtResource("14_213rp")]
+position = Vector2(-2418, -21)
+
+[node name="StaticBody2D78" parent="plataformas/plataformas_esteira" unique_id=1158582546 instance=ExtResource("14_213rp")]
+position = Vector2(-2455, -21)
+
+[node name="StaticBody2D79" parent="plataformas/plataformas_esteira" unique_id=1979081200 instance=ExtResource("14_213rp")]
+position = Vector2(-2492, -21)
+
+[node name="StaticBody2D80" parent="plataformas/plataformas_esteira" unique_id=389382166 instance=ExtResource("14_213rp")]
+position = Vector2(-2529, -21)
+
+[node name="StaticBody2D81" parent="plataformas/plataformas_esteira" unique_id=1462056922 instance=ExtResource("14_213rp")]
+position = Vector2(-2566, -21)
+
+[node name="StaticBody2D82" parent="plataformas/plataformas_esteira" unique_id=135432290 instance=ExtResource("14_213rp")]
+position = Vector2(-2603, -21)
+
+[node name="StaticBody2D83" parent="plataformas/plataformas_esteira" unique_id=610518878 instance=ExtResource("14_213rp")]
+position = Vector2(-2640, -21)
+
+[node name="StaticBody2D84" parent="plataformas/plataformas_esteira" unique_id=1096354003 instance=ExtResource("14_213rp")]
+position = Vector2(-2673, -21)
+scale = Vector2(0.7, 1)
+
+[node name="StaticBody2D85" parent="plataformas/plataformas_esteira" unique_id=1200684292 instance=ExtResource("14_213rp")]
+position = Vector2(-2704, -21)
+
+[node name="StaticBody2D86" parent="plataformas/plataformas_esteira" unique_id=1895114074 instance=ExtResource("14_213rp")]
+position = Vector2(-2741, -21)
+
+[node name="StaticBody2D87" parent="plataformas/plataformas_esteira" unique_id=1200253864 instance=ExtResource("14_213rp")]
+position = Vector2(-2778, -21)
+
+[node name="StaticBody2D108" parent="plataformas/plataformas_esteira" unique_id=2144046922 instance=ExtResource("14_213rp")]
+position = Vector2(-3273.0002, 91)
+scale = Vector2(0.7, 1)
+
+[node name="StaticBody2D113" parent="plataformas/plataformas_esteira" unique_id=1583677996 instance=ExtResource("14_213rp")]
+position = Vector2(-3303, 91)
+
+[node name="StaticBody2D114" parent="plataformas/plataformas_esteira" unique_id=377653479 instance=ExtResource("14_213rp")]
+position = Vector2(-3340, 91)
+
+[node name="StaticBody2D115" parent="plataformas/plataformas_esteira" unique_id=1715288958 instance=ExtResource("14_213rp")]
+position = Vector2(-3377, 91)
+
+[node name="StaticBody2D116" parent="plataformas/plataformas_esteira" unique_id=1090441930 instance=ExtResource("14_213rp")]
+position = Vector2(-3414, 91)
+
+[node name="StaticBody2D117" parent="plataformas/plataformas_esteira" unique_id=1878999526 instance=ExtResource("14_213rp")]
+position = Vector2(-3451, 91)
+
+[node name="StaticBody2D118" parent="plataformas/plataformas_esteira" unique_id=17283565 instance=ExtResource("14_213rp")]
+position = Vector2(-3488, 91)
+
+[node name="StaticBody2D119" parent="plataformas/plataformas_esteira" unique_id=1824178484 instance=ExtResource("14_213rp")]
+position = Vector2(-3525, 91)
+
+[node name="StaticBody2D120" parent="plataformas/plataformas_esteira" unique_id=256622733 instance=ExtResource("14_213rp")]
+position = Vector2(-3562, 91)
+
+[node name="StaticBody2D121" parent="plataformas/plataformas_esteira" unique_id=1206820778 instance=ExtResource("14_213rp")]
+position = Vector2(-3599, 91)
+
+[node name="StaticBody2D122" parent="plataformas/plataformas_esteira" unique_id=1158544121 instance=ExtResource("14_213rp")]
+position = Vector2(-3636, 91)
+
+[node name="StaticBody2D123" parent="plataformas/plataformas_esteira" unique_id=409991007 instance=ExtResource("14_213rp")]
+position = Vector2(-3673, 91)
+
+[node name="StaticBody2D124" parent="plataformas/plataformas_esteira" unique_id=1874645501 instance=ExtResource("14_213rp")]
+position = Vector2(-3710, 91)
+
+[node name="StaticBody2D125" parent="plataformas/plataformas_esteira" unique_id=1150249323 instance=ExtResource("14_213rp")]
+position = Vector2(-3747, 91)
+
+[node name="StaticBody2D126" parent="plataformas/plataformas_esteira" unique_id=153867640 instance=ExtResource("14_213rp")]
+position = Vector2(-3784, 91)
+
+[node name="StaticBody2D127" parent="plataformas/plataformas_esteira" unique_id=1894674803 instance=ExtResource("14_213rp")]
+position = Vector2(-3817, 91)
+scale = Vector2(0.7, 1)
+
+[node name="StaticBody2D128" parent="plataformas/plataformas_esteira" unique_id=927185696 instance=ExtResource("14_213rp")]
+position = Vector2(-3848, 91)
+
+[node name="StaticBody2D129" parent="plataformas/plataformas_esteira" unique_id=1648245280 instance=ExtResource("14_213rp")]
+position = Vector2(-3885, 91)
+
+[node name="StaticBody2D130" parent="plataformas/plataformas_esteira" unique_id=133503048 instance=ExtResource("14_213rp")]
+position = Vector2(-3922, 91)
+
+[node name="StaticBody2D88" parent="plataformas/plataformas_esteira" unique_id=1025129793 instance=ExtResource("14_213rp")]
+position = Vector2(-2815, -21)
+
+[node name="StaticBody2D89" parent="plataformas/plataformas_esteira" unique_id=583626668 instance=ExtResource("14_213rp")]
+position = Vector2(-2852, -21)
+
+[node name="StaticBody2D90" parent="plataformas/plataformas_esteira" unique_id=1081069073 instance=ExtResource("14_213rp")]
+position = Vector2(-2886, -16.000122)
+rotation = -0.58119464
+
+[node name="Porta" type="Node2D" parent="." unique_id=411059158]
+position = Vector2(-1243, -204)
+scale = Vector2(2, 2)
+
+[node name="PortaCima" type="Sprite2D" parent="Porta" unique_id=283660807]
+visible = false
+z_index = 1
+position = Vector2(79.5, -1062)
+texture = ExtResource("15_bn2eg")
+flip_h = true
+flip_v = true
+
+[node name="PortaCima2" type="Sprite2D" parent="Porta" unique_id=1390195453]
+visible = false
+position = Vector2(95, -1054)
+texture = ExtResource("15_bn2eg")
+flip_h = true
+flip_v = true
+
+[node name="Mesa(pintado)LadoEsquerdoGrande2" type="Sprite2D" parent="Porta" unique_id=1835763347]
+z_index = -1
+position = Vector2(484.5, -228.8525)
+rotation = 1.5707964
+scale = Vector2(0.603965, 0.05)
+texture = ExtResource("16_ct7kn")
+flip_h = true
+
+[node name="FundoBackrooms" type="Sprite2D" parent="Porta" unique_id=1641201918]
+z_index = -2
+position = Vector2(331.5, 39.249985)
+scale = Vector2(0.5, 1.3016148)
+texture = ExtResource("17_160l7")
+
+[node name="FundoBackrooms2" type="Sprite2D" parent="Porta" unique_id=1222165475]
+z_index = -2
+position = Vector2(44, 38.5)
+scale = Vector2(0.5, 1.3016148)
+texture = ExtResource("17_160l7")
+
+[node name="CaixaCompleta" type="Sprite2D" parent="." unique_id=1840088919]
+position = Vector2(121.00001, 280)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_o6u0q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CaixaCompleta" unique_id=891283241]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaixaCompleta/StaticBody2D" unique_id=1991841478]
+position = Vector2(-5.0024414, -7.499756)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_o6u0q")
+
+[node name="reload timer" type="Timer" parent="." unique_id=1966664473]
+one_shot = true
+autostart = true
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=296251470]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(2462, -1546)
+repeat_size = Vector2(979, 896)
+repeat_times = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=385744852]
+z_index = -15
+texture = ExtResource("21_ymu86")
+
+[node name="CaixaCompleta4" type="Sprite2D" parent="." unique_id=1227099768]
+position = Vector2(2544.142, -279.40002)
+scale = Vector2(0.2381226, 0.23812261)
+texture = ExtResource("19_o6u0q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CaixaCompleta4" unique_id=318296208]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaixaCompleta4/StaticBody2D" unique_id=1435989571]
+position = Vector2(-2.0986328, 4.1989746)
+scale = Vector2(1.0000002, 1)
+shape = SubResource("RectangleShape2D_o1isc")
+
+[node name="caixas_levantadas" type="AnimatableBody2D" parent="." unique_id=607994680]
+position = Vector2(306, -302)
+script = ExtResource("22_41arw")
+
+[node name="CaixaCompleta3" type="Sprite2D" parent="caixas_levantadas" unique_id=35579196]
+position = Vector2(4598.2007, -727.19995)
+rotation = 1.5707964
+scale = Vector2(0.15689655, 0.15689656)
+texture = ExtResource("19_o6u0q")
+
+[node name="CaixaCompleta2" type="Sprite2D" parent="caixas_levantadas" unique_id=2026612077]
+position = Vector2(4299.2, -73.20007)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_o6u0q")
+
+[node name="Area2D" type="Area2D" parent="caixas_levantadas" unique_id=851791615]
+position = Vector2(4108, -449)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="caixas_levantadas/Area2D" unique_id=513574598]
+position = Vector2(-18, 48.5)
+shape = SubResource("RectangleShape2D_ymu86")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="caixas_levantadas" unique_id=2054073490]
+position = Vector2(3792.7937, -375)
+scale = Vector2(0.99886733, 1)
+polygon = PackedVector2Array(692.9912, -4, 690.9888, -546.99994, 1013.354, -547.99994, 1012.353, 0, 1012.353, 609.99994, 0.20654297, 602.99994, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="caixas_levantadas" unique_id=187463518]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_41arw")
+
+[node name="next_level_check" parent="." unique_id=1434865447 instance=ExtResource("23_bqudx")]
+position = Vector2(6919, -3385)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next_level_check" unique_id=731512828]
+position = Vector2(45, -39.5)
+shape = SubResource("RectangleShape2D_oq31a")
 
 [connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
 [connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
+[connection signal="body_entered" from="caixas_levantadas/Area2D" to="caixas_levantadas" method="_on_area_2d_body_entered"]

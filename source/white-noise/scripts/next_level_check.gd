@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: CharacterBody2D) -> void:
+	Globais.player_spawn = Vector2(0,0)
 	Globais.fase_atual+=1

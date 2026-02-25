@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://h1q65jjay5e2" path="res://images/UI/Carga/carga_min/_preta_cheio_2.png" id="2_63lv3"]
 [ext_resource type="Texture2D" uid="uid://c82fv6w83p2b2" path="res://images/UI/Carga/carga_grand/_preta_2/_cheio.png" id="3_6nfn0"]
 [ext_resource type="Texture2D" uid="uid://bc20k4t2qql6y" path="res://images/UI/Carga/carga_min/_preta_metade_2.png" id="3_eegid"]
+[ext_resource type="Texture2D" uid="uid://kadbde76yqjx" path="res://images/UI/Carga/carga_min/_vazia.png" id="4_dnhxu"]
 [ext_resource type="Texture2D" uid="uid://cdoeagpoipc22" path="res://images/UI/Carga/carga_min/_verde_cheia.png" id="4_xl5ay"]
 [ext_resource type="Texture2D" uid="uid://cxyxdu1445wk" path="res://images/UI/Carga/carga_min/_verde_metade.png" id="5_dnhxu"]
 [ext_resource type="Texture2D" uid="uid://bhxrcc3ns1d0v" path="res://images/UI/Carga/carga_grand/_preta_2/_uso_1.png" id="7_hk2bl"]
@@ -50,7 +51,10 @@ animations = [{
 "name": &"preto1",
 "speed": 10.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dnhxu")
+}],
 "loop": true,
 "name": &"vazio",
 "speed": 5.0
@@ -255,7 +259,7 @@ texture = ExtResource("1_n6j2j")
 position = Vector2(35, -42)
 scale = Vector2(0.075, 0.075)
 sprite_frames = SubResource("SpriteFrames_gvjli")
-animation = &"verde1"
+animation = &"vazio"
 autoplay = "preto0"
 
 [node name="ink4" type="AnimatedSprite2D" parent="." unique_id=1820457037]
