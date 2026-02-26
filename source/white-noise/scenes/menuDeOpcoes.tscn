@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://kb505td3w4so"]
+
+[ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="1_g8sn6"]
+[ext_resource type="Script" uid="uid://ctpn3evjxctuh" path="res://scripts/menu_de_opcoes.gd" id="1_lfb0o"]
+[ext_resource type="Texture2D" uid="uid://com0p0ack5lnn" path="res://images/player_sprites/sprite indo pular sem cor.png" id="3_4cc8y"]
+[ext_resource type="Texture2D" uid="uid://cf0h0td3n2c04" path="res://images/objetos/seta.png" id="3_asubg"]
+[ext_resource type="Texture2D" uid="uid://b1w5hryk1rv61" path="res://images/player_sprites/sprite pulando sem cor.png" id="4_asubg"]
+[ext_resource type="Texture2D" uid="uid://bafxudva4e7xs" path="res://images/UI/Carga/carga_min_resize/_verde/_cheia.png" id="5_teqxl"]
+[ext_resource type="Texture2D" uid="uid://h1q65jjay5e2" path="res://images/UI/Carga/carga_min/_preta_cheio_2.png" id="6_bn5tc"]
+[ext_resource type="Texture2D" uid="uid://bc20k4t2qql6y" path="res://images/UI/Carga/carga_min/_preta_metade_2.png" id="7_8hu6p"]
+[ext_resource type="Texture2D" uid="uid://cxyxdu1445wk" path="res://images/UI/Carga/carga_min/_verde_metade.png" id="8_x5k57"]
+
+[node name="Node2D" type="Node2D" unique_id=678393272]
+script = ExtResource("1_lfb0o")
+
+[node name="Preto" type="Sprite2D" parent="." unique_id=115058125]
+texture = ExtResource("1_g8sn6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1045734630]
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=1505862398]
+offset_left = -523.0
+offset_top = -274.0
+offset_right = -349.0
+offset_bottom = -212.0
+theme_override_font_sizes/font_size = 32
+text = "Resolução"
+
+[node name="tutorial" type="Node2D" parent="." unique_id=1705039021]
+
+[node name="Label" type="Label" parent="tutorial" unique_id=1509803050]
+offset_left = 8.0
+offset_top = -263.0
+offset_right = 289.0
+offset_bottom = 254.0
+text = "Aperte, segure e solte C para pular.
+
+Segurando o botão por no máximo
+4 segundos, você pode carregar seu
+pulo e alcançar lugares mais altos.
+
+O Carimbô possui 2 tipos de tinta:
+Preto e Verde.
+
+A tinta Preta não possui nenhum
+efeito especial, apenas carimbando
+os locais que você passar.
+
+A tinta Verde funciona como uma 
+\"cama elástica\", permitindo que
+você pule mais alto ao pular nela
+novamente.
+
+Troque as tintas do Carimbô usando
+as teclas Q e E."
+
+[node name="Seta" type="Sprite2D" parent="tutorial" unique_id=1697991124]
+position = Vector2(425, 232)
+texture = ExtResource("3_asubg")
+
+[node name="tutorialEControles" type="TextureButton" parent="." unique_id=1440133284]
+offset_left = -531.0
+offset_top = -64.0
+offset_right = -337.0
+offset_bottom = -1.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SpriteIndoPularSemCor" type="Sprite2D" parent="." unique_id=718400475]
+position = Vector2(359, -211.00002)
+scale = Vector2(0.6759259, 0.67592597)
+texture = ExtResource("3_4cc8y")
+
+[node name="SpritePulandoSemCor" type="Sprite2D" parent="." unique_id=692694357]
+position = Vector2(481, -217.99998)
+scale = Vector2(0.76388866, 0.76388866)
+texture = ExtResource("4_asubg")
+
+[node name="Cheia" type="Sprite2D" parent="." unique_id=1735829605]
+position = Vector2(357, 102.99999)
+scale = Vector2(0.7431973, 0.7431973)
+texture = ExtResource("5_teqxl")
+
+[node name="Cheia2" type="Sprite2D" parent="." unique_id=1027393267]
+position = Vector2(522, 233)
+scale = Vector2(0.34438768, 0.34438768)
+texture = ExtResource("5_teqxl")
+
+[node name="PretaCheio2" type="Sprite2D" parent="." unique_id=260110352]
+position = Vector2(357, -47)
+texture = ExtResource("6_bn5tc")
+
+[node name="PretaCheio3" type="Sprite2D" parent="." unique_id=897912347]
+position = Vector2(331, 233)
+scale = Vector2(0.38793105, 0.38793102)
+texture = ExtResource("6_bn5tc")
+
+[node name="PretaMetade2" type="Sprite2D" parent="." unique_id=400040873]
+position = Vector2(484, -43)
+texture = ExtResource("7_8hu6p")
+
+[node name="VerdeMetade" type="Sprite2D" parent="." unique_id=2133290602]
+position = Vector2(482.125, 107.79717)
+scale = Vector2(0.63993704, 0.63993704)
+texture = ExtResource("8_x5k57")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

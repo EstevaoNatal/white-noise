@@ -13,7 +13,7 @@ var can_jump = true
 var diagonal = 0.0
 var max_velocidade_y=1
 var ultima_carimbada:int = -1
-var cor_escrita=""
+var cor_escrita="semCor"
 var contador1=0
 var carimbar_doc=false
 
@@ -111,6 +111,7 @@ func pulo_carimbo(delta_jump,direction_jump):
 	#print(time_jump_charge)
 	if Input.is_action_pressed("jump") and is_on_floor():
 		#print(diagonal)
+		animated_sprite_2d.play("indo_pular_"+cor_escrita)
 		time_jump_charge+=2*delta_jump
 		print(time_jump_charge, " ", velocity.y)
 	if Input.is_action_just_released("jump"):

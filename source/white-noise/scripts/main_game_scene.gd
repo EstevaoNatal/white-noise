@@ -22,13 +22,14 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("close_game"):
 		timer_fechar.stop()
 		contador2=0
-	if Input.is_action_just_pressed("aumentar_tamanho_tela") or Input.is_action_just_pressed("diminuir_tamanho_tela"):
-		if Input.is_action_just_pressed("aumentar_tamanho_tela") and tamanho_atual>0:
-			tamanho_atual-=1
-		if Input.is_action_just_pressed("diminuir_tamanho_tela") and tamanho_atual<tamanhos_tela.size()-1:
-			tamanho_atual+=1
-		DisplayServer.window_set_size(tamanhos_tela[tamanho_atual])
-		print(tamanho_atual)
+	#if Input.is_action_just_pressed("aumentar_tamanho_tela") or Input.is_action_just_pressed("diminuir_tamanho_tela") or Globais.mudar_tamanho_tela:
+	#	if (Input.is_action_just_pressed("aumentar_tamanho_tela") or get_node("menuDeOpcoes").id==1) and tamanho_atual>0:
+	#		tamanho_atual-=1
+	#	if (Input.is_action_just_pressed("diminuir_tamanho_tela") or get_node("menuDeOpcoes").id==0) and tamanho_atual<tamanhos_tela.size()-1:
+	#		tamanho_atual+=1
+	if Globais.mudar_tamanho_tela==true:
+		DisplayServer.window_set_size(tamanhos_tela[Globais.tamanho_resolucao])
+		Globais.mudar_tamanho_tela=false
 	if Globais.fase_atual==2 && contador==0:
 		nivelAtual = main_game_scene.get_node("first_area")
 		main_game_scene.remove_child(nivelAtual)
@@ -65,10 +66,10 @@ func _on_menu_opcoes() -> void:
 	nivelAtual = main_game_scene.get_node("Menu")
 	main_game_scene.remove_child(nivelAtual)
 	nivelAtual.call_deferred("free")
-	proximo = load("res://scenes/second_area.tscn")
+	proximo = load("res://scenes/menuDeOpcoes.tscn")
 	proximo_nivel = proximo.instantiate()
 	main_game_scene.add_child(proximo_nivel)
-	Globais.fase_atual=1
+	Globais.fase_atual=5
 
 
 func _on_menu_fechar() -> void:

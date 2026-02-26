@@ -1,0 +1,378 @@
+[gd_scene format=3 uid="uid://b1yx2d8kscqyj"]
+
+[ext_resource type="Texture2D" uid="uid://cfis5m2s87myg" path="res://images/fundo/fundo do boss.png" id="1_0hmc4"]
+[ext_resource type="Texture2D" uid="uid://cj4jse17klbjy" path="res://images/fundo/fundo_do_boss_so_a_cor.png" id="2_hqu5r"]
+[ext_resource type="Script" uid="uid://c1mnb2f4kbvnc" path="res://scripts/player_manager.gd" id="3_ylqgb"]
+[ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="4_1alko"]
+[ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="5_su4ky"]
+[ext_resource type="AudioStream" uid="uid://h2r5jmcke1k7" path="res://musicas/MSC_T001.mp3" id="6_m7fns"]
+[ext_resource type="Texture2D" uid="uid://bm2m7bsjwp36v" path="res://images/objetos/3fase/guarana 100 fruta pintada.png" id="7_su4ky"]
+[ext_resource type="Texture2D" uid="uid://e1m0xbculcjr" path="res://images/objetos/3fase/janela quebrada.png" id="8_m7fns"]
+[ext_resource type="Texture2D" uid="uid://rjcwbshloytl" path="res://images/objetos/3fase/mesa 2 pintada lado direito.png" id="9_1xx42"]
+[ext_resource type="Texture2D" uid="uid://ymq6egav2tc4" path="res://images/objetos/3fase/mesa 2 pintada lado esquerdo.png" id="10_tg0rk"]
+[ext_resource type="Texture2D" uid="uid://d2a43qknri42m" path="res://images/objetos/livro/livro_2.png" id="11_1xx42"]
+[ext_resource type="Texture2D" uid="uid://cnffrby55i146" path="res://images/boss/caixa_pizza_2.png" id="12_f1mdc"]
+[ext_resource type="Texture2D" uid="uid://7cp80hwqvqvi" path="res://images/boss/lapis.png" id="12_tg0rk"]
+[ext_resource type="PackedScene" uid="uid://2kfbrrv0er40" path="res://scenes/platform.tscn" id="13_qt64w"]
+[ext_resource type="Texture2D" uid="uid://gg3ndijepbxl" path="res://images/objetos/estante direita pintada.png" id="14_ow7lw"]
+[ext_resource type="Texture2D" uid="uid://cnwke2er5l0w8" path="res://images/objetos/estante esquerda pintada.png" id="15_c5pqr"]
+[ext_resource type="Texture2D" uid="uid://bq8ix7644qvtp" path="res://images/objetos/estante meio pintada.png" id="16_0rvgw"]
+[ext_resource type="Texture2D" uid="uid://0s0p1pjctvhk" path="res://images/objetos/3fase/bossta.png" id="17_fe36s"]
+[ext_resource type="Texture2D" uid="uid://dhj1pgs2xk12n" path="res://images/boss/mesinnha.png" id="19_rdjyr"]
+[ext_resource type="Texture2D" uid="uid://bsjlpbs13r3yw" path="res://images/objetos/3fase/teclado.png" id="20_rdjyr"]
+[ext_resource type="Texture2D" uid="uid://36q4njofexhp" path="res://images/objetos/3fase/teclado S.png" id="21_3frly"]
+[ext_resource type="Texture2D" uid="uid://dl4yv8txw31bu" path="res://images/objetos/3fase/teclado N.png" id="22_dubgk"]
+[ext_resource type="Texture2D" uid="uid://rtmur228motx" path="res://images/objetos/3fase/teclado A.png" id="23_gsla3"]
+[ext_resource type="Texture2D" uid="uid://bsip8ndikh7mx" path="res://images/objetos/3fase/teclado E.png" id="24_210py"]
+[ext_resource type="Texture2D" uid="uid://c7015karh5qc0" path="res://images/objetos/3fase/teclado H.png" id="25_2sa4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3frly"]
+size = Vector2(635, 50)
+
+[node name="third_area" type="Node2D" unique_id=208438374]
+
+[node name="fundo" type="Parallax2D" parent="." unique_id=414677184]
+repeat_size = Vector2(1200, 1000)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="fundo" unique_id=1170069478]
+z_index = -26
+position = Vector2(-601, -499)
+texture = ExtResource("2_hqu5r")
+
+[node name="Player_manager" type="Node" parent="." unique_id=1906303]
+script = ExtResource("3_ylqgb")
+
+[node name="Player" parent="Player_manager" unique_id=1572016301 instance=ExtResource("4_1alko")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-2, 794)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=1584845572]
+z_index = 21
+position = Vector2(-3, 790)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
+[node name="Control" type="Control" parent="Player_manager/Camera2D" unique_id=414308036]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -8.0
+offset_right = 39.0
+offset_bottom = 32.0
+script = ExtResource("5_su4ky")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cargas de tinta" type="Label" parent="Player_manager/Camera2D" unique_id=1678146409]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+offset_left = -453.0
+offset_top = -248.0
+offset_right = -353.0
+offset_bottom = -203.0
+theme_override_font_sizes/font_size = 32
+text = "cargas"
+
+[node name="Tinta escolhida" type="Label" parent="Player_manager/Camera2D" unique_id=969989489]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+offset_left = -463.0
+offset_top = 211.0
+offset_right = -379.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 32
+text = "preto"
+
+[node name="musica primeira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=884948048]
+stream = ExtResource("6_m7fns")
+
+[node name="Guarana100FrutaPintada" type="Sprite2D" parent="." unique_id=946798473]
+position = Vector2(910.0001, 420)
+scale = Vector2(0.2886057, 0.28860572)
+texture = ExtResource("7_su4ky")
+
+[node name="JanelaQuebrada" type="Sprite2D" parent="." unique_id=1943795439]
+position = Vector2(-1496, -419)
+texture = ExtResource("8_m7fns")
+
+[node name="Mesa2PintadaLadoDireito" type="Sprite2D" parent="." unique_id=217965144]
+position = Vector2(2344, 949)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_1xx42")
+
+[node name="Mesa2PintadaLadoDireito2" type="Sprite2D" parent="." unique_id=2134182037]
+position = Vector2(-1298.1998, 949)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_1xx42")
+flip_h = true
+
+[node name="Mesa2PintadaLadoEsquerdo" type="Sprite2D" parent="." unique_id=134140483]
+position = Vector2(1268.6003, 948.8)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tg0rk")
+
+[node name="Mesa2PintadaLadoEsquerdo4" type="Sprite2D" parent="." unique_id=788739501]
+position = Vector2(2361.8003, 949)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tg0rk")
+
+[node name="Mesa2PintadaLadoEsquerdo2" type="Sprite2D" parent="." unique_id=696534741]
+position = Vector2(347.60034, 948.8)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tg0rk")
+
+[node name="Mesa2PintadaLadoEsquerdo3" type="Sprite2D" parent="." unique_id=1089275465]
+position = Vector2(-755.1997, 949.00006)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tg0rk")
+
+[node name="Livro2" type="Sprite2D" parent="." unique_id=164463841]
+position = Vector2(-1339, 778.00006)
+rotation = 1.5707964
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_1xx42")
+
+[node name="Lapis" type="Sprite2D" parent="." unique_id=1324609758]
+position = Vector2(-936, 745)
+rotation = 0.34906584
+scale = Vector2(0.30714267, 0.30714267)
+texture = ExtResource("12_tg0rk")
+
+[node name="CaixaPizza2" type="Sprite2D" parent="." unique_id=2019300485]
+position = Vector2(1879, 691)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1mdc")
+
+[node name="CaixaPizza3" type="Sprite2D" parent="." unique_id=216785413]
+position = Vector2(2573.3823, 445.42645)
+rotation = 0.02617994
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1mdc")
+
+[node name="CaixaPizza4" type="Sprite2D" parent="." unique_id=1009965299]
+position = Vector2(2961.3823, 204.42644)
+rotation = 0.05235988
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1mdc")
+
+[node name="CaixaPizza5" type="Sprite2D" parent="." unique_id=1248495917]
+position = Vector2(3303.3826, -35.57356)
+rotation = 0.07853982
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1mdc")
+
+[node name="StaticBody2D58" parent="." unique_id=2040306453 instance=ExtResource("13_qt64w")]
+position = Vector2(1187, -551)
+
+[node name="StaticBody2D59" parent="." unique_id=1429023711 instance=ExtResource("13_qt64w")]
+position = Vector2(1224, -551)
+
+[node name="StaticBody2D60" parent="." unique_id=2146920848 instance=ExtResource("13_qt64w")]
+position = Vector2(1261, -551)
+
+[node name="StaticBody2D61" parent="." unique_id=948815292 instance=ExtResource("13_qt64w")]
+position = Vector2(1298, -551)
+
+[node name="StaticBody2D62" parent="." unique_id=705230734 instance=ExtResource("13_qt64w")]
+position = Vector2(1557, -551)
+
+[node name="StaticBody2D63" parent="." unique_id=145203545 instance=ExtResource("13_qt64w")]
+position = Vector2(1594, -551)
+
+[node name="StaticBody2D64" parent="." unique_id=1593886879 instance=ExtResource("13_qt64w")]
+position = Vector2(1631, -551)
+
+[node name="StaticBody2D65" parent="." unique_id=2040460225 instance=ExtResource("13_qt64w")]
+position = Vector2(1668, -551)
+
+[node name="StaticBody2D66" parent="." unique_id=2112045353 instance=ExtResource("13_qt64w")]
+position = Vector2(1335, -551)
+
+[node name="StaticBody2D67" parent="." unique_id=107779648 instance=ExtResource("13_qt64w")]
+position = Vector2(1372, -551)
+
+[node name="StaticBody2D68" parent="." unique_id=1109644229 instance=ExtResource("13_qt64w")]
+position = Vector2(1409, -551)
+
+[node name="StaticBody2D69" parent="." unique_id=428770559 instance=ExtResource("13_qt64w")]
+position = Vector2(1446, -551)
+
+[node name="StaticBody2D70" parent="." unique_id=1713647662 instance=ExtResource("13_qt64w")]
+position = Vector2(1483, -551)
+
+[node name="StaticBody2D71" parent="." unique_id=1592433601 instance=ExtResource("13_qt64w")]
+position = Vector2(1520, -551)
+
+[node name="StaticBody2D72" parent="." unique_id=1306122463 instance=ExtResource("13_qt64w")]
+position = Vector2(1705, -551)
+
+[node name="StaticBody2D73" parent="." unique_id=1582535009 instance=ExtResource("13_qt64w")]
+position = Vector2(1742, -551)
+
+[node name="StaticBody2D74" parent="." unique_id=1126957993 instance=ExtResource("13_qt64w")]
+position = Vector2(1779, -551)
+
+[node name="StaticBody2D75" parent="." unique_id=1080024889 instance=ExtResource("13_qt64w")]
+position = Vector2(1798, -551)
+scale = Vector2(0.2, 1)
+
+[node name="estante" type="Node2D" parent="." unique_id=1242273831]
+position = Vector2(1484, -513)
+
+[node name="EstanteDireitaPintada" type="Sprite2D" parent="estante" unique_id=607798405]
+scale = Vector2(0.15140279, 0.15140279)
+texture = ExtResource("14_ow7lw")
+
+[node name="EstanteEsquerdaPintada" type="Sprite2D" parent="estante" unique_id=169797400]
+z_index = 1
+scale = Vector2(0.151, 0.151)
+texture = ExtResource("15_c5pqr")
+
+[node name="EstanteMeioPintada" type="Sprite2D" parent="estante" unique_id=1148195231]
+scale = Vector2(0.151, 0.151)
+texture = ExtResource("16_0rvgw")
+
+[node name="estanteColisao" type="StaticBody2D" parent="estante" unique_id=1377588551]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estante/estanteColisao" unique_id=2057033436]
+z_index = 1
+shape = SubResource("RectangleShape2D_3frly")
+
+[node name="StaticBody2D76" parent="." unique_id=1186741858 instance=ExtResource("13_qt64w")]
+position = Vector2(551, -551)
+
+[node name="StaticBody2D77" parent="." unique_id=1944850313 instance=ExtResource("13_qt64w")]
+position = Vector2(588, -551)
+
+[node name="StaticBody2D78" parent="." unique_id=321587142 instance=ExtResource("13_qt64w")]
+position = Vector2(625, -551)
+
+[node name="StaticBody2D79" parent="." unique_id=1630612305 instance=ExtResource("13_qt64w")]
+position = Vector2(662, -551)
+
+[node name="StaticBody2D80" parent="." unique_id=768487814 instance=ExtResource("13_qt64w")]
+position = Vector2(921, -551)
+
+[node name="StaticBody2D81" parent="." unique_id=1322607880 instance=ExtResource("13_qt64w")]
+position = Vector2(958, -551)
+
+[node name="StaticBody2D82" parent="." unique_id=622574194 instance=ExtResource("13_qt64w")]
+position = Vector2(995, -551)
+
+[node name="StaticBody2D83" parent="." unique_id=1784557351 instance=ExtResource("13_qt64w")]
+position = Vector2(1032, -551)
+
+[node name="StaticBody2D84" parent="." unique_id=912149438 instance=ExtResource("13_qt64w")]
+position = Vector2(699, -551)
+
+[node name="StaticBody2D85" parent="." unique_id=86390647 instance=ExtResource("13_qt64w")]
+position = Vector2(736, -551)
+
+[node name="StaticBody2D86" parent="." unique_id=677211195 instance=ExtResource("13_qt64w")]
+position = Vector2(773, -551)
+
+[node name="StaticBody2D87" parent="." unique_id=98433574 instance=ExtResource("13_qt64w")]
+position = Vector2(810, -551)
+
+[node name="StaticBody2D88" parent="." unique_id=1026934711 instance=ExtResource("13_qt64w")]
+position = Vector2(847, -551)
+
+[node name="StaticBody2D89" parent="." unique_id=1433735698 instance=ExtResource("13_qt64w")]
+position = Vector2(884, -551)
+
+[node name="StaticBody2D90" parent="." unique_id=463870611 instance=ExtResource("13_qt64w")]
+position = Vector2(1069, -551)
+
+[node name="StaticBody2D91" parent="." unique_id=309127336 instance=ExtResource("13_qt64w")]
+position = Vector2(1106, -551)
+
+[node name="StaticBody2D92" parent="." unique_id=958991695 instance=ExtResource("13_qt64w")]
+position = Vector2(1143, -551)
+
+[node name="StaticBody2D93" parent="." unique_id=1643726186 instance=ExtResource("13_qt64w")]
+position = Vector2(1162, -551)
+scale = Vector2(0.2, 1)
+
+[node name="estante2" type="Node2D" parent="." unique_id=1760143721]
+position = Vector2(848, -513)
+
+[node name="EstanteDireitaPintada" type="Sprite2D" parent="estante2" unique_id=2010855805]
+scale = Vector2(0.15140279, 0.15140279)
+texture = ExtResource("14_ow7lw")
+
+[node name="EstanteEsquerdaPintada" type="Sprite2D" parent="estante2" unique_id=1223895375]
+z_index = 1
+scale = Vector2(0.151, 0.151)
+texture = ExtResource("15_c5pqr")
+
+[node name="EstanteMeioPintada" type="Sprite2D" parent="estante2" unique_id=1802134899]
+scale = Vector2(0.151, 0.151)
+texture = ExtResource("16_0rvgw")
+
+[node name="estanteColisao" type="StaticBody2D" parent="estante2" unique_id=607329960]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estante2/estanteColisao" unique_id=382113909]
+z_index = 1
+shape = SubResource("RectangleShape2D_3frly")
+
+[node name="coisas_boss" type="Node2D" parent="." unique_id=1857290757]
+
+[node name="FundoDoBoss" type="Sprite2D" parent="coisas_boss" unique_id=1226388170]
+z_index = -1
+position = Vector2(0, -2)
+texture = ExtResource("1_0hmc4")
+
+[node name="FundoDoBoss2" type="Sprite2D" parent="coisas_boss" unique_id=702031412]
+z_index = -1
+position = Vector2(2.0000005, 998)
+rotation = 3.1413872
+texture = ExtResource("1_0hmc4")
+
+[node name="Parallax2D" type="Parallax2D" parent="coisas_boss" unique_id=445125730]
+scroll_scale = Vector2(0.6, 0.6)
+scroll_offset = Vector2(0, 386)
+
+[node name="Mesinnha" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=1641499444]
+z_index = -1
+position = Vector2(4, 459)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_rdjyr")
+
+[node name="Bossta" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=1108958959]
+position = Vector2(3, 38)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("17_fe36s")
+
+[node name="Teclado" type="Sprite2D" parent="." unique_id=991562705]
+position = Vector2(2, 797)
+scale = Vector2(0.67366946, 0.67366946)
+texture = ExtResource("20_rdjyr")
+
+[node name="TecladoS" type="Sprite2D" parent="." unique_id=2090283028]
+position = Vector2(1088, 470)
+texture = ExtResource("21_3frly")
+
+[node name="TecladoN" type="Sprite2D" parent="." unique_id=1010816340]
+position = Vector2(-1146, -88)
+texture = ExtResource("22_dubgk")
+
+[node name="TecladoA" type="Sprite2D" parent="." unique_id=1965052923]
+position = Vector2(-1849, 753)
+texture = ExtResource("23_gsla3")
+
+[node name="TecladoE" type="Sprite2D" parent="." unique_id=958653042]
+position = Vector2(-562, 512)
+texture = ExtResource("24_210py")
+
+[node name="TecladoH" type="Sprite2D" parent="." unique_id=752446830]
+position = Vector2(451, 752)
+texture = ExtResource("25_2sa4w")
+
+[connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
+[connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]

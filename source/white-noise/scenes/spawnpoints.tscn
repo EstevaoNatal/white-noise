@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bm3bqwulbyeil" path="res://scripts/spawnpoints.gd" id="1_7h5m8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb5ul"]
+size = Vector2(88.2, 20)
 
 [node name="spawnpoint_test" type="Marker2D" unique_id=1315256099]
 script = ExtResource("1_7h5m8")
@@ -10,6 +11,8 @@ script = ExtResource("1_7h5m8")
 [node name="Area2D" type="Area2D" parent="." unique_id=705752807]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1829442700]
+position = Vector2(7.6293945e-06, 0)
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_eb5ul")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
