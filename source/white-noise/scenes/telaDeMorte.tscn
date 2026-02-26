@@ -2,12 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="1_wbmbq"]
 [ext_resource type="Texture2D" uid="uid://d2vkhpgvquimr" path="res://images/deathscreenPlaceholder.png" id="2_n2ym4"]
+[ext_resource type="Texture2D" uid="uid://bu068y86xlj6w" path="res://images/fundo/210 Sem Título(1).png" id="3_n2ym4"]
 
 [node name="telaDeMorte" type="Sprite2D" unique_id=1860939011]
 texture = ExtResource("1_wbmbq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=332053107]
+z_index = 3
 
 [node name="DeathscreenPlaceholder" type="Sprite2D" parent="." unique_id=901372678]
+visible = false
 position = Vector2(-1, -7)
 texture = ExtResource("2_n2ym4")
+
+[node name="210SemTítulo(1)" type="Sprite2D" parent="." unique_id=1073518311]
+position = Vector2(0.9000015, 46)
+scale = Vector2(0.65575826, 0.6)
+texture = ExtResource("3_n2ym4")

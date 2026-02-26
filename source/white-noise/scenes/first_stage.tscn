@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://dulhc81pbax88" path="res://images/objetos/livro 2 (espiral).png" id="26_5p8p6"]
 [ext_resource type="PackedScene" uid="uid://ce4laia03af1t" path="res://scenes/next_level_check.tscn" id="27_exr4a"]
 [ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="28_347x0"]
+[ext_resource type="Texture2D" uid="uid://chvd8ndyta0re" path="res://images/objetos/cadeira_propria2.jpg" id="31_1me6s"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_gdk56"]
 points = PackedVector2Array(112, -82, 346, -134, 576, -168, 862, -182, 1072, -172, 1336, -104, 1400, -16, 2, -4)
@@ -56,7 +57,7 @@ size = Vector2(635, 50)
 size = Vector2(1216, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_347x0"]
-size = Vector2(667, 2154)
+size = Vector2(823.5, 2154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1me6s"]
 size = Vector2(86.4375, 86.43799)
@@ -164,8 +165,11 @@ shape = SubResource("RectangleShape2D_gdk56")
 unique_name_in_owner = true
 position = Vector2(-1, 66)
 
-[node name="spawnpoint_test" parent="spawnpoints" unique_id=488415302 instance=ExtResource("12_dinhu")]
-position = Vector2(222, 56)
+[node name="spawnpoint_test" parent="spawnpoints" unique_id=674335259 instance=ExtResource("12_dinhu")]
+position = Vector2(1649, -755)
+
+[node name="spawnpoint_test2" parent="spawnpoints" unique_id=1499233672 instance=ExtResource("12_dinhu")]
+position = Vector2(-400, -1204)
 
 [node name="platforms" type="Node2D" parent="." unique_id=1347431229]
 position = Vector2(-138, 50)
@@ -984,12 +988,6 @@ position = Vector2(-0.19989014, -1123)
 position = Vector2(-13, 5)
 shape = SubResource("RectangleShape2D_nmynh")
 
-[node name="DocumentoImportante" type="Sprite2D" parent="quadro" unique_id=2002870916]
-position = Vector2(-12.863614, -851.5397)
-rotation = 1.5707964
-scale = Vector2(0.54720604, 1.1856345)
-texture = ExtResource("9_ebhel")
-
 [node name="Porta" type="Node2D" parent="." unique_id=1952036714]
 position = Vector2(-1750, -194)
 scale = Vector2(2, 2)
@@ -1052,7 +1050,7 @@ position = Vector2(-2420, -1153)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_level_check" unique_id=1769638297]
 z_index = 1
-position = Vector2(207, 1061)
+position = Vector2(285.25, 1061)
 shape = SubResource("RectangleShape2D_347x0")
 
 [node name="killzone" parent="." unique_id=233359857 instance=ExtResource("28_347x0")]
@@ -1070,6 +1068,21 @@ script = ExtResource("25_31ak0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DocumentoImportante/Area2D" unique_id=1511104912]
 position = Vector2(-0.00025558472, 41.159016)
 shape = SubResource("RectangleShape2D_1me6s")
+
+[node name="CadeiraPropria2" type="Sprite2D" parent="." unique_id=1967029248]
+position = Vector2(-316, -851)
+scale = Vector2(0.4177778, 0.4177778)
+texture = ExtResource("31_1me6s")
+
+[node name="CadeiraPropria3" type="Sprite2D" parent="." unique_id=1655673024]
+position = Vector2(-13, -851)
+scale = Vector2(0.4177778, 0.4177778)
+texture = ExtResource("31_1me6s")
+
+[node name="CadeiraPropria4" type="Sprite2D" parent="." unique_id=192324254]
+position = Vector2(290, -851)
+scale = Vector2(0.4177778, 0.4177778)
+texture = ExtResource("31_1me6s")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
