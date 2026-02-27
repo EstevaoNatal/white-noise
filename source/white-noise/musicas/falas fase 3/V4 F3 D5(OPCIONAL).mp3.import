@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfplu5jpj6f68"
+path="res://.godot/imported/V4 F3 D5(OPCIONAL).mp3-da0ff27bebf1efb965dff17bd6f15daa.mp3str"
+
+[deps]
+
+source_file="res://musicas/falas fase 3/V4 F3 D5(OPCIONAL).mp3"
+dest_files=["res://.godot/imported/V4 F3 D5(OPCIONAL).mp3-da0ff27bebf1efb965dff17bd6f15daa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

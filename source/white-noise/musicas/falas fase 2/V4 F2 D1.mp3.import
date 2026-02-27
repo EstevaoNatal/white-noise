@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c46vfdhg80hhs"
+path="res://.godot/imported/V4 F2 D1.mp3-c1e77302a846d4561a00dcd0b3b8ebd6.mp3str"
+
+[deps]
+
+source_file="res://musicas/falas fase 2/V4 F2 D1.mp3"
+dest_files=["res://.godot/imported/V4 F2 D1.mp3-c1e77302a846d4561a00dcd0b3b8ebd6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
