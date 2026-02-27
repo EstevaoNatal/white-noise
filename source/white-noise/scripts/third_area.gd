@@ -23,6 +23,8 @@ extends Node2D
 @onready var label_a: Label = $coisas_boss/Parallax2D/LabelA
 @onready var ui_cargas: Node2D = %UI_Cargas
 @onready var musica_terceira_fase: AudioStreamPlayer2D = $"Player_manager/Camera2D/musica terceira fase"
+@onready var animation_player: AnimationPlayer = $livros/AnimationPlayer
+@onready var animacao_copo: AnimationPlayer = $CopoCafePintadao/animacaoCopo
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,8 +39,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	if label_h.text == " H " && label_h.text == " S " && label_h.text == " E " && label_h.text == " N " && label_h.text == " A ":
+		animation_player.play("cair")
 
 func _on_reload_timer_timeout() -> void:
 	player.can_ink = true 
@@ -79,3 +81,11 @@ func _on_tecla_h_body_entered(body: CharacterBody2D) -> void:
 
 func _on_musica_terceira_fase_finished() -> void:
 	musica_terceira_fase.playing = true
+
+
+func _on_killzone_body_entered(body: CharacterBody2D) -> void:
+	Globais.fase_atual = 4
+
+
+func _on_copo_cafe_body_entered(body: CharacterBody2D) -> void:
+	animacao_copo.play("derrubar")

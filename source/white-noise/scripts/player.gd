@@ -16,6 +16,7 @@ var ultima_carimbada:int = -1
 var cor_escrita="semCor"
 var contador1=0
 var carimbar_doc=false
+@onready var direcao:int=0
 
 #define a cor
 enum tinta {preto, azul, verde}
@@ -26,6 +27,7 @@ enum tinta {preto, azul, verde}
 @onready var can_ink=false
 @onready var ui_cargas: Node2D = %UI_Cargas
 
+
 func _on_ready() -> void:
 	mudou_tinta.emit(cor_atual as tinta)
 	diminuir_cargas = false
@@ -35,10 +37,16 @@ func _physics_process(delta: float) -> void:
 	#pega direção		
 	var direction := Input.get_axis("lookLeft", "lookRight")
 	if direction==-1:
+		direcao=-1
 		animated_sprite_2d.flip_h=true
 	elif direction==1:
+		direcao=1
 		animated_sprite_2d.flip_h=false
 	
+	#if not is_on_floor(): #verificar amanhã com o povo
+		#if Input.is_action_pressed("lookLeft") or Input.is_action_pressed("lookRight"):
+			#velocity.x+=direcao*SPEED/16
+			#print(velocity.x)
 	if carimbar_doc and contador1==0:
 		animated_sprite_2d.play("carimbando")
 		timer.start()
@@ -89,22 +97,22 @@ func _physics_process(delta: float) -> void:
 			#cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
 			diminuir_cargas=false
 	
-	if Input.is_action_just_pressed("trocar_cor_tras") && cor_atual>0:
-		print("q")
-		cor_atual= cor_atual - 2 as tinta
-		mudou_tinta.emit(cor_atual as tinta)
-	if Input.is_action_just_pressed("trocar_cor_frente") && cor_atual<tinta.size()-1:
-		print("e")
-		cor_atual= cor_atual + 2 as tinta
-		mudou_tinta.emit(cor_atual as tinta)
+	if Input.is_action_just_pressed("trocar_cor_tras"):
+		if cor_atual==0:
+			print("q")
+			cor_atual= cor_atual + 2 as tinta
+			mudou_tinta.emit(cor_atual as tinta)
+		elif cor_atual==2:
+			cor_atual= cor_atual - 2 as tinta
+			mudou_tinta.emit(cor_atual as tinta)
 	
 	if not dead:	#input pras várias cores
 		if cor_atual==tinta.preto:
-			mov_cor_preta(delta,direction)
+			mov_cor_preta(delta,direcao)
 		if cor_atual==tinta.azul:
-			mov_cor_azul(delta,direction)
+			mov_cor_azul(delta,direcao)
 		if cor_atual==tinta.verde:
-			mov_cor_verde(delta,direction)
+			mov_cor_verde(delta,direcao)
 	move_and_slide()
 
 func pulo_carimbo(delta_jump,direction_jump):

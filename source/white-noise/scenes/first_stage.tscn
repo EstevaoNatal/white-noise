@@ -58,6 +58,9 @@ size = Vector2(635, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmynh"]
 size = Vector2(1216, 76)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opw5j"]
+size = Vector2(150, 852)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_347x0"]
 size = Vector2(823.5, 2154)
 
@@ -143,6 +146,7 @@ text = "preto"
 [node name="musica primeira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1841112230]
 stream = ExtResource("6_1me6s")
 autoplay = true
+bus = &"Musica"
 
 [node name="porta abrindo" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1316845121]
 stream = ExtResource("7_opw5j")
@@ -1040,6 +1044,16 @@ position = Vector2(105, 532)
 position = Vector2(2010, -920)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("26_5p8p6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="livros/Livro2(espiral)" unique_id=352890534]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="livros/Livro2(espiral)/StaticBody2D" unique_id=893495087]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_opw5j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="livros/Livro2(espiral)/StaticBody2D" unique_id=1552916018]
+position = Vector2(-1050, -1090)
+shape = SubResource("RectangleShape2D_opw5j")
 
 [node name="Livro2(espiral)2" type="Sprite2D" parent="livros" unique_id=182629874]
 position = Vector2(1486, -1467)

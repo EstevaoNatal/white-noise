@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c88thjn4gu1eq" path="res://images/UI/btn_iniciar.png" id="5_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://dia5pgt027wii" path="res://images/UI/btn_opcoes.png" id="6_g3eks"]
 [ext_resource type="Texture2D" uid="uid://xxld4wb7ueqe" path="res://images/UI/btn_sair.png" id="7_v86rl"]
+[ext_resource type="Texture2D" uid="uid://ctwve2fe0hx4d" path="res://images/UI/_btn_tutorial.png" id="8_13sgg"]
 
 [node name="Menu" type="Node2D" unique_id=1758809669]
 script = ExtResource("1_vjb58")
@@ -108,6 +109,17 @@ position = Vector2(-363.81198, 116.875)
 scale = Vector2(0.6883585, 0.68589747)
 texture = ExtResource("7_v86rl")
 
+[node name="tutorial2" type="TextureButton" parent="." unique_id=144329138]
+offset_left = -323.0
+offset_top = -236.0
+offset_right = -191.0
+offset_bottom = -185.0
+
+[node name="BtnTutorial" type="Sprite2D" parent="tutorial2" unique_id=704553156]
+position = Vector2(61.999985, 23.000008)
+scale = Vector2(0.24057591, 0.24057591)
+texture = ExtResource("8_13sgg")
+
 [connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Opções" to="." method="_on_opções_pressed"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
@@ -115,3 +127,4 @@ texture = ExtResource("7_v86rl")
 [connection signal="pressed" from="comecar" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="menuOpcoes" to="." method="_on_menu_opcoes_pressed"]
 [connection signal="pressed" from="sairJogo" to="." method="_on_sair_jogo_pressed"]
+[connection signal="pressed" from="tutorial2" to="." method="_on_tutorial_2_pressed"]
