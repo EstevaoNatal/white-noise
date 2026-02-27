@@ -7,7 +7,11 @@ extends Node2D
 @onready var current_spawnpoint = Globais.player_spawn
 @onready var camera_2d: Camera2D = $Player_manager/Camera2D
 @onready var first_area: Node2D = $"."
+@onready var musica_primeira_fase: AudioStreamPlayer2D = $"Player_manager/Camera2D/musica primeira fase"
 signal load_second_level
+@onready var porta: Node2D = $Porta
+@onready var porta_abrindo: AudioStreamPlayer2D = $"Player_manager/Camera2D/porta abrindo"
+@onready var carimbando: AudioStreamPlayer2D = $Player_manager/Camera2D/carimbando
 
 var jogador = preload("res://scenes/player.tscn")
 
@@ -34,3 +38,12 @@ func _on_reload_timer_timeout() -> void:
 
 func _on_killzone_body_entered(body: CharacterBody2D) -> void:
 	Globais.fase_atual=4
+
+
+func _on_musica_primeira_fase_finished() -> void:
+	musica_primeira_fase.playing = true
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	porta.visible = true
+	porta_abrindo.play()
+	carimbando.play()

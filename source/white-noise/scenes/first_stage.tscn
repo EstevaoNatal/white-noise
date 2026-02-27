@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://2kfbrrv0er40" path="res://scenes/platform.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="4_p57ef"]
 [ext_resource type="Texture2D" uid="uid://5g53jopi4t8s" path="res://images/fase_tutorial_escrivaninha.png" id="5_u5sy4"]
-[ext_resource type="AudioStream" uid="uid://h2r5jmcke1k7" path="res://musicas/MSC_T001.mp3" id="7_5mhlt"]
+[ext_resource type="AudioStream" uid="uid://bvkqnj5agdkps" path="res://musicas/MSC_T003.mp3" id="6_1me6s"]
+[ext_resource type="AudioStream" uid="uid://dlrep7otido3f" path="res://musicas/porta.mp3" id="7_opw5j"]
+[ext_resource type="AudioStream" uid="uid://0qlxlgthi6tm" path="res://musicas/carimbano.mp3" id="8_ms560"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="8_rsbve"]
 [ext_resource type="Texture2D" uid="uid://c5wchi3jt0cx8" path="res://images/objetos/documentoImportante.png" id="9_ebhel"]
 [ext_resource type="Texture2D" uid="uid://dbak2qfs6xw0u" path="res://images/objetos/Mesa (pintado) LADO DIREITO PEQUENO!!.png" id="11_5b4cl"]
@@ -60,7 +62,7 @@ size = Vector2(1216, 76)
 size = Vector2(823.5, 2154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1me6s"]
-size = Vector2(86.4375, 86.43799)
+size = Vector2(429.22705, 446.86658)
 
 [node name="first_area" type="Node2D" unique_id=971450599]
 script = ExtResource("1_lbhrr")
@@ -139,7 +141,16 @@ theme_override_font_sizes/font_size = 32
 text = "preto"
 
 [node name="musica primeira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1841112230]
-stream = ExtResource("7_5mhlt")
+stream = ExtResource("6_1me6s")
+autoplay = true
+
+[node name="porta abrindo" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1316845121]
+stream = ExtResource("7_opw5j")
+volume_db = 7.776
+
+[node name="carimbando" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1146370357]
+stream = ExtResource("8_ms560")
+volume_db = 6.804
 
 [node name="Player" parent="Player_manager" unique_id=1572016301 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
@@ -989,6 +1000,7 @@ position = Vector2(-13, 5)
 shape = SubResource("RectangleShape2D_nmynh")
 
 [node name="Porta" type="Node2D" parent="." unique_id=1952036714]
+visible = false
 position = Vector2(-1750, -194)
 scale = Vector2(2, 2)
 
@@ -1066,7 +1078,7 @@ script = ExtResource("25_31ak0")
 [node name="Area2D" type="Area2D" parent="DocumentoImportante" unique_id=2082215527]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DocumentoImportante/Area2D" unique_id=1511104912]
-position = Vector2(-0.00025558472, 41.159016)
+position = Vector2(2.9399414, -17.639648)
 shape = SubResource("RectangleShape2D_1me6s")
 
 [node name="CadeiraPropria2" type="Sprite2D" parent="." unique_id=1967029248]
@@ -1086,7 +1098,9 @@ texture = ExtResource("31_1me6s")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
+[connection signal="finished" from="Player_manager/Camera2D/musica primeira fase" to="." method="_on_musica_primeira_fase_finished"]
 [connection signal="cargas" from="platforms" to="." method="_on_platforms_cargas"]
 [connection signal="property_list_changed" from="platforms" to="platforms" method="_on_property_list_changed"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="DocumentoImportante/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="DocumentoImportante/Area2D" to="DocumentoImportante" method="_on_area_2d_body_entered"]
