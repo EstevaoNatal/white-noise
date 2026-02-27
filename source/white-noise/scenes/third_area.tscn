@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="4_1alko"]
 [ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="5_su4ky"]
 [ext_resource type="AudioStream" uid="uid://cpn2j6i56ngoe" path="res://musicas/MSC_T004.mp3" id="6_11hfo"]
+[ext_resource type="AudioStream" uid="uid://c0sjoi5y33wf" path="res://musicas/livro caindo.mp3" id="7_rdnat"]
 [ext_resource type="Texture2D" uid="uid://bm2m7bsjwp36v" path="res://images/objetos/3fase/guarana 100 fruta pintada.png" id="7_su4ky"]
 [ext_resource type="Texture2D" uid="uid://e1m0xbculcjr" path="res://images/objetos/3fase/janela quebrada.png" id="8_m7fns"]
 [ext_resource type="Texture2D" uid="uid://rjcwbshloytl" path="res://images/objetos/3fase/mesa 2 pintada lado direito.png" id="9_1xx42"]
@@ -20,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bq8ix7644qvtp" path="res://images/objetos/estante meio pintada.png" id="16_0rvgw"]
 [ext_resource type="Texture2D" uid="uid://0s0p1pjctvhk" path="res://images/objetos/3fase/bossta.png" id="17_fe36s"]
 [ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="19_2sa4w"]
+[ext_resource type="Texture2D" uid="uid://dulhc81pbax88" path="res://images/objetos/livro 2 (espiral).png" id="19_cupbk"]
 [ext_resource type="Texture2D" uid="uid://dhj1pgs2xk12n" path="res://images/boss/mesinnha.png" id="19_rdjyr"]
 [ext_resource type="PackedScene" uid="uid://da6rdi543wwmi" path="res://scenes/spawnpoints.tscn" id="20_283ac"]
 [ext_resource type="Texture2D" uid="uid://bsjlpbs13r3yw" path="res://images/objetos/3fase/teclado.png" id="20_rdjyr"]
@@ -57,6 +59,9 @@ size = Vector2(635, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2sa4w"]
 size = Vector2(2390, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3yde"]
+size = Vector2(600, 3448)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhsog"]
 size = Vector2(1049.4761, 29.297241)
@@ -773,8 +778,11 @@ text = "preto"
 
 [node name="musica terceira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=884948048]
 stream = ExtResource("6_11hfo")
-volume_db = -7.776
 autoplay = true
+bus = &"Musica"
+
+[node name="livrosCaindo" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=454423654]
+stream = ExtResource("7_rdnat")
 
 [node name="Guarana100FrutaPintada" type="Sprite2D" parent="." unique_id=946798473]
 position = Vector2(910.0001, 420)
@@ -1081,6 +1089,36 @@ position = Vector2(3751.2263, -888.5233)
 rotation = 0.116937056
 scale = Vector2(0.67366946, 0.67366946)
 
+[node name="Livro2(espiral)" type="Sprite2D" parent="." unique_id=1446677655]
+position = Vector2(-1853, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_cupbk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Livro2(espiral)" unique_id=1372712991]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Livro2(espiral)/StaticBody2D" unique_id=2022347051]
+position = Vector2(-2, 2)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_h3yde")
+
+[node name="Livro2(espiral)2" type="Sprite2D" parent="." unique_id=935753966]
+position = Vector2(-1853, -427)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_cupbk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Livro2(espiral)2" unique_id=516738320]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Livro2(espiral)2/StaticBody2D" unique_id=1023779188]
+position = Vector2(-2, 2)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_h3yde")
+
+[node name="killzone" parent="." unique_id=233359857 instance=ExtResource("19_2sa4w")]
+position = Vector2(-2314, 993)
+scale = Vector2(0.67366946, 0.67366946)
+
 [node name="Teclado" type="Sprite2D" parent="." unique_id=991562705]
 position = Vector2(2, 797)
 scale = Vector2(0.67366946, 0.67366946)
@@ -1104,9 +1142,6 @@ position = Vector2(-2.968815, -83.12682)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teclado/deteccao aparecer teclas" unique_id=524848878]
 position = Vector2(15.586284, -5.1954346)
 shape = SubResource("RectangleShape2D_tu6qe")
-
-[node name="killzone" parent="Teclado" unique_id=233359857 instance=ExtResource("19_2sa4w")]
-position = Vector2(-3437.8877, 290.9439)
 
 [node name="teclas" type="Node2D" parent="." unique_id=1287298873]
 
@@ -2097,7 +2132,7 @@ position = Vector2(449, -362)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("32_w6l43")
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="CopoCafePintadao" unique_id=2073965780]
+[node name="animacaoCopo" type="AnimationPlayer" parent="CopoCafePintadao" unique_id=2073965780]
 libraries/ = SubResource("AnimationLibrary_tu6qe")
 
 [node name="copo_cafe" type="Area2D" parent="CopoCafePintadao" unique_id=612689982]
@@ -2110,9 +2145,11 @@ shape = SubResource("RectangleShape2D_28a3b")
 [connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
 [connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
 [connection signal="finished" from="Player_manager/Camera2D/musica terceira fase" to="." method="_on_musica_terceira_fase_finished"]
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="Teclado/deteccao aparecer teclas" to="." method="_on_deteccao_aparecer_teclas_body_entered"]
 [connection signal="body_entered" from="teclas/TecladoS/teclaS" to="." method="_on_tecla_s_body_entered"]
 [connection signal="body_entered" from="teclas/TecladoN/teclaN" to="." method="_on_tecla_n_body_entered"]
 [connection signal="body_entered" from="teclas/TecladoA/teclaA" to="." method="_on_tecla_a_body_entered"]
 [connection signal="body_entered" from="teclas/TecladoE/teclaE" to="." method="_on_tecla_e_body_entered"]
 [connection signal="body_entered" from="teclas/TecladoH/teclaH" to="." method="_on_tecla_h_body_entered"]
+[connection signal="body_entered" from="CopoCafePintadao/copo_cafe" to="." method="_on_copo_cafe_body_entered"]

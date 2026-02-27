@@ -14,6 +14,7 @@ signal fechar
 var contador=0
 var contador1=0
 var pode_carimbar=true
+@onready var tutorial_2: TextureButton = $tutorial2
 
 
 func _ready() -> void:
@@ -63,3 +64,8 @@ func _on_menu_opcoes_pressed() -> void:
 
 func _on_sair_jogo_pressed() -> void:
 	fechar.emit() # Replace with function body.
+
+
+func _on_tutorial_2_pressed() -> void:
+	opcoes.emit()
+	Globais.ligar_tutorial=true

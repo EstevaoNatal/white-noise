@@ -20,6 +20,7 @@ script = ExtResource("1_lfb0o")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1045734630]
 
 [node name="tutorial" type="Node2D" parent="." unique_id=1705039021]
+visible = false
 
 [node name="SpriteIndoPularSemCor" type="Sprite2D" parent="tutorial" unique_id=718400475]
 position = Vector2(359, -211.00002)
@@ -60,43 +61,79 @@ scale = Vector2(0.63993704, 0.63993704)
 texture = ExtResource("8_x5k57")
 
 [node name="Label" type="Label" parent="tutorial" unique_id=1509803050]
-offset_left = 13.0
-offset_top = -271.0
-offset_right = 294.0
-offset_bottom = 272.0
-text = "Aperte, segure e solte C ou Espaço
-para pular.
+visible = false
+offset_left = -106.0
+offset_top = -288.0
+offset_right = 289.0
+offset_bottom = 307.0
+theme_override_font_sizes/font_size = 16
+text = "Aperte, segure e solte C ou Espaço para pular.
 
-Segurando o botão por no máximo
-4 segundos, você pode carregar seu
-pulo e alcançar lugares mais altos.
+Segurando o botão por no máximo 4 segundos, 
+você pode carregar seu pulo e alcançar lugares
+mais altos.
 
-O Carimbô possui 2 tipos de tinta:
-Preto e Verde.
+O Carimbô possui 2 tipos de tinta: Preto e 
+Verde.
 
-A tinta Preta não possui nenhum
-efeito especial, apenas carimbando
-os locais que você passar.
+A tinta Preta não possui nenhum efeito especial,
+apenas pintando os locais que você passar.
 
-A tinta Verde funciona como uma 
-\"cama elástica\", permitindo que
-você pule mais alto ao pular nela
-novamente.
+A tinta Verde funciona como uma \"cama elástica\",
+permitindo que você pule mais alto ao pular nela
+novamente. Você pode cancelar este pulo 
+segurando a Seta Direcional para Baixo do Teclado.
 
 Troque as tintas do Carimbô usando
-as teclas Q e E."
+as tecla Q.
+Embora você tenha 2 tipos de tinta, elas compar-
+tilham a mesma quantidade de cargas, então pres-
+te atenção em quantas ainda possui por meio das
+esferas de tinta no ícone do Carimbô"
 
 [node name="Label2" type="Label" parent="tutorial" unique_id=1237677448]
-offset_left = -436.0
-offset_top = -281.0
-offset_right = -215.0
-offset_bottom = -232.0
+offset_left = -437.0
+offset_top = -296.0
+offset_right = -209.0
+offset_bottom = -221.0
 text = "Durante as fases, você pode 
-fechar o jogo através do Esc."
+acessar esse menu novamen-
+te através do Esc."
 
 [node name="Seta" type="Sprite2D" parent="tutorial" unique_id=1697991124]
 position = Vector2(425, 232)
 texture = ExtResource("3_asubg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tutorial" unique_id=107877307]
+offset_left = -105.0
+offset_top = -258.0
+offset_right = 298.0
+offset_bottom = 261.0
+text = "Aperte, segure e solte C ou Espaço para pular.
+
+Segurando o botão por no máximo 4 segundos, 
+você pode carregar seu pulo e alcançar lugares
+mais altos.
+
+
+O Carimbô possui 2 tipos de tinta: Preto e 
+Verde.
+
+A tinta Preta não possui nenhum efeito especial,
+apenas pintando os locais que você passar.
+
+A tinta Verde funciona como uma \"cama elástica\",
+permitindo que você pule mais alto ao pular nela
+novamente. Você pode cancelar este pulo segurando a Seta Direcional para Baixo do Teclado.
+
+
+
+Troque as tintas do Carimbô usando
+as tecla Q.
+Embora você tenha 2 tipos de tinta, elas compar-
+tilham a mesma quantidade de cargas, então pres-
+te atenção em quantas ainda possui por meio das
+esferas de tinta no ícone do Carimbô"
 
 [node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=731595890]
 z_index = -25
@@ -118,10 +155,10 @@ offset_bottom = -216.0
 theme_override_font_sizes/font_size = 32
 
 [node name="Voltar" type="TextureButton" parent="MesaMenuPapel" unique_id=959993983]
-offset_left = -222.0
-offset_top = 244.0
-offset_right = 292.0
-offset_bottom = 436.0
+offset_left = -312.0
+offset_top = 414.0
+offset_right = -92.47916
+offset_bottom = 496.0
 
 [node name="tutorial2" type="TextureButton" parent="MesaMenuPapel" unique_id=194161029]
 offset_left = -212.0
@@ -134,7 +171,8 @@ position = Vector2(16, -312)
 texture = ExtResource("2_bn5tc")
 
 [node name="BtnVoltar" type="Sprite2D" parent="MesaMenuPapel" unique_id=1354101984]
-position = Vector2(28, 324)
+position = Vector2(-202.50781, 455.5)
+scale = Vector2(0.4322917, 0.4322917)
 texture = ExtResource("12_x5k57")
 
 [node name="BtnTutorial" type="Sprite2D" parent="MesaMenuPapel" unique_id=1792033084]
@@ -142,6 +180,33 @@ position = Vector2(28, 14)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("13_7mch3")
 
+[node name="ControlesVolume" type="Node2D" parent="." unique_id=869911777]
+
+[node name="MasterVol" type="HSlider" parent="ControlesVolume" unique_id=1981612490]
+offset_left = 134.0
+offset_top = -134.0
+offset_right = 358.0
+offset_bottom = -118.0
+max_value = 1.0
+step = 0.01
+
+[node name="MusicaVol" type="HSlider" parent="ControlesVolume" unique_id=1952875677]
+offset_left = 134.0
+offset_top = 33.0
+offset_right = 358.0
+offset_bottom = 49.0
+max_value = 1.0
+step = 0.01
+
+[node name="Volume" type="TextureButton" parent="." unique_id=436795954]
+offset_left = -437.0
+offset_top = 137.0
+offset_right = -194.0
+offset_bottom = 211.0
+
 [connection signal="pressed" from="MesaMenuPapel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MesaMenuPapel/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="MesaMenuPapel/tutorial2" to="." method="_on_tutorial_2_pressed"]
+[connection signal="value_changed" from="ControlesVolume/MasterVol" to="." method="_on_master_vol_value_changed"]
+[connection signal="value_changed" from="ControlesVolume/MusicaVol" to="." method="_on_musica_vol_value_changed"]
+[connection signal="pressed" from="Volume" to="." method="_on_volume_pressed"]

@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="2_bliab"]
 [ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="3_oti4k"]
 [ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="5_wbhli"]
-[ext_resource type="Script" path="res://scripts/ui.gd" id="6_308xq"]
+[ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="6_308xq"]
 [ext_resource type="AudioStream" uid="uid://bwq6jqp0uka1t" path="res://musicas/MSC_T002.mp3" id="6_o1isc"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="7_2anwn"]
 [ext_resource type="AudioStream" uid="uid://oa7j28pgn68n" path="res://musicas/empilhadeira.mp3" id="7_oq31a"]
-[ext_resource type="AudioStream" uid="uid://c0sjoi5y33wf" path="res://musicas/livro caindo.mp3" id="8_khym2"]
+[ext_resource type="AudioStream" uid="uid://d0w05iti1a07v" path="res://musicas/vrido.mp3" id="8_khym2"]
 [ext_resource type="Texture2D" uid="uid://bqkl2qwxkw23p" path="res://images/objetos/placa esquerda.png" id="9_8tmsi"]
 [ext_resource type="Texture2D" uid="uid://cwkutgnydrs3y" path="res://images/objetos/placa direita.png" id="10_ymk8a"]
 [ext_resource type="Texture2D" uid="uid://b3h6jj274x8uf" path="res://images/objetos/esteira pintada esquerda.png" id="11_ntj7i"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c45i7e31m3sxj" path="res://images/objetos/caixa/caixa_completa.png" id="19_o6u0q"]
 [ext_resource type="PackedScene" uid="uid://da6rdi543wwmi" path="res://scenes/spawnpoints.tscn" id="20_suy0s"]
 [ext_resource type="Texture2D" uid="uid://dl40b7tb43hb3" path="res://images/fundo/fundo(1).png" id="21_ymu86"]
-[ext_resource type="Script" path="res://scripts/caixas_levantadas.gd" id="22_41arw"]
+[ext_resource type="Script" uid="uid://8l0idibxko44" path="res://scripts/caixas_levantadas.gd" id="22_41arw"]
 [ext_resource type="PackedScene" uid="uid://ce4laia03af1t" path="res://scenes/next_level_check.tscn" id="23_bqudx"]
 [ext_resource type="Texture2D" uid="uid://d17id5k5vlux7" path="res://images/objetos/maquinas2.png" id="24_o1isc"]
 [ext_resource type="Texture2D" uid="uid://bu4g4v7runq74" path="res://images/fundo/fundofase2.png" id="25_oq31a"]
@@ -878,6 +878,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oq31a"]
 size = Vector2(690, 875)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khym2"]
+size = Vector2(615, 140)
+
 [node name="second_area" type="Node2D" unique_id=1786779047]
 script = ExtResource("1_308xq")
 
@@ -942,12 +945,13 @@ text = "preto"
 [node name="musica segunda fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=796908898]
 stream = ExtResource("6_o1isc")
 autoplay = true
+bus = &"Musica"
 
 [node name="empilhadeira" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=36346816]
 stream = ExtResource("7_oq31a")
 volume_db = 4.561
 
-[node name="LivroCaindo" type="AudioStreamPlayer" parent="Player_manager/Camera2D" unique_id=1403209148]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1845008410]
 stream = ExtResource("8_khym2")
 
 [node name="killzone" parent="." unique_id=233359857 instance=ExtResource("5_wbhli")]
@@ -995,6 +999,24 @@ texture = ExtResource("10_ymk8a")
 [node name="StaticBody2D" type="StaticBody2D" parent="pLaca2" unique_id=1955955878]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pLaca2/StaticBody2D" unique_id=258167168]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_160l7")
+
+[node name="pLaca3" type="Node2D" parent="." unique_id=1549706458]
+z_index = -4
+position = Vector2(3542, -2029)
+
+[node name="PlacaEsquerda" type="Sprite2D" parent="pLaca3" unique_id=1701233013]
+position = Vector2(29, -22)
+texture = ExtResource("9_8tmsi")
+
+[node name="PlacaDireita" type="Sprite2D" parent="pLaca3" unique_id=604323466]
+position = Vector2(-1, -22)
+texture = ExtResource("10_ymk8a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pLaca3" unique_id=2093141881]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pLaca3/StaticBody2D" unique_id=156379364]
 position = Vector2(2, -4)
 shape = SubResource("RectangleShape2D_160l7")
 
@@ -1406,7 +1428,7 @@ position = Vector2(-1489.8577, -507.40015)
 position = Vector2(-1526.8577, -507.40015)
 
 [node name="StaticBody2D135" parent="plataformas/plataformas_esteira" unique_id=693115417 instance=ExtResource("14_213rp")]
-position = Vector2(-1563.8577, -507.40015)
+position = Vector2(-1559, -507)
 
 [node name="StaticBody2D136" parent="plataformas/plataformas_esteira" unique_id=1885120975 instance=ExtResource("14_213rp")]
 position = Vector2(-1008.85767, -507.40015)
@@ -1427,7 +1449,7 @@ position = Vector2(-1156.8577, -507.40015)
 position = Vector2(-1193.8577, -507.40015)
 
 [node name="StaticBody2D143" parent="plataformas/plataformas_esteira" unique_id=1587624951 instance=ExtResource("14_213rp")]
-position = Vector2(-786.85767, -507.40015)
+position = Vector2(-791, -507)
 
 [node name="StaticBody2D144" parent="plataformas/plataformas_esteira" unique_id=1174286903 instance=ExtResource("14_213rp")]
 position = Vector2(-823.85767, -507.40015)
@@ -1878,6 +1900,13 @@ position = Vector2(2586, -2487)
 scale = Vector2(5.8666663, 5)
 texture = ExtResource("25_oq31a")
 
+[node name="baixar_empilhadeira" type="Area2D" parent="." unique_id=1272649126]
+position = Vector2(3513, -1757)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="baixar_empilhadeira" unique_id=146560930]
+position = Vector2(276, 4)
+shape = SubResource("RectangleShape2D_khym2")
+
 [connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
 [connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
 [connection signal="finished" from="Player_manager/Camera2D/musica segunda fase" to="." method="_on_musica_segunda_fase_finished"]
@@ -1885,3 +1914,4 @@ texture = ExtResource("25_oq31a")
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
 [connection signal="body_entered" from="caixas_levantadas/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="caixas_levantadas/Area2D" to="caixas_levantadas" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="baixar_empilhadeira" to="." method="_on_baixar_empilhadeira_body_entered"]
