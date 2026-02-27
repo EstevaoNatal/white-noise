@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://dyq7hroewwrfk"]
+
+[ext_resource type="Script" uid="uid://rifor51m8rkt" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://cy3imydvgb40q" path="res://images/objetos/mão(1).png" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://tfyovw7ibxsn" path="res://images/fundo/mesa menu pintada.png" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://coitnd6fq8dqy" path="res://images/UI/mesa_menu_papel.png" id="4_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://c88thjn4gu1eq" path="res://images/UI/btn_iniciar.png" id="5_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://dia5pgt027wii" path="res://images/UI/btn_opcoes.png" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://xxld4wb7ueqe" path="res://images/UI/btn_sair.png" id="7_v86rl"]
+[ext_resource type="Texture2D" uid="uid://ctwve2fe0hx4d" path="res://images/UI/_btn_tutorial.png" id="8_13sgg"]
+
+[node name="Menu" type="Node2D" unique_id=1758809669]
+script = ExtResource("1_vjb58")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=907294059]
+
+[node name="Iniciar" type="Button" parent="." unique_id=1803858864]
+visible = false
+offset_left = -150.0
+offset_top = -273.0
+offset_right = 24.0
+offset_bottom = -220.0
+theme_override_font_sizes/font_size = 32
+text = "Iniciar"
+
+[node name="Opções" type="Button" parent="." unique_id=1664012644]
+visible = false
+offset_left = -150.0
+offset_top = -193.0
+offset_right = 24.0
+offset_bottom = -140.0
+theme_override_font_sizes/font_size = 32
+text = "Opções"
+
+[node name="Sair" type="Button" parent="." unique_id=2019090536]
+visible = false
+offset_left = -146.0
+offset_top = -101.0
+offset_right = 28.0
+offset_bottom = -48.0
+theme_override_font_sizes/font_size = 32
+text = "Sair"
+
+[node name="Mão" type="Sprite2D" parent="." unique_id=2062043783]
+z_index = 5
+position = Vector2(447, 328)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_con2f")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1653063445]
+position = Vector2(232, 193)
+
+[node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=551369896]
+z_index = -2
+position = Vector2(0, -1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_mhnvy")
+
+[node name="tempoMouse" type="Timer" parent="." unique_id=1458012140]
+wait_time = 0.33
+
+[node name="MesaMenuPapel" type="Sprite2D" parent="." unique_id=597288659]
+z_index = -2
+position = Vector2(-374, -15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_mhnvy")
+
+[node name="comecar" type="TextureButton" parent="." unique_id=1714028834]
+offset_left = -496.0
+offset_top = -189.0
+offset_right = -250.0
+offset_bottom = -98.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="menuOpcoes" type="TextureButton" parent="." unique_id=998394117]
+offset_left = -488.0
+offset_top = -57.0
+offset_right = -256.0
+offset_bottom = 38.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="sairJogo" type="TextureButton" parent="." unique_id=945228722]
+offset_left = -463.0
+offset_top = 72.0
+offset_right = -266.0
+offset_bottom = 162.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnIniciar" type="Sprite2D" parent="." unique_id=170373790]
+z_index = -1
+position = Vector2(-372.37637, -143.5)
+scale = Vector2(0.44708014, 0.4341463)
+texture = ExtResource("5_4ytvr")
+
+[node name="BtnOpcoes" type="Sprite2D" parent="." unique_id=489227395]
+z_index = -1
+position = Vector2(-371.59875, -9.247013)
+scale = Vector2(0.57085806, 0.5708581)
+texture = ExtResource("6_g3eks")
+
+[node name="BtnSair" type="Sprite2D" parent="." unique_id=1663151897]
+z_index = -1
+position = Vector2(-363.81198, 116.875)
+scale = Vector2(0.6883585, 0.68589747)
+texture = ExtResource("7_v86rl")
+
+[node name="tutorial2" type="TextureButton" parent="." unique_id=144329138]
+offset_left = -323.0
+offset_top = -236.0
+offset_right = -191.0
+offset_bottom = -185.0
+
+[node name="BtnTutorial" type="Sprite2D" parent="tutorial2" unique_id=704553156]
+position = Vector2(61.999985, 23.000008)
+scale = Vector2(0.24057591, 0.24057591)
+texture = ExtResource("8_13sgg")
+
+[connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Opções" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="timeout" from="tempoMouse" to="." method="_on_tempo_mouse_timeout"]
+[connection signal="pressed" from="comecar" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="menuOpcoes" to="." method="_on_menu_opcoes_pressed"]
+[connection signal="pressed" from="sairJogo" to="." method="_on_sair_jogo_pressed"]
+[connection signal="pressed" from="tutorial2" to="." method="_on_tutorial_2_pressed"]

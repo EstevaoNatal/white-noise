@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bqwcartjmy6vb"]
+
+[ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="1_spoww"]
+
+[node name="Node2D" type="Node2D" unique_id=2087413905]
+
+[node name="Preto" type="Sprite2D" parent="." unique_id=1097805726]
+position = Vector2(576, 324)
+texture = ExtResource("1_spoww")
+
+[node name="Label" type="Label" parent="." unique_id=901905010]
+offset_left = 166.0
+offset_top = 104.0
+offset_right = 994.0
+offset_bottom = 233.0

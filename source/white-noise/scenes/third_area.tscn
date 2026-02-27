@@ -1,0 +1,2156 @@
+[gd_scene format=3 uid="uid://b1yx2d8kscqyj"]
+
+[ext_resource type="Texture2D" uid="uid://cfis5m2s87myg" path="res://images/fundo/fundo do boss.png" id="1_0hmc4"]
+[ext_resource type="Script" uid="uid://b85jcgo4pwb32" path="res://scripts/third_area.gd" id="1_210py"]
+[ext_resource type="Texture2D" uid="uid://cj4jse17klbjy" path="res://images/fundo/fundo_do_boss_so_a_cor.png" id="2_hqu5r"]
+[ext_resource type="Script" uid="uid://c1mnb2f4kbvnc" path="res://scripts/player_manager.gd" id="3_ylqgb"]
+[ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="4_1alko"]
+[ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="5_su4ky"]
+[ext_resource type="AudioStream" uid="uid://cpn2j6i56ngoe" path="res://musicas/MSC_T004.mp3" id="6_11hfo"]
+[ext_resource type="AudioStream" uid="uid://c0sjoi5y33wf" path="res://musicas/livro caindo.mp3" id="7_rdnat"]
+[ext_resource type="Texture2D" uid="uid://bm2m7bsjwp36v" path="res://images/objetos/3fase/guarana 100 fruta pintada.png" id="7_su4ky"]
+[ext_resource type="Texture2D" uid="uid://e1m0xbculcjr" path="res://images/objetos/3fase/janela quebrada.png" id="8_m7fns"]
+[ext_resource type="Texture2D" uid="uid://rjcwbshloytl" path="res://images/objetos/3fase/mesa 2 pintada lado direito.png" id="9_1xx42"]
+[ext_resource type="Texture2D" uid="uid://ymq6egav2tc4" path="res://images/objetos/3fase/mesa 2 pintada lado esquerdo.png" id="10_tg0rk"]
+[ext_resource type="Texture2D" uid="uid://d2a43qknri42m" path="res://images/objetos/livro/livro_2.png" id="11_1xx42"]
+[ext_resource type="Texture2D" uid="uid://cnffrby55i146" path="res://images/boss/caixa_pizza_2.png" id="12_f1mdc"]
+[ext_resource type="Texture2D" uid="uid://7cp80hwqvqvi" path="res://images/boss/lapis.png" id="12_tg0rk"]
+[ext_resource type="PackedScene" uid="uid://2kfbrrv0er40" path="res://scenes/platform.tscn" id="13_qt64w"]
+[ext_resource type="Texture2D" uid="uid://gg3ndijepbxl" path="res://images/objetos/estante direita pintada.png" id="14_ow7lw"]
+[ext_resource type="Texture2D" uid="uid://cnwke2er5l0w8" path="res://images/objetos/estante esquerda pintada.png" id="15_c5pqr"]
+[ext_resource type="Texture2D" uid="uid://bq8ix7644qvtp" path="res://images/objetos/estante meio pintada.png" id="16_0rvgw"]
+[ext_resource type="Texture2D" uid="uid://0s0p1pjctvhk" path="res://images/objetos/3fase/bossta.png" id="17_fe36s"]
+[ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="19_2sa4w"]
+[ext_resource type="Texture2D" uid="uid://dulhc81pbax88" path="res://images/objetos/livro 2 (espiral).png" id="19_cupbk"]
+[ext_resource type="Texture2D" uid="uid://dhj1pgs2xk12n" path="res://images/boss/mesinnha.png" id="19_rdjyr"]
+[ext_resource type="PackedScene" uid="uid://da6rdi543wwmi" path="res://scenes/spawnpoints.tscn" id="20_283ac"]
+[ext_resource type="Texture2D" uid="uid://bsjlpbs13r3yw" path="res://images/objetos/3fase/teclado.png" id="20_rdjyr"]
+[ext_resource type="Texture2D" uid="uid://36q4njofexhp" path="res://images/objetos/3fase/teclado S.png" id="21_3frly"]
+[ext_resource type="Texture2D" uid="uid://dl4yv8txw31bu" path="res://images/objetos/3fase/teclado N.png" id="22_dubgk"]
+[ext_resource type="Texture2D" uid="uid://rtmur228motx" path="res://images/objetos/3fase/teclado A.png" id="23_gsla3"]
+[ext_resource type="Texture2D" uid="uid://bsip8ndikh7mx" path="res://images/objetos/3fase/teclado E.png" id="24_210py"]
+[ext_resource type="Texture2D" uid="uid://c7015karh5qc0" path="res://images/objetos/3fase/teclado H.png" id="25_2sa4w"]
+[ext_resource type="Texture2D" uid="uid://dfflxrcoce282" path="res://images/objetos/livro/livro_3.png" id="26_gsla3"]
+[ext_resource type="Texture2D" uid="uid://6l68drqkfxpq" path="res://images/objetos/livro/livro_4.png" id="27_210py"]
+[ext_resource type="Texture2D" uid="uid://bqc88lw47j2of" path="res://images/objetos/livro/livro_5.png" id="28_2sa4w"]
+[ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="31_guxn5"]
+[ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="32_283ac"]
+[ext_resource type="Texture2D" uid="uid://o1rrxtcu1jn8" path="res://images/objetos/copo_cafe pintadao.png" id="32_w6l43"]
+[ext_resource type="Texture2D" uid="uid://tw033jddv013" path="res://images/objetos/copo caindo.png" id="35_11hfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_210py"]
+size = Vector2(502.41577, 790.005)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cupbk"]
+size = Vector2(970, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a5y5"]
+size = Vector2(85.714355, 859.99994)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdnat"]
+size = Vector2(1525.4368, 84.56287)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tu6qe"]
+a = Vector2(680.65234, -43.316162)
+b = Vector2(840.32947, -4.42041)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3frly"]
+size = Vector2(635, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sa4w"]
+size = Vector2(2390, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3yde"]
+size = Vector2(600, 3448)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhsog"]
+size = Vector2(1049.4761, 29.297241)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guxn5"]
+size = Vector2(890.64453, 37.11023)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu6qe"]
+size = Vector2(1055.4138, 123.20581)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh5xv"]
+size = Vector2(73, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_283ac"]
+size = Vector2(2690, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6l43"]
+size = Vector2(3897.1438, 418.5714)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11hfo"]
+size = Vector2(147.14746, 864.6726)
+
+[sub_resource type="Animation" id="Animation_guxn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Livro3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1790.9763, -202.25189)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Livro3/StaticBody2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Livro3/StaticBody2D/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.04638672, 6.262329)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Livro4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2014.9763, -176.25208)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Livro4/StaticBody2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Livro4/StaticBody2D/CollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.04638672, 6.262329)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Livro5:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2198.9763, -178.25208)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Livro5/StaticBody2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Livro5/StaticBody2D/CollisionShape2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.04638672, 6.262329)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Livro3:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.9424778]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Livro3/StaticBody2D:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Livro3/StaticBody2D/CollisionShape2D:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.9604645e-08]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Livro4:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.9424778]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Livro4/StaticBody2D:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Livro4/StaticBody2D/CollisionShape2D:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.9604645e-08]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Livro5:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.9424778]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Livro5/StaticBody2D:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Livro5/StaticBody2D/CollisionShape2D:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.9604645e-08]
+}
+
+[sub_resource type="Animation" id="Animation_283ac"]
+resource_name = "cair"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Livro3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1776.9763, -210.25189), Vector2(1744.9763, 6.748108), Vector2(1875.9692, 298.2339)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Livro3/StaticBody2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(8.042891, 1.6562419), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Livro3/StaticBody2D/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Livro4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2000.9763, -184.25208), Vector2(1968.9763, 32.747925), Vector2(2099.9692, 324.2337)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Livro4/StaticBody2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(8.042634, 1.6561903), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Livro4/StaticBody2D/CollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Livro5:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2184.9763, -186.25208), Vector2(2152.9763, 30.747925), Vector2(2283.9692, 322.2337)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Livro5/StaticBody2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(6.3598795, 2.7742102), Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Livro5/StaticBody2D/CollisionShape2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Livro3:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.9424778, -1.7697638, -2.2654374]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Livro3/StaticBody2D:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.3718288, 1.3718288]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Livro3/StaticBody2D/CollisionShape2D:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [5.9604645e-08, -1.3840461, -1.3840461]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Livro4:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.9424778, -1.7697638, -2.2654374]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Livro4/StaticBody2D:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.3718288, 1.3718288]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Livro4/StaticBody2D/CollisionShape2D:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [5.9604645e-08, -1.3735741, -1.3735741]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Livro5:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.9424778, -1.7697638, -2.2654374]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Livro5/StaticBody2D:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.3718288, 1.3718288]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Livro5/StaticBody2D/CollisionShape2D:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5.9604645e-08, -1.3788102]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6l43"]
+_data = {
+&"RESET": SubResource("Animation_guxn5"),
+&"cair": SubResource("Animation_283ac")
+}
+
+[sub_resource type="Animation" id="Animation_cupbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(449, -362)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("copo_cafe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("copo_cafe/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.333374, -20)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("copo_cafe/CollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("copo_cafe:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("32_w6l43")]
+}
+
+[sub_resource type="Animation" id="Animation_rdnat"]
+resource_name = "derrubar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(449, -362), Vector2(433, -285)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("copo_cafe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("copo_cafe/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.333374, -20), Vector2(3.333374, -20)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("copo_cafe/CollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("copo_cafe:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.16580628]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("32_w6l43"), ExtResource("35_11hfo"), ExtResource("35_11hfo")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tu6qe"]
+_data = {
+&"RESET": SubResource("Animation_cupbk"),
+&"derrubar": SubResource("Animation_rdnat")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28a3b"]
+size = Vector2(683.3334, 693.3333)
+
+[node name="third_area" type="Node2D" unique_id=208438374]
+script = ExtResource("1_210py")
+
+[node name="reload timer" type="Timer" parent="." unique_id=2050421660]
+one_shot = true
+autostart = true
+
+[node name="fundo" type="Parallax2D" parent="." unique_id=414677184]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(1200, 1000)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="fundo" unique_id=1170069478]
+z_index = -26
+position = Vector2(-601, -499)
+texture = ExtResource("2_hqu5r")
+
+[node name="Player_manager" type="Node" parent="." unique_id=1906303]
+script = ExtResource("3_ylqgb")
+
+[node name="Player" parent="Player_manager" unique_id=1572016301 instance=ExtResource("4_1alko")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-1401, -231)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player_manager" unique_id=1584845572]
+z_index = 21
+position = Vector2(-1413, 175)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
+[node name="Control" type="Control" parent="Player_manager/Camera2D" unique_id=414308036]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -8.0
+offset_right = 39.0
+offset_bottom = 32.0
+script = ExtResource("5_su4ky")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cargas de tinta" type="Label" parent="Player_manager/Camera2D" unique_id=1678146409]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+offset_left = -453.0
+offset_top = -248.0
+offset_right = -353.0
+offset_bottom = -203.0
+theme_override_font_sizes/font_size = 32
+text = "cargas"
+
+[node name="Tinta escolhida" type="Label" parent="Player_manager/Camera2D" unique_id=969989489]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+offset_left = -463.0
+offset_top = 211.0
+offset_right = -379.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 32
+text = "preto"
+
+[node name="musica terceira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=884948048]
+stream = ExtResource("6_11hfo")
+autoplay = true
+bus = &"Musica"
+
+[node name="livrosCaindo" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=454423654]
+stream = ExtResource("7_rdnat")
+
+[node name="Guarana100FrutaPintada" type="Sprite2D" parent="." unique_id=946798473]
+position = Vector2(910.0001, 420)
+scale = Vector2(0.2886057, 0.28860572)
+texture = ExtResource("7_su4ky")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Guarana100FrutaPintada" unique_id=113156255]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guarana100FrutaPintada/StaticBody2D" unique_id=541052343]
+position = Vector2(-8.662598, 55.439087)
+shape = SubResource("RectangleShape2D_210py")
+
+[node name="JanelaQuebrada" type="Sprite2D" parent="." unique_id=1943795439]
+position = Vector2(-1386, -177)
+texture = ExtResource("8_m7fns")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="JanelaQuebrada" unique_id=1215431489]
+position = Vector2(-40, 409)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JanelaQuebrada/StaticBody2D" unique_id=1984413882]
+position = Vector2(17, 0)
+shape = SubResource("RectangleShape2D_cupbk")
+
+[node name="Livrodeitado" type="Sprite2D" parent="." unique_id=164463841]
+position = Vector2(-1339, 778.00006)
+rotation = 1.5707964
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_1xx42")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Livrodeitado" unique_id=155503293]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Livrodeitado/StaticBody2D" unique_id=159854980]
+position = Vector2(-32.857178, 2.8569336)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_6a5y5")
+
+[node name="Lapis" type="Sprite2D" parent="." unique_id=1324609758]
+position = Vector2(-936, 745)
+rotation = 0.34906584
+scale = Vector2(0.30714267, 0.30714267)
+texture = ExtResource("12_tg0rk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Lapis" unique_id=1011083420]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lapis/StaticBody2D" unique_id=1080719935]
+position = Vector2(-81.77356, -1.699707)
+shape = SubResource("RectangleShape2D_rdnat")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lapis/StaticBody2D" unique_id=1167032106]
+shape = SubResource("SegmentShape2D_tu6qe")
+
+[node name="estante" type="Node2D" parent="." unique_id=1242273831]
+position = Vector2(1294, -229.25195)
+
+[node name="EstanteDireitaPintada" type="Sprite2D" parent="estante" unique_id=607798405]
+scale = Vector2(0.15140279, 0.15140279)
+texture = ExtResource("14_ow7lw")
+
+[node name="EstanteEsquerdaPintada" type="Sprite2D" parent="estante" unique_id=169797400]
+z_index = 1
+scale = Vector2(0.151, 0.151)
+texture = ExtResource("15_c5pqr")
+
+[node name="EstanteMeioPintada" type="Sprite2D" parent="estante" unique_id=1148195231]
+scale = Vector2(0.151, 0.151)
+texture = ExtResource("16_0rvgw")
+
+[node name="estanteColisao" type="StaticBody2D" parent="estante" unique_id=1377588551]
+position = Vector2(0, -7)
+
+[node name="StaticBody2D58" parent="estante/estanteColisao" unique_id=2040306453 instance=ExtResource("13_qt64w")]
+position = Vector2(-297, -31)
+
+[node name="StaticBody2D59" parent="estante/estanteColisao" unique_id=1429023711 instance=ExtResource("13_qt64w")]
+position = Vector2(-260, -31)
+
+[node name="StaticBody2D60" parent="estante/estanteColisao" unique_id=2146920848 instance=ExtResource("13_qt64w")]
+position = Vector2(-223, -31)
+
+[node name="StaticBody2D61" parent="estante/estanteColisao" unique_id=948815292 instance=ExtResource("13_qt64w")]
+position = Vector2(-186, -31)
+
+[node name="StaticBody2D62" parent="estante/estanteColisao" unique_id=705230734 instance=ExtResource("13_qt64w")]
+position = Vector2(73, -31)
+
+[node name="StaticBody2D63" parent="estante/estanteColisao" unique_id=145203545 instance=ExtResource("13_qt64w")]
+position = Vector2(110, -31)
+
+[node name="StaticBody2D64" parent="estante/estanteColisao" unique_id=1593886879 instance=ExtResource("13_qt64w")]
+position = Vector2(147, -31)
+
+[node name="StaticBody2D65" parent="estante/estanteColisao" unique_id=2040460225 instance=ExtResource("13_qt64w")]
+position = Vector2(184, -31)
+
+[node name="StaticBody2D66" parent="estante/estanteColisao" unique_id=2112045353 instance=ExtResource("13_qt64w")]
+position = Vector2(-149, -31)
+
+[node name="StaticBody2D67" parent="estante/estanteColisao" unique_id=107779648 instance=ExtResource("13_qt64w")]
+position = Vector2(-112, -31)
+
+[node name="StaticBody2D68" parent="estante/estanteColisao" unique_id=1109644229 instance=ExtResource("13_qt64w")]
+position = Vector2(-75, -31)
+
+[node name="StaticBody2D69" parent="estante/estanteColisao" unique_id=428770559 instance=ExtResource("13_qt64w")]
+position = Vector2(-38, -31)
+
+[node name="StaticBody2D70" parent="estante/estanteColisao" unique_id=1713647662 instance=ExtResource("13_qt64w")]
+position = Vector2(-1, -31)
+
+[node name="StaticBody2D71" parent="estante/estanteColisao" unique_id=1592433601 instance=ExtResource("13_qt64w")]
+position = Vector2(36, -31)
+
+[node name="StaticBody2D72" parent="estante/estanteColisao" unique_id=1306122463 instance=ExtResource("13_qt64w")]
+position = Vector2(221, -31)
+
+[node name="StaticBody2D73" parent="estante/estanteColisao" unique_id=1582535009 instance=ExtResource("13_qt64w")]
+position = Vector2(258, -31)
+
+[node name="StaticBody2D74" parent="estante/estanteColisao" unique_id=1126957993 instance=ExtResource("13_qt64w")]
+position = Vector2(295, -31)
+
+[node name="StaticBody2D75" parent="estante/estanteColisao" unique_id=1080024889 instance=ExtResource("13_qt64w")]
+position = Vector2(314, -31)
+scale = Vector2(0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estante/estanteColisao" unique_id=2057033436]
+z_index = 1
+shape = SubResource("RectangleShape2D_3frly")
+
+[node name="estante2" type="Node2D" parent="." unique_id=1760143721]
+position = Vector2(658, -229.25195)
+
+[node name="EstanteDireitaPintada" type="Sprite2D" parent="estante2" unique_id=2010855805]
+scale = Vector2(0.15140279, 0.15140279)
+texture = ExtResource("14_ow7lw")
+
+[node name="EstanteEsquerdaPintada" type="Sprite2D" parent="estante2" unique_id=1223895375]
+z_index = 1
+scale = Vector2(0.151, 0.151)
+texture = ExtResource("15_c5pqr")
+
+[node name="EstanteMeioPintada" type="Sprite2D" parent="estante2" unique_id=1802134899]
+scale = Vector2(0.151, 0.151)
+texture = ExtResource("16_0rvgw")
+
+[node name="estanteColisao" type="StaticBody2D" parent="estante2" unique_id=607329960]
+position = Vector2(0, -7)
+
+[node name="StaticBody2D76" parent="estante2/estanteColisao" unique_id=1186741858 instance=ExtResource("13_qt64w")]
+position = Vector2(-297, -31)
+
+[node name="StaticBody2D77" parent="estante2/estanteColisao" unique_id=1944850313 instance=ExtResource("13_qt64w")]
+position = Vector2(-260, -31)
+
+[node name="StaticBody2D78" parent="estante2/estanteColisao" unique_id=321587142 instance=ExtResource("13_qt64w")]
+position = Vector2(-223, -31)
+
+[node name="StaticBody2D79" parent="estante2/estanteColisao" unique_id=1630612305 instance=ExtResource("13_qt64w")]
+position = Vector2(-186, -31)
+
+[node name="StaticBody2D80" parent="estante2/estanteColisao" unique_id=768487814 instance=ExtResource("13_qt64w")]
+position = Vector2(73, -31)
+
+[node name="StaticBody2D81" parent="estante2/estanteColisao" unique_id=1322607880 instance=ExtResource("13_qt64w")]
+position = Vector2(110, -31)
+
+[node name="StaticBody2D82" parent="estante2/estanteColisao" unique_id=622574194 instance=ExtResource("13_qt64w")]
+position = Vector2(147, -31)
+
+[node name="StaticBody2D83" parent="estante2/estanteColisao" unique_id=1784557351 instance=ExtResource("13_qt64w")]
+position = Vector2(184, -31)
+
+[node name="StaticBody2D84" parent="estante2/estanteColisao" unique_id=912149438 instance=ExtResource("13_qt64w")]
+position = Vector2(-149, -31)
+
+[node name="StaticBody2D85" parent="estante2/estanteColisao" unique_id=86390647 instance=ExtResource("13_qt64w")]
+position = Vector2(-112, -31)
+
+[node name="StaticBody2D86" parent="estante2/estanteColisao" unique_id=677211195 instance=ExtResource("13_qt64w")]
+position = Vector2(-75, -31)
+
+[node name="StaticBody2D87" parent="estante2/estanteColisao" unique_id=98433574 instance=ExtResource("13_qt64w")]
+position = Vector2(-38, -31)
+
+[node name="StaticBody2D88" parent="estante2/estanteColisao" unique_id=1026934711 instance=ExtResource("13_qt64w")]
+position = Vector2(-1, -31)
+
+[node name="StaticBody2D89" parent="estante2/estanteColisao" unique_id=1433735698 instance=ExtResource("13_qt64w")]
+position = Vector2(36, -31)
+
+[node name="StaticBody2D90" parent="estante2/estanteColisao" unique_id=463870611 instance=ExtResource("13_qt64w")]
+position = Vector2(221, -31)
+
+[node name="StaticBody2D91" parent="estante2/estanteColisao" unique_id=309127336 instance=ExtResource("13_qt64w")]
+position = Vector2(258, -31)
+
+[node name="StaticBody2D92" parent="estante2/estanteColisao" unique_id=958991695 instance=ExtResource("13_qt64w")]
+position = Vector2(295, -31)
+
+[node name="StaticBody2D93" parent="estante2/estanteColisao" unique_id=1643726186 instance=ExtResource("13_qt64w")]
+position = Vector2(314, -31)
+scale = Vector2(0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estante2/estanteColisao" unique_id=382113909]
+z_index = 1
+shape = SubResource("RectangleShape2D_3frly")
+
+[node name="coisas_boss" type="Node2D" parent="." unique_id=1857290757]
+
+[node name="Mesinnha" type="Sprite2D" parent="coisas_boss" unique_id=1641499444]
+z_index = -1
+position = Vector2(4, 845)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_rdjyr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="coisas_boss/Mesinnha" unique_id=1797355840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coisas_boss/Mesinnha/StaticBody2D" unique_id=1825285185]
+position = Vector2(-137, -476)
+shape = SubResource("RectangleShape2D_2sa4w")
+
+[node name="Parallax2D" type="Parallax2D" parent="coisas_boss" unique_id=445125730]
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(0, 386)
+
+[node name="FundoDoBoss" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=1226388170]
+z_index = -12
+position = Vector2(0, -388)
+texture = ExtResource("1_0hmc4")
+
+[node name="Bossta" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=1108958959]
+z_index = -6
+position = Vector2(3, 38)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("17_fe36s")
+
+[node name="LabelS" type="Label" parent="coisas_boss/Parallax2D" unique_id=102463309]
+z_index = -5
+offset_left = -118.0
+offset_top = 54.0
+offset_right = -57.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="LabelE" type="Label" parent="coisas_boss/Parallax2D" unique_id=730839752]
+z_index = -5
+offset_left = -74.0
+offset_top = 54.0
+offset_right = -13.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="LabelN" type="Label" parent="coisas_boss/Parallax2D" unique_id=16103667]
+z_index = -5
+offset_left = -30.0
+offset_top = 54.0
+offset_right = 31.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="LabelH" type="Label" parent="coisas_boss/Parallax2D" unique_id=502063218]
+z_index = -5
+offset_left = 14.0
+offset_top = 54.0
+offset_right = 75.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="LabelA" type="Label" parent="coisas_boss/Parallax2D" unique_id=519444787]
+z_index = -5
+offset_left = 58.0
+offset_top = 54.0
+offset_right = 119.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="FundoDoBoss2" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=702031412]
+z_index = -13
+position = Vector2(2.0000005, 612)
+rotation = 3.1413872
+texture = ExtResource("1_0hmc4")
+
+[node name="origin_spawnpoint" parent="." unique_id=818883201 instance=ExtResource("20_283ac")]
+unique_name_in_owner = true
+position = Vector2(-1413.9999, 176.99998)
+rotation = 1.5707964
+scale = Vector2(0.13473387, 0.13473387)
+
+[node name="spawnpoint_test" parent="." unique_id=1315256099 instance=ExtResource("20_283ac")]
+position = Vector2(-508.00012, 548)
+scale = Vector2(0.67366946, 0.67366946)
+
+[node name="spawnpoint_test2" parent="." unique_id=1144809239 instance=ExtResource("20_283ac")]
+position = Vector2(-512, 785)
+scale = Vector2(0.67366946, 0.67366946)
+
+[node name="spawnpoint_test3" parent="." unique_id=841370640 instance=ExtResource("20_283ac")]
+position = Vector2(3751.2263, -888.5233)
+rotation = 0.116937056
+scale = Vector2(0.67366946, 0.67366946)
+
+[node name="Livro2(espiral)" type="Sprite2D" parent="." unique_id=1446677655]
+position = Vector2(-1853, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("28_2sa4w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Livro2(espiral)" unique_id=1372712991]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Livro2(espiral)/StaticBody2D" unique_id=2022347051]
+position = Vector2(-2, 2)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_h3yde")
+
+[node name="Livro2(espiral)2" type="Sprite2D" parent="." unique_id=935753966]
+position = Vector2(-1712, -11.000092)
+rotation = -0.29670596
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_cupbk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Livro2(espiral)2" unique_id=516738320]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Livro2(espiral)2/StaticBody2D" unique_id=1023779188]
+position = Vector2(-2, 2)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_h3yde")
+
+[node name="killzone" parent="." unique_id=233359857 instance=ExtResource("19_2sa4w")]
+position = Vector2(-2314, 993)
+scale = Vector2(0.67366946, 0.67366946)
+
+[node name="Teclado" type="Sprite2D" parent="." unique_id=991562705]
+position = Vector2(2, 797)
+scale = Vector2(0.67366946, 0.67366946)
+texture = ExtResource("20_rdjyr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Teclado" unique_id=359570956]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teclado/StaticBody2D" unique_id=7555452]
+position = Vector2(8.164241, -4.6485596)
+shape = SubResource("RectangleShape2D_jhsog")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Teclado" unique_id=1631008851]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teclado/StaticBody2D2" unique_id=57861175]
+position = Vector2(11.87526, -39.336792)
+shape = SubResource("RectangleShape2D_guxn5")
+
+[node name="deteccao aparecer teclas" type="Area2D" parent="Teclado" unique_id=1697410868]
+position = Vector2(-2.968815, -83.12682)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teclado/deteccao aparecer teclas" unique_id=524848878]
+position = Vector2(15.586284, -5.1954346)
+shape = SubResource("RectangleShape2D_tu6qe")
+
+[node name="teclas" type="Node2D" parent="." unique_id=1287298873]
+
+[node name="TecladoS" type="Sprite2D" parent="teclas" unique_id=2090283028]
+position = Vector2(1088, 470)
+texture = ExtResource("21_3frly")
+
+[node name="teclaS" type="Area2D" parent="teclas/TecladoS" unique_id=532138953]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teclas/TecladoS/teclaS" unique_id=1017747542]
+position = Vector2(0.5, 14.5)
+shape = SubResource("RectangleShape2D_sh5xv")
+
+[node name="TecladoN" type="Sprite2D" parent="teclas" unique_id=1010816340]
+position = Vector2(-1036, 154)
+texture = ExtResource("22_dubgk")
+
+[node name="teclaN" type="Area2D" parent="teclas/TecladoN" unique_id=589612735]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teclas/TecladoN/teclaN" unique_id=1051604233]
+position = Vector2(0.5, 14.5)
+shape = SubResource("RectangleShape2D_sh5xv")
+
+[node name="TecladoA" type="Sprite2D" parent="teclas" unique_id=1965052923]
+position = Vector2(-1849, 753)
+texture = ExtResource("23_gsla3")
+
+[node name="teclaA" type="Area2D" parent="teclas/TecladoA" unique_id=419012790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teclas/TecladoA/teclaA" unique_id=1482144672]
+position = Vector2(0.5, 14.5)
+shape = SubResource("RectangleShape2D_sh5xv")
+
+[node name="TecladoE" type="Sprite2D" parent="teclas" unique_id=958653042]
+position = Vector2(-562, 512)
+texture = ExtResource("24_210py")
+
+[node name="teclaE" type="Area2D" parent="teclas/TecladoE" unique_id=2043558190]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teclas/TecladoE/teclaE" unique_id=496031189]
+position = Vector2(0.5, 14.5)
+shape = SubResource("RectangleShape2D_sh5xv")
+
+[node name="TecladoH" type="Sprite2D" parent="teclas" unique_id=752446830]
+position = Vector2(1711.9999, -97.000015)
+rotation = 0.07679449
+texture = ExtResource("25_2sa4w")
+
+[node name="teclaH" type="Area2D" parent="teclas/TecladoH" unique_id=857182891]
+rotation = 0.07679449
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teclas/TecladoH/teclaH" unique_id=1080259854]
+position = Vector2(0.5, 14.5)
+rotation = 0.07679449
+shape = SubResource("RectangleShape2D_sh5xv")
+
+[node name="mesa" type="Node2D" parent="." unique_id=216835398]
+
+[node name="Mesa2PintadaLadoDireito" type="Sprite2D" parent="mesa" unique_id=217965144]
+position = Vector2(2344, 949)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_1xx42")
+
+[node name="Mesa2PintadaLadoDireito2" type="Sprite2D" parent="mesa" unique_id=2134182037]
+position = Vector2(-1298.1998, 949)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_1xx42")
+flip_h = true
+
+[node name="Mesa2PintadaLadoEsquerdo" type="Sprite2D" parent="mesa" unique_id=134140483]
+position = Vector2(1268.6003, 948.8)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tg0rk")
+
+[node name="Mesa2PintadaLadoEsquerdo4" type="Sprite2D" parent="mesa" unique_id=788739501]
+position = Vector2(2361.8003, 949)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tg0rk")
+
+[node name="Mesa2PintadaLadoEsquerdo2" type="Sprite2D" parent="mesa" unique_id=696534741]
+position = Vector2(347.60034, 948.8)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tg0rk")
+
+[node name="Mesa2PintadaLadoEsquerdo3" type="Sprite2D" parent="mesa" unique_id=1089275465]
+position = Vector2(-755.1997, 949.00006)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tg0rk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mesa" unique_id=62247226]
+position = Vector2(0, 906)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mesa/StaticBody2D" unique_id=1508538688]
+position = Vector2(-760, -29.5)
+shape = SubResource("RectangleShape2D_283ac")
+
+[node name="pizza" type="Node2D" parent="." unique_id=1540754961]
+
+[node name="CaixaPizza2" type="Sprite2D" parent="pizza" unique_id=2019300485]
+position = Vector2(1879, 691)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1mdc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pizza/CaixaPizza2" unique_id=133740102]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pizza/CaixaPizza2/StaticBody2D" unique_id=1860084528]
+position = Vector2(-2.8571434, 35.71427)
+rotation = 0.017453292
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_w6l43")
+
+[node name="CaixaPizza3" type="Sprite2D" parent="pizza" unique_id=216785413]
+position = Vector2(2573.3823, 445.42645)
+rotation = 0.02617994
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1mdc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pizza/CaixaPizza3" unique_id=1485887497]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pizza/CaixaPizza3/StaticBody2D" unique_id=350872088]
+position = Vector2(-2.8571434, 35.71427)
+rotation = 0.017453292
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_w6l43")
+
+[node name="CaixaPizza4" type="Sprite2D" parent="pizza" unique_id=1009965299]
+position = Vector2(2961.3823, 204.42644)
+rotation = 0.052359883
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1mdc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pizza/CaixaPizza4" unique_id=1588859215]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pizza/CaixaPizza4/StaticBody2D" unique_id=6074969]
+position = Vector2(-6.140292, 29.752941)
+rotation = 0.017453292
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_w6l43")
+
+[node name="CaixaPizza5" type="Sprite2D" parent="pizza" unique_id=1248495917]
+position = Vector2(2749, -1307)
+rotation = 1.6231562
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1mdc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pizza/CaixaPizza5" unique_id=176970715]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pizza/CaixaPizza5/StaticBody2D" unique_id=2032866714]
+position = Vector2(-2.8571434, 35.71427)
+rotation = 0.017453292
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_w6l43")
+
+[node name="livros bloqueando" type="Node2D" parent="." unique_id=1263112896]
+
+[node name="livros" type="Node2D" parent="." unique_id=1036394454]
+
+[node name="Livro3" type="Sprite2D" parent="livros" unique_id=775971126]
+z_index = -5
+position = Vector2(1790.9763, -202.25189)
+rotation = -0.9424778
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("26_gsla3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="livros/Livro3" unique_id=630862664]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="livros/Livro3/StaticBody2D" unique_id=570068892]
+position = Vector2(0.04638672, 6.262329)
+shape = SubResource("RectangleShape2D_11hfo")
+
+[node name="Livro4" type="Sprite2D" parent="livros" unique_id=480309548]
+z_index = -6
+position = Vector2(2014.9763, -176.25208)
+rotation = -0.9424778
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("27_210py")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="livros/Livro4" unique_id=709683833]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="livros/Livro4/StaticBody2D" unique_id=1091581746]
+position = Vector2(0.04638672, 6.262329)
+shape = SubResource("RectangleShape2D_11hfo")
+
+[node name="Livro5" type="Sprite2D" parent="livros" unique_id=864224766]
+z_index = -7
+position = Vector2(2198.9763, -178.25208)
+rotation = -0.9424778
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("28_2sa4w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="livros/Livro5" unique_id=1021404138]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="livros/Livro5/StaticBody2D" unique_id=1395013596]
+position = Vector2(0.04638672, 6.262329)
+shape = SubResource("RectangleShape2D_11hfo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="livros" unique_id=1027659608]
+libraries/ = SubResource("AnimationLibrary_w6l43")
+
+[node name="CopoCafePintadao2" type="Sprite2D" parent="livros" unique_id=1902395474]
+z_index = -1
+position = Vector2(1216, -362)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("32_w6l43")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=669893370]
+layer = 35
+script = ExtResource("31_guxn5")
+
+[node name="Node2D" type="Node2D" parent="UI" unique_id=459870140]
+position = Vector2(-23, 433)
+
+[node name="UI_Cargas" parent="UI" unique_id=322756276 instance=ExtResource("32_283ac")]
+unique_name_in_owner = true
+z_index = 35
+position = Vector2(104, 530)
+
+[node name="plataformas" type="Node" parent="." unique_id=1528615878]
+
+[node name="StaticBody2D76" parent="plataformas" unique_id=814573845 instance=ExtResource("13_qt64w")]
+position = Vector2(-1872, 219)
+
+[node name="StaticBody2D77" parent="plataformas" unique_id=985061471 instance=ExtResource("13_qt64w")]
+position = Vector2(-1835, 219)
+
+[node name="StaticBody2D78" parent="plataformas" unique_id=590612325 instance=ExtResource("13_qt64w")]
+position = Vector2(-1798, 219)
+
+[node name="StaticBody2D79" parent="plataformas" unique_id=90062523 instance=ExtResource("13_qt64w")]
+position = Vector2(-1761, 219)
+
+[node name="StaticBody2D80" parent="plataformas" unique_id=436659393 instance=ExtResource("13_qt64w")]
+position = Vector2(-1502, 219)
+
+[node name="StaticBody2D81" parent="plataformas" unique_id=7061216 instance=ExtResource("13_qt64w")]
+position = Vector2(-1465, 219)
+
+[node name="StaticBody2D82" parent="plataformas" unique_id=1983931415 instance=ExtResource("13_qt64w")]
+position = Vector2(-1428, 219)
+
+[node name="StaticBody2D83" parent="plataformas" unique_id=339923859 instance=ExtResource("13_qt64w")]
+position = Vector2(-1391, 219)
+
+[node name="StaticBody2D84" parent="plataformas" unique_id=1437396709 instance=ExtResource("13_qt64w")]
+position = Vector2(-1724, 219)
+
+[node name="StaticBody2D85" parent="plataformas" unique_id=1360180963 instance=ExtResource("13_qt64w")]
+position = Vector2(-1687, 219)
+
+[node name="StaticBody2D86" parent="plataformas" unique_id=700128225 instance=ExtResource("13_qt64w")]
+position = Vector2(-1650, 219)
+
+[node name="StaticBody2D87" parent="plataformas" unique_id=1853285008 instance=ExtResource("13_qt64w")]
+position = Vector2(-1613, 219)
+
+[node name="StaticBody2D88" parent="plataformas" unique_id=1718136038 instance=ExtResource("13_qt64w")]
+position = Vector2(-1576, 219)
+
+[node name="StaticBody2D89" parent="plataformas" unique_id=985639697 instance=ExtResource("13_qt64w")]
+position = Vector2(-1539, 219)
+
+[node name="StaticBody2D90" parent="plataformas" unique_id=1828995395 instance=ExtResource("13_qt64w")]
+position = Vector2(-1354, 219)
+
+[node name="StaticBody2D91" parent="plataformas" unique_id=1492602556 instance=ExtResource("13_qt64w")]
+position = Vector2(-1317, 219)
+
+[node name="StaticBody2D92" parent="plataformas" unique_id=315085357 instance=ExtResource("13_qt64w")]
+position = Vector2(-1280, 219)
+
+[node name="StaticBody2D93" parent="plataformas" unique_id=1362031397 instance=ExtResource("13_qt64w")]
+position = Vector2(-1243, 219)
+
+[node name="StaticBody2D94" parent="plataformas" unique_id=732241595 instance=ExtResource("13_qt64w")]
+position = Vector2(-1206, 219)
+
+[node name="StaticBody2D95" parent="plataformas" unique_id=381996967 instance=ExtResource("13_qt64w")]
+position = Vector2(-1169, 219)
+
+[node name="StaticBody2D100" parent="plataformas" unique_id=1108385880 instance=ExtResource("13_qt64w")]
+position = Vector2(-1132, 219)
+
+[node name="StaticBody2D101" parent="plataformas" unique_id=694154813 instance=ExtResource("13_qt64w")]
+position = Vector2(-1095, 219)
+
+[node name="StaticBody2D102" parent="plataformas" unique_id=1876675171 instance=ExtResource("13_qt64w")]
+position = Vector2(-1058, 219)
+
+[node name="StaticBody2D103" parent="plataformas" unique_id=897956254 instance=ExtResource("13_qt64w")]
+position = Vector2(-1021, 219)
+
+[node name="StaticBody2D104" parent="plataformas" unique_id=2004035378 instance=ExtResource("13_qt64w")]
+position = Vector2(-984, 219)
+
+[node name="StaticBody2D96" parent="plataformas" unique_id=2097350055 instance=ExtResource("13_qt64w")]
+position = Vector2(-672, 829)
+
+[node name="StaticBody2D97" parent="plataformas" unique_id=2098551459 instance=ExtResource("13_qt64w")]
+position = Vector2(-635, 829)
+
+[node name="StaticBody2D98" parent="plataformas" unique_id=880376649 instance=ExtResource("13_qt64w")]
+position = Vector2(-598, 829)
+
+[node name="StaticBody2D99" parent="plataformas" unique_id=1226822045 instance=ExtResource("13_qt64w")]
+position = Vector2(-561, 829)
+
+[node name="StaticBody2D107" parent="plataformas" unique_id=1262248552 instance=ExtResource("13_qt64w")]
+position = Vector2(-302, 829)
+
+[node name="StaticBody2D108" parent="plataformas" unique_id=1319688047 instance=ExtResource("13_qt64w")]
+position = Vector2(-265, 829)
+
+[node name="StaticBody2D109" parent="plataformas" unique_id=1703580230 instance=ExtResource("13_qt64w")]
+position = Vector2(-228, 829)
+
+[node name="StaticBody2D110" parent="plataformas" unique_id=831180653 instance=ExtResource("13_qt64w")]
+position = Vector2(-191, 829)
+
+[node name="StaticBody2D111" parent="plataformas" unique_id=244458343 instance=ExtResource("13_qt64w")]
+position = Vector2(-524, 829)
+
+[node name="StaticBody2D112" parent="plataformas" unique_id=1287347288 instance=ExtResource("13_qt64w")]
+position = Vector2(-487, 829)
+
+[node name="StaticBody2D113" parent="plataformas" unique_id=558442912 instance=ExtResource("13_qt64w")]
+position = Vector2(-450, 829)
+
+[node name="StaticBody2D114" parent="plataformas" unique_id=70412546 instance=ExtResource("13_qt64w")]
+position = Vector2(-413, 829)
+
+[node name="StaticBody2D115" parent="plataformas" unique_id=1809489753 instance=ExtResource("13_qt64w")]
+position = Vector2(-376, 829)
+
+[node name="StaticBody2D116" parent="plataformas" unique_id=1175004039 instance=ExtResource("13_qt64w")]
+position = Vector2(-339, 829)
+
+[node name="StaticBody2D117" parent="plataformas" unique_id=188649053 instance=ExtResource("13_qt64w")]
+position = Vector2(-154, 829)
+
+[node name="StaticBody2D118" parent="plataformas" unique_id=1227056983 instance=ExtResource("13_qt64w")]
+position = Vector2(-117, 829)
+
+[node name="StaticBody2D119" parent="plataformas" unique_id=1322528981 instance=ExtResource("13_qt64w")]
+position = Vector2(-80, 829)
+
+[node name="StaticBody2D120" parent="plataformas" unique_id=2075878385 instance=ExtResource("13_qt64w")]
+position = Vector2(-43, 829)
+
+[node name="StaticBody2D121" parent="plataformas" unique_id=549799729 instance=ExtResource("13_qt64w")]
+position = Vector2(-6, 829)
+
+[node name="StaticBody2D122" parent="plataformas" unique_id=692458086 instance=ExtResource("13_qt64w")]
+position = Vector2(31, 829)
+
+[node name="StaticBody2D123" parent="plataformas" unique_id=945534627 instance=ExtResource("13_qt64w")]
+position = Vector2(68, 829)
+
+[node name="StaticBody2D169" parent="plataformas" unique_id=1921550573 instance=ExtResource("13_qt64w")]
+position = Vector2(-2085, 832)
+
+[node name="StaticBody2D170" parent="plataformas" unique_id=1946101480 instance=ExtResource("13_qt64w")]
+position = Vector2(-2048, 832)
+
+[node name="StaticBody2D171" parent="plataformas" unique_id=1419185687 instance=ExtResource("13_qt64w")]
+position = Vector2(-2011, 832)
+
+[node name="StaticBody2D172" parent="plataformas" unique_id=2099625042 instance=ExtResource("13_qt64w")]
+position = Vector2(-1974, 832)
+
+[node name="StaticBody2D173" parent="plataformas" unique_id=767519340 instance=ExtResource("13_qt64w")]
+position = Vector2(-1715, 832)
+
+[node name="StaticBody2D174" parent="plataformas" unique_id=234821114 instance=ExtResource("13_qt64w")]
+position = Vector2(-1678, 832)
+
+[node name="StaticBody2D175" parent="plataformas" unique_id=1080112686 instance=ExtResource("13_qt64w")]
+position = Vector2(-1641, 832)
+
+[node name="StaticBody2D177" parent="plataformas" unique_id=1020957220 instance=ExtResource("13_qt64w")]
+position = Vector2(-1937, 832)
+
+[node name="StaticBody2D178" parent="plataformas" unique_id=326294390 instance=ExtResource("13_qt64w")]
+position = Vector2(-1900, 832)
+
+[node name="StaticBody2D179" parent="plataformas" unique_id=371423726 instance=ExtResource("13_qt64w")]
+position = Vector2(-1863, 832)
+
+[node name="StaticBody2D180" parent="plataformas" unique_id=1759228593 instance=ExtResource("13_qt64w")]
+position = Vector2(-1826, 832)
+
+[node name="StaticBody2D181" parent="plataformas" unique_id=963942032 instance=ExtResource("13_qt64w")]
+position = Vector2(-1789, 832)
+
+[node name="StaticBody2D182" parent="plataformas" unique_id=1037094516 instance=ExtResource("13_qt64w")]
+position = Vector2(-1752, 832)
+
+[node name="StaticBody2D124" parent="plataformas" unique_id=195939806 instance=ExtResource("13_qt64w")]
+position = Vector2(105, 829)
+
+[node name="StaticBody2D125" parent="plataformas" unique_id=6995313 instance=ExtResource("13_qt64w")]
+position = Vector2(142, 829)
+
+[node name="StaticBody2D126" parent="plataformas" unique_id=798189901 instance=ExtResource("13_qt64w")]
+position = Vector2(179, 829)
+
+[node name="StaticBody2D127" parent="plataformas" unique_id=1242184353 instance=ExtResource("13_qt64w")]
+position = Vector2(216, 829)
+
+[node name="StaticBody2D128" parent="plataformas" unique_id=860123202 instance=ExtResource("13_qt64w")]
+position = Vector2(253, 829)
+
+[node name="StaticBody2D129" parent="plataformas" unique_id=2109960258 instance=ExtResource("13_qt64w")]
+position = Vector2(290, 829)
+
+[node name="StaticBody2D130" parent="plataformas" unique_id=2142822164 instance=ExtResource("13_qt64w")]
+position = Vector2(327, 829)
+
+[node name="StaticBody2D131" parent="plataformas" unique_id=1936544483 instance=ExtResource("13_qt64w")]
+position = Vector2(364, 829)
+
+[node name="StaticBody2D136" parent="plataformas" unique_id=639836226 instance=ExtResource("13_qt64w")]
+position = Vector2(401, 829)
+
+[node name="StaticBody2D137" parent="plataformas" unique_id=443457085 instance=ExtResource("13_qt64w")]
+position = Vector2(438, 829)
+
+[node name="StaticBody2D138" parent="plataformas" unique_id=499354352 instance=ExtResource("13_qt64w")]
+position = Vector2(475, 829)
+
+[node name="StaticBody2D139" parent="plataformas" unique_id=1731038729 instance=ExtResource("13_qt64w")]
+position = Vector2(512, 829)
+
+[node name="StaticBody2D132" parent="plataformas" unique_id=596966551 instance=ExtResource("13_qt64w")]
+position = Vector2(-635, 594)
+
+[node name="StaticBody2D133" parent="plataformas" unique_id=373311384 instance=ExtResource("13_qt64w")]
+position = Vector2(-598, 594)
+
+[node name="StaticBody2D134" parent="plataformas" unique_id=482250090 instance=ExtResource("13_qt64w")]
+position = Vector2(-561, 594)
+
+[node name="StaticBody2D135" parent="plataformas" unique_id=161673742 instance=ExtResource("13_qt64w")]
+position = Vector2(-524, 594)
+
+[node name="StaticBody2D140" parent="plataformas" unique_id=1812986469 instance=ExtResource("13_qt64w")]
+position = Vector2(-265, 594)
+
+[node name="StaticBody2D141" parent="plataformas" unique_id=1722304117 instance=ExtResource("13_qt64w")]
+position = Vector2(-228, 594)
+
+[node name="StaticBody2D142" parent="plataformas" unique_id=922032156 instance=ExtResource("13_qt64w")]
+position = Vector2(-191, 594)
+
+[node name="StaticBody2D143" parent="plataformas" unique_id=1113474755 instance=ExtResource("13_qt64w")]
+position = Vector2(-154, 594)
+
+[node name="StaticBody2D144" parent="plataformas" unique_id=199366708 instance=ExtResource("13_qt64w")]
+position = Vector2(-487, 594)
+
+[node name="StaticBody2D145" parent="plataformas" unique_id=999829733 instance=ExtResource("13_qt64w")]
+position = Vector2(-450, 594)
+
+[node name="StaticBody2D146" parent="plataformas" unique_id=1976779658 instance=ExtResource("13_qt64w")]
+position = Vector2(-413, 594)
+
+[node name="StaticBody2D147" parent="plataformas" unique_id=1078939910 instance=ExtResource("13_qt64w")]
+position = Vector2(-376, 594)
+
+[node name="StaticBody2D148" parent="plataformas" unique_id=895900400 instance=ExtResource("13_qt64w")]
+position = Vector2(-339, 594)
+
+[node name="StaticBody2D149" parent="plataformas" unique_id=1895580818 instance=ExtResource("13_qt64w")]
+position = Vector2(-302, 594)
+
+[node name="StaticBody2D150" parent="plataformas" unique_id=610802868 instance=ExtResource("13_qt64w")]
+position = Vector2(-117, 594)
+
+[node name="StaticBody2D194" parent="plataformas" unique_id=554930752 instance=ExtResource("13_qt64w")]
+position = Vector2(-265, 754)
+
+[node name="StaticBody2D210" parent="plataformas" unique_id=703410767 instance=ExtResource("13_qt64w")]
+position = Vector2(-324, 780)
+
+[node name="StaticBody2D211" parent="plataformas" unique_id=1579660774 instance=ExtResource("13_qt64w")]
+position = Vector2(-287, 780)
+
+[node name="StaticBody2D195" parent="plataformas" unique_id=294212980 instance=ExtResource("13_qt64w")]
+position = Vector2(-228, 754)
+
+[node name="StaticBody2D196" parent="plataformas" unique_id=1550958740 instance=ExtResource("13_qt64w")]
+position = Vector2(-191, 754)
+
+[node name="StaticBody2D197" parent="plataformas" unique_id=812267835 instance=ExtResource("13_qt64w")]
+position = Vector2(-154, 754)
+
+[node name="StaticBody2D198" parent="plataformas" unique_id=518335867 instance=ExtResource("13_qt64w")]
+position = Vector2(105, 754)
+
+[node name="StaticBody2D199" parent="plataformas" unique_id=1878369932 instance=ExtResource("13_qt64w")]
+position = Vector2(142, 754)
+
+[node name="StaticBody2D200" parent="plataformas" unique_id=1874074288 instance=ExtResource("13_qt64w")]
+position = Vector2(179, 754)
+
+[node name="StaticBody2D201" parent="plataformas" unique_id=1369568028 instance=ExtResource("13_qt64w")]
+position = Vector2(216, 754)
+
+[node name="StaticBody2D202" parent="plataformas" unique_id=1187936608 instance=ExtResource("13_qt64w")]
+position = Vector2(-117, 754)
+
+[node name="StaticBody2D203" parent="plataformas" unique_id=1265925598 instance=ExtResource("13_qt64w")]
+position = Vector2(-80, 754)
+
+[node name="StaticBody2D204" parent="plataformas" unique_id=1911403837 instance=ExtResource("13_qt64w")]
+position = Vector2(-43, 754)
+
+[node name="StaticBody2D205" parent="plataformas" unique_id=175967430 instance=ExtResource("13_qt64w")]
+position = Vector2(-6, 754)
+
+[node name="StaticBody2D206" parent="plataformas" unique_id=3283070 instance=ExtResource("13_qt64w")]
+position = Vector2(31, 754)
+
+[node name="StaticBody2D207" parent="plataformas" unique_id=1219553604 instance=ExtResource("13_qt64w")]
+position = Vector2(68, 754)
+
+[node name="StaticBody2D208" parent="plataformas" unique_id=292320386 instance=ExtResource("13_qt64w")]
+position = Vector2(253, 754)
+
+[node name="StaticBody2D209" parent="plataformas" unique_id=101178777 instance=ExtResource("13_qt64w")]
+position = Vector2(290, 755)
+
+[node name="StaticBody2D212" parent="plataformas" unique_id=1918234772 instance=ExtResource("13_qt64w")]
+position = Vector2(346, 778)
+
+[node name="StaticBody2D213" parent="plataformas" unique_id=588443680 instance=ExtResource("13_qt64w")]
+position = Vector2(309, 778)
+
+[node name="StaticBody2D151" parent="plataformas" unique_id=1859977792 instance=ExtResource("13_qt64w")]
+position = Vector2(-80, 594)
+
+[node name="StaticBody2D152" parent="plataformas" unique_id=1166851596 instance=ExtResource("13_qt64w")]
+position = Vector2(-43, 594)
+
+[node name="StaticBody2D153" parent="plataformas" unique_id=835353544 instance=ExtResource("13_qt64w")]
+position = Vector2(-6, 594)
+
+[node name="StaticBody2D154" parent="plataformas" unique_id=1079507057 instance=ExtResource("13_qt64w")]
+position = Vector2(31, 594)
+
+[node name="StaticBody2D155" parent="plataformas" unique_id=445958864 instance=ExtResource("13_qt64w")]
+position = Vector2(68, 594)
+
+[node name="StaticBody2D156" parent="plataformas" unique_id=1218942449 instance=ExtResource("13_qt64w")]
+position = Vector2(105, 594)
+
+[node name="StaticBody2D157" parent="plataformas" unique_id=1333542220 instance=ExtResource("13_qt64w")]
+position = Vector2(142, 594)
+
+[node name="StaticBody2D158" parent="plataformas" unique_id=97949704 instance=ExtResource("13_qt64w")]
+position = Vector2(179, 594)
+
+[node name="StaticBody2D159" parent="plataformas" unique_id=1333610431 instance=ExtResource("13_qt64w")]
+position = Vector2(216, 594)
+
+[node name="StaticBody2D160" parent="plataformas" unique_id=1761195326 instance=ExtResource("13_qt64w")]
+position = Vector2(253, 594)
+
+[node name="StaticBody2D161" parent="plataformas" unique_id=1430690720 instance=ExtResource("13_qt64w")]
+position = Vector2(290, 594)
+
+[node name="StaticBody2D162" parent="plataformas" unique_id=1777902781 instance=ExtResource("13_qt64w")]
+position = Vector2(327, 594)
+
+[node name="StaticBody2D163" parent="plataformas" unique_id=260745916 instance=ExtResource("13_qt64w")]
+position = Vector2(364, 594)
+
+[node name="StaticBody2D164" parent="plataformas" unique_id=1707953524 instance=ExtResource("13_qt64w")]
+position = Vector2(401, 594)
+
+[node name="StaticBody2D165" parent="plataformas" unique_id=68419318 instance=ExtResource("13_qt64w")]
+position = Vector2(438, 594)
+
+[node name="StaticBody2D166" parent="plataformas" unique_id=431666856 instance=ExtResource("13_qt64w")]
+position = Vector2(475, 594)
+
+[node name="StaticBody2D167" parent="plataformas" unique_id=148816176 instance=ExtResource("13_qt64w")]
+position = Vector2(512, 594)
+
+[node name="StaticBody2D168" parent="plataformas" unique_id=64831741 instance=ExtResource("13_qt64w")]
+position = Vector2(549, 594)
+
+[node name="StaticBody2D105" parent="plataformas" unique_id=1175488380 instance=ExtResource("13_qt64w")]
+position = Vector2(-947, 219)
+
+[node name="StaticBody2D" parent="plataformas" unique_id=1758346182 instance=ExtResource("13_qt64w")]
+position = Vector2(1629, -19)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D2" parent="plataformas" unique_id=1552103596 instance=ExtResource("13_qt64w")]
+position = Vector2(1666, -15)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D3" parent="plataformas" unique_id=1883617677 instance=ExtResource("13_qt64w")]
+position = Vector2(1703, -11.999992)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D4" parent="plataformas" unique_id=2034651506 instance=ExtResource("13_qt64w")]
+position = Vector2(1740, -9.999985)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D5" parent="plataformas" unique_id=1728158989 instance=ExtResource("13_qt64w")]
+position = Vector2(1777, -6.9999924)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D6" parent="plataformas" unique_id=110102415 instance=ExtResource("13_qt64w")]
+position = Vector2(1814, -4)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D7" parent="plataformas" unique_id=764919278 instance=ExtResource("13_qt64w")]
+position = Vector2(1851.0001, -0.99998474)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D8" parent="plataformas" unique_id=1785136967 instance=ExtResource("13_qt64w")]
+position = Vector2(1888.0001, 2.0000153)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D9" parent="plataformas" unique_id=1348100524 instance=ExtResource("13_qt64w")]
+position = Vector2(1925.0002, 4.0000153)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D10" parent="plataformas" unique_id=259880113 instance=ExtResource("13_qt64w")]
+position = Vector2(1629, -19)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D11" parent="plataformas" unique_id=149844925 instance=ExtResource("13_qt64w")]
+position = Vector2(1666, -15)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D12" parent="plataformas" unique_id=560833879 instance=ExtResource("13_qt64w")]
+position = Vector2(1703, -11.999992)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D13" parent="plataformas" unique_id=576510322 instance=ExtResource("13_qt64w")]
+position = Vector2(1740, -9.999985)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D14" parent="plataformas" unique_id=210579930 instance=ExtResource("13_qt64w")]
+position = Vector2(1777, -6.9999924)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D15" parent="plataformas" unique_id=1699996698 instance=ExtResource("13_qt64w")]
+position = Vector2(1814, -4)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D16" parent="plataformas" unique_id=359123333 instance=ExtResource("13_qt64w")]
+position = Vector2(1851.0001, -0.99998474)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D17" parent="plataformas" unique_id=3233354 instance=ExtResource("13_qt64w")]
+position = Vector2(1888.0001, 2.0000153)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D18" parent="plataformas" unique_id=1424744333 instance=ExtResource("13_qt64w")]
+position = Vector2(1925.0002, 4.0000153)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D45" parent="plataformas" unique_id=517972751 instance=ExtResource("13_qt64w")]
+position = Vector2(1962.0001, 6.0000143)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D46" parent="plataformas" unique_id=1717306241 instance=ExtResource("13_qt64w")]
+position = Vector2(1999.0001, 9.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D47" parent="plataformas" unique_id=282788092 instance=ExtResource("13_qt64w")]
+position = Vector2(2036.0001, 11.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D48" parent="plataformas" unique_id=1009907554 instance=ExtResource("13_qt64w")]
+position = Vector2(2073, 13.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D49" parent="plataformas" unique_id=1885029697 instance=ExtResource("13_qt64w")]
+position = Vector2(2110, 14.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D50" parent="plataformas" unique_id=1574759997 instance=ExtResource("13_qt64w")]
+position = Vector2(2147, 17)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D51" parent="plataformas" unique_id=1240312479 instance=ExtResource("13_qt64w")]
+position = Vector2(2184.0002, 20.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D52" parent="plataformas" unique_id=448541178 instance=ExtResource("13_qt64w")]
+position = Vector2(2221, 21.000017)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D53" parent="plataformas" unique_id=1488807344 instance=ExtResource("13_qt64w")]
+position = Vector2(2258.0002, 24.000017)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D54" parent="plataformas" unique_id=509484583 instance=ExtResource("13_qt64w")]
+position = Vector2(2295.0002, 27.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D55" parent="plataformas" unique_id=1145468603 instance=ExtResource("13_qt64w")]
+position = Vector2(2332.0002, 30.000002)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D56" parent="plataformas" unique_id=1459303247 instance=ExtResource("13_qt64w")]
+position = Vector2(2369, 33.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D57" parent="plataformas" unique_id=1470887187 instance=ExtResource("13_qt64w")]
+position = Vector2(2406, 36.00002)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D58" parent="plataformas" unique_id=630521425 instance=ExtResource("13_qt64w")]
+position = Vector2(2443.0002, 39.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D59" parent="plataformas" unique_id=1135238783 instance=ExtResource("13_qt64w")]
+position = Vector2(2480.0002, 42.00002)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D60" parent="plataformas" unique_id=209020288 instance=ExtResource("13_qt64w")]
+position = Vector2(2517.0002, 45.000015)
+rotation = 0.07853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="StaticBody2D19" parent="plataformas" unique_id=1927440661 instance=ExtResource("13_qt64w")]
+position = Vector2(1237, 260)
+rotation = 0.052359883
+
+[node name="StaticBody2D21" parent="plataformas" unique_id=1460347301 instance=ExtResource("13_qt64w")]
+position = Vector2(1311, 264)
+rotation = 0.052359883
+
+[node name="StaticBody2D22" parent="plataformas" unique_id=2000413687 instance=ExtResource("13_qt64w")]
+position = Vector2(1348, 266)
+rotation = 0.052359883
+
+[node name="StaticBody2D23" parent="plataformas" unique_id=93965756 instance=ExtResource("13_qt64w")]
+position = Vector2(1385, 268)
+rotation = 0.052359883
+
+[node name="StaticBody2D24" parent="plataformas" unique_id=1070992570 instance=ExtResource("13_qt64w")]
+position = Vector2(1421.9999, 269.00003)
+rotation = 0.052359883
+
+[node name="StaticBody2D25" parent="plataformas" unique_id=2028888712 instance=ExtResource("13_qt64w")]
+position = Vector2(1459.0001, 271.00003)
+rotation = 0.052359883
+
+[node name="StaticBody2D26" parent="plataformas" unique_id=1174507139 instance=ExtResource("13_qt64w")]
+position = Vector2(1495.9999, 273)
+rotation = 0.052359883
+
+[node name="StaticBody2D27" parent="plataformas" unique_id=230516040 instance=ExtResource("13_qt64w")]
+position = Vector2(1533, 275)
+rotation = 0.052359883
+
+[node name="StaticBody2D28" parent="plataformas" unique_id=170934646 instance=ExtResource("13_qt64w")]
+position = Vector2(1570, 276.99997)
+rotation = 0.052359883
+
+[node name="StaticBody2D20" parent="plataformas" unique_id=1407770003 instance=ExtResource("13_qt64w")]
+position = Vector2(1274, 262)
+rotation = 0.052359883
+
+[node name="StaticBody2D29" parent="plataformas" unique_id=1667031645 instance=ExtResource("13_qt64w")]
+position = Vector2(538, 541)
+rotation = 0.02617994
+
+[node name="StaticBody2D31" parent="plataformas" unique_id=422292998 instance=ExtResource("13_qt64w")]
+position = Vector2(611.99994, 543)
+rotation = 0.02617994
+
+[node name="StaticBody2D32" parent="plataformas" unique_id=1327988764 instance=ExtResource("13_qt64w")]
+position = Vector2(649, 544)
+rotation = 0.02617994
+
+[node name="StaticBody2D33" parent="plataformas" unique_id=1312711203 instance=ExtResource("13_qt64w")]
+position = Vector2(686, 545)
+rotation = 0.02617994
+
+[node name="StaticBody2D34" parent="plataformas" unique_id=1080966520 instance=ExtResource("13_qt64w")]
+position = Vector2(723, 546)
+rotation = 0.02617994
+
+[node name="StaticBody2D35" parent="plataformas" unique_id=1968008171 instance=ExtResource("13_qt64w")]
+position = Vector2(760, 547)
+rotation = 0.02617994
+
+[node name="StaticBody2D36" parent="plataformas" unique_id=865535832 instance=ExtResource("13_qt64w")]
+position = Vector2(797, 548.00006)
+rotation = 0.02617994
+
+[node name="StaticBody2D37" parent="plataformas" unique_id=1994182526 instance=ExtResource("13_qt64w")]
+position = Vector2(833.99994, 549)
+rotation = 0.02617994
+
+[node name="StaticBody2D38" parent="plataformas" unique_id=1037281000 instance=ExtResource("13_qt64w")]
+position = Vector2(1002.00006, 554)
+rotation = 0.02617994
+
+[node name="StaticBody2D39" parent="plataformas" unique_id=980897353 instance=ExtResource("13_qt64w")]
+position = Vector2(1039, 555)
+rotation = 0.02617994
+
+[node name="StaticBody2D40" parent="plataformas" unique_id=1043377636 instance=ExtResource("13_qt64w")]
+position = Vector2(1076, 556)
+rotation = 0.02617994
+
+[node name="StaticBody2D41" parent="plataformas" unique_id=1829563082 instance=ExtResource("13_qt64w")]
+position = Vector2(1113.0001, 557)
+rotation = 0.02617994
+
+[node name="StaticBody2D42" parent="plataformas" unique_id=805557875 instance=ExtResource("13_qt64w")]
+position = Vector2(1150.0001, 558.00006)
+rotation = 0.02617994
+
+[node name="StaticBody2D43" parent="plataformas" unique_id=2061181273 instance=ExtResource("13_qt64w")]
+position = Vector2(1187, 558.99994)
+rotation = 0.02617994
+
+[node name="StaticBody2D44" parent="plataformas" unique_id=591245214 instance=ExtResource("13_qt64w")]
+position = Vector2(1224, 560.00006)
+rotation = 0.02617994
+
+[node name="StaticBody2D30" parent="plataformas" unique_id=231661714 instance=ExtResource("13_qt64w")]
+position = Vector2(575, 542)
+rotation = 0.02617994
+
+[node name="StaticBody2D190" parent="plataformas" unique_id=410227804 instance=ExtResource("13_qt64w")]
+position = Vector2(857, 319)
+
+[node name="StaticBody2D191" parent="plataformas" unique_id=699836641 instance=ExtResource("13_qt64w")]
+position = Vector2(894, 319)
+
+[node name="StaticBody2D192" parent="plataformas" unique_id=928330079 instance=ExtResource("13_qt64w")]
+position = Vector2(931, 319)
+
+[node name="StaticBody2D193" parent="plataformas" unique_id=307247230 instance=ExtResource("13_qt64w")]
+position = Vector2(968, 319)
+
+[node name="StaticBody2D214" parent="plataformas" unique_id=1828443871 instance=ExtResource("13_qt64w")]
+position = Vector2(-1620, 721)
+
+[node name="StaticBody2D215" parent="plataformas" unique_id=1452662615 instance=ExtResource("13_qt64w")]
+position = Vector2(-1583, 721)
+
+[node name="StaticBody2D216" parent="plataformas" unique_id=2130012867 instance=ExtResource("13_qt64w")]
+position = Vector2(-1546, 721)
+
+[node name="StaticBody2D217" parent="plataformas" unique_id=1470899450 instance=ExtResource("13_qt64w")]
+position = Vector2(-1509, 721)
+
+[node name="StaticBody2D218" parent="plataformas" unique_id=610982475 instance=ExtResource("13_qt64w")]
+position = Vector2(-1472, 721)
+
+[node name="StaticBody2D219" parent="plataformas" unique_id=586112588 instance=ExtResource("13_qt64w")]
+position = Vector2(-1435, 721)
+
+[node name="StaticBody2D220" parent="plataformas" unique_id=768925879 instance=ExtResource("13_qt64w")]
+position = Vector2(-1398, 721)
+
+[node name="StaticBody2D221" parent="plataformas" unique_id=581227765 instance=ExtResource("13_qt64w")]
+position = Vector2(-1361, 721)
+
+[node name="StaticBody2D222" parent="plataformas" unique_id=605191768 instance=ExtResource("13_qt64w")]
+position = Vector2(-1324, 721)
+
+[node name="StaticBody2D223" parent="plataformas" unique_id=1493277392 instance=ExtResource("13_qt64w")]
+position = Vector2(-1287, 721)
+
+[node name="StaticBody2D224" parent="plataformas" unique_id=1543584085 instance=ExtResource("13_qt64w")]
+position = Vector2(-1250, 721)
+
+[node name="StaticBody2D225" parent="plataformas" unique_id=1389720440 instance=ExtResource("13_qt64w")]
+position = Vector2(-1213, 721)
+
+[node name="StaticBody2D226" parent="plataformas" unique_id=661185173 instance=ExtResource("13_qt64w")]
+position = Vector2(-1176, 721)
+
+[node name="StaticBody2D227" parent="plataformas" unique_id=1638572081 instance=ExtResource("13_qt64w")]
+position = Vector2(-1139, 721)
+
+[node name="StaticBody2D228" parent="plataformas" unique_id=1241662692 instance=ExtResource("13_qt64w")]
+position = Vector2(-1102, 721)
+
+[node name="StaticBody2D229" parent="plataformas" unique_id=518140724 instance=ExtResource("13_qt64w")]
+position = Vector2(-1153, 647.00006)
+rotation = 0.34906584
+
+[node name="StaticBody2D230" parent="plataformas" unique_id=444962860 instance=ExtResource("13_qt64w")]
+position = Vector2(-1118, 660)
+rotation = 0.34906584
+
+[node name="StaticBody2D231" parent="plataformas" unique_id=1660002933 instance=ExtResource("13_qt64w")]
+position = Vector2(-1083.0001, 671.99994)
+rotation = 0.34906584
+
+[node name="StaticBody2D232" parent="plataformas" unique_id=152251025 instance=ExtResource("13_qt64w")]
+position = Vector2(-1048, 685)
+rotation = 0.34906584
+
+[node name="StaticBody2D233" parent="plataformas" unique_id=1039026199 instance=ExtResource("13_qt64w")]
+position = Vector2(-1013, 698.00006)
+rotation = 0.34906584
+
+[node name="StaticBody2D234" parent="plataformas" unique_id=1047527656 instance=ExtResource("13_qt64w")]
+position = Vector2(-977.99994, 711)
+rotation = 0.34906584
+
+[node name="StaticBody2D235" parent="plataformas" unique_id=1369462484 instance=ExtResource("13_qt64w")]
+position = Vector2(-942.99994, 724)
+rotation = 0.34906584
+
+[node name="StaticBody2D236" parent="plataformas" unique_id=1366015842 instance=ExtResource("13_qt64w")]
+position = Vector2(-907.99994, 737)
+rotation = 0.34906584
+
+[node name="StaticBody2D237" parent="plataformas" unique_id=1157688321 instance=ExtResource("13_qt64w")]
+position = Vector2(-872.99994, 749.99994)
+rotation = 0.34906584
+
+[node name="StaticBody2D238" parent="plataformas" unique_id=733928968 instance=ExtResource("13_qt64w")]
+position = Vector2(-837.99994, 763)
+rotation = 0.34906584
+
+[node name="StaticBody2D239" parent="plataformas" unique_id=1482611194 instance=ExtResource("13_qt64w")]
+position = Vector2(-803, 775.99994)
+rotation = 0.34906584
+
+[node name="StaticBody2D240" parent="plataformas" unique_id=763577806 instance=ExtResource("13_qt64w")]
+position = Vector2(-767.9999, 788.9999)
+rotation = 0.34906584
+
+[node name="StaticBody2D241" parent="plataformas" unique_id=1460085689 instance=ExtResource("13_qt64w")]
+position = Vector2(-733.99994, 805)
+rotation = 0.51487213
+
+[node name="StaticBody2D242" parent="plataformas" unique_id=713132709 instance=ExtResource("13_qt64w")]
+position = Vector2(-701.99994, 823)
+rotation = 0.51487213
+
+[node name="StaticBody2D106" parent="plataformas" unique_id=1848468378 instance=ExtResource("13_qt64w")]
+position = Vector2(-927, 219)
+scale = Vector2(0.2, 1)
+
+[node name="CopoCafePintadao" type="Sprite2D" parent="." unique_id=982706228]
+position = Vector2(449, -362)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("32_w6l43")
+
+[node name="animacaoCopo" type="AnimationPlayer" parent="CopoCafePintadao" unique_id=2073965780]
+libraries/ = SubResource("AnimationLibrary_tu6qe")
+
+[node name="copo_cafe" type="Area2D" parent="CopoCafePintadao" unique_id=612689982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CopoCafePintadao/copo_cafe" unique_id=1390232186]
+position = Vector2(3.333374, -20)
+shape = SubResource("RectangleShape2D_28a3b")
+
+[connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
+[connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
+[connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
+[connection signal="finished" from="Player_manager/Camera2D/musica terceira fase" to="." method="_on_musica_terceira_fase_finished"]
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="Teclado/deteccao aparecer teclas" to="." method="_on_deteccao_aparecer_teclas_body_entered"]
+[connection signal="body_entered" from="teclas/TecladoS/teclaS" to="." method="_on_tecla_s_body_entered"]
+[connection signal="body_entered" from="teclas/TecladoN/teclaN" to="." method="_on_tecla_n_body_entered"]
+[connection signal="body_entered" from="teclas/TecladoA/teclaA" to="." method="_on_tecla_a_body_entered"]
+[connection signal="body_entered" from="teclas/TecladoE/teclaE" to="." method="_on_tecla_e_body_entered"]
+[connection signal="body_entered" from="teclas/TecladoH/teclaH" to="." method="_on_tecla_h_body_entered"]
+[connection signal="body_entered" from="CopoCafePintadao/copo_cafe" to="." method="_on_copo_cafe_body_entered"]

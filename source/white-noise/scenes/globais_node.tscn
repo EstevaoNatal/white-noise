@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://swwv4td5gt0r"]
+
+[node name="globais_node" type="Node2D" unique_id=1681993199]
+
+[node name="tempo_verde" type="Timer" parent="." unique_id=1114759659]
+wait_time = 0.394
+one_shot = true

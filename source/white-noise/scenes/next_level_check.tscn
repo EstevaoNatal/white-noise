@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ce4laia03af1t"]
+
+[ext_resource type="Script" uid="uid://bobjihthkfsn8" path="res://scripts/next_level_check.gd" id="1_83jg6"]
+
+[node name="next_level_check" type="Area2D" unique_id=1434865447]
+script = ExtResource("1_83jg6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

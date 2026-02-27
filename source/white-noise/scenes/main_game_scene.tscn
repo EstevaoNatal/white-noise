@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b7tyrihx35v21"]
+
+[ext_resource type="Script" uid="uid://c3v33ckgktiwj" path="res://scripts/main_game_scene.gd" id="1_qsd30"]
+[ext_resource type="PackedScene" uid="uid://kb505td3w4so" path="res://scenes/menuDeOpcoes.tscn" id="3_d383n"]
+[ext_resource type="PackedScene" uid="uid://dyq7hroewwrfk" path="res://scenes/menu.tscn" id="4_oa6bs"]
+
+[node name="mainGameScene" type="Node2D" unique_id=2087594735]
+script = ExtResource("1_qsd30")
+
+[node name="timer_fechar" type="Timer" parent="." unique_id=338804193]
+wait_time = 3.0
+
+[node name="Menu" parent="." unique_id=1758809669 instance=ExtResource("4_oa6bs")]
+
+[node name="NodeOpcoes" parent="." unique_id=678393272 instance=ExtResource("3_d383n")]
+visible = false
+position = Vector2(-3, -19)
+
+[connection signal="timeout" from="timer_fechar" to="." method="_on_timer_fechar_timeout"]
+[connection signal="fechar" from="Menu" to="." method="_on_menu_fechar"]
+[connection signal="inicio" from="Menu" to="." method="_on_menu_inicio"]
+[connection signal="opcoes" from="Menu" to="." method="_on_menu_opcoes"]
+[connection signal="fecharOpcoes" from="NodeOpcoes" to="." method="_on_node_opcoes_fechar_opcoes"]
