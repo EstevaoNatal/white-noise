@@ -1092,7 +1092,7 @@ scale = Vector2(0.67366946, 0.67366946)
 [node name="Livro2(espiral)" type="Sprite2D" parent="." unique_id=1446677655]
 position = Vector2(-1853, 1)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("19_cupbk")
+texture = ExtResource("28_2sa4w")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Livro2(espiral)" unique_id=1372712991]
 scale = Vector2(0.5, 0.5)
@@ -1103,7 +1103,8 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_h3yde")
 
 [node name="Livro2(espiral)2" type="Sprite2D" parent="." unique_id=935753966]
-position = Vector2(-1853, -427)
+position = Vector2(-1712, -11.000092)
+rotation = -0.29670596
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_cupbk")
 

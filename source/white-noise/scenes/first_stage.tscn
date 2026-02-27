@@ -1071,6 +1071,19 @@ rotation = -0.4660029
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("26_5p8p6")
 
+[node name="Livro2(espiral)5" type="Sprite2D" parent="livros" unique_id=1796941361]
+z_index = -1
+position = Vector2(-777.9999, -107)
+rotation = -2.6249752
+scale = Vector2(0.49999997, 0.49999997)
+texture = ExtResource("26_5p8p6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="livros/Livro2(espiral)5" unique_id=615755877]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="livros/Livro2(espiral)5/StaticBody2D" unique_id=1005864482]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_opw5j")
+
 [node name="next_level_check" parent="." unique_id=1434865447 instance=ExtResource("27_exr4a")]
 position = Vector2(-2420, -1153)
 

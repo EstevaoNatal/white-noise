@@ -14,6 +14,7 @@ wait_time = 3.0
 
 [node name="NodeOpcoes" parent="." unique_id=678393272 instance=ExtResource("3_d383n")]
 visible = false
+position = Vector2(-3, -19)
 
 [connection signal="timeout" from="timer_fechar" to="." method="_on_timer_fechar_timeout"]
 [connection signal="fechar" from="Menu" to="." method="_on_menu_fechar"]
