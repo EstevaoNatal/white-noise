@@ -17,6 +17,7 @@ var pode_carimbar=true
 
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	comecar.texture_normal = load("res://images/UI/btn_iniciar.png")
 	comecar.texture_hover = load("res://images/objetos/carimbo.png")
 	menu_opcoes.texture_normal = load("res://images/UI/btn_opcoes.png")
@@ -37,8 +38,7 @@ func _process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	mão.position.x = mouse_pos.x+215
 	mão.position.y = mouse_pos.y+131
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and pode_carimbar:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and pode_carimbar and menu.visible==true:
 		tempo_mouse.start()
 		var carimbo = load("res://scenes/carimbo.tscn")
 		var img_carimbo = carimbo.instantiate()

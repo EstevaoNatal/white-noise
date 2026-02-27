@@ -3,6 +3,7 @@ var player_spawn: Vector2 = Vector2(-135,60)
 var player_jump_velocidade:float = 0.0
 var fase_atual:int=0
 var tamanho_tela=0
+var fase_anterior=0
 var mudar_tamanho_tela:bool=false
 var tamanho_resolucao=0
 

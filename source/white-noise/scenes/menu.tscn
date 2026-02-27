@@ -14,6 +14,7 @@ script = ExtResource("1_vjb58")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=907294059]
 
 [node name="Iniciar" type="Button" parent="." unique_id=1803858864]
+visible = false
 offset_left = -150.0
 offset_top = -273.0
 offset_right = 24.0
@@ -22,6 +23,7 @@ theme_override_font_sizes/font_size = 32
 text = "Iniciar"
 
 [node name="Opções" type="Button" parent="." unique_id=1664012644]
+visible = false
 offset_left = -150.0
 offset_top = -193.0
 offset_right = 24.0
@@ -30,6 +32,7 @@ theme_override_font_sizes/font_size = 32
 text = "Opções"
 
 [node name="Sair" type="Button" parent="." unique_id=2019090536]
+visible = false
 offset_left = -146.0
 offset_top = -101.0
 offset_right = 28.0

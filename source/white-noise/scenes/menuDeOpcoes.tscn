@@ -28,12 +28,51 @@ text = "Resolução"
 
 [node name="tutorial" type="Node2D" parent="." unique_id=1705039021]
 
+[node name="SpriteIndoPularSemCor" type="Sprite2D" parent="tutorial" unique_id=718400475]
+position = Vector2(359, -211.00002)
+scale = Vector2(0.6759259, 0.67592597)
+texture = ExtResource("3_4cc8y")
+
+[node name="SpritePulandoSemCor" type="Sprite2D" parent="tutorial" unique_id=692694357]
+position = Vector2(481, -217.99998)
+scale = Vector2(0.76388866, 0.76388866)
+texture = ExtResource("4_asubg")
+
+[node name="Cheia" type="Sprite2D" parent="tutorial" unique_id=1735829605]
+position = Vector2(357, 102.99999)
+scale = Vector2(0.7431973, 0.7431973)
+texture = ExtResource("5_teqxl")
+
+[node name="Cheia2" type="Sprite2D" parent="tutorial" unique_id=1027393267]
+position = Vector2(522, 233)
+scale = Vector2(0.34438768, 0.34438768)
+texture = ExtResource("5_teqxl")
+
+[node name="PretaCheio2" type="Sprite2D" parent="tutorial" unique_id=260110352]
+position = Vector2(357, -47)
+texture = ExtResource("6_bn5tc")
+
+[node name="PretaCheio3" type="Sprite2D" parent="tutorial" unique_id=897912347]
+position = Vector2(331, 233)
+scale = Vector2(0.38793105, 0.38793102)
+texture = ExtResource("6_bn5tc")
+
+[node name="PretaMetade2" type="Sprite2D" parent="tutorial" unique_id=400040873]
+position = Vector2(484, -43)
+texture = ExtResource("7_8hu6p")
+
+[node name="VerdeMetade" type="Sprite2D" parent="tutorial" unique_id=2133290602]
+position = Vector2(482.125, 107.79717)
+scale = Vector2(0.63993704, 0.63993704)
+texture = ExtResource("8_x5k57")
+
 [node name="Label" type="Label" parent="tutorial" unique_id=1509803050]
-offset_left = 8.0
-offset_top = -263.0
-offset_right = 289.0
-offset_bottom = 254.0
-text = "Aperte, segure e solte C para pular.
+offset_left = 13.0
+offset_top = -271.0
+offset_right = 294.0
+offset_bottom = 272.0
+text = "Aperte, segure e solte C ou Espaço
+para pular.
 
 Segurando o botão por no máximo
 4 segundos, você pode carregar seu
@@ -54,54 +93,36 @@ novamente.
 Troque as tintas do Carimbô usando
 as teclas Q e E."
 
+[node name="Label2" type="Label" parent="tutorial" unique_id=1237677448]
+offset_left = -290.0
+offset_top = 222.0
+offset_right = -69.0
+offset_bottom = 271.0
+text = "Durante as fases, você pode 
+fechar o jogo através do Esc."
+
 [node name="Seta" type="Sprite2D" parent="tutorial" unique_id=1697991124]
 position = Vector2(425, 232)
 texture = ExtResource("3_asubg")
 
-[node name="tutorialEControles" type="TextureButton" parent="." unique_id=1440133284]
-offset_left = -531.0
-offset_top = -64.0
-offset_right = -337.0
-offset_bottom = -1.0
-ignore_texture_size = true
-stretch_mode = 5
+[node name="Voltar" type="Button" parent="." unique_id=2111537020]
+offset_left = -546.0
+offset_top = 191.0
+offset_right = -332.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 32
+text = "Voltar"
+flat = true
 
-[node name="SpriteIndoPularSemCor" type="Sprite2D" parent="." unique_id=718400475]
-position = Vector2(359, -211.00002)
-scale = Vector2(0.6759259, 0.67592597)
-texture = ExtResource("3_4cc8y")
-
-[node name="SpritePulandoSemCor" type="Sprite2D" parent="." unique_id=692694357]
-position = Vector2(481, -217.99998)
-scale = Vector2(0.76388866, 0.76388866)
-texture = ExtResource("4_asubg")
-
-[node name="Cheia" type="Sprite2D" parent="." unique_id=1735829605]
-position = Vector2(357, 102.99999)
-scale = Vector2(0.7431973, 0.7431973)
-texture = ExtResource("5_teqxl")
-
-[node name="Cheia2" type="Sprite2D" parent="." unique_id=1027393267]
-position = Vector2(522, 233)
-scale = Vector2(0.34438768, 0.34438768)
-texture = ExtResource("5_teqxl")
-
-[node name="PretaCheio2" type="Sprite2D" parent="." unique_id=260110352]
-position = Vector2(357, -47)
-texture = ExtResource("6_bn5tc")
-
-[node name="PretaCheio3" type="Sprite2D" parent="." unique_id=897912347]
-position = Vector2(331, 233)
-scale = Vector2(0.38793105, 0.38793102)
-texture = ExtResource("6_bn5tc")
-
-[node name="PretaMetade2" type="Sprite2D" parent="." unique_id=400040873]
-position = Vector2(484, -43)
-texture = ExtResource("7_8hu6p")
-
-[node name="VerdeMetade" type="Sprite2D" parent="." unique_id=2133290602]
-position = Vector2(482.125, 107.79717)
-scale = Vector2(0.63993704, 0.63993704)
-texture = ExtResource("8_x5k57")
+[node name="tutorial2" type="Button" parent="." unique_id=1199099732]
+offset_left = -541.0
+offset_top = -53.0
+offset_right = -333.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 32
+text = "Tutorial"
+flat = true
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="tutorial2" to="." method="_on_tutorial_2_pressed"]
