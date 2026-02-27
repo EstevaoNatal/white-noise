@@ -1,14 +1,11 @@
 extends Node2D
-@onready var tile_map_layer: TileMapLayer = $TileMapLayer
 @onready var player: CharacterBody2D = $Player_manager/Player
-@onready var world: TileMapLayer = $world
-@onready var area_2d: Area2D = $Area2D
-@onready var sprite_2d: Sprite2D = $Area2D/Sprite2D
 @onready var platforms: Node = $platforms
 @onready var cargas_de_tinta: Label = %"Cargas de tinta"
 @onready var origin_spawnpoint: Marker2D = $spawnpoints/origin_spawnpoint
 @onready var player_manager: Node = $Player_manager
 @onready var current_spawnpoint = Globais.player_spawn
+@onready var camera_2d: Camera2D = $Player_manager/Camera2D
 @onready var first_area: Node2D = $"."
 signal load_second_level
 
@@ -18,7 +15,9 @@ var jogador = preload("res://scenes/player.tscn")
 
 func _ready() -> void:
 	player.position = current_spawnpoint
+	camera_2d.position = player.position
 	print(DisplayServer.screen_get_size())
+	Globais.fase_anterior = 1
 
 func _on_player_ready() -> void:
 	pass # Replace with function body.

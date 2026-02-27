@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://ce4laia03af1t" path="res://scenes/next_level_check.tscn" id="23_bqudx"]
 [ext_resource type="Texture2D" uid="uid://d17id5k5vlux7" path="res://images/objetos/maquinas2.png" id="24_o1isc"]
 [ext_resource type="Texture2D" uid="uid://bu4g4v7runq74" path="res://images/fundo/fundofase2.png" id="25_oq31a"]
-[ext_resource type="Texture2D" uid="uid://v5l46am6kvhn" path="res://images/UI/Carga/concepts_ui_fase_maquinas.png" id="26_oq31a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_160l7"]
 size = Vector2(700, 418)
@@ -105,7 +104,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(725, -669)]
+"values": [Vector2(725, -663)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -117,7 +116,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(762, -669)]
+"values": [Vector2(762, -663)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -129,7 +128,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(799, -669)]
+"values": [Vector2(799, -663)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -141,7 +140,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(836, -669)]
+"values": [Vector2(836, -663)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -153,7 +152,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(873, -669)]
+"values": [Vector2(873, -663)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -165,7 +164,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(910, -669)]
+"values": [Vector2(910, -663)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -177,7 +176,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(947, -669)]
+"values": [Vector2(947, -663)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -189,7 +188,7 @@ tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(984, -669)]
+"values": [Vector2(984, -663)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -201,7 +200,7 @@ tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(392, -669)]
+"values": [Vector2(392, -663)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -213,7 +212,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(429, -669)]
+"values": [Vector2(429, -663)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -225,7 +224,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(466, -669)]
+"values": [Vector2(466, -663)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -237,7 +236,7 @@ tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(503, -669)]
+"values": [Vector2(503, -663)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -249,7 +248,7 @@ tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(540, -669)]
+"values": [Vector2(540, -663)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -261,7 +260,7 @@ tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(577, -669)]
+"values": [Vector2(577, -663)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -273,7 +272,7 @@ tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(614, -669)]
+"values": [Vector2(614, -663)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -285,7 +284,7 @@ tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(651, -669)]
+"values": [Vector2(651, -663)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
@@ -297,7 +296,7 @@ tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(688, -669)]
+"values": [Vector2(688, -663)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
@@ -333,7 +332,7 @@ tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1021, -669)]
+"values": [Vector2(1021, -663)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
@@ -345,7 +344,7 @@ tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1058, -669)]
+"values": [Vector2(1058, -663)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
@@ -514,10 +513,10 @@ tracks/4/path = NodePath("plataformas/plataformas_esteira/StaticBody2D107:positi
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(725, -669), Vector2(725, -2093)]
+"values": [Vector2(726, -662), Vector2(725, -2093), Vector2(725, -2087)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -526,10 +525,10 @@ tracks/5/path = NodePath("plataformas/plataformas_esteira/StaticBody2D106:positi
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(762, -669), Vector2(762, -2093)]
+"values": [Vector2(763, -662), Vector2(762, -2093), Vector2(762, -2087)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -538,10 +537,10 @@ tracks/6/path = NodePath("plataformas/plataformas_esteira/StaticBody2D105:positi
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(799, -669), Vector2(799, -2093)]
+"values": [Vector2(800, -662), Vector2(799, -2093), Vector2(799, -2087)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -550,10 +549,10 @@ tracks/7/path = NodePath("plataformas/plataformas_esteira/StaticBody2D104:positi
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(836, -669), Vector2(836, -2093)]
+"values": [Vector2(837, -662), Vector2(836, -2093), Vector2(836, -2087)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -562,10 +561,10 @@ tracks/8/path = NodePath("plataformas/plataformas_esteira/StaticBody2D103:positi
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(873, -669), Vector2(873, -2093)]
+"values": [Vector2(874, -662), Vector2(873, -2093), Vector2(873, -2087)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -574,10 +573,10 @@ tracks/9/path = NodePath("plataformas/plataformas_esteira/StaticBody2D102:positi
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(910, -669), Vector2(910, -2093)]
+"values": [Vector2(911, -662), Vector2(910, -2093), Vector2(910, -2087)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -586,10 +585,10 @@ tracks/10/path = NodePath("plataformas/plataformas_esteira/StaticBody2D101:posit
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(947, -669), Vector2(947, -2093)]
+"values": [Vector2(948, -662), Vector2(947, -2093), Vector2(947, -2087)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -598,10 +597,10 @@ tracks/11/path = NodePath("plataformas/plataformas_esteira/StaticBody2D100:posit
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(984, -669), Vector2(984, -2093)]
+"values": [Vector2(985, -662), Vector2(984, -2093), Vector2(984, -2087)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -610,10 +609,10 @@ tracks/12/path = NodePath("plataformas/plataformas_esteira/StaticBody2D99:positi
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(392, -669), Vector2(392, -2093)]
+"values": [Vector2(393, -662), Vector2(392, -2093), Vector2(392, -2087)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -622,10 +621,10 @@ tracks/13/path = NodePath("plataformas/plataformas_esteira/StaticBody2D98:positi
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(429, -669), Vector2(429, -2093)]
+"values": [Vector2(430, -662), Vector2(429, -2093), Vector2(429, -2087)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -634,10 +633,10 @@ tracks/14/path = NodePath("plataformas/plataformas_esteira/StaticBody2D97:positi
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(466, -669), Vector2(466, -2093)]
+"values": [Vector2(467, -662), Vector2(466, -2093), Vector2(466, -2087)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -646,10 +645,10 @@ tracks/15/path = NodePath("plataformas/plataformas_esteira/StaticBody2D96:positi
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(503, -669), Vector2(503, -2093)]
+"values": [Vector2(504, -662), Vector2(503, -2093), Vector2(503, -2087)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -658,10 +657,10 @@ tracks/16/path = NodePath("plataformas/plataformas_esteira/StaticBody2D95:positi
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(540, -669), Vector2(540, -2093)]
+"values": [Vector2(541, -662), Vector2(540, -2093), Vector2(540, -2087)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -670,10 +669,10 @@ tracks/17/path = NodePath("plataformas/plataformas_esteira/StaticBody2D94:positi
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(577, -669), Vector2(577, -2093)]
+"values": [Vector2(578, -662), Vector2(577, -2093), Vector2(577, -2087)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -682,10 +681,10 @@ tracks/18/path = NodePath("plataformas/plataformas_esteira/StaticBody2D93:positi
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(614, -669), Vector2(614, -2093)]
+"values": [Vector2(615, -662), Vector2(614, -2093), Vector2(614, -2087)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -694,10 +693,10 @@ tracks/19/path = NodePath("plataformas/plataformas_esteira/StaticBody2D92:positi
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(651, -669), Vector2(651, -2093)]
+"values": [Vector2(652, -662), Vector2(651, -2093), Vector2(651, -2087)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
@@ -706,10 +705,10 @@ tracks/20/path = NodePath("plataformas/plataformas_esteira/StaticBody2D91:positi
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(688, -669), Vector2(688, -2093)]
+"values": [Vector2(689, -662), Vector2(688, -2093), Vector2(688, -2087)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
@@ -742,10 +741,10 @@ tracks/23/path = NodePath("plataformas/plataformas_esteira/StaticBody2D149:posit
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1021, -669), Vector2(1021, -2093)]
+"values": [Vector2(1022, -662), Vector2(1021, -2093), Vector2(1021, -2087)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
@@ -754,10 +753,10 @@ tracks/24/path = NodePath("plataformas/plataformas_esteira/StaticBody2D150:posit
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1058, -669), Vector2(1058, -2093)]
+"values": [Vector2(1059, -662), Vector2(1058, -2093), Vector2(1058, -2087)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
@@ -1118,61 +1117,61 @@ position = Vector2(68, -21)
 position = Vector2(31, -21)
 
 [node name="StaticBody2D91" parent="plataformas/plataformas_esteira" unique_id=947981689 instance=ExtResource("14_213rp")]
-position = Vector2(688, -669)
+position = Vector2(688, -663)
 
 [node name="StaticBody2D92" parent="plataformas/plataformas_esteira" unique_id=1618069518 instance=ExtResource("14_213rp")]
-position = Vector2(651, -669)
+position = Vector2(651, -663)
 
 [node name="StaticBody2D93" parent="plataformas/plataformas_esteira" unique_id=711790620 instance=ExtResource("14_213rp")]
-position = Vector2(614, -669)
+position = Vector2(614, -663)
 
 [node name="StaticBody2D94" parent="plataformas/plataformas_esteira" unique_id=848283434 instance=ExtResource("14_213rp")]
-position = Vector2(577, -669)
+position = Vector2(577, -663)
 
 [node name="StaticBody2D95" parent="plataformas/plataformas_esteira" unique_id=1412414940 instance=ExtResource("14_213rp")]
-position = Vector2(540, -669)
+position = Vector2(540, -663)
 
 [node name="StaticBody2D96" parent="plataformas/plataformas_esteira" unique_id=209070926 instance=ExtResource("14_213rp")]
-position = Vector2(503, -669)
+position = Vector2(503, -663)
 
 [node name="StaticBody2D97" parent="plataformas/plataformas_esteira" unique_id=43112161 instance=ExtResource("14_213rp")]
-position = Vector2(466, -669)
+position = Vector2(466, -663)
 
 [node name="StaticBody2D98" parent="plataformas/plataformas_esteira" unique_id=991607466 instance=ExtResource("14_213rp")]
-position = Vector2(429, -669)
+position = Vector2(429, -663)
 
 [node name="StaticBody2D99" parent="plataformas/plataformas_esteira" unique_id=850848648 instance=ExtResource("14_213rp")]
-position = Vector2(392, -669)
+position = Vector2(392, -663)
 
 [node name="StaticBody2D100" parent="plataformas/plataformas_esteira" unique_id=1772987966 instance=ExtResource("14_213rp")]
-position = Vector2(984, -669)
+position = Vector2(984, -663)
 
 [node name="StaticBody2D149" parent="plataformas/plataformas_esteira" unique_id=1768645107 instance=ExtResource("14_213rp")]
-position = Vector2(1021, -669)
+position = Vector2(1021, -663)
 
 [node name="StaticBody2D150" parent="plataformas/plataformas_esteira" unique_id=2108011624 instance=ExtResource("14_213rp")]
-position = Vector2(1058, -669)
+position = Vector2(1058, -663)
 
 [node name="StaticBody2D101" parent="plataformas/plataformas_esteira" unique_id=945245988 instance=ExtResource("14_213rp")]
-position = Vector2(947, -669)
+position = Vector2(947, -663)
 
 [node name="StaticBody2D102" parent="plataformas/plataformas_esteira" unique_id=1473831163 instance=ExtResource("14_213rp")]
-position = Vector2(910, -669)
+position = Vector2(910, -663)
 
 [node name="StaticBody2D103" parent="plataformas/plataformas_esteira" unique_id=2029861973 instance=ExtResource("14_213rp")]
-position = Vector2(873, -669)
+position = Vector2(873, -663)
 
 [node name="StaticBody2D104" parent="plataformas/plataformas_esteira" unique_id=1684947081 instance=ExtResource("14_213rp")]
-position = Vector2(836, -669)
+position = Vector2(836, -663)
 
 [node name="StaticBody2D105" parent="plataformas/plataformas_esteira" unique_id=1830075565 instance=ExtResource("14_213rp")]
-position = Vector2(799, -669)
+position = Vector2(799, -663)
 
 [node name="StaticBody2D106" parent="plataformas/plataformas_esteira" unique_id=752750474 instance=ExtResource("14_213rp")]
-position = Vector2(762, -669)
+position = Vector2(762, -663)
 
 [node name="StaticBody2D107" parent="plataformas/plataformas_esteira" unique_id=1247394390 instance=ExtResource("14_213rp")]
-position = Vector2(725, -669)
+position = Vector2(725, -663)
 
 [node name="StaticBody2D151" parent="plataformas/plataformas_esteira" unique_id=1572373023 instance=ExtResource("14_213rp")]
 position = Vector2(5, -2648)
@@ -1868,10 +1867,6 @@ z_index = -14
 position = Vector2(2586, -2487)
 scale = Vector2(5.8666663, 5)
 texture = ExtResource("25_oq31a")
-
-[node name="ConceptsUiFaseMaquinas" type="Sprite2D" parent="." unique_id=1207118852]
-position = Vector2(276, 387)
-texture = ExtResource("26_oq31a")
 
 [connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
 [connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
