@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="2_bliab"]
 [ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="3_oti4k"]
 [ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="5_wbhli"]
-[ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="6_308xq"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="6_308xq"]
 [ext_resource type="AudioStream" uid="uid://bwq6jqp0uka1t" path="res://musicas/MSC_T002.mp3" id="6_o1isc"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="7_2anwn"]
 [ext_resource type="AudioStream" uid="uid://oa7j28pgn68n" path="res://musicas/empilhadeira.mp3" id="7_oq31a"]
+[ext_resource type="AudioStream" uid="uid://c0sjoi5y33wf" path="res://musicas/livro caindo.mp3" id="8_khym2"]
 [ext_resource type="Texture2D" uid="uid://bqkl2qwxkw23p" path="res://images/objetos/placa esquerda.png" id="9_8tmsi"]
 [ext_resource type="Texture2D" uid="uid://cwkutgnydrs3y" path="res://images/objetos/placa direita.png" id="10_ymk8a"]
 [ext_resource type="Texture2D" uid="uid://b3h6jj274x8uf" path="res://images/objetos/esteira pintada esquerda.png" id="11_ntj7i"]
@@ -22,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c45i7e31m3sxj" path="res://images/objetos/caixa/caixa_completa.png" id="19_o6u0q"]
 [ext_resource type="PackedScene" uid="uid://da6rdi543wwmi" path="res://scenes/spawnpoints.tscn" id="20_suy0s"]
 [ext_resource type="Texture2D" uid="uid://dl40b7tb43hb3" path="res://images/fundo/fundo(1).png" id="21_ymu86"]
-[ext_resource type="Script" uid="uid://8l0idibxko44" path="res://scripts/caixas_levantadas.gd" id="22_41arw"]
+[ext_resource type="Script" path="res://scripts/caixas_levantadas.gd" id="22_41arw"]
 [ext_resource type="PackedScene" uid="uid://ce4laia03af1t" path="res://scenes/next_level_check.tscn" id="23_bqudx"]
 [ext_resource type="Texture2D" uid="uid://d17id5k5vlux7" path="res://images/objetos/maquinas2.png" id="24_o1isc"]
 [ext_resource type="Texture2D" uid="uid://bu4g4v7runq74" path="res://images/fundo/fundofase2.png" id="25_oq31a"]
@@ -945,6 +946,9 @@ autoplay = true
 [node name="empilhadeira" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=36346816]
 stream = ExtResource("7_oq31a")
 volume_db = 4.561
+
+[node name="LivroCaindo" type="AudioStreamPlayer" parent="Player_manager/Camera2D" unique_id=1403209148]
+stream = ExtResource("8_khym2")
 
 [node name="killzone" parent="." unique_id=233359857 instance=ExtResource("5_wbhli")]
 position = Vector2(620, 586)
