@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://ovmqqw5olq2l" path="res://scripts/second_area.gd" id="1_308xq"]
 [ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="2_bliab"]
 [ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="3_oti4k"]
-[ext_resource type="AudioStream" uid="uid://h2r5jmcke1k7" path="res://musicas/MSC_T001.mp3" id="4_wbhli"]
 [ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="5_wbhli"]
 [ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="6_308xq"]
+[ext_resource type="AudioStream" uid="uid://bwq6jqp0uka1t" path="res://musicas/MSC_T002.mp3" id="6_o1isc"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="7_2anwn"]
+[ext_resource type="AudioStream" uid="uid://oa7j28pgn68n" path="res://musicas/empilhadeira.mp3" id="7_oq31a"]
 [ext_resource type="Texture2D" uid="uid://bqkl2qwxkw23p" path="res://images/objetos/placa esquerda.png" id="9_8tmsi"]
 [ext_resource type="Texture2D" uid="uid://cwkutgnydrs3y" path="res://images/objetos/placa direita.png" id="10_ymk8a"]
 [ext_resource type="Texture2D" uid="uid://b3h6jj274x8uf" path="res://images/objetos/esteira pintada esquerda.png" id="11_ntj7i"]
@@ -937,8 +938,13 @@ offset_bottom = 256.0
 theme_override_font_sizes/font_size = 32
 text = "preto"
 
-[node name="musica primeira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=796908898]
-stream = ExtResource("4_wbhli")
+[node name="musica segunda fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=796908898]
+stream = ExtResource("6_o1isc")
+autoplay = true
+
+[node name="empilhadeira" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=36346816]
+stream = ExtResource("7_oq31a")
+volume_db = 4.561
 
 [node name="killzone" parent="." unique_id=233359857 instance=ExtResource("5_wbhli")]
 position = Vector2(620, 586)
@@ -1870,6 +1876,8 @@ texture = ExtResource("25_oq31a")
 
 [connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
 [connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
+[connection signal="finished" from="Player_manager/Camera2D/musica segunda fase" to="." method="_on_musica_segunda_fase_finished"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
+[connection signal="body_entered" from="caixas_levantadas/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="caixas_levantadas/Area2D" to="caixas_levantadas" method="_on_area_2d_body_entered"]

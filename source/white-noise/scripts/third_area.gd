@@ -21,6 +21,8 @@ extends Node2D
 @onready var label_n: Label = $coisas_boss/Parallax2D/LabelN
 @onready var label_h: Label = $coisas_boss/Parallax2D/LabelH
 @onready var label_a: Label = $coisas_boss/Parallax2D/LabelA
+@onready var ui_cargas: Node2D = %UI_Cargas
+@onready var musica_terceira_fase: AudioStreamPlayer2D = $"Player_manager/Camera2D/musica terceira fase"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +32,7 @@ func _ready() -> void:
 	camera_2d.position = player.position
 	Globais.fase_anterior=3
 	teclas.visible = false
+	ui_cargas.get_node("icon").play("level3")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -72,3 +75,7 @@ func _on_tecla_h_body_entered(body: CharacterBody2D) -> void:
 	if teclas.visible==true:
 		label_h.text = " H "
 		teclado_h.visible = false
+
+
+func _on_musica_terceira_fase_finished() -> void:
+	musica_terceira_fase.playing = true

@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://c1mnb2f4kbvnc" path="res://scripts/player_manager.gd" id="3_ylqgb"]
 [ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="4_1alko"]
 [ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="5_su4ky"]
-[ext_resource type="AudioStream" uid="uid://h2r5jmcke1k7" path="res://musicas/MSC_T001.mp3" id="6_m7fns"]
+[ext_resource type="AudioStream" uid="uid://cpn2j6i56ngoe" path="res://musicas/MSC_T004.mp3" id="6_11hfo"]
 [ext_resource type="Texture2D" uid="uid://bm2m7bsjwp36v" path="res://images/objetos/3fase/guarana 100 fruta pintada.png" id="7_su4ky"]
 [ext_resource type="Texture2D" uid="uid://e1m0xbculcjr" path="res://images/objetos/3fase/janela quebrada.png" id="8_m7fns"]
 [ext_resource type="Texture2D" uid="uid://rjcwbshloytl" path="res://images/objetos/3fase/mesa 2 pintada lado direito.png" id="9_1xx42"]
@@ -33,6 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://bqc88lw47j2of" path="res://images/objetos/livro/livro_5.png" id="28_2sa4w"]
 [ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="31_guxn5"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="32_283ac"]
+[ext_resource type="Texture2D" uid="uid://o1rrxtcu1jn8" path="res://images/objetos/copo_cafe pintadao.png" id="32_w6l43"]
+[ext_resource type="Texture2D" uid="uid://tw033jddv013" path="res://images/objetos/copo caindo.png" id="35_11hfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_210py"]
 size = Vector2(502.41577, 790.005)
@@ -89,7 +91,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1973, -491.99994)]
+"values": [Vector2(1790.9763, -202.25189)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -125,7 +127,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2197, -466.00012)]
+"values": [Vector2(2014.9763, -176.25208)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -161,7 +163,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2381, -468.00012)]
+"values": [Vector2(2198.9763, -178.25208)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -522,6 +524,189 @@ _data = {
 &"cair": SubResource("Animation_283ac")
 }
 
+[sub_resource type="Animation" id="Animation_cupbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(449, -362)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("copo_cafe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("copo_cafe/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.333374, -20)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("copo_cafe/CollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("copo_cafe:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("32_w6l43")]
+}
+
+[sub_resource type="Animation" id="Animation_rdnat"]
+resource_name = "derrubar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(449, -362), Vector2(433, -285)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("copo_cafe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("copo_cafe/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.333374, -20), Vector2(3.333374, -20)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("copo_cafe/CollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("copo_cafe:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.16580628]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("32_w6l43"), ExtResource("35_11hfo"), ExtResource("35_11hfo")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tu6qe"]
+_data = {
+&"RESET": SubResource("Animation_cupbk"),
+&"derrubar": SubResource("Animation_rdnat")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28a3b"]
+size = Vector2(683.3334, 693.3333)
+
 [node name="third_area" type="Node2D" unique_id=208438374]
 script = ExtResource("1_210py")
 
@@ -586,8 +771,10 @@ offset_bottom = 256.0
 theme_override_font_sizes/font_size = 32
 text = "preto"
 
-[node name="musica primeira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=884948048]
-stream = ExtResource("6_m7fns")
+[node name="musica terceira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=884948048]
+stream = ExtResource("6_11hfo")
+volume_db = -7.776
+autoplay = true
 
 [node name="Guarana100FrutaPintada" type="Sprite2D" parent="." unique_id=946798473]
 position = Vector2(910.0001, 420)
@@ -1079,7 +1266,7 @@ shape = SubResource("RectangleShape2D_w6l43")
 
 [node name="Livro3" type="Sprite2D" parent="livros" unique_id=775971126]
 z_index = -5
-position = Vector2(1973, -491.99994)
+position = Vector2(1790.9763, -202.25189)
 rotation = -0.9424778
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("26_gsla3")
@@ -1092,7 +1279,7 @@ shape = SubResource("RectangleShape2D_11hfo")
 
 [node name="Livro4" type="Sprite2D" parent="livros" unique_id=480309548]
 z_index = -6
-position = Vector2(2197, -466.00012)
+position = Vector2(2014.9763, -176.25208)
 rotation = -0.9424778
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("27_210py")
@@ -1105,7 +1292,7 @@ shape = SubResource("RectangleShape2D_11hfo")
 
 [node name="Livro5" type="Sprite2D" parent="livros" unique_id=864224766]
 z_index = -7
-position = Vector2(2381, -468.00012)
+position = Vector2(2198.9763, -178.25208)
 rotation = -0.9424778
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("28_2sa4w")
@@ -1119,6 +1306,12 @@ shape = SubResource("RectangleShape2D_11hfo")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="livros" unique_id=1027659608]
 libraries/ = SubResource("AnimationLibrary_w6l43")
 
+[node name="CopoCafePintadao2" type="Sprite2D" parent="livros" unique_id=1902395474]
+z_index = -1
+position = Vector2(1216, -362)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("32_w6l43")
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=669893370]
 layer = 35
 script = ExtResource("31_guxn5")
@@ -1129,7 +1322,7 @@ position = Vector2(-23, 433)
 [node name="UI_Cargas" parent="UI" unique_id=322756276 instance=ExtResource("32_283ac")]
 unique_name_in_owner = true
 z_index = 35
-position = Vector2(-371, 391)
+position = Vector2(104, 530)
 
 [node name="plataformas" type="Node" parent="." unique_id=1528615878]
 
@@ -1899,9 +2092,24 @@ rotation = 0.51487213
 position = Vector2(-927, 219)
 scale = Vector2(0.2, 1)
 
+[node name="CopoCafePintadao" type="Sprite2D" parent="." unique_id=982706228]
+position = Vector2(449, -362)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("32_w6l43")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CopoCafePintadao" unique_id=2073965780]
+libraries/ = SubResource("AnimationLibrary_tu6qe")
+
+[node name="copo_cafe" type="Area2D" parent="CopoCafePintadao" unique_id=612689982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CopoCafePintadao/copo_cafe" unique_id=1390232186]
+position = Vector2(3.333374, -20)
+shape = SubResource("RectangleShape2D_28a3b")
+
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
 [connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
 [connection signal="ready" from="Player_manager/Player" to="Player_manager/Player" method="_on_ready"]
+[connection signal="finished" from="Player_manager/Camera2D/musica terceira fase" to="." method="_on_musica_terceira_fase_finished"]
 [connection signal="body_entered" from="Teclado/deteccao aparecer teclas" to="." method="_on_deteccao_aparecer_teclas_body_entered"]
 [connection signal="body_entered" from="teclas/TecladoS/teclaS" to="." method="_on_tecla_s_body_entered"]
 [connection signal="body_entered" from="teclas/TecladoN/teclaN" to="." method="_on_tecla_n_body_entered"]

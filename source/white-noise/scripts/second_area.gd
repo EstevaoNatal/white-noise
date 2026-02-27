@@ -2,6 +2,8 @@ extends Node2D
 @onready var current_spawnpoint = Globais.player_spawn
 @onready var player: CharacterBody2D = %Player
 @onready var ui_cargas: Node2D = %UI_Cargas
+@onready var musica_segunda_fase: AudioStreamPlayer2D = $"Player_manager/Camera2D/musica segunda fase"
+@onready var empilhadeira: AudioStreamPlayer2D = $Player_manager/Camera2D/empilhadeira
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,3 +24,11 @@ func _on_killzone_body_entered(body: CharacterBody2D) -> void:
 
 func _on_reload_timer_timeout() -> void:
 	player.can_ink = true
+
+
+func _on_musica_segunda_fase_finished() -> void:
+	musica_segunda_fase.playing = true
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	empilhadeira.play()
