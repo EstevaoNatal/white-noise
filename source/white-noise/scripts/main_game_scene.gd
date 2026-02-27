@@ -87,7 +87,9 @@ func _process(delta: float) -> void:
 		
 		Globais.voltar_jogo = false
 	
-	if Input.is_action_just_pressed("close_game") && Globais.fase_atual!=4: #abre menu de opcoes
+	#print("fase atual: ", Globais.fase_atual)
+	
+	if Input.is_action_just_pressed("close_game") && Globais.fase_atual!=4 && Globais.fase_atual!=0 && main_game_scene.get_node("NodeOpcoes").get_node("Camera2D").enabled == false: #abre menu de opcoes
 		main_game_scene.get_node("NodeOpcoes").get_node("Camera2D").enabled = true
 		nivelAtual = main_game_scene.get_child(-1)
 		main_game_scene.remove_child(nivelAtual)

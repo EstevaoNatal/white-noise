@@ -137,8 +137,8 @@ esferas de tinta no ícone do Carimbô"
 
 [node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=2090550787]
 z_index = -2
-position = Vector2(0, -1)
-scale = Vector2(0.6, 0.6)
+position = Vector2(11, 6)
+scale = Vector2(0.63363636, 0.63363636)
 texture = ExtResource("10_8hu6p")
 
 [node name="MesaMenuPapel" type="Sprite2D" parent="." unique_id=637103019]
@@ -203,6 +203,22 @@ offset_right = 358.0
 offset_bottom = 49.0
 max_value = 1.0
 step = 0.01
+
+[node name="Label" type="Label" parent="ControlesVolume" unique_id=480492559]
+offset_left = 142.0
+offset_top = -222.0
+offset_right = 354.0
+offset_bottom = -143.0
+theme_override_font_sizes/font_size = 64
+text = "Master"
+
+[node name="Label2" type="Label" parent="ControlesVolume" unique_id=1623687675]
+offset_left = 139.0
+offset_top = -46.0
+offset_right = 356.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 64
+text = "Música"
 
 [node name="Volume" type="TextureButton" parent="." unique_id=436795954]
 offset_left = -410.0
