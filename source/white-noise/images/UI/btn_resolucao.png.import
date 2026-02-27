@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwaj4h8ynmgc6"
-path="res://.godot/imported/_voltar.png-10ef909f082955d38a3027e139256a17.ctex"
+uid="uid://bguq0sog5rqgp"
+path="res://.godot/imported/btn_resolucao.png-01526e4f9bb8d546172159ae941ab2b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/UI/_voltar.png"
-dest_files=["res://.godot/imported/_voltar.png-10ef909f082955d38a3027e139256a17.ctex"]
+source_file="res://images/UI/btn_resolucao.png"
+dest_files=["res://.godot/imported/btn_resolucao.png-01526e4f9bb8d546172159ae941ab2b9.ctex"]
 
 [params]
 
