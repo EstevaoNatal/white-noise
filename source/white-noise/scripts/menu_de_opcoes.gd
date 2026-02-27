@@ -12,11 +12,15 @@ extends Node2D
 @onready var master_vol: HSlider = $ControlesVolume/MasterVol
 @onready var musica_vol: HSlider = $ControlesVolume/MusicaVol
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var mao: Sprite2D =$Mao
 signal fecharOpcoes
 var contador_musga
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN #mao
+	
 	master_vol.value = db_to_linear(Globais.master_bus)
 	musica_vol.value = db_to_linear(Globais.musica_bus)
 	menu_button.get_popup().add_item("1920x1080")
@@ -26,6 +30,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	#inicio-Mão-mouse
+	var mouse_pos = get_global_mouse_position()
+	mao.position.x = mouse_pos.x+215
+	mao.position.y = mouse_pos.y+131
+	#fim-Mão-mouse
+	
 	if node_opcoes.visible==true:
 		if Globais.ligar_tutorial==true:
 			node_opcoes.get_node("tutorial").visible = true
@@ -36,6 +47,8 @@ func _process(delta: float) -> void:
 	#	contador_musga=1
 	#else:
 	#	contador_musga=0
+	
+	
 
 
 func _on_popup_pressed(botao):

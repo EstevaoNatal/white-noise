@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bwaj4h8ynmgc6" path="res://images/UI/btn_voltar.png" id="12_bx3ed"]
 [ext_resource type="Texture2D" uid="uid://br82c8nxgoonb" path="res://images/UI/_tutorial.png" id="13_olae2"]
 [ext_resource type="Texture2D" uid="uid://cd4lt8g0ivfik" path="res://images/UI/btn_volume.png" id="14_lwifl"]
+[ext_resource type="Texture2D" uid="uid://cy3imydvgb40q" path="res://images/objetos/mão(1).png" id="15_bx3ed"]
 
 [node name="Node2D" type="Node2D" unique_id=678393272]
 script = ExtResource("1_lfb0o")
@@ -93,13 +94,11 @@ te atenção em quantas ainda possui por meio das
 esferas de tinta no ícone do Carimbô"
 
 [node name="Label2" type="Label" parent="tutorial" unique_id=1237677448]
-offset_left = -437.0
-offset_top = -296.0
-offset_right = -209.0
-offset_bottom = -221.0
-text = "Durante as fases, você pode 
-acessar esse menu novamen-
-te através do Esc."
+offset_left = -557.0
+offset_top = -286.0
+offset_right = -128.0
+offset_bottom = -262.0
+text = "Em jogo, você pode  acessar esse menu através do Esc."
 
 [node name="Seta" type="Sprite2D" parent="tutorial" unique_id=1697991124]
 position = Vector2(425, 232)
@@ -107,9 +106,9 @@ texture = ExtResource("3_asubg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="tutorial" unique_id=107877307]
 offset_left = -105.0
-offset_top = -258.0
+offset_top = -280.0
 offset_right = 298.0
-offset_bottom = 261.0
+offset_bottom = 273.0
 text = "Aperte, segure e solte C ou Espaço para pular.
 
 Segurando o botão por no máximo 4 segundos, 
@@ -136,15 +135,15 @@ tilham a mesma quantidade de cargas, então pres-
 te atenção em quantas ainda possui por meio das
 esferas de tinta no ícone do Carimbô"
 
-[node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=731595890]
-z_index = -25
-position = Vector2(24, -6)
+[node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=2090550787]
+z_index = -2
+position = Vector2(0, -1)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("10_8hu6p")
 
 [node name="MesaMenuPapel" type="Sprite2D" parent="." unique_id=637103019]
 z_index = -2
-position = Vector2(-328, 30)
+position = Vector2(-368, -12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_x5k57")
 
@@ -210,6 +209,12 @@ offset_left = -410.0
 offset_top = 108.0
 offset_right = -217.0
 offset_bottom = 201.0
+
+[node name="Mao" type="Sprite2D" parent="." unique_id=145912104]
+z_index = 5
+position = Vector2(447, 328)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("15_bx3ed")
 
 [connection signal="pressed" from="MesaMenuPapel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MesaMenuPapel/Voltar" to="." method="_on_voltar_pressed"]
