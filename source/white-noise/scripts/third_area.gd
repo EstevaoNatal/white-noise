@@ -33,6 +33,11 @@ extends Node2D
 @onready var fala_7_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala7audio
 @onready var fala_8_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala8audio
 @onready var _5_segundos_constrangedores: Timer = $"5segundosConstrangedores"
+@onready var livros_caindo: AudioStreamPlayer2D = $Player_manager/Camera2D/livrosCaindo
+@onready var dica_depois_de_2_min: Timer = $dicaDepoisDe2Min
+@onready var livro_3: Sprite2D = $livros/Livro3
+@onready var livro_4: Sprite2D = $livros/Livro4
+@onready var livro_5: Sprite2D = $livros/Livro5
 var contador1=0
 var contador2=0
 var contador3=0
@@ -40,6 +45,7 @@ var contador4=0
 var contador5=0
 var contador6=0
 var contador7=0
+var contador8=0
 var tocar2=false
 var tocar3=false
 var tocar4=false
@@ -53,6 +59,7 @@ var terminou3=false
 var terminou4=false
 var terminou5=false
 var terminou6=false
+var pode_derrubar=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -69,9 +76,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if label_h.text == " H " && label_h.text == " S " && label_h.text == " E " && label_h.text == " N " && label_h.text == " A ":
+	if label_h.text == " H " && label_s.text == " S " && label_e.text == " E " && label_n.text == " N " && label_a.text == " A " && contador7==0:
 		tocar4 = true
+		livros_caindo.play()
 		animation_player.play("cair")
+		pode_derrubar = true
+		livro_3.get_node("StaticBody2D").process_mode = livro_3.get_node("StaticBody2D").PROCESS_MODE_DISABLED
+		livro_4.get_node("StaticBody2D").process_mode = livro_4.get_node("StaticBody2D").PROCESS_MODE_DISABLED
+		livro_5.get_node("StaticBody2D").process_mode = livro_5.get_node("StaticBody2D").PROCESS_MODE_DISABLED
+		contador7=1
+	
+	print(contador5)
 	
 	if contador1==0 && terminou1 && tocar2:
 		fala_2_audio.play()
@@ -85,7 +100,6 @@ func _process(delta: float) -> void:
 		fala_4_audio.play()
 		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador3=1
-		_5_segundos_constrangedores.start()
 	if contador4==0 && terminou4 && tocar5:
 		fala_5_audio.play()
 		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
@@ -94,16 +108,19 @@ func _process(delta: float) -> void:
 		fala_7_audio.play()
 		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador6=1
-
+	
+	#print("terminou3: ", terminou3)
+	#print("tocar4: ", tocar4)
+	
 func _on_reload_timer_timeout() -> void:
 	player.can_ink = true 
 
 
 func _on_deteccao_aparecer_teclas_body_entered(body: CharacterBody2D) -> void:
-	if contador3==0:
+	if contador8==0:
 		tocar3=true
 		teclas.visible = true
-		contador3=1
+		contador8=1
 
 
 func _on_tecla_a_body_entered(body: CharacterBody2D) -> void:
@@ -138,7 +155,6 @@ func _on_tecla_h_body_entered(body: CharacterBody2D) -> void:
 func _on_musica_terceira_fase_finished() -> void:
 	musica_terceira_fase.playing = true
 
-
 func _on_killzone_body_entered(body: CharacterBody2D) -> void:
 	Globais.fase_atual = 4
 
@@ -148,7 +164,6 @@ func _on_copo_cafe_body_entered(body: CharacterBody2D) -> void:
 	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 	fala_7_audio.stop()
 	fala_8_audio.play()
-
 
 func _on_vrido_finished() -> void:
 	fala_1_audio.play()
@@ -170,11 +185,13 @@ func _on_fala_3_audio_finished() -> void:
 
 
 func _on_fala_4_audio_finished() -> void:
+	_5_segundos_constrangedores.start()
 	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	terminou4=true
 
 
 func _on_fala_5_audio_finished() -> void:
+	dica_depois_de_2_min.start()
 	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	terminou5=true
 
