@@ -1,15 +1,238 @@
 [gd_scene format=3 uid="uid://bqwcartjmy6vb"]
 
-[ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="1_spoww"]
+[ext_resource type="Script" uid="uid://dwwryqli67qyy" path="res://scripts/camera_creditos.gd" id="1_jddgq"]
+[ext_resource type="Texture2D" uid="uid://cnt88rfxa713" path="res://images/creditos/fundo_creditos.png" id="2_lgbdq"]
+[ext_resource type="AudioStream" uid="uid://bvkqnj5agdkps" path="res://musicas/MSC_T003.mp3" id="2_lrn2f"]
+[ext_resource type="Texture2D" uid="uid://bl5q128knukri" path="res://images/UI/logo_fabercarimbos.png" id="3_ul0vb"]
+[ext_resource type="Texture2D" uid="uid://bqvkrsfqmrv7l" path="res://images/creditos/image-6.png" id="4_lgbdq"]
+[ext_resource type="Texture2D" uid="uid://bx61xh4lelbo" path="res://images/creditos/image-1.png" id="5_lrn2f"]
+[ext_resource type="Texture2D" uid="uid://bpwawx1b4i6tc" path="res://images/creditos/image-4.png" id="6_3ghxt"]
+[ext_resource type="Texture2D" uid="uid://bmsm588ln6eag" path="res://images/creditos/image_7.png" id="8_2ove7"]
+[ext_resource type="Texture2D" uid="uid://bageu2slujmgg" path="res://images/creditos/image-5.png" id="8_ouidq"]
 
-[node name="Node2D" type="Node2D" unique_id=2087413905]
+[sub_resource type="GDScript" id="GDScript_idjxt"]
+script/source = "extends Node2D
 
-[node name="Preto" type="Sprite2D" parent="." unique_id=1097805726]
-position = Vector2(576, 324)
-texture = ExtResource("1_spoww")
 
-[node name="Label" type="Label" parent="." unique_id=901905010]
-offset_left = 166.0
-offset_top = 104.0
-offset_right = 994.0
-offset_bottom = 233.0
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="credito" type="Node2D" unique_id=556117817]
+script = SubResource("GDScript_idjxt")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=923440678 node_paths=PackedStringArray("timer", "musga")]
+position = Vector2(500, 324)
+script = ExtResource("1_jddgq")
+velocidade = 0.5
+fim = 3780
+timer = NodePath("Timer")
+musga = NodePath("trilha_sonora")
+
+[node name="Timer" type="Timer" parent="Camera2D" unique_id=643349927]
+wait_time = 10.0
+one_shot = true
+
+[node name="trilha_sonora" type="AudioStreamPlayer2D" parent="Camera2D" unique_id=1330251483]
+stream = ExtResource("2_lrn2f")
+volume_db = -10.0
+
+[node name="FundoCreditos" type="Sprite2D" parent="." unique_id=2023122429]
+position = Vector2(503, 2052)
+scale = Vector2(0.623, 3.8)
+texture = ExtResource("2_lgbdq")
+
+[node name="LogoFabercarimbos" type="Sprite2D" parent="." unique_id=758711976]
+position = Vector2(513.00006, 144.93494)
+scale = Vector2(0.13708399, 0.13708399)
+texture = ExtResource("3_ul0vb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1150885666]
+offset_left = -78.0
+offset_top = 396.93506
+offset_right = 1075.0
+offset_bottom = 3979.0
+bbcode_enabled = true
+text = "[b] Agora o carimbo robô está livre das amarras da IA  que o controlava! [/b]
+
+
+
+
+[b] E como primeiro passo após a liverdade, decidiu se chamar.... Carimbolas! [/b]
+
+
+
+
+
+
+
+
+
+
+
+
+
+[font_size=21][b]Animação [/b][/font_size]
+Spoiledchoco  (bobotron 10 000)
+
+[font_size=21]Arte 2D & Design [/b][/font_size]
+Spoiledchoco  (bobotron 10 000)
+ArvoreDeNatal (bobotron 2000)
+Na (ayacat) (chucatron 8000)
+
+[font_size=21][b]Desenvolvimento/Programação[/b][/font_size]
+Bonker (bobotron 3000)
+
+[font_size=21][b]Design de Personagem [/b][/font_size]
+Spoiledchoco  (bobotron 10 000)
+
+[font_size=21][b]Diretor de arte [/b] [/font_size]
+Spoiledchoco  (bobotron 10 000)
+ArvoreDeNatal (bobotron 2000)
+
+[font_size=21][b]Dublagem [/b][/font_size]
+DGarcez (bobotron 13000)
+
+[font_size=21][b]Game Design [/b][/font_size]
+DGarcez (bobotron 13000)
+Annemone (Bonker) (bobotron 3000)
+
+[font_size=21][b]Level Design [/b][/font_size]
+DGarcez (bobotron 13000)
+ArvoreDeNatal (bobotron 2000)
+Na (ayacat) (chucatron 8000)
+
+[font_size=21][b]Narrativa[/b][/font_size]
+DGarcez (bobotron 13000)
+ArvoreDeNatal (bobotron 2000)
+
+[font_size=21][b]Trilha sonora e Sonoplastia[/b][/font_size]
+Na (ayacat) (chucatron 8000)
+
+
+
+
+
+
+
+
+
+[font_size=21][b]FRASES MARCANTES EQUIPE WHITE NOISE NA FELPOJAM[/b][/font_size]
+
+\"O carimbo pinguço\"~chucatron 10000
+
+\"Estojo de peixe\"~chucatron 10000
+
+\"franciscóceano\"~DGarcez
+
+\"Qual é a dificuldade?\"~DGarcez
+
+\"Agora eu.\"~DGarcez
+
+\"pésçscimo\"~DGarcez
+
+\"Sadbolas\"~DGarcez
+
+\"Eu nunca.\"~DGarcez
+
+\"Mandei algo do meu ctrl c do sellualr\"~DGarcez
+
+\"нет нет я не снаю\"~chucatron 10000
+
+\"fundo de barulho de china\"~chucatron 2000
+
+\"Tem outro jeito de teclado?\" ~DGarcez
+
+\"A luz caiu zé\" ~chucatron 8000
+
+\"ops... carimbei\" ~chucatron 2000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[font_size=21][b]Agradecimentos Especiaisn´t[/b][/font_size]
+Cafunga a carequinha
+O coiso
+Oi meu nome é samara...
+Pedro de formiga
+Eles estão de olho em nois
+Elefante na sala (e da cozinha tambem)
+Sofá de gorila
+
+[font_size=21][b]Agradecimentos Especiais[/b][/font_size]
+Lula (If 22 than 13)
+Jaime (O gato)
+A nota impotante
+A cadeira confortável
+Felps
+C3B
+Bastos
+Dumativa
+Toda equipe que possibilitou a FelpoJam
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+[font_size=24][b]E a você que jogou, agradeci-lhe-vos-eimos!![/b][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Image6" type="Sprite2D" parent="." unique_id=84628796]
+position = Vector2(142, 2082)
+scale = Vector2(0.16763319, 0.18532228)
+texture = ExtResource("4_lgbdq")
+
+[node name="Image1" type="Sprite2D" parent="." unique_id=422350141]
+position = Vector2(113, 2484)
+texture = ExtResource("5_lrn2f")
+
+[node name="Image4" type="Sprite2D" parent="." unique_id=1145937283]
+position = Vector2(917, 2051)
+texture = ExtResource("6_3ghxt")
+
+[node name="Image5" type="Sprite2D" parent="." unique_id=713913739]
+position = Vector2(899, 2412.0002)
+scale = Vector2(0.5905404, 0.5905404)
+texture = ExtResource("8_ouidq")
+
+[node name="comecarCreditos" type="Timer" parent="." unique_id=1297171127]
+wait_time = 2.0
+one_shot = true
+
+[node name="Image7" type="Sprite2D" parent="." unique_id=1746157033]
+position = Vector2(497, 2769)
+scale = Vector2(0.8381642, 0.83816427)
+texture = ExtResource("8_2ove7")
+
+[connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
+[connection signal="finished" from="Camera2D/trilha_sonora" to="Camera2D" method="_on_trilha_sonora_finished"]
+[connection signal="timeout" from="comecarCreditos" to="Camera2D" method="_on_comecar_creditos_timeout"]

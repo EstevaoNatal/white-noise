@@ -13,11 +13,16 @@
 [ext_resource type="AudioStream" uid="uid://dlrep7otido3f" path="res://musicas/porta.mp3" id="7_opw5j"]
 [ext_resource type="AudioStream" uid="uid://0qlxlgthi6tm" path="res://musicas/carimbano.mp3" id="8_ms560"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="8_rsbve"]
+[ext_resource type="AudioStream" uid="uid://ji4odqw755ch" path="res://musicas/falas atualizadas/V5 F1 D1.mp3" id="9_87pct"]
 [ext_resource type="Texture2D" uid="uid://c5wchi3jt0cx8" path="res://images/objetos/documentoImportante.png" id="9_ebhel"]
+[ext_resource type="AudioStream" uid="uid://bkf2qoih4uw76" path="res://musicas/falas atualizadas/V5 F1 D2.mp3" id="10_1s5s2"]
 [ext_resource type="Texture2D" uid="uid://dbak2qfs6xw0u" path="res://images/objetos/Mesa (pintado) LADO DIREITO PEQUENO!!.png" id="11_5b4cl"]
+[ext_resource type="AudioStream" uid="uid://2y6awy2w66bg" path="res://musicas/falas atualizadas/V5 F1 D3.mp3" id="11_8tlnc"]
+[ext_resource type="AudioStream" uid="uid://ds7uor6jeiix1" path="res://musicas/falas atualizadas/V5 F1 D4.mp3" id="12_44cke"]
 [ext_resource type="PackedScene" uid="uid://da6rdi543wwmi" path="res://scenes/spawnpoints.tscn" id="12_dinhu"]
 [ext_resource type="Texture2D" uid="uid://cxcdog1y1hux5" path="res://images/objetos/mesa (pintado) LADO ESQUERDO GRANDE.png" id="12_iabq3"]
 [ext_resource type="Texture2D" uid="uid://bimb0ffkr6nwx" path="res://images/fase_1/papel_folha.png" id="13_5b4cl"]
+[ext_resource type="AudioStream" uid="uid://md4tbti4m1y7" path="res://musicas/falas atualizadas/V5 F1 D5.mp3" id="13_v3bvg"]
 [ext_resource type="Texture2D" uid="uid://gg3ndijepbxl" path="res://images/objetos/estante direita pintada.png" id="14_qnkvy"]
 [ext_resource type="Texture2D" uid="uid://cnwke2er5l0w8" path="res://images/objetos/estante esquerda pintada.png" id="15_nbdn1"]
 [ext_resource type="Texture2D" uid="uid://bq8ix7644qvtp" path="res://images/objetos/estante meio pintada.png" id="16_nbdn1"]
@@ -35,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://chvd8ndyta0re" path="res://images/objetos/cadeira_propria2.jpg" id="31_1me6s"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_gdk56"]
-points = PackedVector2Array(112, -82, 346, -134, 576, -168, 862, -182, 1072, -172, 1336, -104, 1400, -16, 2, -4)
+points = PackedVector2Array(252, -118, 516, -160, 812, -180, 1102, -168, 1340, -98, 1400, -8, 1428, 156, -8, 160, -6, -2, 84, -70)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_nbdn1"]
 points = PackedVector2Array(-282, 50, -208, -38, -86, -78, 14, -86, 174, -78, 228, -46, 266, 12, 278, 106)
@@ -44,7 +49,7 @@ points = PackedVector2Array(-282, 50, -208, -38, -86, -78, 14, -86, 174, -78, 22
 size = Vector2(533, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5b4cl"]
-size = Vector2(3170.5, 20)
+size = Vector2(2473.25, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iabq3"]
 size = Vector2(904, 441)
@@ -65,7 +70,16 @@ size = Vector2(150, 852)
 size = Vector2(823.5, 2154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1me6s"]
-size = Vector2(429.22705, 446.86658)
+size = Vector2(727.2139, 862.3549)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3bvg"]
+size = Vector2(651, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87pct"]
+size = Vector2(559, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s5s2"]
+size = Vector2(483, 193)
 
 [node name="first_area" type="Node2D" unique_id=971450599]
 script = ExtResource("1_lbhrr")
@@ -145,7 +159,7 @@ text = "preto"
 
 [node name="musica primeira fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1841112230]
 stream = ExtResource("6_1me6s")
-autoplay = true
+volume_db = -10.0
 bus = &"Musica"
 
 [node name="porta abrindo" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1316845121]
@@ -155,6 +169,26 @@ volume_db = 7.776
 [node name="carimbando" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1146370357]
 stream = ExtResource("8_ms560")
 volume_db = 6.804
+
+[node name="fala1 fase1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1357421590]
+stream = ExtResource("9_87pct")
+volume_db = 7.0
+
+[node name="fala2 fase1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=447333643]
+stream = ExtResource("10_1s5s2")
+volume_db = 7.0
+
+[node name="fala3 fase1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=173001980]
+stream = ExtResource("11_8tlnc")
+volume_db = 7.0
+
+[node name="fala4 fase 1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1226960164]
+stream = ExtResource("12_44cke")
+volume_db = 7.0
+
+[node name="fala5 fase1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=457853751]
+stream = ExtResource("13_v3bvg")
+volume_db = 7.0
 
 [node name="Player" parent="Player_manager" unique_id=1572016301 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
@@ -795,14 +829,14 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("11_5b4cl")
 flip_h = true
 
-[node name="Mesa(pintado)LadoEsquerdoGrande" type="Sprite2D" parent="mesa" unique_id=1052938066]
-position = Vector2(15, 237)
+[node name="Mesa_quina2" type="Sprite2D" parent="mesa" unique_id=36780458]
+z_index = 1
+position = Vector2(617, 249)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("12_iabq3")
-flip_h = true
+texture = ExtResource("11_5b4cl")
 
-[node name="Mesa(pintado)LadoEsquerdoGrande2" type="Sprite2D" parent="mesa" unique_id=85958904]
-position = Vector2(1308.0001, 237)
+[node name="Mesa(pintado)LadoEsquerdoGrande" type="Sprite2D" parent="mesa" unique_id=1052938066]
+position = Vector2(16, 243)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("12_iabq3")
 flip_h = true
@@ -811,7 +845,8 @@ flip_h = true
 position = Vector2(-102, 107)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mesa/mesa_chão" unique_id=1705896156]
-position = Vector2(785.75, 12)
+z_index = 1
+position = Vector2(436.375, 7.5)
 shape = SubResource("RectangleShape2D_5b4cl")
 
 [node name="PapelFolha" type="Sprite2D" parent="." unique_id=1954003017]
@@ -1097,15 +1132,16 @@ position = Vector2(-1019, 272)
 
 [node name="DocumentoImportante" type="Sprite2D" parent="." unique_id=1005520319]
 z_index = -2
-position = Vector2(-1373, -1361)
-scale = Vector2(0.17007308, 0.17007305)
+position = Vector2(-1089.0001, -1421)
+scale = Vector2(0.3457118, 0.34571165)
 texture = ExtResource("9_ebhel")
 script = ExtResource("25_31ak0")
 
 [node name="Area2D" type="Area2D" parent="DocumentoImportante" unique_id=2082215527]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DocumentoImportante/Area2D" unique_id=1511104912]
-position = Vector2(2.9399414, -17.639648)
+position = Vector2(21.106934, -51.884277)
+scale = Vector2(0.99999994, 1.0000001)
 shape = SubResource("RectangleShape2D_1me6s")
 
 [node name="CadeiraPropria2" type="Sprite2D" parent="." unique_id=1967029248]
@@ -1123,11 +1159,54 @@ position = Vector2(290, -851)
 scale = Vector2(0.4177778, 0.4177778)
 texture = ExtResource("31_1me6s")
 
+[node name="tocarFala2" type="Area2D" parent="." unique_id=774589007]
+position = Vector2(62, 61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tocarFala2" unique_id=386743359]
+position = Vector2(4, -2)
+shape = SubResource("RectangleShape2D_v3bvg")
+
+[node name="tocarFala3" type="Area2D" parent="." unique_id=581486626]
+position = Vector2(1215, -412)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tocarFala3" unique_id=167328741]
+position = Vector2(135.5, -4)
+shape = SubResource("RectangleShape2D_87pct")
+
+[node name="tocarFala4" type="Area2D" parent="." unique_id=1454235334]
+position = Vector2(1530, -1740)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tocarFala4" unique_id=1609860758]
+
+[node name="tocarFala5" type="Area2D" parent="." unique_id=795590408]
+position = Vector2(-1409, -1345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tocarFala5" unique_id=1329985734]
+position = Vector2(118.5, -44.5)
+shape = SubResource("RectangleShape2D_1s5s2")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2890709]
+
+[node name="FaseTutorialEscrivaninha2" type="Sprite2D" parent="Parallax2D" unique_id=362038592]
+z_index = 2
+texture_filter = 1
+position = Vector2(898, 683.00006)
+scale = Vector2(1.2740741, 1.2740741)
+texture = ExtResource("5_u5sy4")
+
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
 [connection signal="finished" from="Player_manager/Camera2D/musica primeira fase" to="." method="_on_musica_primeira_fase_finished"]
+[connection signal="finished" from="Player_manager/Camera2D/fala1 fase1" to="." method="_on_fala_1_fase_1_finished"]
+[connection signal="finished" from="Player_manager/Camera2D/fala2 fase1" to="." method="_on_fala_2_fase_1_finished"]
+[connection signal="finished" from="Player_manager/Camera2D/fala3 fase1" to="." method="_on_fala_3_fase_1_finished"]
+[connection signal="finished" from="Player_manager/Camera2D/fala4 fase 1" to="." method="_on_fala_4_fase_1_finished"]
+[connection signal="finished" from="Player_manager/Camera2D/fala5 fase1" to="." method="_on_fala_5_fase_1_finished"]
 [connection signal="cargas" from="platforms" to="." method="_on_platforms_cargas"]
 [connection signal="property_list_changed" from="platforms" to="platforms" method="_on_property_list_changed"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="DocumentoImportante/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="DocumentoImportante/Area2D" to="DocumentoImportante" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="tocarFala2" to="." method="_on_tocar_fala_2_body_entered"]
+[connection signal="body_entered" from="tocarFala3" to="." method="_on_tocar_fala_3_body_entered"]
+[connection signal="body_entered" from="tocarFala5" to="." method="_on_tocar_fala_5_body_entered"]

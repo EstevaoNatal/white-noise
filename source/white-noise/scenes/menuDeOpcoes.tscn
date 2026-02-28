@@ -9,11 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://bc20k4t2qql6y" path="res://images/UI/Carga/carga_min/_preta_metade_2.png" id="7_8hu6p"]
 [ext_resource type="Texture2D" uid="uid://cxyxdu1445wk" path="res://images/UI/Carga/carga_min/_verde_metade.png" id="8_x5k57"]
 [ext_resource type="Texture2D" uid="uid://tfyovw7ibxsn" path="res://images/fundo/mesa menu pintada.png" id="10_8hu6p"]
-[ext_resource type="Texture2D" uid="uid://bguq0sog5rqgp" path="res://images/UI/btn_resolucao.png" id="11_7mch3"]
+[ext_resource type="Texture2D" uid="uid://drv8wd85l5ec8" path="res://images/UI/_resolucao_2.png" id="11_bx3ed"]
 [ext_resource type="Texture2D" uid="uid://coitnd6fq8dqy" path="res://images/UI/mesa_menu_papel.png" id="11_x5k57"]
-[ext_resource type="Texture2D" uid="uid://bwaj4h8ynmgc6" path="res://images/UI/btn_voltar.png" id="12_bx3ed"]
-[ext_resource type="Texture2D" uid="uid://br82c8nxgoonb" path="res://images/UI/_tutorial.png" id="13_olae2"]
-[ext_resource type="Texture2D" uid="uid://cd4lt8g0ivfik" path="res://images/UI/btn_volume.png" id="14_lwifl"]
+[ext_resource type="Texture2D" uid="uid://sm5gcixrisdj" path="res://images/UI/_voltar_2.png" id="12_olae2"]
+[ext_resource type="Texture2D" uid="uid://c3bcijwf7dop0" path="res://images/UI/_tutorial_2.png" id="13_lwifl"]
+[ext_resource type="Texture2D" uid="uid://dilob52uo0n3j" path="res://images/UI/_volume_2.png" id="14_mrxo8"]
+[ext_resource type="Texture2D" uid="uid://cy3imydvgb40q" path="res://images/objetos/mão(1).png" id="15_bx3ed"]
 
 [node name="Node2D" type="Node2D" unique_id=678393272]
 script = ExtResource("1_lfb0o")
@@ -93,13 +94,11 @@ te atenção em quantas ainda possui por meio das
 esferas de tinta no ícone do Carimbô"
 
 [node name="Label2" type="Label" parent="tutorial" unique_id=1237677448]
-offset_left = -437.0
-offset_top = -296.0
-offset_right = -209.0
-offset_bottom = -221.0
-text = "Durante as fases, você pode 
-acessar esse menu novamen-
-te através do Esc."
+offset_left = -557.0
+offset_top = -286.0
+offset_right = -128.0
+offset_bottom = -262.0
+text = "Em jogo, você pode  acessar esse menu através do Esc."
 
 [node name="Seta" type="Sprite2D" parent="tutorial" unique_id=1697991124]
 position = Vector2(425, 232)
@@ -107,9 +106,9 @@ texture = ExtResource("3_asubg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="tutorial" unique_id=107877307]
 offset_left = -105.0
-offset_top = -258.0
+offset_top = -280.0
 offset_right = 298.0
-offset_bottom = 261.0
+offset_bottom = 273.0
 text = "Aperte, segure e solte C ou Espaço para pular.
 
 Segurando o botão por no máximo 4 segundos, 
@@ -136,15 +135,15 @@ tilham a mesma quantidade de cargas, então pres-
 te atenção em quantas ainda possui por meio das
 esferas de tinta no ícone do Carimbô"
 
-[node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=731595890]
-z_index = -25
-position = Vector2(24, -6)
-scale = Vector2(0.6, 0.6)
+[node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=2090550787]
+z_index = -2
+position = Vector2(6.454491, 0.99997425)
+scale = Vector2(0.63636357, 0.63636357)
 texture = ExtResource("10_8hu6p")
 
 [node name="MesaMenuPapel" type="Sprite2D" parent="." unique_id=637103019]
 z_index = -2
-position = Vector2(-328, 30)
+position = Vector2(-368, -12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_x5k57")
 
@@ -156,36 +155,36 @@ offset_bottom = -216.0
 theme_override_font_sizes/font_size = 32
 
 [node name="Voltar" type="TextureButton" parent="MesaMenuPapel" unique_id=959993983]
-offset_left = -304.0
-offset_top = 394.0
-offset_right = -84.47916
+offset_left = -284.0
+offset_top = 376.0
+offset_right = -18.0
 offset_bottom = 476.0
 
 [node name="tutorial2" type="TextureButton" parent="MesaMenuPapel" unique_id=194161029]
-offset_left = -210.0
-offset_top = -140.0
-offset_right = 270.0
-offset_bottom = 46.0
+offset_left = -183.90002
+offset_top = -98.95001
+offset_right = 264.09998
+offset_bottom = 67.04999
 
 [node name="BtnResolucao" type="Sprite2D" parent="MesaMenuPapel" unique_id=904747505]
 position = Vector2(18.00002, -314)
 scale = Vector2(0.7907726, 0.79077256)
-texture = ExtResource("11_7mch3")
+texture = ExtResource("11_bx3ed")
 
 [node name="BtnVoltar" type="Sprite2D" parent="MesaMenuPapel" unique_id=1354101984]
-position = Vector2(-187.05077, 431.5)
-scale = Vector2(0.5, 0.502)
-texture = ExtResource("12_bx3ed")
+position = Vector2(-154.09073, 420.2605)
+scale = Vector2(0.39788005, 0.39947155)
+texture = ExtResource("12_olae2")
 
 [node name="BtnTutorial" type="Sprite2D" parent="MesaMenuPapel" unique_id=1792033084]
-position = Vector2(36, -36)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("13_olae2")
+position = Vector2(28.20282, -26.47501)
+scale = Vector2(0.76441044, 0.76441044)
+texture = ExtResource("13_lwifl")
 
 [node name="BtnVolume" type="Sprite2D" parent="MesaMenuPapel" unique_id=931764328]
 position = Vector2(31.1554, 246.30002)
 scale = Vector2(0.87553227, 0.8755323)
-texture = ExtResource("14_lwifl")
+texture = ExtResource("14_mrxo8")
 
 [node name="ControlesVolume" type="Node2D" parent="." unique_id=869911777]
 
@@ -205,11 +204,33 @@ offset_bottom = 49.0
 max_value = 1.0
 step = 0.01
 
+[node name="Label" type="Label" parent="ControlesVolume" unique_id=480492559]
+offset_left = 142.0
+offset_top = -222.0
+offset_right = 354.0
+offset_bottom = -143.0
+theme_override_font_sizes/font_size = 64
+text = "Master"
+
+[node name="Label2" type="Label" parent="ControlesVolume" unique_id=1623687675]
+offset_left = 139.0
+offset_top = -46.0
+offset_right = 356.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 64
+text = "Música"
+
 [node name="Volume" type="TextureButton" parent="." unique_id=436795954]
-offset_left = -410.0
-offset_top = 108.0
-offset_right = -217.0
-offset_bottom = 201.0
+offset_left = -435.0
+offset_top = 75.0
+offset_right = -267.0
+offset_bottom = 160.0
+
+[node name="Mao" type="Sprite2D" parent="." unique_id=145912104]
+z_index = 5
+position = Vector2(447, 328)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("15_bx3ed")
 
 [connection signal="pressed" from="MesaMenuPapel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MesaMenuPapel/Voltar" to="." method="_on_voltar_pressed"]

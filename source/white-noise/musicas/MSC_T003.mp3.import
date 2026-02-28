@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/MSC_T003.mp3-2f11dde6ecf6cfe6a250de1a5eb2ffc4
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
