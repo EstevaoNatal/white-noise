@@ -179,10 +179,10 @@ func _on_menu_inicio() -> void:
 	nivelAtual = main_game_scene.get_node("Menu")
 	main_game_scene.remove_child(nivelAtual)
 	nivelAtual.call_deferred("free")
-	proximo = load("res://scenes/third_area.tscn")
+	proximo = load("res://scenes/first_stage.tscn")
 	proximo_nivel = proximo.instantiate()
 	main_game_scene.add_child(proximo_nivel)
-	Globais.fase_atual=3
+	Globais.fase_atual=1
 	contador=1
 
 
