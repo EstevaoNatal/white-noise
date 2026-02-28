@@ -322,7 +322,7 @@ tracks/0/path = NodePath("Livro3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1776.9763, -210.25189), Vector2(1744.9763, 6.748108), Vector2(1875.9692, 298.2339)]
@@ -334,7 +334,7 @@ tracks/1/path = NodePath("Livro3/StaticBody2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(8.042891, 1.6562419), Vector2(0, 0)]
@@ -346,7 +346,7 @@ tracks/2/path = NodePath("Livro3/StaticBody2D/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329)]
@@ -358,7 +358,7 @@ tracks/3/path = NodePath("Livro4:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(2000.9763, -184.25208), Vector2(1968.9763, 32.747925), Vector2(2099.9692, 324.2337)]
@@ -370,7 +370,7 @@ tracks/4/path = NodePath("Livro4/StaticBody2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(8.042634, 1.6561903), Vector2(0, 0)]
@@ -382,7 +382,7 @@ tracks/5/path = NodePath("Livro4/StaticBody2D/CollisionShape2D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329)]
@@ -394,7 +394,7 @@ tracks/6/path = NodePath("Livro5:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(2184.9763, -186.25208), Vector2(2152.9763, 30.747925), Vector2(2283.9692, 322.2337)]
@@ -406,7 +406,7 @@ tracks/7/path = NodePath("Livro5/StaticBody2D:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(6.3598795, 2.7742102), Vector2(0, 0)]
@@ -418,7 +418,7 @@ tracks/8/path = NodePath("Livro5/StaticBody2D/CollisionShape2D:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 2.5),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.04638672, 6.262329), Vector2(0.04638672, 6.262329)]
@@ -430,7 +430,7 @@ tracks/9/path = NodePath("Livro3:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-0.9424778, -1.7697638, -2.2654374]
@@ -442,7 +442,7 @@ tracks/10/path = NodePath("Livro3/StaticBody2D:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 1.3718288, 1.3718288]
@@ -454,7 +454,7 @@ tracks/11/path = NodePath("Livro3/StaticBody2D/CollisionShape2D:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [5.9604645e-08, -1.3840461, -1.3840461]
@@ -466,7 +466,7 @@ tracks/12/path = NodePath("Livro4:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-0.9424778, -1.7697638, -2.2654374]
@@ -478,7 +478,7 @@ tracks/13/path = NodePath("Livro4/StaticBody2D:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 1.3718288, 1.3718288]
@@ -490,7 +490,7 @@ tracks/14/path = NodePath("Livro4/StaticBody2D/CollisionShape2D:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [5.9604645e-08, -1.3735741, -1.3735741]
@@ -502,7 +502,7 @@ tracks/15/path = NodePath("Livro5:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-0.9424778, -1.7697638, -2.2654374]
@@ -514,7 +514,7 @@ tracks/16/path = NodePath("Livro5/StaticBody2D:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 1.3718288, 1.3718288]
@@ -526,7 +526,7 @@ tracks/17/path = NodePath("Livro5/StaticBody2D/CollisionShape2D:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 2.5),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [5.9604645e-08, -1.3788102]
@@ -722,7 +722,7 @@ _data = {
 size = Vector2(683.3334, 693.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqlxw"]
-size = Vector2(358, 1314)
+size = Vector2(358, 1763)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12y3o"]
 size = Vector2(829, 208)
@@ -1046,6 +1046,7 @@ texture = ExtResource("19_rdjyr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coisas_boss/Mesinnha/StaticBody2D" unique_id=1825285185]
 position = Vector2(-137, -476)
 shape = SubResource("RectangleShape2D_2sa4w")
+one_way_collision = true
 
 [node name="Parallax2D" type="Parallax2D" parent="coisas_boss" unique_id=445125730]
 scroll_scale = Vector2(0.8, 0.8)
@@ -2191,7 +2192,7 @@ shape = SubResource("RectangleShape2D_28a3b")
 [node name="fala2" type="Area2D" parent="Areas_audio" unique_id=2001933759]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas_audio/fala2" unique_id=822274051]
-position = Vector2(-531, 178)
+position = Vector2(-531, -46.5)
 shape = SubResource("RectangleShape2D_xqlxw")
 
 [node name="fala3" type="Area2D" parent="Areas_audio" unique_id=1338462971]
@@ -2226,7 +2227,7 @@ shape = SubResource("RectangleShape2D_12y3o")
 [node name="5segundosConstrangedores" type="Timer" parent="." unique_id=1924956125]
 
 [node name="dicaDepoisDe2Min" type="Timer" parent="." unique_id=1575468807]
-wait_time = 120.0
+wait_time = 60.0
 
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
 [connection signal="mudou_tinta" from="Player_manager/Player" to="Player_manager" method="_on_player_mudou_tinta"]
