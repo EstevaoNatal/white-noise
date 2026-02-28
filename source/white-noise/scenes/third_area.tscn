@@ -2299,6 +2299,7 @@ wait_time = 60.0
 [connection signal="finished" from="Player_manager/Camera2D/fala5audio" to="." method="_on_fala_5_audio_finished"]
 [connection signal="finished" from="Player_manager/Camera2D/fala6audio" to="." method="_on_fala_6_audio_finished"]
 [connection signal="finished" from="Player_manager/Camera2D/fala7audio" to="." method="_on_fala_7_audio_finished"]
+[connection signal="finished" from="Player_manager/Camera2D/fala8audio" to="." method="_on_fala_8_audio_finished"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="Teclado/deteccao aparecer teclas" to="." method="_on_deteccao_aparecer_teclas_body_entered"]
 [connection signal="body_entered" from="teclas/TecladoS/teclaS" to="." method="_on_tecla_s_body_entered"]

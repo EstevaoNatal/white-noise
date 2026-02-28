@@ -172,4 +172,9 @@ position = Vector2(137.74199, 1696.5599)
 scale = Vector2(0.47982398, 0.47982398)
 texture = ExtResource("9_206h8")
 
+[node name="comecarCreditos" type="Timer" parent="." unique_id=1297171127]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="comecarCreditos" to="Camera2D" method="_on_comecar_creditos_timeout"]

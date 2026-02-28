@@ -261,3 +261,7 @@ func sentimentos():
 			bossta.play("normal")
 	else:
 		bossta.play("triste triste")
+
+
+func _on_fala_8_audio_finished() -> void:
+	Globais.fase_atual=8
