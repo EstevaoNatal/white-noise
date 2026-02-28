@@ -110,3 +110,7 @@ func _on_volume_pressed() -> void:
 			controles_volume.visible = false
 		else:
 			controles_volume.visible=true
+
+
+func _on_sair_pressed() -> void:
+	get_tree().quit()
