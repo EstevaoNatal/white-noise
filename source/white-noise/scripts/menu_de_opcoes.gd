@@ -20,9 +20,10 @@ var contador_musga
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN #mao
-	
-	master_vol.value = db_to_linear(Globais.master_bus)
-	musica_vol.value = db_to_linear(Globais.musica_bus)
+	master_vol.value = Globais.valor_slider_master
+	musica_vol.value = Globais.valor_slider_musica
+	Globais.valor_slider_master=master_vol.value
+	Globais.valor_slider_musica=musica_vol.value
 	menu_button.get_popup().add_item("1920x1080")
 	menu_button.get_popup().add_item("960x540")
 	menu_button.get_popup().add_item("640x360")
@@ -30,8 +31,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	#inicio-Mão-mouse
+	
+	#print("valor_slider_master: ", Globais.valor_slider_master)
+	#print("valor atual slider: ", master_vol.value)
+	
+	#if Input.is_action_just_pressed("close_game"):
+	#	master_vol.value=Globais.valor_slider_master
+	#	musica_vol.value=Globais.valor_slider_musica
+	
 	var mouse_pos = get_global_mouse_position()
 	mao.position.x = mouse_pos.x+215
 	mao.position.y = mouse_pos.y+131
@@ -83,20 +91,22 @@ func _on_voltar_pressed() -> void:
 
 func _on_master_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(Globais.master_bus, linear_to_db(value))
+	Globais.valor_slider_master = value
+	#master_vol.value = db_to_linear(Globais.master_bus)
 	#Globais.master_bus = value
 
 
 func _on_musica_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(value))
+	Globais.valor_slider_musica = value
+	#musica_vol.value = db_to_linear(Globais.musica_bus)
 	#Globais.musica_bus = value
 
 
-#func _on_volume_pressed() -> void:
-	#master_vol.value = db_to_linear(Globais.master_bus)
-	#musica_vol.value = db_to_linear(Globais.musica_bus)
-#	tutorial.visible = false
-#	if node_opcoes.visible==true:
-#		if controles_volume.visible:
-#			controles_volume.visible = false
-#		else:
-#			controles_volume.visible=true
+func _on_volume_pressed() -> void:
+	tutorial.visible = false
+	if node_opcoes.visible==true:
+		if controles_volume.visible:
+			controles_volume.visible = false
+		else:
+			controles_volume.visible=true
