@@ -85,7 +85,7 @@ func _on_fala_2_body_entered(body: CharacterBody2D) -> void:
 func _on_fala_3_body_entered(body: CharacterBody2D) -> void:
 	tocar3=true
 
-func _on_fala_4_body_entered(body: Node2D) -> void:
+func _on_fala_4_body_entered(body: CharacterBody2D) -> void:
 	tocar4=true
 
 
