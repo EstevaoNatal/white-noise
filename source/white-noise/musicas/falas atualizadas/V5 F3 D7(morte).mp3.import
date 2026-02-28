@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhuguh2wlt8o"
+path="res://.godot/imported/V5 F3 D7(morte).mp3-0eaeb075c94a79a627ae62a242ac400e.mp3str"
+
+[deps]
+
+source_file="res://musicas/falas atualizadas/V5 F3 D7(morte).mp3"
+dest_files=["res://.godot/imported/V5 F3 D7(morte).mp3-0eaeb075c94a79a627ae62a242ac400e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

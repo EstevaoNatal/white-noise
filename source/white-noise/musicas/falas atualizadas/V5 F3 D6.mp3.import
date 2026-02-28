@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl4x7861j8xvu"
+path="res://.godot/imported/V5 F3 D6.mp3-84b436019e0d5bf749923f95c96b2360.mp3str"
+
+[deps]
+
+source_file="res://musicas/falas atualizadas/V5 F3 D6.mp3"
+dest_files=["res://.godot/imported/V5 F3 D6.mp3-84b436019e0d5bf749923f95c96b2360.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

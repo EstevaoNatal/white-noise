@@ -13,6 +13,39 @@ var master_bus = AudioServer.get_bus_index("Master")
 var musica_bus = AudioServer.get_bus_index("Musica")
 var valor_slider_master:float=1.0
 var valor_slider_musica:float=1.0
+var terminou1_1=false
+var terminou2_1=false
+var terminou3_1=false
+var terminou4_1=false
+var terminou1_2=false
+var terminou2_2=false
+var terminou3_2=false
+var terminou4_2=false
+var terminou1_3=false
+var terminou2_3=false
+var terminou3_3=false
+var terminou4_3=false
+var terminou5_3=false
+var terminou6_3=false
+var tocar1_1=true
+var tocar2_1=false
+var tocar3_1=false
+var tocar4_1=false
+var tocar5_1=false
+var tocar1_2=true
+var tocar2_2=false
+var tocar3_2=false
+var tocar4_2=false
+var tocar5_2=false
+var tocar1_3=true
+var tocar2_3=false
+var tocar3_3=false
+var tocar4_3=false
+var tocar5_3=false
+var tocar6_3=false
+var tocar7_3=false
+var tocar8_3=false
+
 
 
 # Called when the node enters the scene tree for the first time.

@@ -13,16 +13,16 @@
 [ext_resource type="AudioStream" uid="uid://dlrep7otido3f" path="res://musicas/porta.mp3" id="7_opw5j"]
 [ext_resource type="AudioStream" uid="uid://0qlxlgthi6tm" path="res://musicas/carimbano.mp3" id="8_ms560"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="8_rsbve"]
+[ext_resource type="AudioStream" uid="uid://ji4odqw755ch" path="res://musicas/falas atualizadas/V5 F1 D1.mp3" id="9_87pct"]
 [ext_resource type="Texture2D" uid="uid://c5wchi3jt0cx8" path="res://images/objetos/documentoImportante.png" id="9_ebhel"]
-[ext_resource type="AudioStream" uid="uid://yoyvbcd4gky4" path="res://musicas/falas fase 1/V4(final).mp3" id="9_ms560"]
-[ext_resource type="AudioStream" uid="uid://cgttbyxy66t6w" path="res://musicas/falas fase 1/V4 F1 D2.mp3" id="10_87pct"]
-[ext_resource type="AudioStream" uid="uid://c17t0qfljr6te" path="res://musicas/falas fase 1/V4 F1 D3.mp3" id="11_1s5s2"]
+[ext_resource type="AudioStream" uid="uid://bkf2qoih4uw76" path="res://musicas/falas atualizadas/V5 F1 D2.mp3" id="10_1s5s2"]
 [ext_resource type="Texture2D" uid="uid://dbak2qfs6xw0u" path="res://images/objetos/Mesa (pintado) LADO DIREITO PEQUENO!!.png" id="11_5b4cl"]
-[ext_resource type="AudioStream" uid="uid://dugfmnoqmlkpm" path="res://musicas/falas fase 1/V4 F1 D4.mp3" id="12_8tlnc"]
+[ext_resource type="AudioStream" uid="uid://2y6awy2w66bg" path="res://musicas/falas atualizadas/V5 F1 D3.mp3" id="11_8tlnc"]
+[ext_resource type="AudioStream" uid="uid://ds7uor6jeiix1" path="res://musicas/falas atualizadas/V5 F1 D4.mp3" id="12_44cke"]
 [ext_resource type="PackedScene" uid="uid://da6rdi543wwmi" path="res://scenes/spawnpoints.tscn" id="12_dinhu"]
 [ext_resource type="Texture2D" uid="uid://cxcdog1y1hux5" path="res://images/objetos/mesa (pintado) LADO ESQUERDO GRANDE.png" id="12_iabq3"]
 [ext_resource type="Texture2D" uid="uid://bimb0ffkr6nwx" path="res://images/fase_1/papel_folha.png" id="13_5b4cl"]
-[ext_resource type="AudioStream" uid="uid://c7y12qyy311ud" path="res://musicas/falas fase 1/V4 F1 D5.mp3" id="13_44cke"]
+[ext_resource type="AudioStream" uid="uid://md4tbti4m1y7" path="res://musicas/falas atualizadas/V5 F1 D5.mp3" id="13_v3bvg"]
 [ext_resource type="Texture2D" uid="uid://gg3ndijepbxl" path="res://images/objetos/estante direita pintada.png" id="14_qnkvy"]
 [ext_resource type="Texture2D" uid="uid://cnwke2er5l0w8" path="res://images/objetos/estante esquerda pintada.png" id="15_nbdn1"]
 [ext_resource type="Texture2D" uid="uid://bq8ix7644qvtp" path="res://images/objetos/estante meio pintada.png" id="16_nbdn1"]
@@ -171,24 +171,23 @@ stream = ExtResource("8_ms560")
 volume_db = 6.804
 
 [node name="fala1 fase1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1357421590]
-stream = ExtResource("9_ms560")
+stream = ExtResource("9_87pct")
 volume_db = 7.0
-autoplay = true
 
 [node name="fala2 fase1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=447333643]
-stream = ExtResource("10_87pct")
+stream = ExtResource("10_1s5s2")
 volume_db = 7.0
 
 [node name="fala3 fase1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=173001980]
-stream = ExtResource("11_1s5s2")
+stream = ExtResource("11_8tlnc")
 volume_db = 7.0
 
 [node name="fala4 fase 1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1226960164]
-stream = ExtResource("12_8tlnc")
+stream = ExtResource("12_44cke")
 volume_db = 7.0
 
 [node name="fala5 fase1" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=457853751]
-stream = ExtResource("13_44cke")
+stream = ExtResource("13_v3bvg")
 volume_db = 7.0
 
 [node name="Player" parent="Player_manager" unique_id=1572016301 instance=ExtResource("1_uwrxv")]

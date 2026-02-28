@@ -47,6 +47,8 @@ var contador5=0
 var contador6=0
 var contador7=0
 var contador8=0
+var contadorvol1=0
+var contadorvol2=0
 var tocar2=false
 var tocar3=false
 var tocar4=false
@@ -67,7 +69,8 @@ var triste=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+	player.max_tinta=90
+	player.contador_tinta=player.max_tinta
 	Globais.player_spawn = origin_spawnpoint.position
 	current_spawnpoint = origin_spawnpoint.position
 	player.position = current_spawnpoint
@@ -96,31 +99,26 @@ func _process(delta: float) -> void:
 		falando=true
 		raiva=true
 		fala_2_audio.play()
-		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador1=1
 	if contador2==0 && terminou2 && tocar3:
 		falando=true
 		raiva = true
 		fala_3_audio.play()
-		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador2=1
 	if contador3==0 && terminou3 && tocar4:
 		falando=true
 		triste=true
 		fala_4_audio.play()
-		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador3=1
 	if contador4==0 && terminou4 && tocar5:
 		falando=true
 		raiva=true
 		fala_5_audio.play()
-		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador4=1
 	if contador6==0 && terminou5 && tocar7:
 		falando=true
 		raiva=true
 		fala_7_audio.play()
-		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador6=1
 	
 	#print("terminou3: ", terminou3)
@@ -175,7 +173,7 @@ func _on_killzone_body_entered(body: CharacterBody2D) -> void:
 
 func _on_copo_cafe_body_entered(body: CharacterBody2D) -> void:
 	animacao_copo.play("derrubar")
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+	
 	fala_7_audio.stop()
 	fala_8_audio.play()
 	triste = true
@@ -187,48 +185,39 @@ func _on_vrido_finished() -> void:
 
 func _on_fala_1_audio_finished() -> void:
 	falando=false
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	terminou1=true
 
 
 func _on_fala_2_audio_finished() -> void:
 	falando=false
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	terminou2=true
 
 
 func _on_fala_3_audio_finished() -> void:
 	falando=false
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	terminou3=true
 
 
 func _on_fala_4_audio_finished() -> void:
 	falando=false
 	_5_segundos_constrangedores.start()
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	terminou4=true
 
 
 func _on_fala_5_audio_finished() -> void:
 	falando=false
 	dica_depois_de_2_min.start()
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	terminou5=true
 
 
 func _on_fala_6_audio_finished() -> void:
 	falando=false
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	terminou6=true
 
-
-#func _on_fala_7_audio_finished() -> void:
-#	terminou7=true
-
+func _on_fala_7_audio_finished() -> void:
+	pass
 
 func _on_fala_7_body_entered(body: CharacterBody2D) -> void:
-	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	tocar7=true
 
 
@@ -239,8 +228,8 @@ func _on_segundos_constrangedores_timeout() -> void:
 func _on_dica_depois_de_2_min_timeout() -> void:
 	tocar6=true
 	if contador5==0 && terminou5 && tocar6:
+		falando = true
 		fala_6_audio.play()
-		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador5=1
 
 
@@ -251,6 +240,10 @@ func _on_fala_2_body_entered(body: Node2D) -> void:
 func sentimentos():
 	if not tocar8:
 		if falando:
+			contadorvol2=0
+			if contadorvol1==0:
+				#AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+				contadorvol1=1
 			if raiva:
 				bossta.play("falando_raiva")
 			else:
@@ -258,10 +251,15 @@ func sentimentos():
 		elif raiva:
 			bossta.play("raiva")
 		else:
+			contadorvol1=0
+			if contadorvol2==0:
+				#AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
+				contadorvol2=1
 			bossta.play("normal")
 	else:
 		bossta.play("triste triste")
 
 
 func _on_fala_8_audio_finished() -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
 	Globais.fase_atual=8
