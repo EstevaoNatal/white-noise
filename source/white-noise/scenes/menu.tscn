@@ -67,46 +67,46 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_mhnvy")
 
 [node name="comecar" type="TextureButton" parent="." unique_id=1714028834]
-offset_left = -460.0
-offset_top = -122.0
-offset_right = -214.0
-offset_bottom = -31.0
+offset_left = -463.0
+offset_top = -97.0
+offset_right = -217.0
+offset_bottom = -6.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="menuOpcoes" type="TextureButton" parent="." unique_id=998394117]
-offset_left = -452.0
-offset_top = 10.0
-offset_right = -220.0
-offset_bottom = 105.0
+offset_left = -455.0
+offset_top = 35.0
+offset_right = -223.0
+offset_bottom = 130.0
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="sairJogo" type="TextureButton" parent="." unique_id=945228722]
-offset_left = -427.0
-offset_top = 139.0
-offset_right = -230.0
-offset_bottom = 229.0
+offset_left = -429.37604
+offset_top = 193.0
+offset_right = -232.37604
+offset_bottom = 283.0
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="BtnIniciar" type="Sprite2D" parent="." unique_id=170373790]
 z_index = -1
-position = Vector2(-336.37637, -76.5)
+position = Vector2(-339.37637, -51.5)
 scale = Vector2(0.44708014, 0.4341463)
 texture = ExtResource("5_4ytvr")
 
 [node name="BtnOpcoes" type="Sprite2D" parent="." unique_id=489227395]
 z_index = -1
-position = Vector2(-335.59875, 57.75299)
+position = Vector2(-338.59875, 82.75299)
 scale = Vector2(0.57085806, 0.5708581)
 texture = ExtResource("6_g3eks")
 
 [node name="BtnSair" type="Sprite2D" parent="." unique_id=1663151897]
 z_index = -1
-position = Vector2(-327.81198, 183.875)
+position = Vector2(-330.18802, 237.875)
 scale = Vector2(0.6883585, 0.68589747)
 texture = ExtResource("7_v86rl")
 
@@ -116,10 +116,10 @@ scale = Vector2(0.16801205, 0.16801211)
 texture = ExtResource("9_i6lef")
 
 [node name="tutorial2" type="TextureButton" parent="." unique_id=144329138]
-offset_left = -294.0
-offset_top = 94.0
-offset_right = -162.0
-offset_bottom = 145.0
+offset_left = -295.0
+offset_top = 145.0
+offset_right = -163.0
+offset_bottom = 196.0
 
 [node name="BtnTutorial" type="Sprite2D" parent="tutorial2" unique_id=704553156]
 position = Vector2(61.999985, 23.000008)
