@@ -967,7 +967,7 @@ bus = &"Musica"
 
 [node name="empilhadeira" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=36346816]
 stream = ExtResource("7_oq31a")
-volume_db = 4.561
+volume_db = -1.825
 
 [node name="fala1 fase2" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1592180934]
 stream = ExtResource("8_04fgn")
