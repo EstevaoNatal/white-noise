@@ -1,15 +1,175 @@
 [gd_scene format=3 uid="uid://bqwcartjmy6vb"]
 
-[ext_resource type="Texture2D" uid="uid://bb0p443qjdket" path="res://images/preto.png" id="1_spoww"]
+[ext_resource type="Script" uid="uid://dwwryqli67qyy" path="res://scripts/camera_creditos.gd" id="1_jddgq"]
+[ext_resource type="Texture2D" uid="uid://cnt88rfxa713" path="res://images/creditos/fundo_creditos.png" id="2_lgbdq"]
+[ext_resource type="Texture2D" uid="uid://bl5q128knukri" path="res://images/UI/logo_fabercarimbos.png" id="3_ul0vb"]
+[ext_resource type="Texture2D" uid="uid://bqvkrsfqmrv7l" path="res://images/creditos/image-6.png" id="4_lgbdq"]
+[ext_resource type="Texture2D" uid="uid://bx61xh4lelbo" path="res://images/creditos/image-1.png" id="5_lrn2f"]
+[ext_resource type="Texture2D" uid="uid://bpwawx1b4i6tc" path="res://images/creditos/image-4.png" id="6_3ghxt"]
+[ext_resource type="Texture2D" uid="uid://dven0hhrqfxjq" path="res://images/creditos/image-3.png" id="7_n1vwi"]
+[ext_resource type="Texture2D" uid="uid://bageu2slujmgg" path="res://images/creditos/image-5.png" id="8_ouidq"]
+[ext_resource type="Texture2D" uid="uid://c3k4ltxu3wa4o" path="res://images/creditos/image-7.png" id="9_206h8"]
 
-[node name="Node2D" type="Node2D" unique_id=2087413905]
+[sub_resource type="GDScript" id="GDScript_idjxt"]
+script/source = "extends Node2D
 
-[node name="Preto" type="Sprite2D" parent="." unique_id=1097805726]
-position = Vector2(576, 324)
-texture = ExtResource("1_spoww")
 
-[node name="Label" type="Label" parent="." unique_id=901905010]
-offset_left = 166.0
-offset_top = 104.0
-offset_right = 994.0
-offset_bottom = 233.0
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="credito" type="Node2D" unique_id=556117817]
+script = SubResource("GDScript_idjxt")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=923440678 node_paths=PackedStringArray("timer")]
+position = Vector2(500, 324)
+script = ExtResource("1_jddgq")
+velocidade = 0.5
+fim = 2376
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Camera2D" unique_id=643349927]
+wait_time = 30.0
+one_shot = true
+
+[node name="FundoCreditos" type="Sprite2D" parent="." unique_id=2023122429]
+position = Vector2(500, 1350)
+scale = Vector2(0.584, 2.5)
+texture = ExtResource("2_lgbdq")
+
+[node name="LogoFabercarimbos" type="Sprite2D" parent="." unique_id=758711976]
+position = Vector2(513.00006, 144.93494)
+scale = Vector2(0.13708399, 0.13708399)
+texture = ExtResource("3_ul0vb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1150885666]
+offset_left = -78.0
+offset_top = 396.93506
+offset_right = 1075.0
+offset_bottom = 2691.935
+bbcode_enabled = true
+text = " [b]Arte & Design [/b]
+Spolied (bobotron 10 000)
+ArvoreDeNatal (bobotron 2000)
+
+[b]Desenvolvimento[/b]
+Bonker (bobotron 3000)
+
+[b]Dublagem [/b]
+DGarcez (bobotron 13000)
+
+ [b]Trilha sonora e SFX[/b]
+DGarcez (bobotron 13000)
+Bonker (bobotron 3000)
+
+ [b]Trilha sonora e SFX[/b]
+ayacat (chucatron 8000)
+
+[b]Narrativa[/b]
+DG (bobotron 13000)
+
+[b]FRASES MARCANTES FELPOJAM[/b]
+
+\"O carimbo pinguço\"~chucatron 10000
+
+\"Estojo de peixe\"~chucatron 10000
+
+\"franciscóceano\"~DGarcez
+
+\"Qual é a dificuldade?\"~DGarcez
+
+\"Agora eu.\"~DGarcez
+
+\"pésçscimo\"~DGarcez
+
+\"Sadbolas\"~DGarcez
+
+\"Eu nunca.\"~DGarcez
+
+\"Mandei algo do meu ctrl c do sellualr\"~DGarcez
+
+\"нет нет я не снаю\"~chucatron 10000
+
+\"pen#s\"~chucatron 10000
+
+\"fundo de barulho de china\"~chucatron 2000
+
+\"Tem outro jeito de teclado?\" ~DGarcez
+
+\"A luz caiu zé\" ~chucatron 8000
+
+\"ops... carimbei\" ~chucatron 2000
+
+[b]Agradecimentos Especiaisn´t[/b]
+Ator por# tambem
+Cafunga a carequinha
+O coiso
+Oi meu nome é samara...
+Pedro de formiga
+Eles estão de olho em nois
+Japonesa dos seios (do G1)
+Elefante na sala (e da cozinha tambem)
+Sofá de gorila
+
+[b]Agradecimentos Especiais[/b]
+Felps
+C3B
+Bastos
+Lula (If 22 than 13)
+Erika Hilton (Diva)
+Jaime (O gato)
+A nota impotante
+A cadeira confortável
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+E a você que jogou, agradeci-lhe-ei"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Image6" type="Sprite2D" parent="." unique_id=84628796]
+position = Vector2(101, 588.93494)
+scale = Vector2(0.14616193, 0.1615853)
+texture = ExtResource("4_lgbdq")
+
+[node name="Image1" type="Sprite2D" parent="." unique_id=422350141]
+position = Vector2(875, 479.93494)
+texture = ExtResource("5_lrn2f")
+
+[node name="Image4" type="Sprite2D" parent="." unique_id=1145937283]
+position = Vector2(873, 939.93494)
+texture = ExtResource("6_3ghxt")
+
+[node name="Image3" type="Sprite2D" parent="." unique_id=368609907]
+position = Vector2(112.000015, 1089.9349)
+scale = Vector2(0.778125, 0.7741935)
+texture = ExtResource("7_n1vwi")
+
+[node name="Image5" type="Sprite2D" parent="." unique_id=713913739]
+position = Vector2(854, 1537.9349)
+scale = Vector2(0.5567569, 0.5567569)
+texture = ExtResource("8_ouidq")
+
+[node name="Image7" type="Sprite2D" parent="." unique_id=424476385]
+position = Vector2(137.74199, 1696.5599)
+scale = Vector2(0.47982398, 0.47982398)
+texture = ExtResource("9_206h8")
+
+[connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
