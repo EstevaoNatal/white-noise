@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://tfyovw7ibxsn" path="res://images/fundo/mesa menu pintada.png" id="10_8hu6p"]
 [ext_resource type="Texture2D" uid="uid://drv8wd85l5ec8" path="res://images/UI/_resolucao_2.png" id="11_bx3ed"]
 [ext_resource type="Texture2D" uid="uid://coitnd6fq8dqy" path="res://images/UI/mesa_menu_papel.png" id="11_x5k57"]
+[ext_resource type="Texture2D" uid="uid://buv837fcjnrhv" path="res://images/UI/_sair_2.png" id="12_lwifl"]
 [ext_resource type="Texture2D" uid="uid://sm5gcixrisdj" path="res://images/UI/_voltar_2.png" id="12_olae2"]
 [ext_resource type="Texture2D" uid="uid://c3bcijwf7dop0" path="res://images/UI/_tutorial_2.png" id="13_lwifl"]
 [ext_resource type="Texture2D" uid="uid://dilob52uo0n3j" path="res://images/UI/_volume_2.png" id="14_mrxo8"]
@@ -22,7 +23,6 @@ script = ExtResource("1_lfb0o")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1045734630]
 
 [node name="tutorial" type="Node2D" parent="." unique_id=1705039021]
-visible = false
 
 [node name="SpriteIndoPularSemCor" type="Sprite2D" parent="tutorial" unique_id=718400475]
 position = Vector2(359, -211.00002)
@@ -166,10 +166,23 @@ offset_top = -98.95001
 offset_right = 264.09998
 offset_bottom = 67.04999
 
+[node name="sair" type="TextureButton" parent="MesaMenuPapel" unique_id=860388084]
+offset_left = 126.0
+offset_top = 382.0
+offset_right = 342.0
+offset_bottom = 472.0
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="BtnResolucao" type="Sprite2D" parent="MesaMenuPapel" unique_id=904747505]
 position = Vector2(18.00002, -314)
 scale = Vector2(0.7907726, 0.79077256)
 texture = ExtResource("11_bx3ed")
+
+[node name="BtnSair" type="Sprite2D" parent="MesaMenuPapel" unique_id=1845738493]
+position = Vector2(180.00003, 429.99997)
+scale = Vector2(0.43812892, 0.44164085)
+texture = ExtResource("12_lwifl")
 
 [node name="BtnVoltar" type="Sprite2D" parent="MesaMenuPapel" unique_id=1354101984]
 position = Vector2(-154.09073, 420.2605)
@@ -235,6 +248,7 @@ texture = ExtResource("15_bx3ed")
 [connection signal="pressed" from="MesaMenuPapel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MesaMenuPapel/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="MesaMenuPapel/tutorial2" to="." method="_on_tutorial_2_pressed"]
+[connection signal="pressed" from="MesaMenuPapel/sair" to="." method="_on_sair_pressed"]
 [connection signal="value_changed" from="ControlesVolume/MasterVol" to="." method="_on_master_vol_value_changed"]
 [connection signal="value_changed" from="ControlesVolume/MusicaVol" to="." method="_on_musica_vol_value_changed"]
 [connection signal="pressed" from="Volume" to="." method="_on_volume_pressed"]
