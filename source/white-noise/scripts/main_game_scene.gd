@@ -16,6 +16,7 @@ var contador4=0
 var contador11=0
 var contador22=0
 var contador33=0
+var contador8=0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -89,7 +90,7 @@ func _process(delta: float) -> void:
 	
 	#print("fase atual: ", Globais.fase_atual)
 	
-	if Input.is_action_just_pressed("close_game") && Globais.fase_atual!=4 && Globais.fase_atual!=0 && main_game_scene.get_node("NodeOpcoes").get_node("Camera2D").enabled == false: #abre menu de opcoes
+	if Input.is_action_just_pressed("close_game") && Globais.fase_atual!=8 && Globais.fase_atual!=4 && Globais.fase_atual!=0 && main_game_scene.get_node("NodeOpcoes").get_node("Camera2D").enabled == false: #abre menu de opcoes
 		main_game_scene.get_node("NodeOpcoes").get_node("Camera2D").enabled = true
 		nivelAtual = main_game_scene.get_child(-1)
 		main_game_scene.remove_child(nivelAtual)
@@ -172,6 +173,18 @@ func _process(delta: float) -> void:
 			contador3=1
 	else:
 		contador3=0
+	if Globais.fase_atual==8: #creditos
+		if contador8==0:
+			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+			nivelAtual = main_game_scene.get_child(-1)
+			main_game_scene.remove_child(nivelAtual)
+			nivelAtual.call_deferred("free")
+			proximo = load("res://scenes/creditos.tscn")
+			proximo_nivel = proximo.instantiate()
+			main_game_scene.add_child(proximo_nivel)
+			contador8=1
+	else:
+		contador8=0
 
 func _on_menu_inicio() -> void:
 	node_opcoes.visible = false
@@ -179,10 +192,10 @@ func _on_menu_inicio() -> void:
 	nivelAtual = main_game_scene.get_node("Menu")
 	main_game_scene.remove_child(nivelAtual)
 	nivelAtual.call_deferred("free")
-	proximo = load("res://scenes/third_area.tscn")
+	proximo = load("res://scenes/first_stage.tscn")
 	proximo_nivel = proximo.instantiate()
 	main_game_scene.add_child(proximo_nivel)
-	Globais.fase_atual=3
+	Globais.fase_atual=1
 	contador=1
 
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="white-noise"
-run/main_scene="uid://bqwcartjmy6vb"
+run/main_scene="uid://b7tyrihx35v21"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://clttfv47855h2"
 
