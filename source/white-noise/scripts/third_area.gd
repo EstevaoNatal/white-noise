@@ -3,7 +3,6 @@ extends Node2D
 @onready var player: CharacterBody2D = %Player
 @onready var camera_2d: Camera2D = $Player_manager/Camera2D
 @onready var current_spawnpoint = Globais.player_spawn #verificar
-@onready var killzone: Area2D = $Teclado/killzone
 @onready var origin_spawnpoint: Marker2D = %origin_spawnpoint
 @onready var teclas: Node2D = $teclas
 @onready var tecla_s: Area2D = $teclas/TecladoS/teclaS
@@ -25,9 +24,39 @@ extends Node2D
 @onready var musica_terceira_fase: AudioStreamPlayer2D = $"Player_manager/Camera2D/musica terceira fase"
 @onready var animation_player: AnimationPlayer = $livros/AnimationPlayer
 @onready var animacao_copo: AnimationPlayer = $CopoCafePintadao/animacaoCopo
+@onready var fala_1_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala1audio
+@onready var fala_2_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala2audio
+@onready var fala_3_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala3audio
+@onready var fala_4_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala4audio
+@onready var fala_5_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala5audio
+@onready var fala_6_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala6audio
+@onready var fala_7_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala7audio
+@onready var fala_8_audio: AudioStreamPlayer2D = $Player_manager/Camera2D/fala8audio
+@onready var _5_segundos_constrangedores: Timer = $"5segundosConstrangedores"
+var contador1=0
+var contador2=0
+var contador3=0
+var contador4=0
+var contador5=0
+var contador6=0
+var contador7=0
+var tocar2=false
+var tocar3=false
+var tocar4=false
+var tocar5=false
+var tocar6=false
+var tocar7=false
+var tocar8=false
+var terminou1=false
+var terminou2=false
+var terminou3=false
+var terminou4=false
+var terminou5=false
+var terminou6=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 	Globais.player_spawn = origin_spawnpoint.position
 	current_spawnpoint = origin_spawnpoint.position
 	player.position = current_spawnpoint
@@ -36,18 +65,45 @@ func _ready() -> void:
 	teclas.visible = false
 	ui_cargas.get_node("icon").play("level3")
 
+#não precisa area 3, 8, 4
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if label_h.text == " H " && label_h.text == " S " && label_h.text == " E " && label_h.text == " N " && label_h.text == " A ":
+		tocar4 = true
 		animation_player.play("cair")
+	
+	if contador1==0 && terminou1 && tocar2:
+		fala_2_audio.play()
+		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+		contador1=1
+	if contador2==0 && terminou2 && tocar3:
+		fala_3_audio.play()
+		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+		contador2=1
+	if contador3==0 && terminou3 && tocar4:
+		fala_4_audio.play()
+		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+		contador3=1
+		_5_segundos_constrangedores.start()
+	if contador4==0 && terminou4 && tocar5:
+		fala_5_audio.play()
+		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+		contador4=1
+	if contador6==0 && terminou5 && tocar7:
+		fala_7_audio.play()
+		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+		contador6=1
 
 func _on_reload_timer_timeout() -> void:
 	player.can_ink = true 
 
 
 func _on_deteccao_aparecer_teclas_body_entered(body: CharacterBody2D) -> void:
-	teclas.visible = true
+	if contador3==0:
+		tocar3=true
+		teclas.visible = true
+		contador3=1
 
 
 func _on_tecla_a_body_entered(body: CharacterBody2D) -> void:
@@ -89,3 +145,65 @@ func _on_killzone_body_entered(body: CharacterBody2D) -> void:
 
 func _on_copo_cafe_body_entered(body: CharacterBody2D) -> void:
 	animacao_copo.play("derrubar")
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+	fala_7_audio.stop()
+	fala_8_audio.play()
+
+
+func _on_vrido_finished() -> void:
+	fala_1_audio.play()
+
+
+func _on_fala_1_audio_finished() -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
+	terminou1=true
+
+
+func _on_fala_2_audio_finished() -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
+	terminou2=true
+
+
+func _on_fala_3_audio_finished() -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
+	terminou3=true
+
+
+func _on_fala_4_audio_finished() -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
+	terminou4=true
+
+
+func _on_fala_5_audio_finished() -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
+	terminou5=true
+
+
+func _on_fala_6_audio_finished() -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
+	terminou6=true
+
+
+#func _on_fala_7_audio_finished() -> void:
+#	terminou7=true
+
+
+func _on_fala_7_body_entered(body: CharacterBody2D) -> void:
+	AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)*5))
+	tocar7=true
+
+
+func _on_segundos_constrangedores_timeout() -> void:
+	tocar5=true
+
+
+func _on_dica_depois_de_2_min_timeout() -> void:
+	tocar6=true
+	if contador5==0 && terminou5 && tocar6:
+		fala_6_audio.play()
+		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+		contador5=1
+
+
+func _on_fala_2_body_entered(body: Node2D) -> void:
+	tocar2=true
