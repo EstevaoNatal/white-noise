@@ -9,15 +9,15 @@
 [ext_resource type="AudioStream" uid="uid://bwq6jqp0uka1t" path="res://musicas/MSC_T002.mp3" id="6_o1isc"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="7_2anwn"]
 [ext_resource type="AudioStream" uid="uid://oa7j28pgn68n" path="res://musicas/empilhadeira.mp3" id="7_oq31a"]
-[ext_resource type="AudioStream" uid="uid://c46vfdhg80hhs" path="res://musicas/falas fase 2/V4 F2 D1.mp3" id="8_04fgn"]
+[ext_resource type="AudioStream" uid="uid://cm723etvps1if" path="res://musicas/falas atualizadas/V5 F2 D1.mp3" id="8_04fgn"]
 [ext_resource type="Texture2D" uid="uid://bqkl2qwxkw23p" path="res://images/objetos/placa esquerda.png" id="9_8tmsi"]
-[ext_resource type="AudioStream" uid="uid://brorxgale1v26" path="res://musicas/falas fase 2/V4 F2 D2.mp3" id="9_m0j8u"]
-[ext_resource type="AudioStream" uid="uid://dslhxenaow4uj" path="res://musicas/falas fase 2/V4 F2 D3.mp3" id="10_y0ix5"]
+[ext_resource type="AudioStream" uid="uid://nvnyftvneqdp" path="res://musicas/falas atualizadas/V5 F2 D2.mp3" id="9_m0j8u"]
+[ext_resource type="AudioStream" uid="uid://bqwhxd6i4xwon" path="res://musicas/falas atualizadas/V5 F2 D3.mp3" id="10_y0ix5"]
 [ext_resource type="Texture2D" uid="uid://cwkutgnydrs3y" path="res://images/objetos/placa direita.png" id="10_ymk8a"]
 [ext_resource type="Texture2D" uid="uid://b3h6jj274x8uf" path="res://images/objetos/esteira pintada esquerda.png" id="11_ntj7i"]
-[ext_resource type="AudioStream" uid="uid://dan4nqd0ao4qx" path="res://musicas/falas fase 2/V4 F2 D4(OPCIONAL).mp3" id="11_q6xb0"]
+[ext_resource type="AudioStream" uid="uid://gn6i7rpr05md" path="res://musicas/falas atualizadas/V5 F2 D4(OPCIONAL).mp3" id="11_q6xb0"]
 [ext_resource type="Texture2D" uid="uid://b8snum3wagp7d" path="res://images/objetos/esteira_pintada_frente_subindo(1).png" id="11_suy0s"]
-[ext_resource type="AudioStream" uid="uid://dpyj24c6cfdi2" path="res://musicas/falas fase 2/V4 F2 D4.mp3" id="12_r5tnm"]
+[ext_resource type="AudioStream" uid="uid://df5i4onypgivk" path="res://musicas/falas atualizadas/V5 F2 D4.mp3" id="12_r5tnm"]
 [ext_resource type="Texture2D" uid="uid://c53gb0mv5lvsn" path="res://images/objetos/esteira pintada.png" id="12_xnptu"]
 [ext_resource type="Texture2D" uid="uid://dhqqemshob21k" path="res://images/objetos/janela.png" id="13_xnptu"]
 [ext_resource type="PackedScene" uid="uid://2kfbrrv0er40" path="res://scenes/platform.tscn" id="14_213rp"]
@@ -967,12 +967,11 @@ bus = &"Musica"
 
 [node name="empilhadeira" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=36346816]
 stream = ExtResource("7_oq31a")
-volume_db = -1.825
+volume_db = -4.796
 
 [node name="fala1 fase2" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1592180934]
 stream = ExtResource("8_04fgn")
 volume_db = 7.0
-autoplay = true
 
 [node name="fala2 fase2" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1028781157]
 stream = ExtResource("9_m0j8u")
@@ -1980,6 +1979,7 @@ shape = SubResource("RectangleShape2D_y0ix5")
 [connection signal="finished" from="Player_manager/Camera2D/fala2 fase2" to="." method="_on_fala_2_fase_2_finished"]
 [connection signal="finished" from="Player_manager/Camera2D/fala3 fase2" to="." method="_on_fala_3_fase_2_finished"]
 [connection signal="finished" from="Player_manager/Camera2D/fala4 fase2" to="." method="_on_fala_4_fase_2_finished"]
+[connection signal="finished" from="Player_manager/Camera2D/fala5 fase2" to="." method="_on_fala_5_fase_2_finished"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="timeout" from="reload timer" to="." method="_on_reload_timer_timeout"]
 [connection signal="body_entered" from="caixas_levantadas/Area2D" to="." method="_on_area_2d_body_entered"]

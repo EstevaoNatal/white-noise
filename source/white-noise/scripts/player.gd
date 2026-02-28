@@ -21,7 +21,8 @@ var carimbar_doc=false
 #define a cor
 enum tinta {preto, azul, verde}
 @onready var cor_atual : tinta
-@onready var contador_tinta:=70
+@onready var max_tinta=70
+@onready var contador_tinta:=0
 @onready var diminuir_cargas: bool = false
 @onready var contador_tinta_azul: int = 0
 @onready var can_ink=false
@@ -42,6 +43,9 @@ func _physics_process(delta: float) -> void:
 	elif direction==1:
 		direcao=1
 		animated_sprite_2d.flip_h=false
+	
+	if contador_tinta==0:
+		Globais.fase_atual=4
 	
 	#if not is_on_floor(): #verificar amanhã com o povo
 		#if Input.is_action_pressed("lookLeft") or Input.is_action_pressed("lookRight"):
@@ -88,6 +92,8 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("idle_nao_pintado")
 
 	if diminuir_cargas:
+		print("max tinta: ",max_tinta)
+		print("contador cargas: ",contador_tinta)
 		if cor_atual!=1:
 			contador_tinta-=1
 			#cargas_de_tinta.text = "Tem " + str(contador_tinta/2) + " cargas"
@@ -121,7 +127,7 @@ func pulo_carimbo(delta_jump,direction_jump):
 		#print(diagonal)
 		animated_sprite_2d.play("indo_pular_"+cor_escrita)
 		time_jump_charge+=2*delta_jump
-		print(time_jump_charge, " ", velocity.y)
+		#print(time_jump_charge, " ", velocity.y)
 	if Input.is_action_just_released("jump"):
 		if Input.is_action_pressed("up"):
 			diagonal=1.2
@@ -129,7 +135,7 @@ func pulo_carimbo(delta_jump,direction_jump):
 			diagonal=-0.7
 		#print(diagonal)
 		time_jump_charge=clamp(time_jump_charge,1,4)
-		print(time_jump_charge, " ", velocity.y)
+		#print(time_jump_charge, " ", velocity.y)
 		velocity.x = direction_jump*SPEED*time_jump_charge
 		velocity.y = JUMP_VELOCITY*time_jump_charge - 200*diagonal
 		Globais.player_jump_velocidade = 2*(JUMP_VELOCITY*time_jump_charge - 200*diagonal)
@@ -189,7 +195,7 @@ func estado_ui():
 	if cor_atual==0:
 		cor_escrita="preto"
 		if contador_tinta>20:
-			ui_cargas.get_node("Cheia").play(cor_escrita + str((70-contador_tinta)/5))
+			ui_cargas.get_node("Cheia").play(cor_escrita + str((max_tinta-contador_tinta)/ ((max_tinta-20)/10) ))
 			ui_cargas.get_node("ink1").play(cor_escrita+"0")
 			ui_cargas.get_node("ink2").play(cor_escrita+"0")
 			ui_cargas.get_node("ink3").play(cor_escrita+"0")
