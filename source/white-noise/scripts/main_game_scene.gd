@@ -97,7 +97,7 @@ func _process(delta: float) -> void:
 		proximo = load("res://scenes/menuDeOpcoes.tscn")
 		proximo_nivel = proximo.instantiate()
 		main_game_scene.add_child(proximo_nivel)
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.is_action_pressed("close_game") and contador4==0: #fecha o jogo dps de 3 segundos
 		timer_fechar.start()
 		contador4=1
@@ -179,17 +179,17 @@ func _on_menu_inicio() -> void:
 	nivelAtual = main_game_scene.get_node("Menu")
 	main_game_scene.remove_child(nivelAtual)
 	nivelAtual.call_deferred("free")
-	proximo = load("res://scenes/first_stage.tscn")
+	proximo = load("res://scenes/third_area.tscn")
 	proximo_nivel = proximo.instantiate()
 	main_game_scene.add_child(proximo_nivel)
-	Globais.fase_atual=1
+	Globais.fase_atual=3
 	contador=1
 
 
 func _on_menu_opcoes() -> void:
 	menu.visible=false
 	node_opcoes.visible=true
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _on_menu_fechar() -> void:

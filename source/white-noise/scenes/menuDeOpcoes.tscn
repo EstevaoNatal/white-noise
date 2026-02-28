@@ -137,8 +137,8 @@ esferas de tinta no ícone do Carimbô"
 
 [node name="MesaMenuPintada" type="Sprite2D" parent="." unique_id=2090550787]
 z_index = -2
-position = Vector2(0, -1)
-scale = Vector2(0.6, 0.6)
+position = Vector2(6.454491, 0.99997425)
+scale = Vector2(0.63636357, 0.63636357)
 texture = ExtResource("10_8hu6p")
 
 [node name="MesaMenuPapel" type="Sprite2D" parent="." unique_id=637103019]

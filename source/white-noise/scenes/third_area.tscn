@@ -28,7 +28,6 @@
 [ext_resource type="AudioStream" uid="uid://gc0ruv0rwwo1" path="res://musicas/falas fase 3/V4 F3 D6.mp3" id="15_qn8d6"]
 [ext_resource type="Texture2D" uid="uid://bq8ix7644qvtp" path="res://images/objetos/estante meio pintada.png" id="16_0rvgw"]
 [ext_resource type="AudioStream" uid="uid://bb6l1q7usppym" path="res://musicas/falas fase 3/V4 F3 D7(morte).mp3" id="16_33bd3"]
-[ext_resource type="Texture2D" uid="uid://0s0p1pjctvhk" path="res://images/objetos/3fase/bossta.png" id="17_fe36s"]
 [ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="19_2sa4w"]
 [ext_resource type="Texture2D" uid="uid://dulhc81pbax88" path="res://images/objetos/livro 2 (espiral).png" id="19_cupbk"]
 [ext_resource type="Texture2D" uid="uid://dhj1pgs2xk12n" path="res://images/boss/mesinnha.png" id="19_rdjyr"]
@@ -41,11 +40,62 @@
 [ext_resource type="Texture2D" uid="uid://c7015karh5qc0" path="res://images/objetos/3fase/teclado H.png" id="25_2sa4w"]
 [ext_resource type="Texture2D" uid="uid://dfflxrcoce282" path="res://images/objetos/livro/livro_3.png" id="26_gsla3"]
 [ext_resource type="Texture2D" uid="uid://6l68drqkfxpq" path="res://images/objetos/livro/livro_4.png" id="27_210py"]
+[ext_resource type="Texture2D" uid="uid://fb20tykpawwt" path="res://images/boss/bossta falando.png" id="27_wiv2j"]
 [ext_resource type="Texture2D" uid="uid://bqc88lw47j2of" path="res://images/objetos/livro/livro_5.png" id="28_2sa4w"]
+[ext_resource type="Texture2D" uid="uid://deje2dcrap71t" path="res://images/boss/bossta falando bravo.png" id="28_415er"]
+[ext_resource type="Texture2D" uid="uid://8w2olk0x2bup" path="res://images/boss/bossta.png" id="29_rbwkq"]
+[ext_resource type="Texture2D" uid="uid://dap327va8hqgn" path="res://images/boss/bossta raiva.png" id="30_qn8d6"]
+[ext_resource type="Texture2D" uid="uid://cvgmm8k1jlg6b" path="res://images/boss/bossta trsite.png" id="31_33bd3"]
 [ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="31_guxn5"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="32_283ac"]
 [ext_resource type="Texture2D" uid="uid://o1rrxtcu1jn8" path="res://images/objetos/copo_cafe pintadao.png" id="32_w6l43"]
 [ext_resource type="Texture2D" uid="uid://tw033jddv013" path="res://images/objetos/copo caindo.png" id="35_11hfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sa4w"]
+size = Vector2(2390, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpep5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_wiv2j")
+}],
+"loop": true,
+"name": &"falando",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_415er")
+}],
+"loop": true,
+"name": &"falando_raiva",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_rbwkq")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_qn8d6")
+}],
+"loop": true,
+"name": &"raiva",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_33bd3")
+}],
+"loop": true,
+"name": &"triste triste",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_210py"]
 size = Vector2(502.41577, 790.005)
@@ -65,9 +115,6 @@ b = Vector2(840.32947, -4.42041)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3frly"]
 size = Vector2(635, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sa4w"]
-size = Vector2(2390, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3yde"]
 size = Vector2(600, 3448)
@@ -730,6 +777,90 @@ size = Vector2(829, 208)
 [node name="third_area" type="Node2D" unique_id=208438374]
 script = ExtResource("1_210py")
 
+[node name="coisas_boss" type="Node2D" parent="." unique_id=1857290757]
+z_index = -11
+
+[node name="Mesinnha" type="Sprite2D" parent="coisas_boss" unique_id=1641499444]
+z_index = -1
+position = Vector2(4, 845)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_rdjyr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="coisas_boss/Mesinnha" unique_id=1797355840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coisas_boss/Mesinnha/StaticBody2D" unique_id=1825285185]
+position = Vector2(-137, -476)
+shape = SubResource("RectangleShape2D_2sa4w")
+one_way_collision = true
+
+[node name="Parallax2D" type="Parallax2D" parent="coisas_boss" unique_id=445125730]
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(0, 386)
+
+[node name="FundoDoBoss" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=1226388170]
+z_index = -12
+position = Vector2(0, -388)
+texture = ExtResource("1_0hmc4")
+
+[node name="Bossta" type="AnimatedSprite2D" parent="coisas_boss/Parallax2D" unique_id=1954201266]
+z_index = -6
+position = Vector2(3, 38)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_jpep5")
+animation = &"raiva"
+autoplay = "normal"
+
+[node name="LabelS" type="Label" parent="coisas_boss/Parallax2D" unique_id=102463309]
+z_index = -5
+offset_left = -118.0
+offset_top = 54.0
+offset_right = -57.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="LabelE" type="Label" parent="coisas_boss/Parallax2D" unique_id=730839752]
+z_index = -5
+offset_left = -74.0
+offset_top = 54.0
+offset_right = -13.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="LabelN" type="Label" parent="coisas_boss/Parallax2D" unique_id=16103667]
+z_index = -5
+offset_left = -30.0
+offset_top = 54.0
+offset_right = 31.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="LabelH" type="Label" parent="coisas_boss/Parallax2D" unique_id=502063218]
+z_index = -5
+offset_left = 14.0
+offset_top = 54.0
+offset_right = 75.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="LabelA" type="Label" parent="coisas_boss/Parallax2D" unique_id=519444787]
+z_index = -5
+offset_left = 58.0
+offset_top = 54.0
+offset_right = 119.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = " _ "
+
+[node name="FundoDoBoss2" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=702031412]
+z_index = -13
+position = Vector2(2.0000005, 612)
+rotation = 3.1413872
+texture = ExtResource("1_0hmc4")
+
 [node name="reload timer" type="Timer" parent="." unique_id=2050421660]
 wait_time = 5.0
 one_shot = true
@@ -805,27 +936,35 @@ autoplay = true
 
 [node name="fala1audio" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=449019299]
 stream = ExtResource("9_12y3o")
+volume_db = 7.0
 
 [node name="fala2audio" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1117281284]
 stream = ExtResource("10_h5rju")
+volume_db = 7.0
 
 [node name="fala3audio" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=259953445]
 stream = ExtResource("11_hwp1x")
+volume_db = 7.0
 
 [node name="fala4audio" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1256730722]
 stream = ExtResource("12_wiv2j")
+volume_db = 7.0
 
 [node name="fala5audio" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=111607511]
 stream = ExtResource("14_rbwkq")
+volume_db = 7.0
 
 [node name="fala6audio" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1220576203]
 stream = ExtResource("13_415er")
+volume_db = 7.0
 
 [node name="fala7audio" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1695511163]
 stream = ExtResource("15_qn8d6")
+volume_db = 7.0
 
 [node name="fala8audio" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=1586793825]
 stream = ExtResource("16_33bd3")
+volume_db = 7.0
 
 [node name="Guarana100FrutaPintada" type="Sprite2D" parent="." unique_id=946798473]
 position = Vector2(910.0001, 420)
@@ -1032,87 +1171,6 @@ scale = Vector2(0.2, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="estante2/estanteColisao" unique_id=382113909]
 z_index = 1
 shape = SubResource("RectangleShape2D_3frly")
-
-[node name="coisas_boss" type="Node2D" parent="." unique_id=1857290757]
-
-[node name="Mesinnha" type="Sprite2D" parent="coisas_boss" unique_id=1641499444]
-z_index = -1
-position = Vector2(4, 845)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("19_rdjyr")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="coisas_boss/Mesinnha" unique_id=1797355840]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coisas_boss/Mesinnha/StaticBody2D" unique_id=1825285185]
-position = Vector2(-137, -476)
-shape = SubResource("RectangleShape2D_2sa4w")
-one_way_collision = true
-
-[node name="Parallax2D" type="Parallax2D" parent="coisas_boss" unique_id=445125730]
-scroll_scale = Vector2(0.8, 0.8)
-scroll_offset = Vector2(0, 386)
-
-[node name="FundoDoBoss" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=1226388170]
-z_index = -12
-position = Vector2(0, -388)
-texture = ExtResource("1_0hmc4")
-
-[node name="Bossta" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=1108958959]
-z_index = -6
-position = Vector2(3, 38)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("17_fe36s")
-
-[node name="LabelS" type="Label" parent="coisas_boss/Parallax2D" unique_id=102463309]
-z_index = -5
-offset_left = -118.0
-offset_top = 54.0
-offset_right = -57.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 64
-text = " _ "
-
-[node name="LabelE" type="Label" parent="coisas_boss/Parallax2D" unique_id=730839752]
-z_index = -5
-offset_left = -74.0
-offset_top = 54.0
-offset_right = -13.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 64
-text = " _ "
-
-[node name="LabelN" type="Label" parent="coisas_boss/Parallax2D" unique_id=16103667]
-z_index = -5
-offset_left = -30.0
-offset_top = 54.0
-offset_right = 31.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 64
-text = " _ "
-
-[node name="LabelH" type="Label" parent="coisas_boss/Parallax2D" unique_id=502063218]
-z_index = -5
-offset_left = 14.0
-offset_top = 54.0
-offset_right = 75.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 64
-text = " _ "
-
-[node name="LabelA" type="Label" parent="coisas_boss/Parallax2D" unique_id=519444787]
-z_index = -5
-offset_left = 58.0
-offset_top = 54.0
-offset_right = 119.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 64
-text = " _ "
-
-[node name="FundoDoBoss2" type="Sprite2D" parent="coisas_boss/Parallax2D" unique_id=702031412]
-z_index = -13
-position = Vector2(2.0000005, 612)
-rotation = 3.1413872
-texture = ExtResource("1_0hmc4")
 
 [node name="origin_spawnpoint" parent="." unique_id=818883201 instance=ExtResource("20_283ac")]
 unique_name_in_owner = true
