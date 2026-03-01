@@ -21,6 +21,7 @@ var contador1=0
 var contador2=0
 var contador3=0
 var contador4=0
+var contador5=0
 
 
 var jogador = preload("res://scenes/player.tscn")
@@ -63,11 +64,12 @@ func _process(delta: float) -> void:
 		fala_2_fase_1.play()
 		fala_2_fase_1.autoplay=true
 		fala_1_fase_1.autoplay=false
+		Globais.tocar1_1=false
 		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador1=1
-	elif Globais.tocar1_1:
+	elif Globais.tocar1_1 && contador5==0:
 		fala_1_fase_1.play()
-		Globais.tocar1_1=false
+		contador5=1
 	
 
 func _on_player_ready() -> void:

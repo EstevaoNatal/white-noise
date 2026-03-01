@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://xg85mjflpm4g" path="res://scenes/player.tscn" id="2_bliab"]
 [ext_resource type="Script" uid="uid://blbw0yin6b3oj" path="res://scenes/control.gd" id="3_oti4k"]
 [ext_resource type="PackedScene" uid="uid://c4arol4m8fxsq" path="res://scenes/killzone.tscn" id="5_wbhli"]
+[ext_resource type="AudioStream" uid="uid://byt4kl8cxpl3x" path="res://musicas/MSC_T002_2.mp3" id="6_04fgn"]
 [ext_resource type="Script" uid="uid://k38o7yd6xr0h" path="res://scripts/ui.gd" id="6_308xq"]
-[ext_resource type="AudioStream" uid="uid://bwq6jqp0uka1t" path="res://musicas/MSC_T002.mp3" id="6_o1isc"]
 [ext_resource type="PackedScene" uid="uid://b1s4chm3u2uu5" path="res://scenes/ui_cargas.tscn" id="7_2anwn"]
 [ext_resource type="AudioStream" uid="uid://oa7j28pgn68n" path="res://musicas/empilhadeira.mp3" id="7_oq31a"]
 [ext_resource type="AudioStream" uid="uid://cm723etvps1if" path="res://musicas/falas atualizadas/V5 F2 D1.mp3" id="8_04fgn"]
@@ -898,7 +898,7 @@ size = Vector2(1567, 96.5)
 script = ExtResource("1_308xq")
 
 [node name="spawnpoint_test2" parent="." unique_id=1315256099 instance=ExtResource("20_suy0s")]
-position = Vector2(4402, -2172)
+position = Vector2(5564, -2999)
 
 [node name="spawnpoint_test3" parent="." unique_id=644727070 instance=ExtResource("20_suy0s")]
 position = Vector2(4315, -755)
@@ -962,7 +962,7 @@ theme_override_font_sizes/font_size = 32
 text = "preto"
 
 [node name="musica segunda fase" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=796908898]
-stream = ExtResource("6_o1isc")
+stream = ExtResource("6_04fgn")
 bus = &"Musica"
 
 [node name="empilhadeira" type="AudioStreamPlayer2D" parent="Player_manager/Camera2D" unique_id=36346816]

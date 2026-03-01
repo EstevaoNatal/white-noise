@@ -15,6 +15,7 @@ var contador1=0
 var contador2=0
 var contador3=0
 var contador4=0
+var contador5=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,11 +52,11 @@ func _process(delta: float) -> void:
 		fala_2_fase_2.play()
 		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
 		contador1=1
-	elif Globais.tocar1_2:
-		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
-		fala_1_fase_2.play()
 		Globais.tocar1_2=false
-		
+	elif Globais.tocar1_2 && contador5==0:
+		fala_1_fase_2.play()
+		AudioServer.set_bus_volume_db(Globais.musica_bus, linear_to_db(AudioServer.get_bus_volume_linear(Globais.musica_bus)/5))
+		contador5=1
 
 
 func _on_killzone_body_entered(body: CharacterBody2D) -> void:
