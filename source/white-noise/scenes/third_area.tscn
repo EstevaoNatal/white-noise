@@ -126,7 +126,7 @@ size = Vector2(1049.4761, 29.297241)
 size = Vector2(890.64453, 37.11023)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu6qe"]
-size = Vector2(1055.4138, 123.20581)
+size = Vector2(1285.4971, 200.39508)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh5xv"]
 size = Vector2(73, 49)
@@ -1244,7 +1244,7 @@ shape = SubResource("RectangleShape2D_guxn5")
 position = Vector2(-2.968815, -83.12682)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teclado/deteccao aparecer teclas" unique_id=524848878]
-position = Vector2(15.586284, -5.1954346)
+position = Vector2(-99.455315, -43.79004)
 shape = SubResource("RectangleShape2D_tu6qe")
 
 [node name="teclas" type="Node2D" parent="." unique_id=1287298873]

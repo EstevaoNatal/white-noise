@@ -33,6 +33,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#inicio-Mão-mouse
 	
+	if tutorial.visible:
+		controles_volume.visible = false
+	
+	if controles_volume.visible:
+		tutorial.visible = false
+	
 	#print("valor_slider_master: ", Globais.valor_slider_master)
 	#print("valor atual slider: ", master_vol.value)
 	
@@ -48,6 +54,7 @@ func _process(delta: float) -> void:
 	if node_opcoes.visible==true:
 		if Globais.ligar_tutorial==true:
 			node_opcoes.get_node("tutorial").visible = true
+			node_opcoes.get_node("ControlesVolume").visible = false
 			Globais.ligar_tutorial=false
 	#if camera_2d.enabled == true and contador_musga==0:
 	#	master_vol.value = db_to_linear(Globais.master_bus)

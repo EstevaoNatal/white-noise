@@ -173,7 +173,12 @@ func _on_killzone_body_entered(body: CharacterBody2D) -> void:
 
 func _on_copo_cafe_body_entered(body: CharacterBody2D) -> void:
 	animacao_copo.play("derrubar")
-	
+	fala_1_audio.stop()
+	fala_2_audio.stop()
+	fala_3_audio.stop()
+	fala_4_audio.stop()
+	fala_5_audio.stop()
+	fala_6_audio.stop()
 	fala_7_audio.stop()
 	fala_8_audio.play()
 	triste = true

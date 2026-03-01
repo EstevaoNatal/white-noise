@@ -322,7 +322,7 @@ func estado_ui():
 	else:
 		cor_escrita="verde"
 		if contador_tinta>20:
-			ui_cargas.get_node("Cheia").play(cor_escrita + str((70-contador_tinta)/5))
+			ui_cargas.get_node("Cheia").play(cor_escrita + str((max_tinta-contador_tinta)/ ((max_tinta-20)/10) ))
 			ui_cargas.get_node("ink1").play(cor_escrita+"0")
 			ui_cargas.get_node("ink2").play(cor_escrita+"0")
 			ui_cargas.get_node("ink3").play(cor_escrita+"0")
